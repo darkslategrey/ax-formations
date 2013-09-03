@@ -1,0 +1,20 @@
+
+
+
+Requete 1:
+
+
+http://orientation-pour-tous.fr/?page=resultats_offre&search=cap+petite+enfance&filter_region%5B%5D=&filter_niveau_sortie%5B%5D=&filter_metadomain%5B%5D=
+
+# 30 par page
+http://orientation-pour-tous.fr/?page=resultats_offre&search=cap%2Bpetite%2Benfance&filter_region%5B%5D=&filter_niveau_sortie%5B%5D=&filter_metadomain%5B%5D=&postperpage=30&valid_postperpage=ok
+page 2:
+http://orientation-pour-tous.fr/?page=resultats_offre&search=cap%2Bpetite%2Benfance&filter_region%5B%5D=&filter_niveau_sortie%5B%5D=&filter_metadomain%5B%5D=&valid_postperpage=ok&postperpage=30&valid_postperpage=ok&debut_formations=30
+page 3:
+http://orientation-pour-tous.fr/?page=resultats_offre&search=cap%2Bpetite%2Benfance&filter_region%5B%5D=&filter_niveau_sortie%5B%5D=&filter_metadomain%5B%5D=&valid_postperpage=ok&postperpage=30&valid_postperpage=ok&debut_formations=60
+
+
+Requete 2:
+
+
+
