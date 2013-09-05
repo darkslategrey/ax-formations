@@ -1,0 +1,439 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="">
+<meta name="REPLY-TO" content="">
+<meta name="keywords" content="">
+<meta http-equiv='content=";' url='index.php?numero="'>
+<script type="text/javascript" language="JavaScript">
+ old = 1;
+
+function ferme_dernier (xx) {
+   document.getElementById("deroule_"+old).style.visibility = "hidden"; 
+ };
+
+function deroule_donc(xx){
+ ferme_dernier();
+ document.getElementById("deroule_"+xx).style.visibility = "visible";
+ old = xx;
+}
+
+function  ecrire(courriel,sujet) {
+  scroll(0,0);
+  document.getElementById("ma_ref").innerHTML ='<a href="mailto:'+courriel.replace('!!','@')+'?subject='+sujet+'" class="noir_01" style="background:#FFFFD0; color:#FF0000;"><b>ECRIRE à '+courriel+'</b></a>';
+  document.getElementById("email").style.visibility="visible"; 
+} 
+
+function montre_donc(xx) {
+ if (xx==7)  {document.f_orm0.nunum.value = document.f_orm1.numero.value ; document.f_orm0.target='_self';}
+        else {document.f_orm0.nunum.value = -1; document.f_orm0.krono_titre.value= ''; };
+  document.getElementById("entree").style.visibility="visible"; 
+  scroll(0,0);  
+  document.f_orm0.ident49.focus();
+  if (xx==7) {document.getElementById("komment").innerHTML = '<b>Accès restreint</b>'; }
+	    else {document.getElementById("komment").innerHTML = '<b>Administrateur</b>'; };
+};
+
+ function ouvre(fenetre)
+   {
+      var popup2 = null;
+      popup2 = window.open('Tableau de commandes', 'popupnav', 'top=20,left=20,width=360,height=450,resizable=yes,scrollbars=yes');
+      popup2.opener = self;
+      popup2.location.href = fenetre;
+  }
+
+function on_cherche(xx) {
+  cherche = document.f_orm1.cherche.value;
+  fenetre = "cherche_01.php?cherche="+cherche;
+  ouvre(fenetre);
+}
+
+function entrer_01(ev)  {
+  if (ev.keyCode == 13)   {on_cherche(1);}
+ }
+
+function entrer_02(ev)   {
+   if (ev.keyCode == 13)
+  {
+   document.getElementById('entree').style.visibility='hidden'
+   document.f_orm0.submit(); 
+  }
+ }
+
+function sortir(lien) {
+  document.f_orm1.lien_interne.value = lien;
+  document.f_orm1.submit();
+};
+
+function partir(xx,num,deplo,kn,titre) {
+ if ( kn >0 ) {
+   derog = document.f_orm1.marque_theme.value;
+   derog0=derog.charAt(kn);
+   if (derog0==1) {derog0=0;} else {derog0=1;};
+   derog1=derog.substring(0,kn); 
+   derog2=derog.substring(kn+1,derog.length);
+   derog=derog1+derog0+derog2;
+   document.f_orm1.marque_theme.value=derog; 
+   document.f_orm0.marque_theme.value=derog;    
+    };
+      document.f_orm1.num_ero.value = num;
+      document.f_orm0.deploye.value = deplo;	 
+      document.f_orm1.deployee.value = deplo;	 
+      document.f_orm0.krono_titre.value= titre;  
+	  ident_restreint = document.f_orm1.ident_restreint.value; 
+	  document.f_orm1.numero.value = xx;	 
+	  if (deplo != '') {deplo = deplo +',admin';}; 
+	  if ( (deplo != '' ) && (   (deplo.search(ident_restreint)<0) | (ident_restreint == '')  ) )  {montre_donc(7);} 
+	                          else {document.f_orm1.submit();};
+};
+
+
+function TabClick(nb_fic ,  nTab ){ 
+    eval( "largeur = document.f_orm1.largeur"+nb_fic+".value ");
+    for (i = 1; i <= largeur ; i++) 
+        { 
+        document.getElementById("tabs_"+i+"_"+nb_fic).className = "Onglet_01"; 
+        document.getElementById("onglet_"+i+"_"+nb_fic).style.display = "none"; 
+        } 
+    document.getElementById("onglet_"+nTab+"_"+nb_fic).style.display = "block";     
+    document.getElementById("tabs_"+nTab+"_"+nb_fic).className = "Onglet_03"; 
+} 
+
+</script><link href="habillages/class_03.css" rel="stylesheet" type="text/css">
+<link href="chrono/class_onglet.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    <!--
+    p { margin: 0px 0px 0px 0px; }
+    -->
+</style>
+</head>
+<body leftmargin="4" topmargin="5" marginheight="6" background="habillages/trame.gif">
+
+<div id="entree" style="position:absolute; left:200px; top:200px; visibility:hidden; border: thin solid Grey; background:#D0C090;">
+<table border="0" cellspacing="0" cellpadding="0"><td width="90%" align="center" class="noir_01" bgcolor="#E0D090">
+<span id="komment"><b>Accès restreint</b></span><br><br>Veuillez vous identifier<br><br><form name="f_orm0" onkeydown="entrer_02(event)" action="lanceur/lanceur.php" target="_blank" method="post">
+Identifiant  :<br><input type="text" tabindex="1" name="ident49" style="width:150" value=""><br>
+Mot de passe : <br><input type="password" tabindex="2" name="passe44" style="width:150" value=""><br><br><input type="hidden" name="nunum"><input type="hidden" name="deploye"><input type="hidden" name="krono_titre"><input type="hidden" name="marque_theme" value="000000000000000000000000000000000000000000"><input name="valide" type="button" value="Valider" onclick="submit(); document.getElementById('entree').style.visibility='hidden'"><br><br><input name="valide" type="button" value="Annuler" onclick="document.getElementById('entree').style.visibility='hidden'"><br><br>
+</form>
+</td></table>
+</div>
+
+<div id="email" style="position:absolute; left:200px; top:250px; visibility:hidden; width:400; border: thin solid Grey; background:#FFFFFF;">
+<table border="0" cellspacing="0" cellpadding="0"><td width="90%" align="center" class="noir_01" bgcolor="#FBF0E0">
+<br>Fenêtre de sécurité chrono-site<br><br><br><i>Cliquez sur le lien ci-dessous pour écrire</i><br><br><br><span id="ma_ref"></span><br><br><br><br>Cette fenêtre empêche les spammeurs de <b>voler</b> l'adresse email !!!<br><br><input name="fermer" type="button" value="Refermer" onclick="document.getElementById('email').style.visibility='hidden'"><br><br><br>
+</td></table>
+</div>
+
+ <form name="f_orm1" action="index.php" method="POST">
+
+<!------------------------------------------------------------------------------------------->
+<!---- le chapeau du site (enlever le background pour assurer la transparence ) -------------->
+<!-------------------------------------------------------------------------------------------->
+<table width="88%" align="center" height="69">
+<td width="75%">
+  <table align="center" width="100%">
+<tr><td width="100%" align="center" class="entete1">Lycée Jacques de Romas</td></tr>
+<tr><td width="100%" align="center" class="entete2"></td></tr>
+</table>
+</td>
+<td width="25%">  
+  <table align="center" width="100%">
+<td width="30%" align="center" class="entete2">
+   <b>Le mercredi 4 septembre 2013<br>En semaine 36<br>Bonne fête aux<br>Rosalie</b>   </td>
+  </table>
+</td>
+</table>
+<!-- la table de la ligne des menus forum etc. ----------------------------------------------><table align="center" border="0" bordercolor="#222222" cellpadding="0" cellspacing="0" width="88%" background="habillages/bouton_0.jpg">
+<td width="15%" align="center" onmouseover="ferme_dernier()"><a href="forum.php" target="_blank" class="forum">Forum</a></td>
+<td width="15%" align="center" class="forum" onmouseover="deroule_donc(2)">Annuaires</td>
+<td width="15%" align="center" onmouseover="ferme_dernier()"><a href="livredor.php" target="_blank" class="forum">Livre d'or</a></td>
+<td width="15%" align="center" class="forum" onmouseover="deroule_donc(4)">Communication</td>
+<td width="15%" align="center" onmouseover="ferme_dernier()"><a href="stats/index.php" target="_blank" class="forum">Statistiques</a></td>
+<!--------la boîte de recherche------------------------>
+<td width="25%" align="center" class="forum"> 
+<input name="cherche" onkeydown="entrer_01(event)" type="text" size="20" style="width:45%; height:19" class="forum"><input type="button" value="Chercher" style="height:19" onclick="on_cherche(1)">
+</td>
+<!---      fin de la table des menus forum etc... ----------------->
+</table>
+<!----- un cadre transparent pour contenir les déroulants éventuels ----------------><div style="position:absolute; left:6%; width:88%; visibility:hidden;">
+<!------une table dans le cadre --------------->
+<table border="2" cellpadding="0" cellspacing="0" width="100%">
+<td id="deroule_1" width="15%" style="visibility:hidden"></td>
+<td id="deroule_2" class="deroule" align="CENTER" width="15%" style="visibility:hidden">
+<a href="annuaires/courriers_01.php" class="forum2" target="_blank">Courrier</a><br><a href="annuaires/liens_01.php" class="forum2" target="_blank">Liens</a><br>
+</td>
+<td id="deroule_3" width="15%" style="visibility:hidden"></td>
+<td id="deroule_4" class="deroule" align="CENTER" width="15%" style="visibility:hidden">
+<a href="salle_profs/index.php" class="forum2" target="_blank">Salle des profs</a><br><a href="calendrier/index.php" class="forum2" target="_blank">Calendrier</a><br>
+</td>
+<td id="deroule_5" width="15%" style="visibility:hidden"></td>
+<td id="deroule_6" width="25%" style="visibility:hidden"></td> 
+</table>
+</div>
+<table width="88%" cellpadding="0" cellspacing="0" align="center">
+<td align="center" width="16%" valign="top">
+<table><td width="100%" height="6"></td></table>
+<input name="ident_restreint" type="hidden" value=""><input name="deployee" type="hidden"><input name="num_ero" type="hidden" value=""><input name="numero" type="hidden" value="0"><table border="0" cellpadding="0" cellspacing="0" width="100%" background="habillages/bouton.jpg"><td width="100%" align="center" class="titres_menus"><b>Accueil<b></b></b></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" align="center" bgcolor="#FFFFFF">
+<table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(1,1,'',1,'Accueil&lt;BR&gt;')" class="listes_menus">Accueil<br></a></td>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(3,1,'',2,'Acc%C3%A8s%20facile')" class="listes_menus">Accès facile</a></td>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(324,1,'',3,'Nous%20contacter')" class="listes_menus">Nous contacter</a></td>
+</table>
+</td></table>
+<table><td width="100%" height="12"></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" background="habillages/bouton.jpg"><td width="100%" align="center" class="titres_menus"><b>Restaurant Le Couloumé<b></b></b></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" align="center" bgcolor="#FFFFFF"><table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(207,11,'',4,'&lt;P&gt;&lt;FONT%20color=#000000&gt;Accueil&lt;/FONT&gt;%C2%A0&lt;/P&gt;')" class="listes_menus"><p><font color="#000000">Accueil</font> </p></a></td>
+</table></td></table>
+<table><td width="100%" height="12"></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" background="habillages/bouton.jpg"><td width="100%" align="center" class="titres_menus"><b>CDI<b></b></b></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" align="center" bgcolor="#FFFFFF"><table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b>+</b></td>
+<td width="92%"><a href="javascript:partir(74,15,'',5,'Centre%20de%20documentation%20')" class="listes_menus">Centre de documentation </a></td>
+</table></td></table>
+<table><td width="100%" height="12"></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" background="habillages/bouton.jpg"><td width="100%" align="center" class="titres_menus"><b>Administration<b></b></b></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" align="center" bgcolor="#FFFFFF"><table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(318,7,'',6,'Equipe%20administrative%202012%20-%202013')" class="listes_menus">Equipe administrative 2012 - 2013</a></td>
+</table></td></table>
+<table><td width="100%" height="12"></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" background="habillages/bouton.jpg"><td width="100%" align="center" class="titres_menus"><b>Intendance<b></b></b></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" align="center" bgcolor="#FFFFFF">
+<table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(36,13,'',7,'&lt;FONT%20size=2&gt;March%C3%A9s%20Publics&lt;/FONT&gt;')" class="listes_menus"><font size="2">Marchés Publics</font></a></td>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(273,13,'',8,'&lt;FONT%20size=2&gt;Menus%20du%20restaurant%20scolaire&lt;/FONT&gt;')" class="listes_menus"><font size="2">Menus du restaurant scolaire</font></a></td>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(276,13,'',9,'&lt;FONT%20size=2&gt;Tarifs%20d%5C'h%C3%A9bergement%202011&lt;/FONT&gt;')" class="listes_menus"><font size="2">Tarifs d'hébergement 2011</font></a></td>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(335,13,'',10,'Collecte%20TA%202013')" class="listes_menus">Collecte TA 2013</a></td>
+</table>
+</td></table>
+<table><td width="100%" height="12"></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" background="habillages/bouton.jpg"><td width="100%" align="center" class="titres_menus"><b>Evénements<b></b></b></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" align="center" bgcolor="#FFFFFF">
+<table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(326,22,'',11,'Partenariat%20CIFG')" class="listes_menus">Partenariat CIFG</a></td>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(331,22,'',12,'Worlwide%20Hospitality%20Awards')" class="listes_menus">Worlwide Hospitality Awards</a></td>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(340,22,'',13,'Bartendeuse')" class="listes_menus">Bartendeuse</a></td>
+</table>
+</td></table>
+<table><td width="100%" height="12"></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" background="habillages/bouton.jpg"><td width="100%" align="center" class="titres_menus"><b>Les Formations<b></b></b></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" align="center" bgcolor="#FFFFFF">
+<table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(320,10,'',14,'%C2%A0ULIS')" class="listes_menus"> ULIS</a></td>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(323,10,'',15,'AIDE-SOIGNANT%C2%A0')" class="listes_menus">AIDE-SOIGNANT </a></td>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b>+</b></td>
+<td width="92%"><a href="javascript:partir(330,10,'',16,'POLE%20HOTELLERIE')" class="listes_menus">POLE HOTELLERIE</a></td>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(339,10,'',17,'POLE%20SERVICES%20A%20LA%20PERSONNE')" class="listes_menus">POLE SERVICES A LA PERSONNE</a></td>
+</table>
+</td></table>
+<table><td width="100%" height="12"></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" background="habillages/bouton.jpg"><td width="100%" align="center" class="titres_menus"><b>Années Scolaires<b></b></b></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" align="center" bgcolor="#FFFFFF"><table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(215,16,'',18,'Equipes%20p%C3%A9dagogiques%202012%20-%202013')" class="listes_menus">Equipes pédagogiques 2012 - 2013</a></td>
+</table></td></table>
+<table><td width="100%" height="12"></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" background="habillages/bouton.jpg"><td width="100%" align="center" class="titres_menus"><b>Vie Scolaire<b></b></b></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" align="center" bgcolor="#FFFFFF"><table border="0" cellpadding="0" cellspacing="0" width="98%" height="24" align="center" bgcolor="#FFF8DD">
+<td width="8%" class="noir_01" align="left"><b> </b></td>
+<td width="92%"><a href="javascript:partir(25,14,'',19,'Vie%20Scolaire%20')" class="listes_menus">Vie Scolaire </a></td>
+</table></td></table>
+<table><td width="100%" height="12"></td></table>
+<table align="center"><td align="center"></td></table>
+<table align="center"><td align="center" class="admin">
+<br> Dernière mise à jour le <br>03-09-2013</td></table>
+<input name="actif" type="hidden" value=""><input name="decale" type="hidden" value=""><input name="theme" type="hidden" value="Vie Scolaire"><input name="ident" type="hidden" value=""><input name="lien_interne" type="hidden" value=""><input name="marque_theme" type="hidden" value="000000000000000000000000000000000000000000"><input name="affiche_infos" type="hidden" value="">
+</td>
+<td width="68%" height="100%" bgcolor="" align="center" leftmargin="0" topmargin="2" class="noir_01" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center"><td width="100%" valign="top">
+<div style="WIDTH:100%; Background:; color:; font-weight:normal; text-decoration:; font-style:; border:; font-size:9pt; text-align:center" class="noir_01">Accueil<br>
+</div>
+<br>
+</td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01"><td width="100%" valign="top" class="noir_01">
+<div name="texte1" style="WIDTH:100%; Background:; color:; border-color:; font-weight:; font-Size:12px; text-decoration:; font-style:; border:; text-align:216" class="noir_01"><p align="center"><font color="#0000c8" size="7"><a href="?numero=199">RENTREE 2013</a></font></p></div>
+<br>
+</td></table>
+<table><td height="4"></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01"><td width="100%" valign="top" class="noir_01">
+<div name="texte2" style="WIDTH:100%; Background:##000000; color:normal; border-color:normal; font-weight:; font-Size:12px; text-decoration:; font-style:; border:; text-align:216" class="noir_01"></div>
+<br>
+</td></table>
+<table><td height="4"></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01"><td width="100%" valign="top" class="noir_01">
+<div name="texte3" style="WIDTH:100%; Background:; color:; border-color:; font-weight:; font-Size:12px; text-decoration:; font-style:; border:; text-align:216" class="noir_01"><div>
+<span style="FONT-SIZE: 11pt"><font size="3"><br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm"><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'">Le mot du Proviseur,<?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><p></p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm"><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'"><p> </p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'">Année après année, le lycée des métiers Jacques de Romas s’est construit une image très positive auprès des élèves du département de LOT et GARONNE et au-delà, illustrée par le fort taux de pression exercée par la demande d’admission dans les diverses formations proposées et que légitime aussi un taux de réussite aux examens supérieur aux taux départemental et académique (100% pour 5 diplômes et entre 80% et 87,5% pour les 4 autres).<p></p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'">Elle s’explique aussi par la forte implication des équipes pédagogiques qui, en outre, ont su tisser des liens solides et durables avec un ensemble de partenaires professionnels des secteurs d’activité concernés : <b style="mso-bidi-font-weight: normal"><i style="mso-bidi-font-style: normal">l’hôtellerie-restauration et les métiers des services à la personne</i></b>.<p></p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'">L’offre de formation du lycée s’articule autour de ces deux pôles d’activité avec les deux niveaux d’accès à un diplôme qui résultent de la réforme de la voie professionnelle et de la généralisation du Bac Pro 3 ans : <p></p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Wingdings; mso-ascii-font-family: 'Arial Narrow'; mso-hansi-font-family: 'Arial Narrow'; mso-char-type: symbol; mso-symbol-font-family: Wingdings"><span style="mso-char-type: symbol; mso-symbol-font-family: Wingdings">ð</span></span><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'"> le CAP (Cuisine et Restaurant)<p></p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Wingdings; mso-ascii-font-family: 'Arial Narrow'; mso-hansi-font-family: 'Arial Narrow'; mso-char-type: symbol; mso-symbol-font-family: Wingdings"><span style="mso-char-type: symbol; mso-symbol-font-family: Wingdings">ð</span></span><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'"> le Bac Pro 3 ans<p></p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Wingdings; mso-ascii-font-family: 'Arial Narrow'; mso-hansi-font-family: 'Arial Narrow'; mso-char-type: symbol; mso-symbol-font-family: Wingdings"><span style="mso-char-type: symbol; mso-symbol-font-family: Wingdings">  Ø</span></span><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'"> Restauration (2 options : Cuisine / Commercialisation et Services en Restauration)<p></p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Wingdings; mso-ascii-font-family: 'Arial Narrow'; mso-hansi-font-family: 'Arial Narrow'; mso-char-type: symbol; mso-symbol-font-family: Wingdings"><span style="mso-char-type: symbol; mso-symbol-font-family: Wingdings">  Ø</span></span><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'"> ASSP (Accompagnement Soins et Services à la Personne / Option Structure)<p></p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: Wingdings; mso-ascii-font-family: 'Arial Narrow'; mso-hansi-font-family: 'Arial Narrow'; mso-char-type: symbol; mso-symbol-font-family: Wingdings"><span style="mso-char-type: symbol; mso-symbol-font-family: Wingdings">  Ø</span></span><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'"> SPVL (Service de Proximité et Vie Locale)<p></p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'">Afin de permettre à nos élèves d’acquérir des compétences plus spécifiques, plus fines, nous leur offrons la possibilité d’intégrer 2 mentions complémentaires après l’obtention d’un premier diplôme (Accueil-Réception, Cuisinier en desserts de restaurant) qui se concrétisent par une forte insertion professionnelle ainsi qu’une formation d’Aides Soignants qui destine, elle aussi, à des métiers très porteurs.<p></p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'">L’existence d’un Bac Pro Restauration Européen permet aux élèves qui en ont la volonté et les compétences d’intégrer un cursus au cours duquel ils auront la possibilité d’effectuer des périodes de formation en entreprise à l’étranger et ainsi, d’acquérir une maîtrise supérieure de la langue vivante concernée (notamment en anglais) et d’avoir des opportunités supplémentaires de carrière professionnelle à l’étranger.<p></p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'">Enfin, la labellisation “Lycée des métiers” acquise en 2009 assigne au lycée une vocation à préparer des publics variés (élèves, apprentis, adultes) à acquérir des diplômes ou suivre des formations diversifiés (du CAP au BTS).<p></p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'">Au-delà de notre mission pédagogique et de la transmission des savoirs, se décline aussi au-travers de nombreux projets, notre autre mission, d’une égale noblesse, qui consiste à contribuer à<span style="mso-spacerun: yes">  </span>ce que nos élèves deviennent des adultes responsables, matures, pour qui les notions de respect mutuel, de différence, de tolérance et d’ouverture à l’autre auront du sens.<p></p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'">Nous y travaillons en y associant les élèves via leurs différentes représentations et, singulièrement, les internes (plus d’1 élève sur 2) qui doivent bénéficier de bonnes conditions d’accueil pour que leur semaine au lycée soit profitable et agréable.<p></p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'">La taille humaine de notre établissement, son cadre verdoyant, son système de relations simples, directes, entre adultes et élèves, sont autant d’atouts pour qu’il fasse bon vivre et étudier au lycée des métiers Jacques de Romas.<p></p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'"><p> </p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm; TEXT-ALIGN: justify"><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'"><p> </p></span></p>
+<br><p class="MsoBodyTextIndent2" style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 0cm; TEXT-ALIGN: right" align="right"><b style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 11pt; FONT-FAMILY: 'Arial Narrow','sans-serif'">Dominique BOISSARD<p></p></span></b></p></font></span> </div></div>
+<br>
+</td></table>
+<table><td height="4"></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01">
+<tr><td width="100%" align="center"><div style="width:100%;  width:90%;  text-align:center; "><a href="chrono_upload/chrono536_1.jpg" target="_blank"><img name="image4" src="chrono_upload/chrono536_1.jpg" border="0" width="550"></a></div></td></tr>
+<tr><td width="100%">
+<div style="width:100%; Background:; color:; font-weight:normal; text-decoration:; font-style:; font-Size:12px;  border:; text-align:; vertical-align:middle"> </div>
+<br>
+</td></tr>
+</table>
+<table><td height="4"></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01">
+<tr><td width="100%" align="center"><div style="width:100%;  width:90%;  text-align:center; "><img name="image5" src="chrono_upload/chrono461_1.gif" border="0" width="400"></div></td></tr>
+<tr><td width="100%">
+<div style="width:100%; Background:; color:; font-weight:normal; text-decoration:; font-style:; font-Size:12px;  border:; text-align:; vertical-align:middle"> </div>
+<br>
+</td></tr>
+</table>
+<table><td height="4"></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01">
+<td width="42%" class="noir_01"><div style="width:100%; Background:; color:; font-weight:normal; text-decoration:; font-style:; font-Size:12px;  border:; text-align:; "> </div></td>
+<td width="58%" align="center">
+<div style="width:100%; "><img name="image6" src="images/image_vide.gif" border="0" width="0"></div>
+<br>
+</td>
+</table>
+<table><td height="4"></td></table>
+</td>
+<td width="16%" valign="top">
+<table><td width="100%" height="6"></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" background="habillages/bouton.jpg"><td width="100%" align="center" class="titres_menus"><b>Infos<b></b></b></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" topmargin="0" cellspacing="0" width="100%" align="center"><td width="100%" bgcolor="" align="center" leftmargin="0" topmargin="2" class="noir_02" valign="top"><table width="100%"><td width="100%" bgcolor="">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" valign="top"><div style="WIDTH:100%; Background:; color:#000000; font-weight:normal; font-Size:9pt; text-decoration:; font-style:; border:; text-align:center" class="noir_02"><font size="3"><a href="http://195.220.254.11/pronote">Acces Pronote</a></font></div></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01">
+<tr><td width="100%"><div style=" width:90%;  text-align:center; "><a href="http://195.220.254.11/" target="_blank"><img name="image1" src="chrono_upload/chrono886_1.jpg" border="0" width="142"></a></div></td></tr>
+<tr><td width="100%"><div style="width:100%; Background:#; color:#000000; font-weight:normal; text-decoration:; font-style:; font-Size:12px;  border:; text-align:; "></div></td></tr>
+</table>
+</td></table></td></table>
+<table width="4"><td></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" topmargin="0" cellspacing="0" width="100%" align="center"><td width="100%" bgcolor="" align="center" leftmargin="0" topmargin="2" class="noir_02" valign="top"><table width="100%"><td width="100%" bgcolor="#FFFFFF"><table border="0" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" valign="top"><div style="WIDTH:100%; Background:; color:#000000; font-weight:normal; font-Size:9pt; text-decoration:; font-style:; border:; text-align:center" class="noir_02"><font size="3"><strong><a href="?numero=199">Rentrée 2013</a></strong></font></div></td></table></td></table></td></table>
+<table width="4"><td></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" topmargin="0" cellspacing="0" width="100%" align="center"><td width="100%" bgcolor="" align="center" leftmargin="0" topmargin="2" class="noir_02" valign="top"><table width="100%"><td width="100%" bgcolor="#FFFFFF">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" valign="top"><div style="WIDTH:100%; Background:; color:#000000; font-weight:normal; font-Size:9pt; text-decoration:; font-style:; border:; text-align:center" class="noir_02"><font face="Comic Sans MS" size="4"><strong>L'aromatique</strong></font></div></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01"><td width="100%" valign="top" class="noir_01">
+<div name="texte1" style="WIDTH:100%; Background:##000000; color:normal; border-color:normal; font-weight:; font-Size:12px; text-decoration:; font-style:; border:; text-align:216"><p align="center"><font face="Comic Sans MS" size="2"><strong><a href="http://lycee-jderomas.com/cdi/aromatique2/">Journal en ligne du lycée</a></strong></font></p></div>
+<br>
+</td></table>
+</td></table></td></table>
+<table width="4"><td></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" topmargin="0" cellspacing="0" width="100%" align="center"><td width="100%" bgcolor="" align="center" leftmargin="0" topmargin="2" class="noir_02" valign="top"><table width="100%"><td width="100%" bgcolor="#FFFFFF">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" valign="top"><div style="WIDTH:100%; Background:; color:#000000; font-weight:normal; font-Size:9pt; text-decoration:; font-style:; border:; text-align:center" class="noir_02"><strong><font size="3">GRETA </font><br><font size="2">Agenais &amp; Val de Garonne</font></strong></div></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01">
+<tr><td width="100%"><div style=" width:90%;  text-align:center; "><a href="http://www.greta-avdg.fr/" target="_blank"><img name="image1" src="chrono_upload/chrono403_1.jpg" border="0" width="150"></a></div></td></tr>
+<tr><td width="100%"><div style="width:100%; Background:#; color:#000000; font-weight:normal; text-decoration:; font-style:; font-Size:12px;  border:; text-align:; "><p align="center"><strong>La formation continue</strong></p></div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01"><td width="100%" valign="top" class="noir_01">
+<div name="texte2" style="WIDTH:100%; Background:; color:; border-color:; font-weight:; font-Size:12px; text-decoration:; font-style:; border:; text-align:"><p align="center"><strong><font size="2"><a href="chrono_upload/fic_160_affiche-Mardis-gour.pdf" target="_blank"></a><a href="chrono_upload/fic_160_AFFICHE_MARDIS_GOURMANDS_sep_oct_08%5B1%5D.pdf" target="_blank"></a></font></strong> </p></div>
+<br>
+</td></table>
+</td></table></td></table>
+<table width="4"><td></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" topmargin="0" cellspacing="0" width="100%" align="center"><td width="100%" bgcolor="" align="center" leftmargin="0" topmargin="2" class="noir_02" valign="top"><table width="100%"><td width="100%" bgcolor="#FFFFFF">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" valign="top"><div style="WIDTH:100%; Background:; color:#000000; font-weight:normal; font-Size:9pt; text-decoration:; font-style:; border:; text-align:center" class="noir_02"><font face="Helvetica" size="3"><strong>R     E     G     I     O    N</strong></font></div></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01"><td width="100%" valign="top" class="noir_01">
+<div name="texte1" style="WIDTH:100%; Background:; color:; border-color:; font-weight:; font-Size:12px; text-decoration:; font-style:; border:; text-align:"><p align="center"><a href="http://aquitaine.fr/"><img src="chrono_upload/fic_247_r%C3%A9gion%20Aquitaine%20170X157%20MOINS%20REGION.jpg" border="0"></a></p></div>
+<br>
+</td></table>
+</td></table></td></table>
+<table width="4"><td></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" topmargin="0" cellspacing="0" width="100%" align="center"><td width="100%" bgcolor="" align="center" leftmargin="0" topmargin="2" class="noir_02" valign="top"><table width="100%"><td width="100%" bgcolor="#FFFFFF">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" valign="top"><div style="WIDTH:100%; Background:; color:#000000; font-weight:normal; font-Size:9pt; text-decoration:; font-style:; border:; text-align:center" class="noir_02"><strong><font size="3">Projets 2009/2010</font></strong></div></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01"><td width="100%" valign="top" class="noir_01">
+<div name="texte1" style="WIDTH:100%; Background:##000000; color:normal; border-color:normal; font-weight:; font-Size:12px; text-decoration:; font-style:; border:; text-align:216"><p align="center"><a href="?numero=306">Projets pluridisciplinaires  à caractère professionnel<br>Actions diverses</a></p></div>
+<br>
+</td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01"><td width="100%" valign="top" class="noir_01">
+<div name="texte2" style="WIDTH:100%; Background:##000000; color:normal; border-color:normal; font-weight:; font-Size:12px; text-decoration:; font-style:; border:; text-align:216"></div>
+<br>
+</td></table>
+</td></table></td></table>
+<table width="4"><td></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" topmargin="0" cellspacing="0" width="100%" align="center"><td width="100%" bgcolor="" align="center" leftmargin="0" topmargin="2" class="noir_02" valign="top"><table width="100%"><td width="100%" bgcolor="#FFFFFF">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" valign="top"><div style="WIDTH:100%; Background:; color:#000000; font-weight:normal; font-Size:9pt; text-decoration:; font-style:; border:; text-align:center" class="noir_02"><strong><font size="3">INFOS ORIENTATION</font></strong></div></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01"><td width="100%" valign="top" class="noir_01">
+<div name="texte1" style="WIDTH:100%; Background:; color:; border-color:; font-weight:; font-Size:12px; text-decoration:; font-style:; border:; text-align:"><p align="center"><strong>POST 3ème</strong><br><a href="chrono_upload/fic_254_fiche%20reservation%20mini%20stage.PDF" target="_blank">Télécharger la demande d'inscription au mini stage</a></p></div>
+<br>
+</td></table>
+</td></table></td></table>
+<table width="4"><td></td></table>
+<table border="1" bordercolor="#E0E000" cellpadding="0" topmargin="0" cellspacing="0" width="100%" align="center"><td width="100%" bgcolor="" align="center" leftmargin="0" topmargin="2" class="noir_02" valign="top"><table width="100%"><td width="100%" bgcolor="#FFFFFF">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center"><td width="100%" valign="top"><div style="WIDTH:100%; Background:; color:#000000; font-weight:normal; font-Size:9pt; text-decoration:; font-style:; border:; text-align:center" class="noir_02"><strong><font size="4">Nos recettes</font></strong></div></td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01"><td width="100%" valign="top" class="noir_01">
+<div name="texte1" style="WIDTH:100%; Background:##000000; color:normal; border-color:normal; font-weight:; font-Size:12px; text-decoration:; font-style:; border:; text-align:216"><p align="center"><a href="?numero=185">L'atelier des TH2</a></p></div>
+<br>
+</td></table>
+<table border="0" cellpadding="0" cellspacing="0" width="96%" align="center" class="noir_01">
+<td width="90%"><div style="width:90%; Background:#; color:#000000; font-weight:normal; text-decoration:; font-style:; font-Size:12px;  border:; text-align:; "></div></td>
+<td width="9%" align="center"><div style="width:9%; "><a href="http://lycee-jderomas.com/" target="_blank"><img name="image2" src="images/document_01.gif" border="0" width="32"></a></div></td>
+</table>
+</td></table></td></table>
+<table width="4"><td></td></table>
+</td>
+</table>
+<br><br><table align="center" cellpadding="0" cellspacing="0" width="80%" height="10"><td width="80%" align="center" class="buro"><font color="#AAAAAA">Page    modifiée  le 25-06-2013</font></td></table>
+<hr width="80%" color="#BBBBBB" size="1">
+<table align="center" cellpadding="0" cellspacing="0" width="80%" height="10">
+<td width="15%" align="center">  <a href="javascript:montre_donc(0)" class="buro"><font color="#990000">Bureau</font></a>
+
+ </td>   
+  <td width="55%" align="center" class="buro"><font color="#AAAAAA">Chrono-site 5.04 (© 2006) est un logiciel libre distribué sous licence GNU/GPL</font></td>
+<td width="15%" align="center">    
+ 
+  <a href="http://webmail.lycee-jderomas.com/" class="buro" target="_blank&lt;font" color="#000099">Courrier</a>
+ </td>
+</table>
+<br><center><a href="http://www.chronosite.org" class="liens_rouges">CMS chronosite</a></center> 
+</form>
+</body>
+</html>

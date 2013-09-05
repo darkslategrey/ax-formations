@@ -1,0 +1,320 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="Ametys v3 (http://www.ametys.org) - The Smart Web CMS" name="generator">
+<link href="/kernel/resources/img/runtime_favico.gif" type="image/gif" rel="icon">
+<link href="/kernel/resources/img/runtime_favico.ico" type="image/x-icon" rel="shortcut icon">
+<script src="/plugins/jquery/resources/js/jquery.min.js" type="text/javascript"></script><script src="/plugins/jquery-ui/resources/js/jquery-ui.min.js" type="text/javascript"></script><script src="/plugins/jquery-ui/resources/js/i18n/jquery.ui.datepicker-fr.js" type="text/javascript"></script><script type="text/javascript"><!--
+
+              	$j = jQuery.noConflict();
+		
+--></script><script src="/plugins/pirobox_ext/resources/pirobox_extended_min.js" type="text/javascript"></script><script type="text/javascript"><!--
+
+                $j(document).ready(function() {
+                    $j().piroBox_ext({
+                        piro_speed: 600,
+                        bg_alpha: 0.5,
+                        piro_scroll: true
+                    });
+                });
+	        
+--></script><link media="screen, print" rel="stylesheet" href="/plugins/jquery-ui/resources/css/ui-lightness/jquery-ui.css" type="text/css">
+<link type="text/css" rel="stylesheet" title="black" media="screen" href="/plugins/pirobox_ext/resources/css/style_2/style.css">
+<meta content="Université Bordeaux 2" name="author">
+<meta content="Université Bordeaux 2" name="copyright">
+<meta content="fr" name="language">
+<meta content="15 days" name="revisit-aftert">
+<meta name="DC.subject" content="Accueil -">
+<meta name="DC.description" content="">
+<title>Accueil - Université Bordeaux Segalen</title>
+<link href="/plugins/web/www/fr/filter/org.ametys.web.new.RSS/rss.xml" title="Afficher les fils RSS" type="application/rss+xml" rel="alternate">
+<link media="screen" rel="stylesheet" href="/skins/Univ-Bordeaux2/resources/css/bdx2-page.css" type="text/css">
+<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold">
+<link media="screen" rel="stylesheet" href="/skins/Univ-Bordeaux2/resources/css/services-sample.css" type="text/css">
+<link media="screen" rel="stylesheet" href="/skins/Univ-Bordeaux2/resources/css/multimedia-sample.css" type="text/css">
+<link media="screen" rel="stylesheet" href="/skins/Univ-Bordeaux2/resources/css/content.css" type="text/css">
+<link href="/skins/Univ-Bordeaux2/resources/css/bdx2-print.css" media="print" type="text/css" rel="stylesheet">
+<!--[if IE]>
+			<link rel="stylesheet" type="text/css" href="/skins/Univ-Bordeaux2/resources/css/bdx2-ie.css" media="screen" />
+		<![endif]--><!--[if lte IE 7]>
+			<link rel="stylesheet" type="text/css" href="/skins/Univ-Bordeaux2/resources/css/bdx2-ie7.css" media="screen" />
+            <link rel="stylesheet" type="text/css" href="/skins/Univ-Bordeaux2/resources/css/content-ie7.css" media="screen" />
+		<![endif]--><link media="screen" rel="stylesheet" href="/skins/Univ-Bordeaux2/templates/index/resources/css/bdx2-acc-layout.css" type="text/css">
+<script src="/skins/Univ-Bordeaux2/resources/js/bdx2-scripts.js" type="text/javascript"></script><!--[if lte IE 7]>
+            <link rel="stylesheet" type="text/css" href="/skins/Univ-Bordeaux2/resources/js/jquery.pseudo.js" media="screen" />
+        <![endif]--><script type="text/javascript"><!--
+
+			$j(document).ready(function(){
+				function parseXML(data)
+				{
+					var results = [];
+					var branches = $j(data).find('item');
+					$j(branches).each(function() {
+						var text = $j.trim($j(this).text());
+						results[results.length] = {'data': [text, text], 'result': text, 'value': text};
+					});
+					return results;
+				} 
+				
+		        // Search autocomplete
+				var url = "/plugins/web/service/search/auto-completion/www/fr.xml";
+				$j("#textfield").autocomplete({
+					source: function( request, response ) {
+							$j.ajax({
+								url: url + "?q=" + request.term,
+								dataType: "xml",
+								success: function( xmlResponse  ) {
+									response( parseXML (xmlResponse));
+								}
+							});
+					},
+					minLength: 2,
+					delay: 500
+				});
+			});
+		
+--></script><script src="/skins/Univ-Bordeaux2/resources/js/slides.min.jquery.js" type="text/javascript"></script><script type="text/javascript"><!--
+
+                $j(document).ready(function()
+                {
+                    changeAllH2();
+                });
+                        
+                function changeAllH2 ()
+                {
+                    $j('.content .wrapper .panel h2').each(function()
+                    {
+                        $j(this).html(boldLastWord($j(this).html()));
+                    });
+                }
+                    
+                function boldLastWord(sentence)
+                {
+                    var mots = sentence.split(" ");
+                    var newSentence = "";
+                    for (var i = 0; i < mots.length ; i++ )
+                    {
+                        if (i == (mots.length - 1))
+                        {
+                            newSentence += "<strong>" + mots[i] + "</strong>";
+                        }
+                        else
+                        {
+                            newSentence += mots[i] + " ";
+                        }
+                    }
+                    return newSentence;
+                }                                              
+            
+--></script><link rel="stylesheet" type="text/css" href="/plugins/web/resources/css/service/filtered-contents.css">
+<link href="/plugins/cms/dublincore/content.rdf?contentId=defaultWebContent://f40ada58-bc11-478b-8bdb-08e10ce23dc9" rel="meta">
+<link href="/plugins/cms/dublincore/content.rdf?contentId=defaultWebContent://9471ed97-8e03-4a70-b40e-a3206120ef0b" rel="meta">
+<link href="/plugins/cms/dublincore/content.rdf?contentId=defaultWebContent://11e84cce-4b1a-43bd-852f-d2cd64b7a44c" rel="meta">
+<link href="/plugins/cms/dublincore/content.rdf?contentId=defaultWebContent://294c3971-cf64-4245-8ccc-21fd38993fab" rel="meta">
+</head>
+<body class="accueil">
+<p id="easy-access"><a accesskey="s" href="#content">Aller au contenu</a><a href="#navigation">Aller au menu</a><a accesskey="r" href="#research">Aller à la recherche</a></p>
+<div class="maincontainer">
+<div class="ornament"><div class="wrapper"><div class="bdx-top"><div class="innertube">
+<h1><a title="Retour à la page d'accueil" accesskey="1" href="/fr/index.html"><span class="hidden-D">Université Bordeaux Segalen</span></a></h1>
+<ul class="tools">
+<li><a title="Lancer l'impression de la page" href="javascript:print();" class="print"><span>Imprimer la page</span></a></li>
+<li><a title="Afficher le plan du site" href="/fr/plan-du-site.html" class="sitemap"><span>Plan du site</span></a></li>
+<li>Envoyer vers<span class="hidden-L">les réseaux sociaux</span><a title="Facebook de l'université" onclick="window.open(this.href);return false" href="http://www.facebook.com/universitebordeauxsegalen" class="facebook"><span class="hidden-L">Envoyer vers facebook</span></a><a title="Twitter de l'université" onclick="window.open(this.href);return false" href="http://www.twitter.com/bordeauxsegalen" class="twitter"><span class="hidden-L">Envoyer vers twitter</span></a>
+</li>
+</ul>
+<ul class="flags">
+<li class="en"><a href="/en/index.html" title="Home"><span class="hidden-L">English</span></a></li>
+<li class="fr select"><a href="#"><span class="hidden-L">Français</span></a></li>
+</ul>
+<form id="research" action="/fr/recherche-avancee.html#nav" method="post">
+<h2 class="hidden-D">Recherche</h2>
+<div>
+<label for="recherche"><span class="hidden-L">Lancer la recherche dans le site</span></label><input name="submit-form" type="hidden"><input id="textfield" name="textfield" type="text"><input alt="Lancer la recherche" value="OK" type="submit">
+</div>
+<p><a title="Accéder à la recherche avancée" href="/fr/recherche-avancee.html" class="advanced-search">Recherche avancée</a></p>
+</form>
+<h2 class="hidden-L">Navigation principale</h2>
+<ul class="menu">
+<li><a title="Retour à la page d'accueil" href="/fr/index.html" class="acc">Accueil</a></li>
+<li><a title="Aller à la page Etudes" href="/fr/etudes/catalogue-des-formations.html" class="etudes">Etudes</a></li>
+<li><a title="Aller à la page Recherche" href="/fr/recherche.html" class="internat">Recherche</a></li>
+<li><a title="Aller à la page Campus" href="/fr/campus.html" class="campus">Campus</a></li>
+<li><a title="Aller à la page International" href="/fr/international/l-actualite-internationale.html" class="recherche">International</a></li>
+<li><a title="Aller à la page Documentation" href="/fr/documentation.html" class="docu">Documentation</a></li>
+<li><a title="Aller à la page Université" href="/fr/universite.html" class="univ">Université</a></li>
+</ul>
+<div class="carousel" id="news"><div id="ametys-cms-zone-carousel"><div id="ametys-cms-zone-carousel-item-N1002B"><div id="slides">
+<div class="slides_container">
+<a title="© Igor Klimov - Fotolia.com" href="http://www.univ-bordeauxsegalen.fr/fr/recherche/l-actualite-de-la-recherche/agenda-de-la-recherche/symposium-international-alcohol-level-reduction-in-wine.html"><img id="img-7805964010055072-2" alt="© Igor Klimov - Fotolia.com" src="/_contents/ametys-internal%253Asites/www/ametys-internal%253Acontents/index-carrousel/_metadata/illustration1/image/OENOVITI.jpg"></a><a title="© Lionel Lizet" href="http://www.univ-bordeauxsegalen.fr/fr/etudes/l-actualite-des-etudes/formations/bienvenue-a-l-universite.html"><img id="img-7805964010055072-2" alt="© Lionel Lizet" src="/_contents/ametys-internal%253Asites/www/ametys-internal%253Acontents/index-carrousel/_metadata/illustration2/image/inscriptions_2013-2014.jpg"></a><a title="© Yvann K - Fotolia.com" href="http://www.univ-bordeauxsegalen.fr/fr/recherche/l-actualite-de-la-recherche/agenda-de-la-recherche/symposium-international-neurophotonics-2013.html"><img id="img-7805964010055072-2" alt="© Yvann K - Fotolia.com" src="/_contents/ametys-internal%253Asites/www/ametys-internal%253Acontents/index-carrousel/_metadata/illustration3/image/fins.jpg"></a>
+</div>
+<div class="pilot">
+<a class="prev" href="#"><span class="hidden-L">accéder à l'actualité précédente</span></a><a class="next" href="#"><span class="hidden-L">accéder à l'actualité suivante</span></a>
+</div>
+</div></div></div></div>
+<a title="Afficher la page des actualités" href="/fr/toute-l-actualite.html" class="allnews">
+                » 
+                <span>Toute l'actualité</span></a><a title="Afficher les fils RSS" class="fluxrss-news" href="/plugins/web/www/fr/filter/org.ametys.web.new.RSS/rss.xml%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20"><span class="hidden-L">S'abonner au </span>Flux RSS<span class="hidden-L"> de l'université</span></a><div class="directaccesslinks">
+<h2 class="whoareyou"><span>Accès par profils</span></h2>
+<ul id="submenu-whoareyou">
+<li><a title="Aller à la page Entreprises" href="/fr/index/entreprises.html">» Entreprises</a></li>
+<li><a title="Aller à la page Etudiants" href="/fr/index/etudiants.html">» Etudiants</a></li>
+<li><a title="Aller à la page International students" href="/fr/index/international-students.html">» International students</a></li>
+<li><a title="Aller à la page Lycéens" href="/fr/index/lyceens.html">» Lycéens</a></li>
+<li><a title="Aller à la page Personnels" href="/fr/index/personnels.html">» Personnels</a></li>
+<li><a title="Aller à la page Reprise d’études" href="/fr/index/reprise-d-etudes.html">» Reprise d’études</a></li>
+</ul>
+<h2 class="directaccess"><span>Accès directs</span></h2>
+<ul id="submenu-directaccess">
+<li><a title="Aller à la page Annuaire" href="/fr/index/annuaire.html">» Annuaire</a></li>
+<li><a title="Aller à la page Emplois, recrutements" href="/fr/index/emplois--recrutements.html">» Emplois, recrutements</a></li>
+<li><a title="Aller à la page Inscriptions" href="/fr/index/inscriptions.html">» Inscriptions</a></li>
+<li><a title="Aller à la page Marchés" href="/fr/index/marches.html">» Marchés</a></li>
+<li><a title="Aller à la page Nouvelle Université de Bordeaux" href="/fr/index/nouvelle-universite-de-bordeaux.html">» Nouvelle Université de Bordeaux</a></li>
+<li><a title="Aller à la page Organisation d'événement" href="/fr/index/organisation-d-evenement.html">» Organisation d'événement</a></li>
+<li><a title="Aller à la page Salle de presse" href="/fr/index/salle-de-presse.html">» Salle de presse</a></li>
+</ul>
+<h2 class="link"><a onclick="window.open(this.href);return false" title="Accéder au portail étudiant" href="/fr/index/etudiants.html">Portail étudiant</a></h2>
+<h2 class="link"><a onclick="window.open(this.href);return false" title="Accéder au portail du personnel" href="/fr/index/personnels.html">Portail du personnel</a></h2>
+</div>
+</div></div></div></div>
+<div class="content"><div class="wrapper">
+<div class="panel box  picto agenda red"><div id="ametys-cms-zone-middle_left">
+<div id="ametys-cms-zone-middle_left-item-N10084"><div class="content-list-wrapper abstract">
+<h2>Agenda</h2>
+<a class="alldate" href="/fr/agenda.html">
+                                »
+                                <span>Tout l'agenda</span></a><script type="text/javascript"><!--
+
+								var pagination_fc_561921440603776 = [];
+							
+--></script><div id="fc_561921440603776-part-1"><script type="text/javascript"><!--
+
+						
+					pagination_fc_561921440603776.push('1');
+				
+--></script></div>
+<script type="text/javascript"><!--
+
+								pagination_fc_561921440603776_current = 0;	
+								if (pagination_fc_561921440603776.length > 1)
+								{
+									document.write("<div class='pagination'><ul class='nav'><li>Pages :</li><li id='content_filter_prev_fc_561921440603776' style='display: none;' class='precede'><input type='submit' onclick='try { show_fc_561921440603776(\"prev\"); } catch(e) {} return false;' value='Précédent'/></li>");
+									for (var i = 0; i < pagination_fc_561921440603776.length; i++)
+									{
+										document.write("<li id='content_filter_fc_561921440603776" + i + "_button' style='display: " + (i == 0 ? 'none' : '') + "' class='page'><input type='submit' onclick='try { show_fc_561921440603776(" + i + "); } catch(e) {} return false;' value='" + (i + 1) + "'/></li>");
+										document.write("<li id='content_filter_fc_561921440603776" + i + "' style='display: " + (i != 0 ? 'none' : '') + "' class='page'>" + (i + 1) + "</li>");
+									}
+									document.write("<li id='content_filter_next_fc_561921440603776' class='next'><input type='submit' onclick='try { show_fc_561921440603776(\"next\"); } catch(e) {} return false;' value='Suivant'/></li></ul></div><div style='clear: both;'></div>");
+									
+									function show_fc_561921440603776(count)
+									{
+										if (count == 'next')
+										{
+											count = pagination_fc_561921440603776_current + 1;
+										}
+										else if (count == 'prev')
+										{
+											count = pagination_fc_561921440603776_current - 1;
+										}
+									
+										for (var i = 0; i < pagination_fc_561921440603776.length; i++)
+										{
+											if (i == count)
+											{
+												document.getElementById('fc_561921440603776-part-' + pagination_fc_561921440603776[i]).style.display = "";
+												document.getElementById('content_filter_fc_561921440603776' + i + '_button').style.display = "none";
+												document.getElementById('content_filter_fc_561921440603776' + i).style.display = "";
+											}
+											else
+											{
+												document.getElementById('fc_561921440603776-part-' + pagination_fc_561921440603776[i]).style.display = "none";
+												document.getElementById('content_filter_fc_561921440603776' + i + '_button').style.display = "";
+												document.getElementById('content_filter_fc_561921440603776' + i).style.display = "none";
+											}
+										}
+										pagination_fc_561921440603776_current = count;
+
+										document.getElementById("content_filter_prev_fc_561921440603776").style.display = (pagination_fc_561921440603776_current == "0" ? 'none' : '');
+										document.getElementById("content_filter_next_fc_561921440603776").style.display = (pagination_fc_561921440603776_current == (pagination_fc_561921440603776.length - 1) ? 'none' : '');
+									}
+								}
+						
+--></script>
+</div></div>
+<div id="ametys-cms-zone-middle_left-item-N100B7"><p><a href="http://www.boutique-bordeauxsegalen.com/" class="invisible" onclick="window.open(this.href); return false;"><span class="image-wrapper invisible" style="display: inline-block; text-align: center"><img src="/_contents-images/ametys-internal%253Asites/www/ametys-internal%253Acontents/index-article/_metadata/content/_data/Pub_Boutique-2.gif_149x300" alt="Vers la boutique en ligne" title="Vers la boutique en ligne" width="300" height="149"><br style="clear: both"></span></a></p></div>
+<div id="ametys-cms-zone-middle_left-item-N1010B"><p><a href="http://www.facebook.com/universitebordeauxsegalen" title="Bordeaux Segalen sur Facebook" class="invisible" onclick="window.open(this.href); return false;"><span class="image-wrapper invisible" style="display: inline-block; text-align: center"><img src="/_contents-images/ametys-internal%253Asites/www/ametys-internal%253Acontents/index-article-4/_metadata/content/_data/Pub_Facebook-2.gif_75x300" alt="" width="300" height="75"><br style="clear: both"></span></a></p></div>
+</div></div>
+<div class="panel box  picto formations vert"><div id="ametys-cms-zone-middle_center">
+<div id="ametys-cms-zone-middle_center-item-N10173">
+<h2 class="title">Inscription à l'université</h2>
+<div class="article"><p>Les inscriptions pour la rentrée 2013 sont ouvertes. Suivez la procédure pour finaliser votre inscription.<br><strong>Accédez à la</strong> <strong><a href="http://www.etu.univ-bordeauxsegalen.fr/fr/etudes/s-inscrire-ou-se-reinscrire/premiere-inscription-1.html" class="know-more">rubrique inscription</a></strong> <br><br><br></p></div>
+</div>
+<div id="ametys-cms-zone-middle_center-item-N101C8"><div id="service-odf-search-wrapper">
+<h2>Découvrez nos formations</h2>
+<form class="search" method="post" action="/fr/etudes/catalogue-des-formations/moteur-de-recherche-des-formations.html#nav">
+<input name="submit-form" type="hidden"><ul class="formulaire">
+<li>Trouvez votre formation dans notre catalogue.</li>
+<li>
+<input value="" name="textfield" type="text" id="search-textfield-6832094014147875"><br><select id="degree-input" name="degree"><option value="">- type de diplôme -</option>
+<option value="">Autres types de formation</option>
+<option value="">Concours</option>
+<option value="">Diplôme d'Université</option>
+<option value="">Doctorat</option>
+<option value="">Formations santé et paramédical</option>
+<option value="">Inconnu</option>
+<option value="">Licence</option>
+<option value="">Licence professionnelle</option>
+<option value="">Master</option>
+<option value="">XX</option></select><br><input class="search" value="Rechercher" type="submit">
+</li>
+</ul>
+</form>
+</div></div>
+</div></div>
+<div class="panel box  picto no-margin-r electron bleu"><div id="ametys-cms-zone-middle_right"><div id="ametys-cms-zone-middle_right-item-N10237">
+<h2 class="title">Concours &amp; Emplois : l'Université Recrute</h2>
+<div class="article">
+<p><strong><strong><a href="/fr/universite/l-universite-recrute/attaches-temporaires-d-enseignement-et-de-recherche.html" class="simple">Campagne de recrutement complémentaire ATER - Rentrée 2013 &gt;&gt;</a><br><br></strong><a href="/fr/universite/l-universite-recrute/doctorants-contractuels/campagne-de-recrutement-activites-accessoires.html" class="simple">Activités accessoires des doctorants contractuels &gt;&gt;</a><br><br><a href="/fr/universite/l-universite-recrute/biatss/personnels-itrf.html" class="simple">Postes ITRF ouverts aux concours à l'Université Bordeaux Segalen (session 2013) &gt;&gt;</a></strong></p>
+<p><strong><br></strong></p>
+</div>
+</div></div></div>
+</div></div>
+</div>
+<div class="footer"><div class="bdx-footer">
+<div class="links">
+<ul>
+<li class="first"><a title="Retour à la page d'accueil" href="/fr/index.html">Accueil</a></li>
+<li><a title="Aller à la page Etudes" href="/fr/etudes.html">Etudes</a></li>
+<li><a title="Aller à la page Recherche" href="/fr/recherche.html">Recherche</a></li>
+<li><a title="Aller à la page Campus" href="/fr/campus.html">Campus</a></li>
+<li><a title="Aller à la page International" href="/fr/international.html">International</a></li>
+<li><a title="Aller à la page Documentation" href="/fr/documentation.html">Documentation</a></li>
+<li><a title="Aller à la page Université" href="/fr/universite.html">Université</a></li>
+</ul>
+<ul class="secondary">
+<li class="first"><a title="Aller à la page Crédits et mentions légales" href="/fr/credits-et-mentions-legales.html">Crédits et mentions légales</a></li>
+<li><a title="Aller à la page Annuaire" href="http://annuaire.u-bordeaux2.fr/" onclick="window.open(this.href);return false">Annuaire</a></li>
+<li><a title="Aller à la page Plan du site" href="/fr/plan-du-site.html">Plan du site</a></li>
+</ul>Copyright © 2010</div>
+<div class="logos-partner"><a title="Lien vers l'université de Bordeaux" href="http://www.univ-bordeaux.fr" onclick="window.open(this.href);return false" class="logo"><img alt="Logo de l'université de Bordeaux" src="/skins/Univ-Bordeaux2/resources/img/logo-univbdx.png"></a></div>
+<address>
+<strong>Université Bordeaux Segalen</strong>-  146 rue Léo-Saignat  -  33076 Bordeaux Cedex   -  Tél. 33 (0)5 57 57 10 10  -  Fax. 33 (0)5 56 99 03 80</address>
+</div></div>
+<script type="text/javascript"><!--
+
+            
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-20283224-1']);
+              _gaq.push(['_trackPageview']);
+            
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+            
+            
+--></script>
+</body>
+</html>

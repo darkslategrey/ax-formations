@@ -1,0 +1,1173 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<noindex><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="inalco/css/style.css" rel="stylesheet" type="text/css">
+<link href="inalco/css/layers.css" rel="stylesheet" type="text/css">
+<link href="inalco/css/boutique.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="inalco/js/preloader.js"></script><style type="text/css">
+	#content {position: absolute;}
+	#up {position: absolute;}
+	#down {position: absolute;}
+	#drag {position: absolute;}
+	#fond {position: absolute;}
+	#ruler {position: absolute;}
+</style>
+<script language="javascript">
+
+// Touch me here :-)
+var upH = 12; // Height of up-arrow
+var upW = 12; // Width of up-arrow
+var downH = 12; // Height of down-arrow
+var downW = 12; // Width of down-arrow
+var dragH = 19; // Height of scrollbar
+var dragW = 14; // Width of scrollbar
+var scrollH = 160; // Height of scrollbar
+var speed = 4; // Scroll speed
+
+
+
+// Browser detection
+var dom = document.getElementById ? true:false;
+var nn4 = document.layers ? true:false;
+var ie4 = document.all ? true:false;
+
+var mouseY; // Mouse Y position onclick
+var mouseX; // Mouse X position onclick
+
+var clickUp = false; // If click on up-arrow
+var clickDown = false; // If click on down-arrow
+var clickDrag = false; // If click on scrollbar
+var clickAbove = false; // If click above scrollbar
+var clickBelow = false; // If click below scrollbar
+
+var timer = setTimeout("",500); // Repeat variable
+var upL; // Up-arrow X
+var upT; // Up-arrow Y
+var downL; // Down-arrow X
+var downT; // Down-arrow Y
+var dragL; // Scrollbar X
+var dragT; // Scrollbar Y
+var rulerL; // Ruler X
+var rulerT; // Ruler Y
+var contentT; // Content layer Y;
+var contentH; // Content height
+var contentClipH; // Content clip height
+var scrollLength; // Number of pixels scrollbar should move
+var startY; // Keeps track of offset between mouse and span
+
+// Mousedown
+function down(e){
+	if((document.layers && e.which!=1) || (document.all && event.button!=1)) return true; // Enables the right mousebutton
+	getMouse(e);
+	startY = (mouseY - dragT);
+	
+	// If click on up-arrow
+	if(mouseX >= upL && (mouseX <= (upL + upW)) && mouseY >= upT && (mouseY <= (upT + upH))){
+		clickUp = true;
+		return scrollUp();
+	}	
+	// Else if click on down-arrow
+	else if(mouseX >= downL && (mouseX <= (downL + downW)) && mouseY >= downT && (mouseY <= (downT + downH))){
+		clickDown = true;
+		return scrollDown();
+	}
+	// Else if click on scrollbar
+	else if(mouseX >= dragL && (mouseX <= (dragL + dragW)) && mouseY >= dragT && (mouseY <= (dragT + dragH))){
+		clickDrag = true;
+		return false;
+	}
+	else if(mouseX >= dragL && (mouseX <= (dragL + dragW)) && mouseY >= rulerT && (mouseY <= (rulerT + scrollH))){
+		// If click above drag
+		if(mouseY < dragT){
+			clickAbove = true;
+			clickUp = true;
+			return scrollUp();
+		}
+		// Else click below drag
+		else{
+			clickBelow = true;
+			clickDown = true;
+			return scrollDown();
+		}
+	}
+	// If no scrolling is to take place
+	else{
+		return true;
+	}
+}
+
+// Drag function
+function move(e){
+	if(clickDrag && contentH > contentClipH){
+		getMouse(e);
+		dragT = (mouseY - startY);
+		
+		if(dragT < (rulerT))
+			dragT = rulerT;		
+		if(dragT > (rulerT + scrollH - dragH))
+			dragT = (rulerT + scrollH - dragH);
+		
+		contentT = ((dragT - rulerT)*(1/scrollLength));
+		contentT = eval('-' + contentT);
+
+		moveTo();
+		
+		// So ie-pc doesn't select gifs
+		if(ie4)
+			return false;
+	}
+}
+
+function up(){
+	clearTimeout(timer);
+	// Resetting variables
+	clickUp = false;
+	clickDown = false;
+	clickDrag = false;
+	clickAbove = false;
+	clickBelow = false;
+	return true;
+}
+
+// Reads content layer top
+function getT(){
+	if(ie4)
+		contentT = document.all.content.style.pixelTop;
+	else if(nn4)
+		contentT = document.contentClip.document.content.top;
+	else if(dom)
+		contentT = parseInt(document.getElementById("content").style.top);
+}
+
+// Reads mouse X and Y coordinates
+function getMouse(e){
+	if(ie4){
+		mouseY = event.clientY + document.body.scrollTop;
+		mouseX = event.clientX + document.body.scrollLeft;
+	}
+	else if(nn4 || dom){
+		mouseY = e.pageY;
+		mouseX = e.pageX;
+	}
+}
+
+// Moves the layer
+function moveTo(){
+	if(ie4){
+		document.all.content.style.top = contentT;
+		document.all.ruler.style.top = dragT;
+		document.all.drag.style.top = dragT;
+	}
+	else if(nn4){
+		document.contentClip.document.content.top = contentT;
+		document.ruler.top = dragT;
+		document.drag.top = dragT;
+	}
+	else if(dom){
+		document.getElementById("content").style.top = contentT + "px";
+		document.getElementById("drag").style.top = dragT + "px";
+		document.getElementById("ruler").style.top = dragT + "px";
+	}
+}
+
+// Scrolls up
+function scrollUp(){
+	getT();
+	
+	if(clickAbove){
+		if(dragT <= (mouseY-(dragH/2)))
+			return up();
+	}
+	
+	if(clickUp){
+		if(contentT < 0){		
+			dragT = dragT - (speed*scrollLength);
+			
+			if(dragT < (rulerT))
+				dragT = rulerT;
+				
+			contentT = contentT + speed;
+			if(contentT > 0)
+				contentT = 0;
+			
+			moveTo();
+			timer = setTimeout("scrollUp()",25);
+		}
+	}
+	return false;
+}
+
+// Scrolls down
+function scrollDown(){
+	getT();
+	
+	if(clickBelow){
+		if(dragT >= (mouseY-(dragH/2)))
+			return up();
+	}
+
+	if(clickDown){
+		if(contentT > -(contentH - contentClipH)){			
+			dragT = dragT + (speed*scrollLength);
+			if(dragT > (rulerT + scrollH - dragH))
+				dragT = (rulerT + scrollH - dragH);
+			
+			contentT = contentT - speed;
+			if(contentT < -(contentH - contentClipH))
+				contentT = -(contentH - contentClipH);
+			
+			moveTo();
+			timer = setTimeout("scrollDown()",25);
+		}
+	}
+	return false;
+}
+
+// reloads page to position the layers again
+function reloadPage(){
+	location.reload();
+}
+
+// Preload
+function eventLoader(){
+
+	PlaceScroll();
+	if(ie4){
+		// Up-arrow X and Y variables
+		upL = document.all.up.style.pixelLeft;
+		upT = document.all.up.style.pixelTop;		
+		// Down-arrow X and Y variables
+		downL = document.all.down.style.pixelLeft;
+		downT = document.all.down.style.pixelTop;
+		// Scrollbar X and Y variables
+		dragL = document.all.drag.style.pixelLeft;
+		dragT = document.all.drag.style.pixelTop;		
+		// Ruler Y variable
+		rulerT = document.all.ruler.style.pixelTop;		
+		// Height of content layer and clip layer
+		contentH = parseInt(document.all.content.scrollHeight);
+		contentClipH = parseInt(document.all.contentClip.style.height);
+	}
+	else if(nn4){
+		// Up-arrow X and Y variables
+		upL = document.up.left;
+		upT = document.up.top;		
+		// Down-arrow X and Y variables
+		downL = document.down.left;
+		downT = document.down.top;		
+		// Scrollbar X and Y variables
+		dragL = document.drag.left;
+		dragT = document.drag.top;		
+		// Ruler Y variable
+		rulerT = document.ruler.top;
+		// Height of content layer and clip layer
+		contentH = document.contentClip.document.content.clip.bottom;
+		contentClipH = document.contentClip.clip.bottom;
+	}
+	else if(dom){
+		// Up-arrow X and Y variables
+		upL = parseInt(document.getElementById("up").style.left);
+		upT = parseInt(document.getElementById("up").style.top);
+		
+		// Down-arrow X and Y variables
+		downL = parseInt(document.getElementById("down").style.left);
+		downT = parseInt(document.getElementById("down").style.top);
+		// Scrollbar X and Y variables
+		dragL = parseInt(document.getElementById("drag").style.left);
+		dragT = parseInt(document.getElementById("drag").style.top);
+		// Ruler Y variable
+		rulerT = parseInt(document.getElementById("ruler").style.top);
+		// Height of content layer and clip layer
+		contentH = parseInt(document.getElementById("content").offsetHeight);
+		contentClipH = parseInt(document.getElementById("contentClip").offsetHeight);
+
+		document.getElementById("content").style.top = 0 + "px";
+		
+	}
+	// Number of pixels scrollbar should move
+	scrollLength = ((scrollH-dragH)/(contentH-contentClipH));
+	// Initializes event capturing
+	if(nn4){
+		document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE | Event.MOUSEUP);
+		window.onresize = reloadPage;
+	}
+	
+	document.onmousedown = down;
+	document.onmousemove = move;
+	document.onmouseup = up;
+
+}
+
+function PositionMenu()
+{
+	if (ie4){
+		TheWindowWidth = document.body.scrollWidth;
+	}else if (dom){
+		TheWindowWidth = document.body.scrollWidth;
+	}else if(nn4) {
+		TheWindowWidth = window.innerWidth - 16;
+	}
+	ToReturn = ((TheWindowWidth - 982) / 2);
+	return Math.round(ToReturn);	
+}
+
+function PlaceScroll(theDiv)
+{	
+	
+	var ToPx = PositionMenu();
+	
+	if(ToPx<15){
+		ToPx = 10;
+	} else if(ToPx<30){
+		ToPx = 10;
+	}
+	
+	decalage = 793;
+	
+	if((navigator.appVersion.indexOf("MSIE")!=-1)){
+		decalage = 793;		
+	}
+
+	var ToScrollPx = ToPx + decalage;
+	var scrollerPx = ToPx + 966;
+	var dragPx = scrollerPx - 1;
+	var fondPx = scrollerPx + 4
+
+	if (nn4)
+	{
+        document.layers["contentClip"].pageX	= ToScrollPx;
+		document.layers["scroller"].pageX		= scrollerPx;
+		document.layers["ruler"].pageX			= scrollerPx;
+		document.layers["fond"].pageX			= fondPx;
+		document.layers["up"].pageX				= scrollerPx;
+		document.layers["down"].pageX			= scrollerPx;
+		document.layers["drag"].pageX			= dragPx;
+    }
+	else if (ie4)
+	{
+        document.all["contentClip"].style.posLeft	=  ToScrollPx;	
+		document.all["ruler"].style.posLeft			=  scrollerPx;
+		document.all["fond"].style.posLeft			=  fondPx;
+		document.all["up"].style.posLeft			=  scrollerPx;	
+		document.all["down"].style.posLeft			=  scrollerPx;	
+		document.all["drag"].style.posLeft			=  dragPx;	
+    }
+	else if (dom)
+	{
+		document.getElementById("contentClip").style.left	= ToScrollPx;
+		document.getElementById("ruler").style.left			=  scrollerPx;
+		document.getElementById("fond").style.left			=  fondPx;
+		document.getElementById("up").style.left			=  scrollerPx;
+		document.getElementById("down").style.left			=  scrollerPx;	
+		document.getElementById("drag").style.left			=  dragPx;	
+    }
+
+}
+
+
+</script></noindex>
+</head>
+<body onload="MM_preloadImages('inalco/images/commun/cartemonde.gif','inalco/images/commun/cartezone1.gif','inalco/images/commun/cartezone2.gif','inalco/images/commun/cartezone3.gif','inalco/images/commun/cartezone4.gif','inalco/images/commun/cartezone5.gif','inalco/images/commun/cartezone6.gif','inalco/images/commun/cartezone7.gif','inalco/images/commun/cartezone8.gif')" onresize="location.reload(true);">
+  
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0"><tr>
+<td align="center" valign="top">
+      <table width="982px" height="100%" border="0" cellpadding="0" cellspacing="0">
+<!-- DEBUT - BANDEAU HAUT --><noindex><tr valign="top">
+<td height="120" colspan="3" class="bordurebandeau">
+	    <table width="982px" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td rowspan="2" valign="top">
+	        	<a href="index.php?id_secteur=1&amp;def_lang=fr"><img src="inalco/images/commun/logo.jpg" title="Logo INALCO" alt="Logo INALCO" width="151" height="94" border="0"></a>
+	        </td>
+	        <td width="831" height="74">
+	          <table width="831" height="74" border="0" cellpadding="0" cellspacing="0" background="inalco/images/commun/bienvenueinalco.jpg"><tr>
+<td align="right" valign="bottom"><table width="380" height="21" border="0" cellpadding="0" cellspacing="0">
+<form name="form_rech" method="get" action="ina_accueil.php3">
+	                    <tr>
+<td align="right">
+	                      									<a href="ina_contacts.php3?id_rubrique=149&amp;id_secteur=1" class="navcontexthaut">Contacts</a> - <a href="ina_plan.php3?id_rubrique=1505&amp;id_secteur=1" class="navcontexthaut">Plan du site</a>
+								                		 
+	                      </td>
+	                      <td width="127" align="right">
+	                      										<input id="formulaire_recherche" name="recherchemnogo" type="text" size="40" value=" " onmouseover="this.focus();" onfocus="if(this.value == ' ') this.value = '';">
+</td>
+	                      <td width="26" align="right">
+	                      	<a href="javascript:document.form_rech.submit();">
+	                      		<img src="inalco/images/commun/btokrouge.gif" title="Valider" alt="Valider" width="22" height="19" hspace="0" border="0"></a>
+	                      </td>
+	                    </tr>
+</form>
+	                </table></td>
+	            </tr></table>
+</td>
+	      </tr>
+<tr>
+<td height="23" valign="top"><table width="831" height="21" border="0" cellpadding="0" cellspacing="0" bgcolor="#95ACD6"><tr>
+<td align="center" onmouseover="this.className='fondnoir'" onmouseout="this.className='fondorange'" class="fondorange">
+				  		<a href="ina_gabarit_espace.php3?id_rubrique=3" class="navhaut"> <span style="text-transform: uppercase">L’Institut</span> </a>
+				  	</td>
+				  <td align="center"><img src="inalco/images/commun/barreblanchenav.gif" width="1" height="10"></td>
+									  	<td align="center" onmouseover="this.className='fondnoir'" onmouseout="this.className='fondorange'" class="fondorange">
+				  		<a href="ina_gabarit_espace.php3?id_rubrique=44" class="navhaut"> <span style="text-transform: uppercase">Étudier à l’Inalco</span> </a>
+				  	</td>
+				  <td align="center"><img src="inalco/images/commun/barreblanchenav.gif" width="1" height="10"></td>
+									  	<td align="center" onmouseover="this.className='fondnoir'" onmouseout="this.className='fondorange'" class="fondorange">
+				  		<a href="ina_gabarit_espace.php3?id_rubrique=90" class="navhaut"> <span style="text-transform: uppercase">Recherche &amp; École doctorale</span> </a>
+				  	</td>
+				  <td align="center"><img src="inalco/images/commun/barreblanchenav.gif" width="1" height="10"></td>
+									  	<td align="center" onmouseover="this.className='fondnoir'" onmouseout="this.className='fondorange'" class="fondorange">
+				  		<a href="ina_gabarit_espace.php3?id_rubrique=6" class="navhaut"> <span style="text-transform: uppercase">International</span> </a>
+				  	</td>
+				  <td align="center"><img src="inalco/images/commun/barreblanchenav.gif" width="1" height="10"></td>
+									  	<td align="center" onmouseover="this.className='fondnoir'" onmouseout="this.className='fondorange'" class="fondorange">
+				  		<a href="ina_gabarit_espace.php3?id_rubrique=74" class="navhaut"> <span style="text-transform: uppercase">Formation continue</span> </a>
+				  	</td>
+				  <td align="center"><img src="inalco/images/commun/barreblanchenav.gif" width="1" height="10"></td>
+									  	<td align="center" onmouseover="this.className='fondnoir'" onmouseout="this.className='fondorange'" class="fondorange">
+				  		<a href="ina_gabarit_espace.php3?id_rubrique=119" class="navhaut"> <span style="text-transform: uppercase">Publications &amp; Médiathèque</span> </a>
+				  	</td>
+				  
+				  <td width="1" align="center"><img src="inalco/images/commun/barreblanchenav.gif" width="1" height="10"></td>
+				  <td align="center" onmouseover="this.className='fondnoir'" onmouseout="this.className='fondextranet'" class="fondextranet">
+				  	<a href="https://www.inalco.fr/extranet/" class="navhaut"> EXTRANET </a>
+				  </td>
+	            </tr></table></td>
+	      </tr>
+</table>
+</td>
+	</tr></noindex><!-- FIN - BANDEAU HAUT --><tr height="100%">
+<!-- DEBUT - COLONNE GAUCHE --><td valign="top" class="borduregauche">
+            <noindex><!-- COLONNE GAUCHE --><table width="190" height="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+		<table width="190" border="0" cellpadding="0" cellspacing="0" class="blocvousetes">
+<tr>
+<td width="190"><img src="inalco/images/commun/titrevousetes.gif" width="190" height="20"></td>
+		  </tr>
+<tr>
+<td height="65" align="center"><table width="100%" height="65" border="0" cellpadding="0" cellspacing="0" background="inalco/images/commun/vous_etes.jpg">
+<tr>
+<td width="8" valign="middle"> </td>	
+		          <td width="8" valign="middle"><img src="inalco/images/commun/puceorange.gif" width="8" height="12"></td>
+                  <!--JAK 27042009 avant :  <td width="157"><a href="index.php?id_secteur=1&hp=FUTURS" class="orange">Futur &eacute;tudiant</a></td> -->
+		          <td width="157"><a href="/ina_gabarit_rubrique.php3?id_rubrique=2750" class="orange">Futur étudiant</a></td>
+		        </tr>
+<tr>
+<td width="8" valign="middle"> </td>	
+		          <td valign="middle"><img src="inalco/images/commun/puceorange.gif" width="8" height="12"></td>
+		          <!--JAK 27042009 avant :   <td><a href="index.php?id_secteur=1&hp=ETRANGERS" class="orange">Etudiant &eacute;tranger</a></td> -->
+                  <td><a href="/index.php?id_secteur=1&amp;id_rubrique=143&amp;id_article=1791&amp;hp=ETRANGERS&amp;infoprat" class="orange">Etudiant étranger</a></td>
+		        </tr>
+<!-- JAK --><tr>
+<td width="8" valign="middle"> </td>	
+		          <td valign="middle"><img src="inalco/images/commun/puceorange.gif" width="8" height="12"></td>
+                  <td><a href="/ina_gabarit_rubrique.php3?id_rubrique=2573" class="orange">Personnel administratif</a></td>
+                 		        </tr>
+<!-- JAK fin --><tr>
+<td width="8" valign="middle"> </td>	
+		          <td valign="middle"><img src="inalco/images/commun/puceorange.gif" width="8" height="12"></td>
+                 <!--JAK 27042009 avant :   <td><a href="index.php?id_secteur=1&hp=CHERCHEUR" class="orange">Enseignant chercheur</a></td>  -->
+                                   
+		     <td><a href="/index.php?id_secteur=1&amp;id_rubrique=143&amp;id_article=1441&amp;hp=CHERCHEUR&amp;infoprat" class="orange">Enseignant chercheur</a></td> 
+                    
+		        </tr>
+<tr>
+<td width="8" valign="middle"> </td>	
+		          <td valign="middle"><img src="inalco/images/commun/puceorange.gif" width="8" height="12"></td>
+                  
+                  <!--JAK 27042009 avant :   <td><a href="index.php?id_secteur=1&hp=PRO" class="orange">Professionnel</a></td>  -->
+		          <td><a href="/index.php?id_secteur=1&amp;id_rubrique=143&amp;id_article=1443&amp;hp=PRO&amp;infoprat" class="orange">Professionnel</a></td>
+		        </tr>
+</table></td>
+		  </tr>
+</table>
+</td>
+  </tr>
+<tr>
+<td valign="bottom"> </td>
+  </tr>
+<tr class="blocgauchehome">
+<td align="center" valign="top">
+  		<a href="ina_gabarit_espace.php3?id_rubrique=3"><img src="IMG/rubon3.jpg" align="center" alt="" class="spip_logos"></a>  	</td>
+  </tr>
+<tr class="blocgauchehome">
+<td align="center" valign="top">
+  		<a href="ina_gabarit_espace.php3?id_rubrique=44"><img src="IMG/rubon44.jpg" align="center" alt="" class="spip_logos"></a>  	</td>
+  </tr>
+<tr class="blocgauchehome">
+<td align="center" valign="top">
+  		<a href="ina_gabarit_espace.php3?id_rubrique=90"><img src="IMG/rubon90.jpg" align="center" alt="" class="spip_logos"></a>  	</td>
+  </tr>
+<tr class="blocgauchehome">
+<td align="center" valign="top">
+  		<a href="ina_gabarit_espace.php3?id_rubrique=6"><img src="IMG/rubon6.jpg" align="center" alt="" class="spip_logos"></a>  	</td>
+  </tr>
+<tr class="blocgauchehome">
+<td align="center" valign="top">
+  		<a href="ina_gabarit_espace.php3?id_rubrique=74"><img src="IMG/rubon74.jpg" align="center" alt="" class="spip_logos"></a>  	</td>
+  </tr>
+<tr class="blocgauchehome">
+<td align="center" valign="top">
+  		<a href="ina_gabarit_espace.php3?id_rubrique=119"><img src="IMG/rubon119.jpg" align="center" alt="" class="spip_logos"></a>  	</td>
+  </tr>
+<tr height="100%" class="blocgauchehome">
+<td> </td>
+  </tr>
+<tr>
+<td><img src="inalco/images/commun/barrebasgauchehome.gif" width="100%" height="10"></td>
+  </tr>
+</table>
+<!--Version 2.0.2--><!-- FIN COLONNE GAUCHE --></noindex>
+</td>
+          <!-- FIN - COLONNE GAUCHE -->
+          
+          
+          <!-- DEBUT - COLONNE CENTRALE -->
+          <td valign="top" class="margescentrales">
+          									
+				<!-- COLONNE CENTRE -->
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3"><img src="inalco/images/commun/titrehome.gif" width="562" height="28"></td>
+  </tr>
+<tr></tr>
+<tr>
+<td height="40" colspan="3">
+    	<img src="inalco/images/commun/pucenoir.gif" width="8" height="3" hspace="5" align="absmiddle"><font face="Arial, Helvetica, sans-serif" class="maintxtbold">
+    		Sélection géographique :</font> cliquer la <font class="maintitre">région</font> souhaitée sur la carte des langues ci-dessous    </td>
+  </tr>
+<tr>
+<td colspan="3"><img id="cartemonde" name="cartemonde" src="inalco/images/commun/cartemonde.gif" width="562" height="310" usemap="#world" border="0"></td>
+  </tr>
+<tr>
+<td colspan="3" valign="top">
+      <div id="worldmap" name="worldmap"></div>    </td>
+  </tr>
+<tr><td colspan="3" valign="top"> </td></tr>
+<tr>
+<form name="acces_langue" method="post" action="ina_gabarit_rubrique.php3?id_rubrique=47">
+	    <td height="50" colspan="3" class="lignegrisehome">
+	      <table width="500" height="50" border="0" cellpadding="0" cellspacing="0"><tr>
+<td class="maintxtbold">
+			        <img src="inalco/images/commun/pucenoirfondgris.gif" width="8" height="3" hspace="5">
+			        Sélection rapide	            </td>
+	            <td>
+		            	<select name="langue" class="selectLangue"><option value="1">Albanais		</option>
+<option value="2">Amharique		</option>
+<option value="3">Arabe littéral		</option>
+<option value="4">Arabe maghrébin (Algérien, Marocain, Tunisien)		</option>
+<option value="5">Arabe oriental		</option>
+<option value="6">Arabe syro-libano-palestinien		</option>
+<option value="7">Araméen		</option>
+<option value="8">Arménien		</option>
+<option value="11">Aymara		</option>
+<option value="12">Azéri		</option>
+<option value="100">Bantu		</option>
+<option value="13">Bengali		</option>
+<option value="14">Berbère		</option>
+<option value="15">Biélorusse		</option>
+<option value="16">Birman		</option>
+<option value="17">Bisaya (Cebuano)		</option>
+<option value="18">Bislama		</option>
+<option value="20">Bulgare		</option>
+<option value="21">Cambodgien		</option>
+<option value="22">Cantonais		</option>
+<option value="10">Cham		</option>
+<option value="23">Chinois		</option>
+<option value="24">Comorien		</option>
+<option value="25">Coréen		</option>
+<option value="26">Drehu (Lifou)		</option>
+<option value="27">Estonien		</option>
+<option value="28">Filipino (Tagalog)		</option>
+<option value="29">Finnois		</option>
+<option value="30">Français		</option>
+<option value="31">Géorgien		</option>
+<option value="32">Grec moderne		</option>
+<option value="33">Guarani		</option>
+<option value="34">Haoussa		</option>
+<option value="35">Hébreu moderne		</option>
+<option value="36">Hindi		</option>
+<option value="37">Hongrois		</option>
+<option value="38">Ilokano		</option>
+<option value="39">Indonésien - Malais		</option>
+<option value="40">Inuktitut		</option>
+<option value="41">Japonais		</option>
+<option value="42">Judéo-arabe		</option>
+<option value="43">Judéo-espagnol		</option>
+<option value="19">Khmer		</option>
+<option value="44">Kirghiz		</option>
+<option value="45">Kurde (Kurmanji et Sorani)		</option>
+<option value="50">Laotien		</option>
+<option value="51">Letton		</option>
+<option value="52">Lituanien		</option>
+<option value="53">Macédonien		</option>
+<option value="54">Malgache		</option>
+<option value="55">Maltais		</option>
+<option value="56">Mandingue (Bambara)		</option>
+<option value="57">Maya		</option>
+<option value="58">Môn		</option>
+<option value="59">Mongol		</option>
+<option value="60">Nahuatl		</option>
+<option value="61">Nepali		</option>
+<option value="62">Osmanli		</option>
+<option value="63">Ossète		</option>
+<option value="64">Ourdou		</option>
+<option value="101">Ouzbek		</option>
+<option value="65">Pashto		</option>
+<option value="66">Persan		</option>
+<option value="67">Peul		</option>
+<option value="68">Polonais		</option>
+<option value="69">Qazaq		</option>
+<option value="70">Quechua		</option>
+<option value="71">Roumain		</option>
+<option value="72">Rromani		</option>
+<option value="73">Russe		</option>
+<option value="46">Sanskrit		</option>
+<option value="74">Serbo-Croate		</option>
+<option value="76">Siamois (thaï)		</option>
+<option value="77">Singhalais		</option>
+<option value="78">Slovaque		</option>
+<option value="79">Slovène		</option>
+<option value="80">Soninké		</option>
+<option value="81">Sorabe		</option>
+<option value="48">Soureth (araméen moderne)		</option>
+<option value="82">Swahili		</option>
+<option value="83">Tahitien		</option>
+<option value="84">Tamoul		</option>
+<option value="85">Tatar de Kazan		</option>
+<option value="86">Tchèque		</option>
+<option value="87">Télougou		</option>
+<option value="88">Tibétain		</option>
+<option value="89">Tigrinya		</option>
+<option value="90">Turc		</option>
+<option value="92">Ukrainien		</option>
+<option value="93">Vietnamien		</option>
+<option value="94">Wolof		</option>
+<option value="95">Yiddish		</option>
+<option value="96">Yoruba</option></select>
+</td>
+	             <td>
+	            	<input type="hidden" name="acces" value="1"><a href="javascript:document.acces_langue.submit();">
+	            		<img src="inalco/images/commun/btoknoir.gif" title="Valider" alt="Valider" width="19" height="19" hspace="3" border="0"></a>	            </td>
+	          </tr></table>
+</td>
+    </form>
+  </tr>
+<tr>
+<td colspan="3"> </td>
+  </tr>
+<tr>
+<td align="center"><div align="center">
+       
+        
+<center>  
+ </center>
+</div></td>
+    <td><div align="center"></div></td>
+    <td align="center"><div align="center">  
+        
+            <center>    <marquee style="WIDTH: 260px; CURSOR: pointer; HEIGHT: 19px" behavior="alternate"><b><font size="1">       Pour plus d'informations, cliquez sur l'image :      </font></b></marquee>
+</center>     
+        
+<!-- JAK<CENTER>  <a href="http://www.inalco.fr/ina_gabarit_rubrique.php3?id_rubrique=2604" ><img src="http://www.inalco.fr/IMG/jpg/cpoiepetitcouveokleo_Mise_en_page_1_JAK.jpg" border=0></a> 
+JAK -->
+<center>  
+<a href="http://www.inalco.fr/ina_gabarit_rubrique.php3?id_rubrique=3025"><img src="http://www.inalco.fr/IMG/bmp/TransversauxPetit.bmp" border="0"></a> 
+
+ </center>
+</div></td>
+  </tr>
+<tr>
+<td colspan="3"> </td>
+  </tr>
+</table>
+<!-- JAK nogent
+ <CENTER>    <MARQUEE style="WIDTH: 260px; CURSOR: pointer; HEIGHT: 19px" behavior=alternate><B><FONT color="#FF0000" size=3,>       Information importante :      </STRONG></FONT></B></MARQUEE><br><br>
+
+     <B><FONT size=1  ,>       A partir du 1er septembre 2008 l&#146;Inalco installe ses centres de recherche dans un nouveau site dans le Bois de Vincennes : 49 bis avenue de la Belle-Gabrielle, 75012 Paris <br><br>
+RER A : Nogent sur Marne, sortie Marronniers puis suivre direction jardin tropical <br>
+<CENTER> ou </Center>
+Bus 114 ou 210 au Ch&acirc;teau de Vincennes, station "RER Nogent"<br>
+<CENTER> ou </Center>
+Bus 112 au Ch&acirc;teau de Vincennes - station "Mortemart"<br><br>
+T&eacute;l. +33 1 80 51 95 00 - Fax : +33 1 80 51 95 49 
+ </STRONG></FONT></B>
+        
+    <CENTER>    <MARQUEE style="WIDTH: 260px; CURSOR: pointer; HEIGHT: 19px" behavior=alternate><B><FONT size=1  ,>       Pour plus d'informations, cliquez sur l'image :      </STRONG></FONT></B></MARQUEE>
+        
+                    
+        </CENTER>     
+        
+<CENTER>  <a href="http://www.inalco.fr/ina_gabarit_espace.php3?id_rubrique=44" ><img src="http://www.inalco.fr/IMG/jpg/cpoiepetitcouveokleo_Mise_en_page_1_JAK.jpg" border=0></a> 
+ </CENTER>
+       
+JAK --><!-- JAK
+ <CENTER>  <a href="http://www.inalco.fr/?id_rubrique=150&id_article=3487&actu" ><img src="http://www.inalco.fr/IMG/jpg/afficheclouweb.jpg" border=0></a> 
+ </CENTER>
+JAK --><!-- JAK
+
+ 
+        <CENTER>    <MARQUEE style="WIDTH: 260px; CURSOR: pointer; HEIGHT: 19px" behavior=alternate><B><FONT size=1  ,>       Pour plus d'informations, cliquez sur l'image :      </STRONG></FONT></B></MARQUEE>
+        
+                    
+        </CENTER>
+ <CENTER>
+  
+ 
+ <a href="http://www.inalco.fr/IMG/pdf/LOS14052008.pdf" target="blank"><img src="http://www.inalco.fr/IMG/jpg/languesoshow_Page_1petite.JPG" border=0></a> 
+ 
+
+ </CENTER>
+ 
+
+ <CENTER ALIGN=right>
+  <MARQUEE BEHAVIOR="ALTERNATE" DIRECTION="RIGHT"
+    WIDTH="250" HEIGHT="250" SCROLLAMOUNT="18">
+<MARQUEE BEHAVIOR="ALTERNATE" DIRECTION="UP"
+    WIDTH="90" HEIGHT="250"  SCROLLAMOUNT="9">
+<MARQUEE BEHAVIOR="ALTERNATE" DIRECTION="DOWN"
+    WIDTH="90" HEIGHT="120" SCROLLAMOUNT="4">
+<IMG height=72 alt="" src="http://inalco-front1.heb.fr.colt.net//inalco/FCKeditor/userimages/oiseau.gif" width=88 border=0>
+</MARQUEE>
+</MARQUEE>
+</MARQUEE>
+ </CENTER>
+JAK --><map name="world"><!--<area shape="poly" coords="82,47,69,9,42,9,33,29,13,17,5,40,24,75,35,96,53,102,73,106,83,112,79,124,90,169,96,198,115,159,137,134,109,113,92,104,84,88,73,78" href="#" onclick="writeinlayer('worldmap',zone1)">--><area shape="poly" coords="40,60,60,44,85,52,101,25,135,46,145,75,126,140,210,182,161,265,151,257,133,178,67,114" href="#" onclick="writeinlayer('worldmap',zone1);" onmouseover="MU_swapImage('cartemonde',1);" onmouseout="MU_swapImage('cartemonde',0);">
+<area shape="poly" coords="236,170,285,174,302,181,306,166,322,179,311,211,283,245,270,209,268,187,244,181" href="#" onclick="writeinlayer('worldmap',zone2)" onmouseover="MU_swapImage('cartemonde',2);" onmouseout="MU_swapImage('cartemonde',0);">
+<area shape="poly" coords="236,170,285,174,302,181,306,166,317,168,345,169,343,142,311,134,302,149,273,145,273,140,252,141,235,154" href="#" onclick="writeinlayer('worldmap',zone3)" onmouseover="MU_swapImage('cartemonde',3);" onmouseout="MU_swapImage('cartemonde',0);">
+<area shape="poly" coords="311,134,299,106,300,93,313,76,325,73,325,88,321,94,332,103,324,112,322,124" href="#" onclick="writeinlayer('worldmap',zone4)" onmouseover="MU_swapImage('cartemonde',4);" onmouseout="MU_swapImage('cartemonde',0);">
+<area shape="poly" coords="343,142,311,134,322,124,324,112,332,103,321,94,325,88,325,73,344,38,383,32,447,50,488,47,487,75,460,74,452,88,440,86,428,76,412,93,391,95,376,86,357,102,364,115" href="#" onclick="writeinlayer('worldmap',zone5)" onmouseover="MU_swapImage('cartemonde',5);" onmouseout="MU_swapImage('cartemonde',0);">
+<area shape="poly" coords="345,169,343,142,364,115,381,133,382,147,359,176" href="#ZONE" onclick="writeinlayer('worldmap',zone6)" onmouseover="MU_swapImage('cartemonde',6);" onmouseout="MU_swapImage('cartemonde',0);">
+<area shape="poly" coords="381,133,364,115,357,102,376,86,391,95,412,93,428,76,440,86,452,88,460,74,474,81,469,103,449,115,435,115,430,127,415,138,410,136,396,136,381,133" href="#" onclick="writeinlayer('worldmap',zone7)" onmouseover="MU_swapImage('cartemonde',7);" onmouseout="MU_swapImage('cartemonde',0);">
+<area shape="poly" coords="381,133,396,136,410,136,415,138,430,127,435,115,454,160,516,178,505,190,480,189,451,202,415,199,393,177,390,153,382,147" href="#" onclick="writeinlayer('worldmap',zone8)" onmouseover="MU_swapImage('cartemonde',8);" onmouseout="MU_swapImage('cartemonde',0);"></map><form method="post" action="ina_gabarit_rubrique.php3?id_rubrique=47" name="DATA">
+	<input type="hidden" name="langue" value=""><input type="hidden" name="acces" value="1">
+</form>
+
+
+<script language="JavaScript">
+
+var zone1 = '<table border="0" cellpadding="2" cellspacing="2" width="100%"><tr>';
+zone1 +=	'<td valign="top" width="45%">';
+zone1 +=	'<a href="javascript:afficheLangMap(11)" class="carteLangue">Aymara</a><br>';
+zone1 +=	'<a href="javascript:afficheLangMap(33)" class="carteLangue">Guarani</a><br>';
+zone1 +=	'</td>';
+zone1 +=	'<td valign="top" width="33%">';
+zone1 +=	'<a href="javascript:afficheLangMap(40)" class="carteLangue">Inuktitut</a><br>';
+zone1 +=	'<a href="javascript:afficheLangMap(57)" class="carteLangue">Maya</a><br>';
+zone1 +=	'</td>';
+zone1 +=	'<td valign="top" width="22%">';
+zone1 +=	'<a href="javascript:afficheLangMap(60)" class="carteLangue">Nahualt</a><br>';
+zone1 +=	'<a href="javascript:afficheLangMap(70)" class="carteLangue">Quechua</a><br>';
+zone1 +=	'</td>';
+zone1 +=	'</tr>';
+zone1 +=	'</table>';
+
+
+var zone2 = '<table border="0" cellpadding="2" cellspacing="2" width="100%"><tr>';
+zone2 +=	'<td valign="top" width="45%">';
+zone2 +=	'<a href="javascript:afficheLangMap(2)" class="carteLangue">Amharique</a><br>';
+zone2 +=	'<a href="javascript:afficheLangMap(100)" class="carteLangue">Bantu</a><br>';
+
+zone2 +=	'<a href="javascript:afficheLangMap(14)" class="carteLangue">Berb&egrave;re</a><br>';
+zone2 +=	'<a href="javascript:afficheLangMap(24)" class="carteLangue">Comorien</a><br>';
+zone2 +=	'<a href="javascript:afficheLangMap(34)" class="carteLangue">Haoussa</a><br>';
+
+
+zone2 +=	'</td>';
+zone2 +=	'<td valign="top" width="33%">';
+zone2 +=	'<a href="javascript:afficheLangMap(54)" class="carteLangue">Malgache</a><br>';
+zone2 +=	'<a href="javascript:afficheLangMap(56)" class="carteLangue">Mandingue (bambara)</a><br>';
+zone2 +=	'<a href="javascript:afficheLangMap(67)" class="carteLangue">Peul</a><br>';
+
+zone2 +=	'<a href="javascript:afficheLangMap(80)" class="carteLangue">Sonink&eacute;</a><br>';
+
+zone2 +=	'</td>';
+zone2 +=	'<td valign="top" width="22%">';
+zone2 +=	'<a href="javascript:afficheLangMap(82)" class="carteLangue">Swahili</a><br>';
+zone2 +=	'<a href="javascript:afficheLangMap(89)" class="carteLangue">Tigrinya</a><br>';
+zone2 +=	'<a href="javascript:afficheLangMap(94)" class="carteLangue">Wolof</a><br>';
+zone2 +=	'<a href="javascript:afficheLangMap(96)" class="carteLangue">Yoruba</a><br>';
+
+zone2 +=	'</td>';
+zone2 +=	'</tr>';
+zone2 +=	'</table>';
+
+
+
+var zone3 = '<table border="0" cellpadding="2" cellspacing="2" width="100%"><tr valign="top">';
+zone3 +=	'<td valign="top" width="45%">';
+zone3 +=	'<a href="javascript:afficheLangMap(3)" class="carteLangue">Arabe litt&eacute;ral</a><br>';
+zone3 +=	'<a href="javascript:afficheLangMap(4)" class="carteLangue">Arabe maghr&eacute;bin (alg&eacute;rien, marocain, tunisien)</a><br>';
+zone3 +=	'<a href="javascript:afficheLangMap(5)" class="carteLangue">Arabe oriental</a><br>';
+zone3 +=	'<a href="javascript:afficheLangMap(6)" class="carteLangue">Arabe syro-libano-palestinien</a><br>';
+zone3 +=	'<a href="javascript:afficheLangMap(7)" class="carteLangue">Aram&eacute;en</a><br>';
+zone3 +=	'</td>';
+zone3 +=	'<td valign="top" width="33%">';
+zone3 +=	'<a href="javascript:afficheLangMap(35)" class="carteLangue">H&eacute;breu moderne</a><br>';
+zone3 +=	'<a href="javascript:afficheLangMap(42)" class="carteLangue">Jud&eacute;o-arabe</a><br>';
+zone3 +=	'<a href="javascript:afficheLangMap(43)" class="carteLangue">Jud&eacute;o-espagnol</a><br>';
+zone3 +=	'<a href="javascript:afficheLangMap(45)" class="carteLangue">Kurde(kurmanji, sorani)</a><br>';
+zone3 +=	'</td>';
+zone3 +=	'<td valign="top" width="22%">';
+zone3 +=	'<a href="javascript:afficheLangMap(55)" class="carteLangue">Maltais</a><br>';
+zone3 +=	'<a href="javascript:afficheLangMap(62)" class="carteLangue">Osmanli</a><br>';
+zone3 +=	'<a href="javascript:afficheLangMap(101)" class="carteLangue">Ouzbek</a><br>';
+zone3 +=	'<a href="javascript:afficheLangMap(66)" class="carteLangue">Persan</a><br>';
+zone3 +=	'<a href="javascript:afficheLangMap(48)" class="carteLangue">Soureth</a><br>';
+
+zone3 +=	'<a href="javascript:afficheLangMap(90)" class="carteLangue">Turc</a><br>';
+zone3 +=	'<a href="javascript:afficheLangMap(95)" class="carteLangue">Yiddish</a><br>';
+zone3 +=	'</td>';
+zone3 +=	'</tr>';
+zone3 +=	'</table>';
+
+
+
+
+var zone4 = '<table border="0" cellpadding="2" cellspacing="2" width="100%"><tr>';
+zone4 +=	'<td valign="top" width="45%">';
+zone4 +=	'<a href="javascript:afficheLangMap(1)" class="carteLangue">Albanais</a><br>';
+zone4 +=	'<a href="javascript:afficheLangMap(74)" class="carteLangue">Serbo-croate</a><br>';
+zone4 +=	'<a href="javascript:afficheLangMap(20)" class="carteLangue">Bulgare</a><br>';
+zone4 +=	'<a href="javascript:afficheLangMap(27)" class="carteLangue">Estonien</a><br>';
+zone4 +=	'<a href="javascript:afficheLangMap(29)" class="carteLangue">Finnois</a><br>';
+zone4 +=	'<a href="javascript:afficheLangMap(32)" class="carteLangue">Grec moderne</a><br>';
+zone4 +=	'</td>';
+zone4 +=	'<td valign="top" width="33%">';
+zone4 +=	'<a href="javascript:afficheLangMap(37)" class="carteLangue">Hongrois</a><br>';
+zone4 +=	'<a href="javascript:afficheLangMap(51)" class="carteLangue">Letton</a><br>';
+zone4 +=	'<a href="javascript:afficheLangMap(52)" class="carteLangue">Lituanien</a><br>';
+zone4 +=	'<a href="javascript:afficheLangMap(53)" class="carteLangue">Mac&eacute;donien</a><br>';
+zone4 +=	'<a href="javascript:afficheLangMap(68)" class="carteLangue">Polonais</a><br>';
+zone4 +=	'<a href="javascript:afficheLangMap(71)" class="carteLangue">Roumain</a><br>';
+zone4 +=	'</td>';
+zone4 +=	'<td valign="top" width="22%">';
+zone4 +=	'<a href="javascript:afficheLangMap(72)" class="carteLangue">Rromani</a><br>';
+zone4 +=	'<a href="javascript:afficheLangMap(78)" class="carteLangue">Slovaque</a><br>';
+zone4 +=	'<a href="javascript:afficheLangMap(79)" class="carteLangue">Slov&egrave;ne</a><br>';
+zone4 +=	'<a href="javascript:afficheLangMap(81)" class="carteLangue">Sorabe</a><br>';
+zone4 +=	'<a href="javascript:afficheLangMap(86)" class="carteLangue">Tch&egrave;que</a><br>';
+zone4 +=	'</td>';
+zone4 +=	'</tr>';
+zone4 +=	'</table>';
+
+
+
+
+var zone5 = '<table border="0" cellpadding="2" cellspacing="2" width="100%"><tr>';
+zone5 +=	'<td valign="top" width="45%">';
+zone5 +=	'<a href="javascript:afficheLangMap(8)" class="carteLangue">Arm&eacute;nien</a><br>';
+zone5 +=	'<a href="javascript:afficheLangMap(12)" class="carteLangue">Az&eacute;ri</a><br>';
+zone5 +=	'<a href="javascript:afficheLangMap(15)" class="carteLangue">Bi&eacute;lorusse</a><br>';
+zone5 +=	'<a href="javascript:afficheLangMap(31)" class="carteLangue">G&eacute;orgien</a><br>';
+zone5 +=	'</td>';
+zone5 +=	'<td valign="top" width="33%">';
+zone5 +=	'<a href="javascript:afficheLangMap(44)" class="carteLangue">Kirghiz</a><br>';
+zone5 +=	'<a href="javascript:afficheLangMap(59)" class="carteLangue">Mongol</a><br>';
+zone5 +=	'<a href="javascript:afficheLangMap(69)" class="carteLangue">Qazaq</a><br>';
+zone5 +=	'<a href="javascript:afficheLangMap(63)" class="carteLangue">Oss&egrave;te</a><br>';
+zone5 +=	'</td>';
+zone5 +=	'<td valign="top" width="22%">';
+zone5 +=	'<a href="javascript:afficheLangMap(73)" class="carteLangue">Russe</a><br>';
+zone5 +=	'<a href="javascript:afficheLangMap(85)" class="carteLangue">Tatar de Kazan</a><br>';
+zone5 +=	'<a href="javascript:afficheLangMap(91)" class="carteLangue">T&uuml;rkm&egrave;ne</a><br>';
+zone5 +=	'<a href="javascript:afficheLangMap(92)" class="carteLangue">Ukrainien</a><br>';
+zone5 +=	'</td>';
+zone5 +=	'</tr>';
+zone5 +=	'</table>';
+
+
+
+var zone6 = '<table border="0" cellpadding="2" cellspacing="2" width="100%"><tr>';
+zone6 +=	'<td valign="top" width="45%">';
+zone6 +=	'<a href="javascript:afficheLangMap(13)" class="carteLangue">Bengali</a><br>';
+zone6 +=	'<a href="javascript:afficheLangMap(36)" class="carteLangue">Hindi</a><br>';
+zone6 +=	'<a href="javascript:afficheLangMap(61)" class="carteLangue">N&eacute;pali</a><br>';
+zone6 +=	'</td>';
+zone6 +=	'<td valign="top" width="33%">';
+zone6 +=	'<a href="javascript:afficheLangMap(64)" class="carteLangue">Ourdou</a><br>';
+zone6 +=	'<a href="javascript:afficheLangMap(65)" class="carteLangue">Pashto</a><br>';
+zone6 +=	'<a href="javascript:afficheLangMap(46)" class="carteLangue">Sanskrit</a><br>';
+
+zone6 +=	'</td>';
+zone6 +=	'<td valign="top" width="22%">';
+zone6 +=	'<a href="javascript:afficheLangMap(77)" class="carteLangue">Singhalais</a><br>';
+zone6 +=	'<a href="javascript:afficheLangMap(84)" class="carteLangue">Tamoul</a><br>';
+zone6 +=	'<a href="javascript:afficheLangMap(87)" class="carteLangue">Telougou</a><br>';
+zone6 +=	'</td>';
+zone6 +=	'</tr>';
+zone6 +=	'</table>';
+
+
+
+var zone7 = '<table border="0" cellpadding="2" cellspacing="2" width="100%"><tr>';
+zone7 +=	'<td valign="top" width="45%">';
+zone7 +=	'<a href="javascript:afficheLangMap(22)" class="carteLangue">Cantonais</a><br>';
+zone7 +=	'<a href="javascript:afficheLangMap(23)" class="carteLangue">Chinois</a><br>';
+zone7 +=	'</td>';
+zone7 +=	'<td valign="top" width="33%">';
+zone7 +=	'<a href="javascript:afficheLangMap(25)" class="carteLangue">Cor&eacute;en</a><br>';
+zone7 +=	'<a href="javascript:afficheLangMap(41)" class="carteLangue">Japonais</a><br>';
+zone7 +=	'</td>';
+zone7 +=	'<td valign="top" width="22%">';
+zone7 +=	'<a href="javascript:afficheLangMap(88)" class="carteLangue">Tib&eacute;tain</a><br>';
+zone7 +=	'</td>';
+zone7 +=	'</tr>';
+zone7 +=	'</table>';
+
+
+var zone8 = '<table border="0" cellpadding="2" cellspacing="2" width="100%"><tr>';
+zone8 +=	'<td valign="top" width="45%">';
+zone8 +=	'<a href="javascript:afficheLangMap(16)" class="carteLangue">Birman</a><br>';
+zone8 +=	'<a href="javascript:afficheLangMap(17)" class="carteLangue">Bisaya (cebuano)</a><br>';
+zone8 +=	'<a href="javascript:afficheLangMap(18)" class="carteLangue">Bislama</a><br>';
+zone8 +=	'<a href="javascript:afficheLangMap(21)" class="carteLangue">Cambodgien</a><br>';
+zone8 +=	'<a href="javascript:afficheLangMap(10)" class="carteLangue">Cham</a><br>';
+zone8 +=	'</td>';
+zone8 +=	'<td valign="top" width="33%">';
+zone8 +=	'<a href="javascript:afficheLangMap(26)" class="carteLangue">Drehu (Lifou)</a><br>';
+zone8 +=	'<a href="javascript:afficheLangMap(28)" class="carteLangue">Filipino (Tagalog)</a><br>';
+zone8 +=	'<a href="javascript:afficheLangMap(38)" class="carteLangue">Ilokano</a><br>';
+zone8 +=	'<a href="javascript:afficheLangMap(39)" class="carteLangue">Indon&eacute;sien-Malais</a><br>';
+zone8 +=	'<a href="javascript:afficheLangMap(19)" class="carteLangue">Khmer</a><br>';
+
+
+zone8 +=	'</td>';
+zone8 +=	'<td valign="top" width="22%">';
+zone8 +=	'<a href="javascript:afficheLangMap(50)" class="carteLangue">Laotien</a><br>';
+zone8 +=	'<a href="javascript:afficheLangMap(58)" class="carteLangue">M&ocirc;n</a><br>';
+zone8 +=	'<a href="javascript:afficheLangMap(76)" class="carteLangue">Siamois (tha&iuml;)</a><br>';
+zone8 +=	'<a href="javascript:afficheLangMap(83)" class="carteLangue">Tahitien</a><br>';
+zone8 +=	'<a href="javascript:afficheLangMap(93)" class="carteLangue">Vietnamien</a><br>';
+zone8 +=	'</td>';
+zone8 +=	'</tr>';
+zone8 +=	'</table>';
+
+function afficheLangMap(idlangue){
+	obj = document.DATA;
+	obj.langue.value=idlangue;
+	obj.submit();
+}
+	
+function writeinlayer(layer,text) {
+
+	if (document.layers) {
+        document.layers[layer].document.close();
+        document.layers[layer].document.write(text);
+        document.layers[layer].document.close();
+    } else {
+        if (document.all) {
+           //eval("document.all." + contenue + ".innerHTML='" + message + "'");
+			document.all[layer].innerHTML= text;
+        } else {
+            document.getElementById(layer).innerHTML = text;
+        }
+    }
+}
+//-->
+</script><!-- FIN COLONNE CENTRE -->
+</td>
+          <!-- FIN - COLONNE CENTRALE -->
+          
+          <!-- DEBUT - COLONNE DROITE -->
+          <td align="center" valign="top" class="borduredroite">
+      		<noindex><!-- COLONNE DROITE --><table width="192" height="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="FFF6F0">
+<!-- ACTUALITES --><tr>
+<td valign="bottom"><img src="inalco/images/fr/titrescarres/actualites.gif" width="192" height="30"></td>
+  </tr>
+<tr>
+<td>
+		
+<!-- div containing up-arrow | change: top + left -->
+<span id="up" style="position: absolute; top: 150px; left: 0px; width: 1px; height: 1px; z-index: 18;">
+	<img src="inalco/images/commun/scroll_up.gif" border="0"></span>
+
+<!-- div containing down-arrow | change: top + left -->
+<span id="down" style="position: absolute; top: 319px; left: 0px; width: 1px; height: 1px; z-index: 19;">
+	<img src="inalco/images/commun/scroll_down.gif" border="0"></span>
+
+<!-- div containing scrollbar | change: top + left + width + height -->
+<span id="drag" style="position: absolute; top: 160px; left: px; width: 17px; height: 26px; z-index: 20;">
+	<img src="inalco/images/commun/scroll.gif" border="0"></span>
+
+<!-- div laying above scrollbar for netscape 6 protection | change: top + left + width + height -->
+<span id="ruler" style="position: absolute; top: 160px; left: 0px; width: 4px; height: 151px; z-index: 17;"></span>
+
+<!-- div laying above scrollbar for netscape 6 protection | change: top + left + width + height -->
+<span id="fond" style="position: absolute; top: 160px; left: 0px; width: 4px; height: 151px; z-index: 17;"><img src="inalco/images/commun/barre_scroll.gif" width="4px" height="160px" border="0"></span>
+
+<span id="contentClip" style="position: absolute; top: 150px; left: 0px; width: 190px; height: 180px; clip:rect(0px,190px,180px,0px); visibility: visible; z-index: 5; overflow: hidden;">
+<span id="content">
+
+<!-- ACTUALITES -->
+<table cellspacing="0" class="tabActu">
+<tr>
+<td width="10" valign="top"> </td>
+<td valign="top"><img src="inalco/images/commun/puceorangeclair.gif" width="8" height="12"></td>
+<td valign="top"><a href="?id_rubrique=150&amp;id_article=3329&amp;actu" class="orange" target="_self">Exposition <b>Sipsongpana, ou le royaume oublié</b> - 24 septembre au 25 octobre 2013</a></td>
+</tr>
+<tr><td height="5px" colspan="3" valign="top"></td></tr>
+<tr>
+<td width="10" valign="top"> </td>
+<td valign="top"><img src="inalco/images/commun/puceorangeclair.gif" width="8" height="12"></td>
+<td valign="top"><a href="?id_rubrique=150&amp;id_article=1315&amp;actu" class="orange" target="_self"><font color="01B0F0"><b>Informations culturelles de l’Inalco (septembre 2013)</b></font></a></td>
+</tr>
+<tr><td height="5px" colspan="3" valign="top"></td></tr>
+<tr>
+<td width="10" valign="top"> </td>
+<td valign="top"><img src="inalco/images/commun/puceorangeclair.gif" width="8" height="12"></td>
+<td valign="top"><a href="?id_rubrique=150&amp;id_article=3664&amp;actu" class="orange" target="_self"><b>Appels à communications</b></a></td>
+</tr>
+<tr><td height="5px" colspan="3" valign="top"></td></tr>
+<tr>
+<td width="10" valign="top"> </td>
+<td valign="top"><img src="inalco/images/commun/puceorangeclair.gif" width="8" height="12"></td>
+<td valign="top"><a href="?id_rubrique=150&amp;id_article=3638&amp;actu" class="orange" target="_self"><b>Manifestations scientifiques prévues en octobre-décembre 2013</b></a></td>
+</tr>
+<tr><td height="5px" colspan="3" valign="top"></td></tr>
+<tr>
+<td width="10" valign="top"> </td>
+<td valign="top"><img src="inalco/images/commun/puceorangeclair.gif" width="8" height="12"></td>
+<td valign="top"><a href="?id_rubrique=150&amp;id_article=2279&amp;actu" class="orange" target="_self"><b>Appels d’offre / Financements</b></a></td>
+</tr>
+<tr><td height="5px" colspan="3" valign="top"></td></tr>
+</table>
+<!-- FIN ACTUALITES --></span>
+</span>
+
+<script language="javascript">
+	eventLoader();
+</script>
+</td>
+  </tr>
+<tr>
+<td height="190"> </td>
+  </tr>
+<!-- FIN ACTUALITES --><!-- A NOTER --><tr>
+<td><img src="inalco/images/fr/titrescarres/anoter.gif" width="192" height="35"></td>
+  </tr>
+<tr>
+<td align="left" valign="top">
+      <table width="172" height="50" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="10" valign="top"> </td>
+<td width="8" valign="top"><img src="inalco/images/commun/puceorangeclair.gif" width="8" height="12"></td>
+<td width="144"><a href="index.php?id_rubrique=144&amp;id_article=2865&amp;anoter" class="orange" target="_self"><b>Emploi du temps du 1er semestre 2013/2014</b></a></td>
+</tr>
+<tr>
+<td width="10" valign="top"> </td>
+<td width="8" valign="top"><img src="inalco/images/commun/puceorangeclair.gif" width="8" height="12"></td>
+<td width="144"><a href="index.php?id_rubrique=144&amp;id_article=1614&amp;anoter" class="orange" target="_self"><font color="01B0F0"><font size="3">Recrutements en diplômes intensifs</font></font></a></td>
+</tr>
+<tr>
+<td width="10" valign="top"> </td>
+<td width="8" valign="top"><img src="inalco/images/commun/puceorangeclair.gif" width="8" height="12"></td>
+<td width="144"><a href="index.php?id_rubrique=144&amp;id_article=2339&amp;anoter" class="orange" target="_self"><font color="01B0F0"><font size="3"><b>Votre rentrée universitaire</b></font></font></a></td>
+</tr>
+<tr>
+<td width="10" valign="top"> </td>
+<td width="8" valign="top"><img src="inalco/images/commun/puceorangeclair.gif" width="8" height="12"></td>
+<td width="144"><a href="index.php?id_rubrique=144&amp;id_article=2239&amp;anoter" class="orange" target="_self"><b>Recrutement enseignants par concours</b></a></td>
+</tr>
+<tr><td colspan="3"> </td></tr>
+</table>
+</td>
+  </tr>
+<!-- FIN A NOTER --><!-- INSCRIPTIONS --><tr>
+<td class="blocinscription">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="171" height="20" onmouseover="this.className='fondblanc'" onmouseout="this.className='fondinscription'"><a href="http://www.inalco.fr/ina_gabarit_rubrique.php3?id_rubrique=1743" class="txtinscription"><img src="inalco/images/commun/flecherouge.gif" height="12" border="0" style="vertical-align:middle"> Actualités scientifiques</a></td></tr>
+<tr><td width="171" height="20" onmouseover="this.className='fondblanc'" onmouseout="this.className='fondinscription'"><a href="/ina_gabarit_rubrique.php3?id_rubrique=1792" class="txtinscription"><img src="inalco/images/commun/flecherouge.gif" height="12" border="0" style="vertical-align:middle"> Événements culturels</a></td></tr>
+<tr><td width="171" height="20" onmouseover="this.className='fondblanc'" onmouseout="this.className='fondinscription'"><a href="/ina_gabarit_rubrique.php3?id_rubrique=1759" class="txtinscription"><img src="inalco/images/commun/flecherouge.gif" height="12" border="0" style="vertical-align:middle"> L’INALCO 65 rue des Grands Moulins</a></td></tr>
+<tr><td width="171" height="20" onmouseover="this.className='fondblanc'" onmouseout="this.className='fondinscription'"><a href="/ina_gabarit_rubrique.php3?id_rubrique=2760" class="txtinscription"><img src="inalco/images/commun/flecherouge.gif" height="12" border="0" style="vertical-align:middle"> PRES Sorbonne Paris Cité</a></td></tr>
+<tr><td width="171" height="20" onmouseover="this.className='fondblanc'" onmouseout="this.className='fondinscription'"><a href="/ina_gabarit_article.php3?id_rubrique=2044&amp;id_article=4868&amp;id_secteur=1" class="txtinscription"><img src="inalco/images/commun/flecherouge.gif" height="12" border="0" style="vertical-align:middle"> Master 2013-2014</a></td></tr>
+<tr><td width="171" height="20" onmouseover="this.className='fondblanc'" onmouseout="this.className='fondinscription'"><a href="/ina_gabarit_rubrique.php3?id_rubrique=1963" class="txtinscription"><img src="inalco/images/commun/flecherouge.gif" height="12" border="0" style="vertical-align:middle"> Nos diplômes d’établissement          &amp; licences</a></td></tr>
+<tr><td width="171" height="20" onmouseover="this.className='fondblanc'" onmouseout="this.className='fondinscription'"><a href="/ina_gabarit_rubrique.php3?id_rubrique=48" class="txtinscription"><img src="inalco/images/commun/flecherouge.gif" height="12" border="0" style="vertical-align:middle"> Nos filières professionnelles</a></td></tr>
+<tr><td width="171" height="20" onmouseover="this.className='fondblanc'" onmouseout="this.className='fondinscription'"><a href="/ina_gabarit_rubrique.php3?id_rubrique=45" class="txtinscription"><img src="inalco/images/commun/flecherouge.gif" height="12" border="0" style="vertical-align:middle"> Nos départements de langue</a></td></tr>
+<tr><td width="171" height="20" onmouseover="this.className='fondblanc'" onmouseout="this.className='fondinscription'"><a href="/ina_gabarit_rubrique.php3?id_rubrique=78" class="txtinscription"><img src="inalco/images/commun/flecherouge.gif" height="12" border="0" style="vertical-align:middle"> Nos cours du soir</a></td></tr>
+<tr><td width="171" height="20" onmouseover="this.className='fondblanc'" onmouseout="this.className='fondinscription'"><a href="/ina_gabarit_rubrique.php3?id_rubrique=1925" class="txtinscription"><img src="inalco/images/commun/flecherouge.gif" height="12" border="0" style="vertical-align:middle"> Marchés publics</a></td></tr>
+<tr><td width="171" height="20" onmouseover="this.className='fondblanc'" onmouseout="this.className='fondinscription'"><a href="/ina_gabarit_rubrique.php3?id_rubrique=2632" class="txtinscription"><img src="inalco/images/commun/flecherouge.gif" height="12" border="0" style="vertical-align:middle"> Espace presse</a></td></tr>
+<tr><td width="171" height="20" onmouseover="this.className='fondblanc'" onmouseout="this.className='fondinscription'"><a href="/ina_gabarit_rubrique.php3?id_rubrique=68" class="txtinscription"><img src="inalco/images/commun/flecherouge.gif" height="12" border="0" style="vertical-align:middle"> Aide au voyage</a></td></tr>
+</table>
+</td>
+  </tr>
+<!-- FIN INSCRIPTIONS --><!-- A LA UNE --><tr><td> </td></tr>
+<tr>
+<td align="center"><br></td>
+    </tr>
+<tr><td> </td></tr>
+<!-- FIN A LA UNE --><tr height="100%">
+<td>
+    
+    <center>
+    <!-- JAK 03042010
+    <a href="http://www.inalco.fr/ina_gabarit_rubrique.php3?id_rubrique=1759">L'Inalco en 2011 </a>
+     
+    <a href="http://www.inalco.fr/ina_gabarit_rubrique.php3?id_rubrique=1759"><img src='IMG/arton2287-s158.jpg' align='' alt='' class='spip_logos' />
+    JAK  -->
+    
+    <a href="http://www.sorbonne-paris-cite.fr" target="_blank">Inalco - membre du PRES</a>
+     
+    <a href="http://www.sorbonne-paris-cite.fr" target="_blank"><img src="IMG/logo_partenaire.png" align="" alt="" class="spip_logos"></a>
+</center>
+    
+    </td>
+     
+  </tr>
+<tr>
+<td><img src="inalco/images/commun/barrebasdroitehome.gif" width="192" height="10"></td>
+  </tr>
+</table>
+<!-- FIN COLONNE DROITE --></noindex>
+</td>
+          <!-- FIN - COLONNE DROITE -->
+          
+        </tr>
+<tr valign="bottom">
+<td height="18"> </td>
+          <td colspan="2"> </td>
+        </tr>
+<!-- DEBUT - BANDEAU BAS --><tr valign="bottom">
+<td height="18" colspan="3" class="navcontextbas">
+			<noindex><table width="100%" border="0" cellpadding="0" cellspacing="0" class="fondnavcontextbas"><tr>
+<td width="21%">
+	      		      		<a href="ina_mentions_legales.php3?id_rubrique=157&amp;id_secteur=1" class="navcontextbas">Mentions légales</a>
+					</td>      
+        <td width="79%">
+<font class="navcontextbas">INALCO - 65 rue des Grands Moulins - CS21351 - 75214 PARIS cedex 13 - Standard : 01 81 70 10 00</font>
+                   </td>
+      </tr></table></noindex>
+</td>
+        </tr>
+<!-- FIN - BANDEAU BAS -->
+</table>
+</td>
+  </tr></table>
+<script language="javascript">
+	eventLoader();
+</script><!-- Begin WEBandSTATS Tag Rev 3.5 part 1--><!-- COPYRIGHT AUDIENTIA ALL RIGHTS RESERVED. --><script language="JavaScript"><!--
+var SITE_ID          = "FFFFFF2F6F";
+var PAGE_URL         = escape(window.document.URL);
+var PAGE_NAME        = "";
+var HANDLE_PARAM     = "YES";
+var GALLERY_NAME     = "";
+var GALLERY_PRODUCTID= "";
+
+var scjsexec = "no";//--></script><script language="javascript1.1" src="http://colt3.audientia.net:80/webandstats_v35.js">
+</script><script language="javascript"><!--
+if (scjsexec=="no") {
+var wasa = 'http://colt3.audientia.net:80/scripts/stats.asp';
+var wasb = '?SITE_ID=FFFFFF2F6F&REFERRER='+escape(document.referrer)+'&LOCAL_DATE='+(new Date()).getHours();
+wasb += '&JS_VERSION=10&PAGE_TITLE='+escape(document.title)+'&PAGE_NAME='+escape(PAGE_NAME);
+wasb += '&PAGE_URL='+PAGE_URL+'&HANDLE_PARAM='+HANDLE_PARAM+'&GALLERY_NAME='+escape(GALLERY_NAME);
+wasb += '&GALLERY_PRODUCTID='+escape(GALLERY_PRODUCTID)+'&PARAMETERS='+escape(PARAMETERS);
+
+var wasImg = new Image();wasImg.src = wasa+wasb;};//-->
+</script><noscript><img src="http://colt3.audientia.net:80/scripts/stats.asp?SITE_ID=FFFFFF2F6F&amp;PAGE_URL=&amp;HANDLE_PARAM=NO&amp;GALLERY_NAME=&amp;GALLERY_PRODUCTID="></noscript>
+<!-- End WEBandSTATS Tag -->
+        </body>
+</html>

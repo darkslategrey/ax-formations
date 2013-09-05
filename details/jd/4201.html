@@ -1,0 +1,2205 @@
+<html>
+<head>
+<script src="prive/javascript/jquery.js" type="text/javascript"></script><script src="prive/javascript/jquery.form.js" type="text/javascript"></script><script src="prive/javascript/ajaxCallback.js" type="text/javascript"></script><!-- insert_head --><script type="text/javascript" src="plugins/auto/Lecteur_multimedia/soundmanager/soundmanager2.js"></script><script type="text/javascript"><!--
+var musicplayerurl="plugins/auto/Lecteur_multimedia/flash/eraplayer_playlist.swf";
+var image_play="plugins/auto/Lecteur_multimedia/images/playl.gif";
+var image_pause="plugins/auto/Lecteur_multimedia/images/pausel.gif";
+soundManager.url = "plugins/auto/Lecteur_multimedia/soundmanager/soundmanager2.swf";
+soundManager.nullURL = "plugins/auto/Lecteur_multimedia/soundmanager/null.mp3";
+var videoNullUrl = "plugins/auto/Lecteur_multimedia/null.flv";
+var DIR_PLUGIN_PLAYER = "plugins/auto/Lecteur_multimedia/";//--></script><script type="text/javascript" src="plugins/auto/Lecteur_multimedia/javascript/jscroller.js"></script><script type="text/javascript" src="plugins/auto/Lecteur_multimedia/player_enclosure.js"></script><link rel="stylesheet" href="plugins/auto/Lecteur_multimedia/player.css" type="text/css" media="all">
+<script src="http://www.irtsreunion.fr/plugins/auto/thickbox2/javascript/thickbox.js" type="text/javascript"></script><link rel="stylesheet" href="http://www.irtsreunion.fr/plugins/auto/thickbox2/thickbox.css" type="text/css" media="projection, screen, tv">
+<script type="text/javascript"><!--
+// Inside the function "this" will be "document" when called by ready() 
+// and "the ajaxed element" when called because of onAjaxLoad 
+var init_f = function() {
+	if (jQuery("a.thickbox,a[type='image/jpeg'],a[type='image/png'],a[type='image/gif']",this).addClass("thickbox").size()) {
+		TB_chemin_animation = "http://www.irtsreunion.fr/plugins/auto/thickbox2/circle_animation.gif";
+		TB_chemin_close = "http://www.irtsreunion.fr/plugins/auto/thickbox2/close.gif";
+		TB_chemin_css = "http://www.irtsreunion.fr/plugins/auto/thickbox2/thickbox.css";
+		TB_init(this);
+	};
+}
+//onAjaxLoad is defined in private area only
+if(typeof onAjaxLoad == "function") onAjaxLoad(init_f);
+if (window.jQuery) jQuery(document).ready(init_f);
+// --></script><title>IRTS - Ile de la R&Atilde;&copy;union</title>
+<link rel="stylesheet" href="squelettes/styles.css" type="text/css" media="all">
+<link rel="stylesheet" href="squelettes/formulaires/calendar.css" type="text/css" media="all">
+<link rel="alternate" href="spip.php?page=RSS_actu" title="Actualit&Atilde;&copy;s du site IRTS - Ile de la R&Atilde;&copy;union" type="application/rss+xml">
+<!-- <link rel="stylesheet" href="squelettes/spip-menu-vertical.css" type="text/css" media="all" />
+ --><script language="javascript">AC_FL_RunContent = 0;</script><script src="squelettes/scripts/AC_RunActiveContent.js" language="javascript"></script>
+</head>
+<body>
+	<div id="conteneur">
+		<div id="contenu">
+ 			<div id="bandeau">
+	<h1 class="drop">IRTS - Institut R&Atilde;&copy;gional du Travail Social de la R&Atilde;&copy;union</h1>
+	<script language="javascript">
+		if (AC_FL_RunContent == 0) {
+			alert("Cette page n&Atilde;&copy;cessite le fichier AC_RunActiveContent.js.");
+		} else {
+			AC_FL_RunContent(
+				'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0',
+				'width', '980',
+				'height', '180',
+				'src', 'squelettes/medias/irts_01',
+				'quality', 'high',
+				'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+				'align', 'middle',
+				'play', 'true',
+				'loop', 'true',
+				'scale', 'showall',
+				'wmode', 'transparent',
+				'devicefont', 'false',
+				'id', 'irts_01',
+				'bgcolor', '#FFFFFF',
+				'name', 'irts_01',
+				'menu', 'true',
+				'allowFullScreen', 'false',
+				'allowScriptAccess','sameDomain',
+				'movie', 'squelettes/medias/irts_01',
+				'salign', ''
+				); //end AC code
+		}
+	</script><noscript>
+	<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="980" height="180" id="irts_01" align="middle">
+	<param name="allowScriptAccess" value="sameDomain">
+<param name="allowFullScreen" value="false">
+<param name="movie" value="squelettes/medias/irts_01.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<embed src="squelettes/medias/irts_01.swf" quality="high" bgcolor="#ffffff" width="980" height="180" name="irts_01" align="middle" allowscriptaccess="sameDomain" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed></object>
+</noscript>
+</div>
+<!-- <div id="bandeau"> -->			<div id="corps">
+				<div id="bloc_gauche">
+					<div id="hauteur_sep_menu_haut">
+</div>
+<div id="bloc_recherche">
+ 	<div class="formulaire_spip formulaire_recherche" id="formulaire_recherche">
+<form action="http://www.irtsreunion.fr/spip.php?page=recherche" method="get">
+		<div>
+			<input name="page" value="recherche" type="hidden"><span class="drop">
+				<label for="recherche">&lt;:info_rechercher:&gt;</label>
+			</span>
+				<input id="recherche" class="forml" onfocus="this.value=''" name="recherche" value="Rechercher ..." type="text"><!-- 	<input type="submit" class="submit" value="&gt;&gt;" title="Rechercher" /> -->
+</div>
+	</form>
+</div>
+
+</div>
+<div id="hauteur_sep_menu">
+</div>					<div id="menu">
+	
+
+	<!-- toutes les rubriques qui ne doivent pas &Atilde;&ordf;tre affich&Atilde;&copy;es sont exclues dans la  boucle suivante
+	 qui liste toutes les rubriques du site -{doublons filles} et {doublons parents} le resultat est stock&Atilde;&copy; dans {doublons exclus}-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	<!-- boucle principale affichage
+	On limite l'affichage du plan aux seules rubriques utiles, les autres sont exclues par {doublons exclus}>
+	-->
+	<!-- <a href="http://www.irtsreunion.fr" class="menurubrique" title="Accueil du site">Sommaire</a>
+	 -->
+	<ul>
+<li class="li_menu_gauche_n1">
+					<a href="spip.php?rubrique2">
+			<span>
+				L&rsquo;IRTS
+				<br><span class="li_menu_gauche_n1_2">pr&Atilde;&copy;sentation</span>
+			</span>
+			</a>
+
+			
+		</li>
+	
+		<li class="li_menu_gauche_n1">
+					<a href="spip.php?rubrique3">
+			<span>
+				Se former
+				<br><span class="li_menu_gauche_n1_2">aux m&Atilde;&copy;tiers du social</span>
+			</span>
+			</a>
+
+			
+		</li>
+	
+		<li class="li_menu_gauche_n1">
+					<a href="spip.php?rubrique119">
+			<span>
+				Admissions - S&Atilde;&copy;lections
+				
+			</span>
+			</a>
+
+			
+		</li>
+	
+		<li class="li_menu_gauche_n1">
+					<a href="spip.php?rubrique4">
+			<span>
+				VAE et Parcours
+				
+			</span>
+			</a>
+
+			
+		</li>
+	
+		<li class="li_menu_gauche_n1">
+					<a href="?rubrique136">
+			<span>
+				International
+				
+			</span>
+			</a>
+
+			
+		</li>
+	
+		<li class="li_menu_gauche_n1">
+					<a href="spip.php?rubrique5">
+			<span>
+				Espace Ressources
+				
+			</span>
+			</a>
+
+			
+		</li>
+	
+		<li class="li_menu_gauche_n1">
+					<a href="spip.php?rubrique6">
+			<span>
+				Offres d&rsquo;emploi
+				
+			</span>
+			</a>
+
+			
+		</li>
+	
+	</ul>
+</div>					<div id="hauteur_sep_menu_bas">
+</div>
+<div id="bloc_acces_etudiant">
+	<h2>Extranet &Atilde;&copy;tudiant</h2>
+	<form action="http://www.campus.irtsreunion.fr/index.php" method="post" name="formLogin" id="formLogin">
+		<span class="drop">
+			<label for="login">Nom d'utilisateur :</label>
+		</span>
+		<input id="login" class="form_acces_etudiant" onfocus="this.value=''" name="login" value="Nom d'utilisateur" type="text"><span class="drop">
+			<label for="password">Mot de passe :</label>
+		</span>
+		<input id="password" class="form_acces_etudiant" onfocus="this.value=''" name="password" value="Mot de passe" type="password"><button name="submitAuth" type="submit" id="ok">OK</button>
+		<input name="_qf__formLogin" type="hidden" value="">
+</form>
+	<ul>
+<li class="li_menu_gauche_n1">
+			<a href="http://www.campus.irtsreunion.fr/main/auth/lostPassword.php">Mot de passe perdu</a>
+		</li>
+	</ul>
+</div>					<div class="clear"></div>
+				</div>
+<!-- <div id="bloc_gauche"> -->
+				<div id="bloc_droite">
+					<div id="cont1">
+					<div id="cont2">
+					<div id="cont3">
+<!-- contient respectivement la partie centrale, haute et basse du s&Atilde;&copy;parateur bloc centre et bloc droite -->
+						<div id="hauteur_min"></div>
+						<div id="bloc_droite_gaucheAccueil">
+								
+								<h2 class="drop">Fil d'ariane</h2>
+								<div id="fil_ariane">
+									
+									<div id="hierarchie">
+										<a href="http://www.irtsreunion.fr/">Accueil du site</a>
+									</div>
+								</div>								
+								
+								
+			<!--<div id="google_translate_element">
+			<a href="javascript:var%20t=((window.getSelection&&window.getSelection())||(document.getSelection&&document.getSelection())||(document.selection&&document.selection.createRange&&document.selection.createRange().text));var%20e=(document.charset||document.characterSet);if(t!=''){location.href='http://translate.google.fr/translate_t?text='+t+'&hl=fr&langpair=auto|en&tbb=1&ie='+e;}else{location.href='http://translate.google.fr/translate?u='+escape(location.href)+'&hl=fr&langpair=auto|en&tbb=1&ie='+e;};">Traduction</a>
+			</div>-->
+
+<!--s&Atilde;&copy;lectionne les articles comportant une date de fin de publication-->
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+			
+						
+									<div class="bloc_contenu">
+										<h3 class="H3bloc_contenu">Actualit&Atilde;&copy;</h3>
+											<h1 class="drop">Actus de l'IRTS</h1>
+	<script language="javascript">
+		if (AC_FL_RunContent == 0) {
+			alert("Cette page n&Atilde;&copy;cessite le fichier AC_RunActiveContent.js.");
+		} else {
+			AC_FL_RunContent(
+				'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0',
+				'width', '450',
+				'height', '120',
+				'src', 'squelettes/actu',
+				'quality', 'high',
+				'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+				'align', 'middle',
+				'play', 'true',
+				'loop', 'true',
+				'scale', 'showall',
+				'wmode', 'transparent',
+				'devicefont', 'false',
+				'id', 'actu',
+				'bgcolor', '#FFFFFF',
+				'name', 'actu',
+				'menu', 'true',
+				'allowFullScreen', 'false',
+				'allowScriptAccess','sameDomain',
+				'movie', 'squelettes/actu',
+				'salign', ''
+				); //end AC code
+		}
+	</script><noscript>
+	<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="450" height="120" id="actu" align="middle">
+	<param name="allowScriptAccess" value="sameDomain">
+<param name="allowFullScreen" value="false">
+<param name="movie" value="squelettes/actu.swf">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<embed src="squelettes/actu.swf" quality="high" bgcolor="#ffffff" width="450" height="120" name="actu" align="middle" allowscriptaccess="sameDomain" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed></object>
+</noscript>										<div class="voirplus"><a href="spip.php?rubrique41">Voir toutes les actualit&Atilde;&copy;s</a></div>
+									</div>
+<!-- <div class="bloc_contenu"> -->
+						
+						
+						
+						
+							
+						<div class="bloc_contenu_conteneurBi">	
+							<div class="bloc_contenu_conteneurBi_gauche">
+						
+									<h3 class="H3bloc_contenu">Nouveaut&Atilde;&copy;s du Centre de ressources</h3>
+									
+										<div class="bloc_ouvrage">
+											<div class="bloc_miniature_couverture">
+												<a href="IMG/arton1682.jpg" class="thick&Acirc;&shy;box" type="image/jpeg">
+												<img src="local/cache-vignettes/L40xH59/arton1682-cb91a.jpg" alt="" width="40" height="59" class="spip_logos" style="height:59px;width:40px;"></a>									
+											</div>
+											<h4 class="H4_liste_bloc_contenu_ouvrage"><a href="w3.irtsreunion.fr/cindocweb/simplequery.asp?version=2&amp;ref=11125398" target="_blank">DIRIGER UN ETABLISSEMENT OU UN SERVICE EN ACTION SOCIALE ET MEDICO-SOCIALE [ED. 2013]</a></h4>
+											 JAEGER, Marcel (coord.)
+
+ 
+
+Ann&Atilde;&copy;e &Atilde;&copy;dition : 2013
+
+										
+										</div>
+									
+										<div class="bloc_ouvrage">
+											<div class="bloc_miniature_couverture">
+												<a href="IMG/arton1684.jpg" class="thick&Acirc;&shy;box" type="image/jpeg">
+												<img src="local/cache-vignettes/L40xH60/arton1684-b590e.jpg" alt="" width="40" height="60" class="spip_logos" style="height:60px;width:40px;"></a>									
+											</div>
+											<h4 class="H4_liste_bloc_contenu_ouvrage"><a href="w3.irtsreunion.fr/cindocweb/simplequery.asp?version=2&amp;ref=11125400" target="_blank">STATUT DE CADRE ET CULTURE DE METIER&nbsp;: LA STRUCTURATION DES FONCTIONS D&rsquo;ENCADREMENT DANS LE SECTEUR DE L&rsquo;EDUCATION SPECIALISEE</a></h4>
+											 CHERONNET, H&Atilde;&copy;l&Atilde;&uml;ne
+
+ 
+
+Ann&Atilde;&copy;e &Atilde;&copy;dition : 2006
+
+										
+										</div>
+									
+								<div class="voirplus"><a href="spip.php?rubrique43">Voir toutes les nouveaut&Atilde;&copy;s</a></div>
+							
+							</div>
+							<div class="bloc_contenu_conteneurBi_droite">
+								<h3 class="H3bloc_contenu">Le m&Atilde;&copy;tier du mois</h3>
+									
+									
+										<h4 class="H4_sousTitre_bloc_contenu">Assistant(e) de service social</h4>
+									
+									<center>
+	<dl class="spip_document_44 spip_documents spip_documents_center">
+<dt class="spip_doc_titre">
+<object type="application/x-shockwave-flash" data="plugins/auto/Lecteur_multimedia/flash/player_flv_maxi.swf" width="200" height="150">
+<param name="movie" value="plugins/auto/Lecteur_multimedia/flash/player_flv_maxi.swf">
+<param name="FlashVars" value="flv=http://www.irtsreunion.fr/IMG/flv/film_AS.flv&amp;width=200&amp;height=150&amp;bgcolor1=ffffff&amp;bgcolor2=cccccc&amp;buttoncolor=999999&amp;buttonovercolor=0&amp;slidercolor1=cccccc&amp;slidercolor2=999999&amp;sliderovercolor=666666&amp;textcolor=0&amp;showstop=1&amp;title=Film+formation+d%26%238217%3BAssistant%28e%29+de+service+social &amp;startimage=IMG/jpg/vign_ASSO.jpg&amp;ondoubleclick=fullscreen&amp;showfullscreen=1&amp;autoplay=0">
+<param name="allowFullScreen" value="true">
+<param name="wmode" value="transparent">
+<strong>Film formation d&rsquo;Assistant(e) de service social</strong>
+<span><a href="IMG/flv/film_AS.flv" rel="enclosure">IMG/flv/film_AS.flv</a></span>
+</object>
+</dt>
+
+</dl>
+</center>
+									
+							</div>
+							<div class="clear"></div>
+						</div>
+						
+						
+
+						
+						</div>
+<!-- <div id="bloc_droite_gaucheAccueil"> -->
+						<div id="bloc_droite_centre"></div>
+						
+						<!--s&Atilde;&copy;lectionne les articles comportant une date de fin de publication-->
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+<div id="translator">
+	<a target="_blank" rel="nofollow" onclick="window.open('http://www.google.com/translate?u='+encodeURIComponent(location.href)+'&amp;langpair=fr%7Cen&amp;hl=fr&amp;ie=UTF8'); return false;" title="English">
+		<img style="cursor:pointer; cursor:hand;" alt="English" src="./IMG/image/England2.png" title="Translate this page to English"></a>
+	<a target="_blank" rel="nofollow" onclick="window.open('http://www.google.com/translate_p?u='+encodeURIComponent(location.href)+'&amp;langpair=fr%7Ces&amp;hl=fr&amp;ie=UTF8'); return false;">
+		<img style="cursor:pointer; cursor:hand;" alt="espa&Atilde;&plusmn;ol" src="./IMG/image/Espagne.png" title="traducir esta p&Atilde;&iexcl;gina al espa&Atilde;&plusmn;ol"></a>
+	<a target="_blank" rel="nofollow" onclick="window.open('http://www.google.com/translate_p?u='+encodeURIComponent(location.href)+'&amp;langpair=fr%7Cit&amp;hl=fr&amp;ie=UTF8'); return false;">
+		<img style="cursor:pointer; cursor:hand;" alt="Italiano" src="./IMG/image/Italie.png" title="Traduci questa pagina in Italiano"></a>
+	<a target="_blank" rel="nofollow" onclick="window.open('http://www.google.com/translate_p?u='+encodeURIComponent(location.href)+'&amp;langpair=fr%7Cde&amp;hl=fr&amp;ie=UTF8'); return false;">
+		<img style="cursor:pointer; cursor:hand;" alt="deutsch" src="./IMG/image/Allemagne.png" title="diese Seite auf deutsch"></a>
+</div>
+	
+<div id="bloc_droite_droite">
+	<div class="bloc_contenu_droite">
+		<h3 class="H3bloc_contenu_droite">L'Agenda</h3>	
+
+		
+
+			<h4 class="H4_liste_bloc_contenu">
+		<a href="spip.php?page=agenda_mois&amp;date=2013-09-00%2000:00:00">septembre 2013</a>
+	</h4>
+	<h4 class="H4_liste_bloc_contenu">
+		<a href="spip.php?page=agenda_mois&amp;date=2013-10-00%2000:00:00">octobre 2013</a>
+	</h4>
+	<h4 class="H4_liste_bloc_contenu">
+		<a href="spip.php?page=agenda_mois&amp;date=2013-11-00%2000:00:00">novembre 2013</a>
+	</h4>
+	<h4 class="H4_liste_bloc_contenu">
+		<a href="spip.php?page=agenda_mois&amp;date=2013-12-00%2000:00:00">d&eacute;cembre 2013</a>
+	</h4>
+
+<div class="voirplus"><a href="spip.php?page=agenda">Voir tout l'Agenda</a></div>			
+</div>	
+
+
+<div class="bloc_contenu_droite">
+	<h3 class="H3bloc_contenu_droite">Focus</h3>
+	<h4 class="H4_liste_bloc_contenu_ouvrage">Formations 2013</h4>
+	
+<div style="margin-top:10px; margin-bottom:10px; text-align:center;">
+<!--<a href=(|!={""}|?{(|replace{" ",%20}),(spip.php?article1473|replace{" ",%20})})>(<img src="IMG/arton1473.jpg" alt="" width="200" height="283" class="spip_logos" />||image_reduire{180})</a>-->
+
+<a href="spip.php?article1473"><img src="local/cache-vignettes/L128xH180/arton1473-8e51e.jpg" alt="" width="128" height="180" class="spip_logos" style="height:180px;width:128px;"></a>
+
+</div>
+
+	
+<div class="voirplus"><a href="spip.php?article1473">Lire la suite</a></div>
+</div>
+
+		
+
+		<div class="bloc_contenu_droite">
+			
+			<h3 class="H3bloc_contenu_droite">IRTS Newsletter</h3>
+			<p>Abonnez vous &agrave; notre newsletter</p>
+			<div class="formulaire_spip formulaire_lettres ajax" id="formulaire_lettres">
+
+<br class="bugajaxie"><form method="post" action="./#formulaire_lettres">
+
+<div>
+<input type="hidden" name="formulaire_action" value="lettres"><input type="hidden" name="formulaire_action_args" value="xdBlahUVqImX2f3zXhcHoSY3yaviXCKjv1OGXGk/NSaaLvefZZcw1USvul+vRfMEJBa6y/tCV8vxAD3KhaX83+8=">
+</div>
+<fieldset style="border:0; margin:0; padding:0;"><ul style="margin:0; padding:0; text-indent:0; float:left;">
+<li class="obligatoire" style="display:none">
+<label>Th&Atilde;&uml;mes</label>
+<span class="choix">
+<input type="checkbox" class="checkbox" name="rubriques[]" value="45" id="theme_1" checked><label for="theme_1">Newsletter</label>
+</span>
+</li>
+
+<li class="obligatoire" style="list-style:none; margin:0; padding:0; text-indent:0;">
+<input type="text" class="text" name="email" id="email" value="Votre Email" size="20"><input type="submit" class="submit" name="valide" value="ok">
+</li>
+
+<li style="display:none">
+<label for="nom">Nom</label>
+<input type="text" class="text" name="nom" id="nom" value="Sans" size="30">
+</li>
+
+<li style="display:none">
+<label>Format</label>
+<span class="choix">
+<input type="radio" class="radio" name="format" value="mixte" id="format_mixte" checked><label for="format_mixte">Mixte</label>
+</span>
+</li>
+
+<li class="obligatoire" style="display:none">
+<label>Action</label>
+<span class="choix">
+<input type="radio" class="radio" name="choix" value="abonnements" id="abonnements" checked><label for="abonnements">Abonnement</label>
+</span>
+<span class="choix">
+<input type="radio" class="radio" name="choix" value="desabonnements" id="desabonnements"><label for="desabonnements">D&Atilde;&copy;sabonnement</label>
+</span>
+<span class="choix">
+<input type="radio" class="radio" name="choix" value="changement_format" id="changement_format"><label for="changement_format">Changement de format</label>
+</span>
+
+</li>
+
+</ul></fieldset>
+</form>
+
+<div class="clear"></div>
+</div>
+		
+<br><a href="http://www.irtsreunion.fr/spip.php?page=RSS_actu" target="_blank"><img src="./IMG/rss.png" alt="[Flux RSS des actualit&Atilde;&copy;s du site de l'IRTS]" border="0/"></a>&nbsp;<a href="http://feedvalidator.org/check.cgi?url=http%3A//www.irtsreunion.fr/spip.php%3Fpage%3DRSS_actu" target="_blank"><img src="./IMG/valid-rss-rogers.png" alt="[Valid RSS]" title="Validate my RSS feed"></a>		</div>
+</div>
+<div class="clear"></div>						
+					</div>
+<!-- <div id="cont1"> -->
+					</div>
+<!-- <div id="cont2"> -->
+					</div>
+<!-- <div id="cont3"> -->
+				</div>
+<!-- <div id="bloc_droite"> -->
+				<div class="clear"></div>
+			</div>
+<!-- <div id="corps"> -->
+			<div id="pied">
+				<div id="pied_droite">
+			<div id="contener_pied">
+				<div id="pied_logo">
+						<h2 class="drop">Financeurs</h2>
+						<ul>
+<li class="li_pied_logo">
+<span class="drop">L'Europe s'engage &Atilde;&nbsp; la R&Atilde;&copy;union</span><img src="squelettes/img/europereunion.jpg" alt="Logo Europe R&Atilde;&copy;union">
+</li>
+							<li id="sloganfooter">L'Union Europ&Atilde;&copy;enne et la R&Atilde;&copy;gion R&Atilde;&copy;union investissent dans votre avenir.</li>
+							<li class="li_pied_logo">
+<span class="drop">Europe</span><img src="squelettes/img/europe.jpg" alt="Logo Europe">
+</li>
+							<li class="li_pied_logo">
+<span class="drop">Pr&Atilde;&copy;fecture de la R&Atilde;&copy;union</span><img src="squelettes/img/pref.jpg" alt="Logo Etat">
+</li>
+							<li class="li_pied_logo">
+<span class="drop">R&Atilde;&copy;gion R&Atilde;&copy;union</span><img src="squelettes/img/region.jpg" alt="Logo r&Atilde;&copy;gion R&Atilde;&copy;union">
+</li>
+						</ul>
+<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="separateur_ombre_footer"></div>
+<div class="separateur_ombre_footer"></div>
+<div id="footerlien">
+<div class="separateur_ombre_footer"></div>
+
+			<ul>
+<li><a href="spip.php?article17">Plan d&rsquo;acc&Atilde;&uml;s</a></li>
+			
+				<li><a href="spip.php?article18">Mentions l&Atilde;&copy;gales</a></li>
+			
+				<li><a href="spip.php?article19">Plan du site</a></li>
+			
+				<li><a href="spip.php?article20">Accessibilit&Atilde;&copy;</a></li>
+			
+				<li><a href="spip.php?article21">Nous contacter</a></li>
+			
+				
+			</ul>
+</div>
+</div>			</div>
+			
+		</div>
+<!-- <div id="contenu"> -->
+	</div>
+<!-- <div id="conteneur"> -->
+
+		<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script><script type="text/javascript">
+try { var pageTracker = _gat._getTracker("UA-12313866-1"); pageTracker._trackPageview(); } catch(err) {}
+		</script>
+</body>
+</html>

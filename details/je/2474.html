@@ -1,0 +1,702 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<title>Lycée Gustave Eiffel</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="generator" content="SPIP 2.1.0 [15608]">
+<link rel="shortcut icon" href="plugins/auto/scolaspip/favicon.ico" type="image/x-icon">
+<link rel="alternate" type="application/rss+xml" title="Suivez l'actualité de ce site" href="http://www.lyc-eiffel-rueil.ac-versailles.fr/spip.php?page=backend">
+<link rel="stylesheet" href="prive/spip_style.css" type="text/css" media="all">
+<link rel="stylesheet" href="squelettes-dist/spip_formulaires.css" type="text/css" media="projection, screen, tv">
+<link rel="stylesheet" href="squelettes-dist/habillage.css" type="text/css" media="projection, screen, tv">
+<link rel="stylesheet" href="squelettes-dist/impression.css" type="text/css" media="print">
+<link rel="stylesheet" href="plugins/auto/scolaspip/etablissement.css" type="text/css" media="projection, screen, tv">
+<link rel="stylesheet" href="http://www.lyc-eiffel-rueil.ac-versailles.fr/spip.php?page=couleurs" type="text/css" media="projection, screen, tv">
+<link rel="stylesheet" href="squelettes/perso.css" type="text/css" media="projection, screen, tv">
+<script type="text/javascript">
+<!--
+function masque(identifiant,num) {
+		$("dd").each(function( intIndex ){if ($(this).attr("id")!=$(identifiant).attr("id") && $(this).css("display")!="none" ) $(this).hide('slow');});
+		$("img.imageplus").each(function( intIndex ){if ($(this).attr("id")!="img"+num ) $(this).attr({ src: "plugins/auto/scolaspip/images/deplierhaut.png", alt : " - " , title : "Voir les sous-rubriques"});});
+}
+
+function montre(id,num) {
+	masque(id,num);
+	if (id!="")
+		if ($(id).css("display")=="none") {
+				$(id).show('slow');
+				$("#img"+num).attr({ src: "plugins/auto/scolaspip/images/deplierbas.png",  alt : " + " , title : "Masquer les sous-rubriques"  });
+		}
+		else  {
+				$(id).hide('slow');
+				$("#img"+num).attr({ src: "plugins/auto/scolaspip/images/deplierhaut.png", alt : " - " , title : "Voir les sous-rubriques" });
+		}
+}
+var tout_masque=true;
+
+function montre_tout(){
+		if (tout_masque){
+				$("dd").each(function( intIndex ){if ( $(this).css("display")=="none" ) $(this).show('slow');});
+				$("img.imageplus").each(function( intIndex ){$(this).attr({ src: "plugins/auto/scolaspip/images/deplierbas.png", alt : " - " , title : "Masquer les sous-rubriques"});});
+				tout_masque=false;
+		}
+		else{
+				$("dd").each(function( intIndex ){if ( $(this).css("display")!="none" ) $(this).hide('slow');});
+				$("img.imageplus").each(function( intIndex ){$(this).attr({ src: "plugins/auto/scolaspip/images/deplierhaut.png", alt : " + " , title : "Montrer les sous-rubriques"});});
+				tout_masque=true;
+		}
+}
+// --></script><link rel="stylesheet" type="text/css" media="all" href="extensions/porte_plume/css/barre_outils.css">
+<link rel="stylesheet" type="text/css" media="all" href="http://www.lyc-eiffel-rueil.ac-versailles.fr/spip.php?page=barre_outils_icones.css">
+<script src="prive/javascript/jquery.js" type="text/javascript"></script><script src="prive/javascript/jquery.form.js" type="text/javascript"></script><script src="prive/javascript/ajaxCallback.js" type="text/javascript"></script><!-- insert_head --><!--[if lt IE 7]>
+	<script src='extensions/msie_compat/javascript/jquery.ifixpng.js'></script>
+	<script type='text/javascript'>//<![CDATA[
+		jQuery.ifixpng('rien.gif');		
+		function fixie() {
+			jQuery('img').ifixpng();
+		}
+		$(document).ready(function() { fixie(); });
+		onAjaxLoad(fixie);	
+	//]]></script>
+<![endif]--><script type="text/javascript" src="extensions/porte_plume/javascript/xregexp-min.js"></script><script type="text/javascript" src="extensions/porte_plume/javascript/jquery.markitup_pour_spip.js"></script><script type="text/javascript" src="extensions/porte_plume/javascript/jquery.previsu_spip.js"></script><script type="text/javascript" src="http://www.lyc-eiffel-rueil.ac-versailles.fr/spip.php?page=porte_plume_start.js&amp;lang=fr"></script><link rel="stylesheet" href="http://www.lyc-eiffel-rueil.ac-versailles.fr/spip.php?page=cfg.css" type="text/css" media="all">
+<!-- Debut header du Couteau Suisse --><script src="plugins/auto/couteau_suisse/outils/jquery.scrollto.js" type="text/javascript"></script><script src="plugins/auto/couteau_suisse/outils/jquery.localscroll.js" type="text/javascript"></script><script type="text/javascript"><!--
+var cs_prive=window.location.pathname.match(/\/ecrire\/$/)!=null;
+jQuery.fn.cs_todo=function(){return this.not('.cs_done').addClass('cs_done');};
+function soft_scroller_init() { if(typeof jQuery.localScroll=="function") jQuery.localScroll({hash: true}); }
+var cs_init = function() {
+	soft_scroller_init.apply(this);
+}
+if(typeof onAjaxLoad=='function') onAjaxLoad(cs_init);
+if(window.jQuery) {
+var cs_sel_jQuery=typeof jQuery(document).selector=='undefined'?'@':'';
+var cs_CookiePlugin="http://www.lyc-eiffel-rueil.ac-versailles.fr/prive/javascript/jquery.cookie.js";
+jQuery(document).ready(function(){
+	cs_init.apply(document);
+});
+}
+// --></script><!-- Fin header du Couteau Suisse --><!-- Player --><script type="text/javascript" src="plugins/auto/Lecteur_multimedia/soundmanager/soundmanager2.js"></script><script type="text/javascript"><!--
+var musicplayerurl="";
+var key_espace_stop = true;
+var image_play="plugins/auto/Lecteur_multimedia/images/playl.gif";
+var image_pause="plugins/auto/Lecteur_multimedia/images/pausel.gif";
+soundManager.url = "plugins/auto/Lecteur_multimedia/soundmanager/soundmanager2.swf";
+soundManager.nullURL = "plugins/auto/Lecteur_multimedia/soundmanager/null.mp3";
+var videoNullUrl = "null.flv";
+var DIR_PLUGIN_PLAYER = "plugins/auto/Lecteur_multimedia/";//--></script><script type="text/javascript" src="plugins/auto/Lecteur_multimedia/javascript/jscroller.js"></script><script type="text/javascript" src="plugins/auto/Lecteur_multimedia/player_enclosure.js"></script><link rel="stylesheet" href="plugins/auto/Lecteur_multimedia/player.css" type="text/css" media="all">
+<script type="text/javascript" src="plugins/auto/splickrbox/splickrbox.js"></script><script src="http://www.lyc-eiffel-rueil.ac-versailles.fr/plugins/auto/thickbox2/javascript/thickbox.js" type="text/javascript"></script><link rel="stylesheet" href="http://www.lyc-eiffel-rueil.ac-versailles.fr/plugins/auto/thickbox2/thickbox.css" type="text/css" media="all">
+<script type="text/javascript"><!--
+// Inside the function "this" will be "document" when called by ready() 
+// and "the ajaxed element" when called because of onAjaxLoad 
+var init_f = function() {
+	if (jQuery("a.thickbox,a[type='image/jpeg'],a[type='image/png'],a[type='image/gif']",this).addClass("thickbox").size()) {
+		TB_chemin_animation = "http://www.lyc-eiffel-rueil.ac-versailles.fr/plugins/auto/thickbox2/circle_animation.gif";
+		TB_chemin_close = "http://www.lyc-eiffel-rueil.ac-versailles.fr/plugins/auto/thickbox2/close.gif";
+		TB_chemin_css = "http://www.lyc-eiffel-rueil.ac-versailles.fr/plugins/auto/thickbox2/thickbox.css";
+		TB_init(this);
+	};
+}
+//onAjaxLoad is defined in private area only
+if(typeof onAjaxLoad == "function") onAjaxLoad(init_f);
+if (window.jQuery) jQuery(document).ready(init_f);
+// --></script>
+</head>
+<body class="page_sommaire">
+<div id="page">
+
+	
+	<div id="entete">
+
+
+<div class="logo-versailles"><a target="_blank" href="http://www.ac-versailles.fr/" title="Site de l'académie de Versailles"><img src="plugins/auto/scolaspip/images/ac-versailles_transparent.png" alt="Acad?mie de Versailles" class="format_png"></a></div>
+
+<a rel="start" href="http://www.lyc-eiffel-rueil.ac-versailles.fr/" title="Accueil du site">
+<img class="spip_logos" alt="Lycée Gustave Eiffel" src="local/cache-vignettes/L960xH200/siteon0-38e4a.jpg" width="960" height="200" style="height:200px;width:960px;" title="Lycée Gustave Eiffel"></a>
+
+<ul id="menuhorizontal">
+<li>Aller à :</li>
+	<li>
+<a href="#contenu" title="Aller au contenu">Contenu</a> |</li>
+	<li>
+<a href="#montre_ou_masque_tout" title="Aller au menu de navigation">Sommaire</a> |</li>
+	<li>
+<a href="#formulaire_recherche" title="Aller à la recherche">Recherche</a> |</li>
+	<li class="">
+<a href="http://www.lyc-eiffel-rueil.ac-versailles.fr/spip.php?page=calendrier" title="Agenda complet">Agenda</a> |</li>
+	<li>
+<a href="http://www.lyc-eiffel-rueil.ac-versailles.fr/spip.php?page=sites" title="Les sites sélectionnés">Liens</a> |</li>
+	
+	<li>
+<a href="spip.php?article31" title="Afficher lycée gustave eiffel sur une carte plus grande (...)">Plan d’accès</a> |</li>
+	
+	
+</ul>
+</div>
+	
+	<div class="hfeed" id="conteneur">
+	<div id="contenu">
+        
+        <div id="hierarchie">Accueil du site</div>
+
+		<div class="cartouche invisible">
+			<h1 class="invisible">Lycée Gustave Eiffel</h1>
+		</div>
+
+		
+		<div class=" " id="calendrier">
+			
+			<div id="calendar">
+
+	<table summary="Calendrier">
+<caption>
+			<a rel="nofollow" href="./?date=2013-08" title="août 2013">«</a>
+			septembre 2013
+			<a rel="nofollow" href="./?date=2013-10" title="octobre 2013">»</a>
+		</caption>
+		<thead><tr>
+<th scope="col"><abbr title="lundi">L</abbr></th>
+				<th scope="col"><abbr title="mardi">M</abbr></th>
+				<th scope="col"><abbr title="mercredi">M</abbr></th>
+				<th scope="col"><abbr title="jeudi">J</abbr></th>
+				<th scope="col"><abbr title="vendredi">V</abbr></th>
+				<th scope="col"><abbr title="samedi">S</abbr></th>
+				<th scope="col"><abbr title="dimanche">D</abbr></th>
+			</tr></thead>
+<tbody>
+<tr>
+<td class="horsperiode">26</td>
+	<td class="horsperiode">27</td>
+	<td class="horsperiode">28</td>
+	<td class="horsperiode">29</td>
+	<td class="horsperiode">30</td>
+	<td class="horsperiode">31</td>
+	<td class="libre">1
+	</td>
+</tr>
+<tr>
+<td class="libre">2
+	</td>
+	<td class="libre">3
+	</td>
+	<td class="libre today">4
+	</td>
+	<td class="libre">5
+	</td>
+	<td class="libre">6
+	</td>
+	<td class="libre">7
+	</td>
+	<td class="libre">8
+	</td>
+</tr>
+<tr>
+<td class="libre">9
+	</td>
+	<td class="libre">10
+	</td>
+	<td class="libre">11
+	</td>
+	<td class="libre">12
+	</td>
+	<td class="libre">13
+	</td>
+	<td class="libre">14
+	</td>
+	<td class="libre">15
+	</td>
+</tr>
+<tr>
+<td class="libre">16
+	</td>
+	<td class="libre">17
+	</td>
+	<td class="libre">18
+	</td>
+	<td class="libre">19
+	</td>
+	<td class="libre">20
+	</td>
+	<td class="libre">21
+	</td>
+	<td class="libre">22
+	</td>
+</tr>
+<tr>
+<td class="libre">23
+	</td>
+	<td class="libre">24
+	</td>
+	<td class="libre">25
+	</td>
+	<td class="libre">26
+	</td>
+	<td class="libre">27
+	</td>
+	<td class="libre">28
+	</td>
+	<td class="libre">29
+	</td>
+</tr>
+<tr>
+<td class="libre">30
+	</td>
+	<td class="horsperiode">1</td>
+	<td class="horsperiode">2</td>
+	<td class="horsperiode">3</td>
+	<td class="horsperiode">4</td>
+	<td class="horsperiode">5</td>
+	<td class="horsperiode">6</td>
+</tr>
+</tbody>
+</table>
+</div>
+		</div>
+
+		
+    
+
+		<div id="edito">
+			
+			<h2 class="titre">
+<img class="spip_logos" alt="" align="right" src="local/cache-vignettes/L185xH150/arton30-d680d.png" width="185" height="150" style="height:150px;width:185px;"><big>Bienvenue...</big>
+</h2>
+			<div class="texte"><h3 class="spip">... sur le nouveau site du Lycée Gustave Eiffel de Rueil Malmaison.</h3></div>
+			
+		</div>
+
+		
+		
+
+		
+		<div id="mozaique">
+			
+			<h2>Opération Petit Déjeuner</h2>
+			<div style="position:relative;" class="splickrbox ">
+        <table cellpadding="0" cellspacing="0">
+<tr>
+<td> <a href="IMG/jpg/24204.jpg" class="thickbox"><img src="local/cache-gd2/4a40087980280b22db7a1ab5631b9fc6.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/SL371242.jpg" class="thickbox"><img src="local/cache-gd2/b176f360137725c8da04ac3098455db4.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/SL371236.jpg" class="thickbox"><img src="local/cache-gd2/c213b9854046fce96dc11d827ae343ca.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/SL371234.jpg" class="thickbox"><img src="local/cache-gd2/28ab560f4f1ee18cfbbdb933d1e02823.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+            </tr>
+<tr>
+<td> <a href="IMG/jpg/SL371233.jpg" class="thickbox"><img src="local/cache-gd2/ef831d7dd9dd0f39dc5eff6dc954ad22.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/SL371228.jpg" class="thickbox"><img src="local/cache-gd2/d98024fed3ecf9f8cc659c80b847b4bd.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/SL371221.jpg" class="thickbox"><img src="local/cache-gd2/9e16c8fb51c0c183342e6073bde1267b.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/SL371208.jpg" class="thickbox"><img src="local/cache-gd2/804b50fb2b7b6839ce37df41dad65efb.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+            </tr>
+<tr>
+<td> <a href="IMG/jpg/SL371206.jpg" class="thickbox"><img src="local/cache-gd2/4dc8c3a7ce1b3d69cd0599bf4dba9eb7.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/SL371205.jpg" class="thickbox"><img src="local/cache-gd2/c40b8e4d960395d432751bebeed13ee6.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/SL371203.jpg" class="thickbox"><img src="local/cache-gd2/ff85ac7661fc46cea3cebbaf89d0d072.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/SL371201.jpg" class="thickbox"><img src="local/cache-gd2/790260d105b955c88b0f952116c2738a.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+            </tr>
+<tr>
+<td> <a href="IMG/jpg/SL371199.jpg" class="thickbox"><img src="local/cache-gd2/8e5a0915eb3fd21786857b6bf9aa7976.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/SDC10040.jpg" class="thickbox"><img src="local/cache-gd2/6848c7e4a671b013320483d6e089ec4d.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/SDC10027.jpg" class="thickbox"><img src="local/cache-gd2/0baa20ed30e11bc0f1e9b395bca97b11.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/SDC10022.jpg" class="thickbox"><img src="local/cache-gd2/26600496a36e85bbfc46bc436e3d5837.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+            </tr>
+<tr>
+<td> <a href="IMG/jpg/SDC10015.jpg" class="thickbox"><img src="local/cache-gd2/547002fb936d17e90bf89b109bd27b88.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/SDC10005.jpg" class="thickbox"><img src="local/cache-gd2/d1eeb3ffa0e057ee0d582d082b3f9ce6.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/SDC10003.jpg" class="thickbox"><img src="local/cache-gd2/00c6c0ddae2b1e060228d467a17d6cba.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/SDC10002.jpg" class="thickbox"><img src="local/cache-gd2/db925c5ad17029b6e01f010f6796cf37.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+            </tr>
+<tr>
+<td> <a href="IMG/jpg/SDC10001.jpg" class="thickbox"><img src="local/cache-gd2/64b614a908e0a366e8ceeefa685a769a.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/24204_379933952409_734357409_3640017_7114227_n.jpg" class="thickbox"><img src="local/cache-gd2/5a1ca083108e08335fd40943df8783f7.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/24204_379933742409_734357409_3639981_3476041_n.jpg" class="thickbox"><img src="local/cache-gd2/0adbd5ae52b14f1c40e43f4cb52c1fce.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+             
+
+            <td> <a href="IMG/jpg/24204_379933712409_734357409_3639976_7764931_n-2.jpg" class="thickbox"><img src="local/cache-gd2/a672781f8738aeb6e2e84f4ab70b00ed.jpg" width="100" height="100" style="height:100px;width:100px;" alt=""></a>
+</td>
+            </tr>
+<tr>
+<td></td>
+	</tr>
+</table>
+</div>
+
+
+<!--
+<div id="statusContainer" class="statusContainer">
+  <span class="statusMsg" id="statusMsg">x</span>
+</div>
+//-->
+			
+		</div>
+		
+
+		
+		
+
+
+		
+		 
+
+		
+		<div class="ajaxbloc env-MeUudDhAL+PH4x0udIiP6RHPA6cvSsLiuu4ry/ZX7+yxiWEBGXCXXW4sYbJuoZ22vwVNBbWxTjBq+tEJQGYbcZrxcNym/9vb78hwMtDstuV9iiDtlkzfL5H5E7+Om+hMH4GvsRhHRchI6MY4Te06Vqi10uPaOc/Vwn8Ppg99u2Z/dfMpC3VMd4Gg/59wgL3KbfzAIQ==">
+
+<div class="menu articles">
+	<a name="pagination_articles" id="pagination_articles"></a>
+	<h2>Les nouveautés</h2>
+	<ul>
+<li><a href="spip.php?article133" title="Vous trouverez ci-dessous, le planning prévisionnel de (...)">Planning de la rentrée 2013</a></li>
+	
+		<li><a href="spip.php?article132" title="Vous trouverez ci-dessous la liste des documents à (...)">Inscription en classe de seconde</a></li>
+	
+		<li><a href="spip.php?article131" title="Attention ! En raison de la préparation des salles pour (...)">Arrêt des cours à 13 heures le vendredi 14 juin</a></li>
+	
+		<li><a href="spip.php?article130" title="Lundi 24 juin : Envoi du courrier de notification (...)">Inscription des nouveaux élèves</a></li>
+	
+		<li><a href="spip.php?article129" title="INFORMATION DE MADAME LE PROVISEUR À DESTINATION DES (...)">Organisation du troisième trimestre</a></li>
+	
+		<li><a href="spip.php?article128" title="Vous trouverez ci-dessous, le planning des conseils de (...)">Dates des conseils de classe du troisième trimestre</a></li>
+	
+		<li><a href="spip.php?article127" title="Téléthon 2012 : Sur l’initiative de Mesdames Glad et (...)">Téléthon 2012</a></li>
+	
+		<li><a href="spip.php?article126" title="Sensibilisation à l’handicap pour les classes de 1ASSP1, (...)">Sensibilisation à l’handicap</a></li>
+	
+	</ul>
+<p class="pagination"><span class="pagination_label">Pages</span>
+
+
+
+<strong class="on">1</strong>
+<span class="sep separateur">|</span>
+
+
+<a href="./?debut_articles=8#pagination_articles" class="lien_pagination" rel="nofollow">2</a></p>
+</div>
+
+</div>
+<!-- ajaxbloc -->
+
+    
+    
+
+		
+		
+
+	</div>
+<!--#contenu-->
+	</div>
+<!--#conteneur-->
+
+	
+	<div id="navigation">
+
+		
+		<div class="formulaire_spip formulaire_recherche" id="formulaire_recherche">
+<form action="http://www.lyc-eiffel-rueil.ac-versailles.fr/spip.php?page=recherche" method="get"><div>
+	<input name="page" value="recherche" type="hidden"><input type="hidden" name="lang" value="fr"><label for="recherche">Rechercher :</label>
+	<input type="text" class="text" size="10" name="recherche" id="recherche" accesskey="4"><input type="submit" class="submit" value="OK" title="Rechercher">
+</div></form>
+</div>
+
+
+
+
+	<div onmouseover="this.style.cursor='pointer';" onclick="javascript:montre_tout();" title="Voir toutes les sous-rubriques"><span id="montre_ou_masque_tout">Sommaire <img class="imageplus" id="img_toute_rubrique" src="plugins/auto/scolaspip/images/deplierhaut.png" alt=" + "></span></div>
+		<dl id="menu">
+<!--<dt onmouseover="this.style.cursor='pointer';" onclick="javascript:masque();">Fermer</dt>--><dt>
+					<span onmouseover="this.style.cursor='pointer';" onclick="javascript:montre('#smenu1',1);"><img class="imageplus" id="img1" src="plugins/auto/scolaspip/images/deplierhaut.png" alt=" + " title="Voir les sous-rubriques"></span>
+					<a href="spip.php?rubrique1" title="Le lycée ">Le lycée</a>
+				</dt>
+			
+
+			
+			<dd id="smenu1" class="dd">
+				<ul class="ss-rubrique">
+<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique18" title="Présentation ">Présentation</a>
+							
+					</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique19" title="Organisation ">Organisation</a>
+							
+					</li>
+				
+				</ul>
+</dd>
+			
+	
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				<dt>
+					<span onmouseover="this.style.cursor='pointer';" onclick="javascript:montre('#smenu2',2);"><img class="imageplus" id="img2" src="plugins/auto/scolaspip/images/deplierhaut.png" alt=" + " title="Voir les sous-rubriques"></span>
+					<a href="spip.php?rubrique2" title="Formations et filières ">Formations et filières</a>
+				</dt>
+			
+
+			
+			<dd id="smenu2" class="dd">
+				<ul class="ss-rubrique">
+<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique22" title="Aides-soignants / Auxiliaires de puériculture ">Aides-soignants / Auxiliaires de puériculture</a>
+							
+					</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique24" title="Bac Pro ">Bac Pro</a>
+							
+								<ul class="ss-rubrique">
+<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique32" title="BAC PRO Accompagnement Soins et Services à la personne - Nouveau Bac Pro ASSP">BAC PRO Accompagnement Soins et Services à la (...)</a>
+									</li>
+								
+									<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique34" title="Bac Pro Gestion Administration ">Bac Pro Gestion Administration</a>
+									</li>
+								
+								</ul>
+</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique21" title="BTS Communication ">BTS Communication</a>
+							
+					</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique23" title="Carrières sanitaires et sociales ">Carrières sanitaires et sociales</a>
+							
+					</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique26" title="Examens ">Examens</a>
+							
+					</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique25" title="Stages en entreprise ">Stages en entreprise</a>
+							
+					</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique20" title="STG ">STG</a>
+							
+					</li>
+				
+				</ul>
+</dd>
+			
+	
+
+			
+			
+			
+			
+			
+			
+			
+			
+				<dt>
+					<span onmouseover="this.style.cursor='pointer';" onclick="javascript:montre('#smenu3',3);"><img class="imageplus" id="img3" src="plugins/auto/scolaspip/images/deplierhaut.png" alt=" + " title="Voir les sous-rubriques"></span>
+					<a href="spip.php?rubrique3" title="Disciplines ">Disciplines</a>
+				</dt>
+			
+
+			
+			<dd id="smenu3" class="dd">
+				<ul class="ss-rubrique">
+<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique15" title="Arts appliqués ">Arts appliqués</a>
+							
+					</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique12" title="EPS - Projet EPS, évaluations, dates de CCF...">EPS</a>
+							
+					</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique29" title="Histoire Géographie ">Histoire Géographie</a>
+							
+					</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique6" title="Langues ">Langues</a>
+							
+					</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique28" title="Lettres ">Lettres</a>
+							
+					</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique7" title="Maths Sciences ">Maths Sciences</a>
+							
+					</li>
+				
+				</ul>
+</dd>
+			
+	
+
+			
+			  <dt class="rubrique_vide">
+			  	<a href="spip.php?rubrique4" title="CDI ">CDI</a>
+			  </dt>
+			
+
+			
+	
+
+			
+			  <dt class="rubrique_vide">
+			  	<a href="spip.php?rubrique30" title="Section européenne ">Section européenne</a>
+			  </dt>
+			
+
+			
+	
+
+			
+			  <dt class="rubrique_vide">
+			  	<a href="spip.php?rubrique31" title="Association Sportive ">Association Sportive</a>
+			  </dt>
+			
+
+			
+	
+
+			
+			  <dt class="rubrique_vide">
+			  	<a href="spip.php?rubrique5" title="Projets et sorties ">Projets et sorties</a>
+			  </dt>
+			
+
+			
+	
+		</dl>
+<ul id="site_menu">
+<li><a rel="start" href="http://213.41.205.238/" target="_blank" title="">
+			<img class="spip_logos" alt="PRONOTE" src="local/cache-vignettes/L125xH50/siteon3-265fc.png" width="125" height="50" onmouseover="this.src='local/cache-vignettes/L125xH50/siteoff3-acaf4.png'" onmouseout="this.src='local/cache-vignettes/L125xH50/siteon3-265fc.png'" style="height:50px;width:125px;" title="PRONOTE"></a></li>
+
+</ul>
+<div class="" id="video">
+				<h2 class="titre">Vidéo</h2>
+				
+				
+				<dl class="spip_document_86 spip_documents spip_lien_ok">
+<dt class="spip_doc_titre">
+<object type="application/x-shockwave-flash" data="plugins/auto/Lecteur_multimedia/flash/player_flv_maxi.swf" width="216" height="162">
+<param name="movie" value="plugins/auto/Lecteur_multimedia/flash/player_flv_maxi.swf">
+<param name="FlashVars" value="flv=http://www.lyc-eiffel-rueil.ac-versailles.fr/IMG/flv/SansTitre.flv&amp;width=216&amp;height=162&amp;bgcolor1=4b4b4b&amp;bgcolor2=4b4b4b&amp;buttoncolor=999999&amp;buttonovercolor=0&amp;slidercolor1=cc6600&amp;slidercolor2=cc6600&amp;sliderovercolor=666666&amp;textcolor=0&amp;showstop=1&amp;title= &amp;startimage=IMG/jpg/photo_lycee_2-2.jpg&amp;ondoubleclick=fullscreen&amp;showfullscreen=1">
+<param name="allowFullScreen" value="true">
+<param name="wmode" value="transparent">
+<span><a href="IMG/flv/SansTitre.flv" rel="enclosure">IMG/flv/SansTitre.flv</a></span>
+</object>
+</dt>
+
+</dl>
+<small>Voir <a href="spip.php?article48" title="Voir la vidéo en plus grand">l'article contenant cette vidéo</a>.</small>
+				
+			</div>
+			
+
+    </div>
+<!--#navigation-->
+
+	
+	<div id="extra">
+
+		
+		
+
+	</div>
+<!--#extra-->
+
+	
+	<br class="nettoyeur"><div id="pied">
+	<div class="pied">
+		<small>
+			<a href="http://www.lyc-eiffel-rueil.ac-versailles.fr/spip.php?page=backend" title="Suivez l'actualité de ce site"><img src="squelettes-dist/feed.png" alt="Suivre la vie du site" width="16" height="16" class="format_png"> RSS 2.0</a>
+			| <a href="http://www.lyc-eiffel-rueil.ac-versailles.fr/spip.php?page=plan" title="Cette page vous présente l'organisation du site">Plan du site</a>
+			| <a href="http://www.lyc-eiffel-rueil.ac-versailles.fr/spip.php?page=mentions" title="Mentions légales de ce site">Mentions légales</a> | <a href="http://www.lyc-eiffel-rueil.ac-versailles.fr/spip.php?page=login&amp;url=.%2F" rel="nofollow" class="login_modal">Se connecter</a>
+			| <a href="http://www.crdp.ac-versailles.fr/" title="Site du CRDP l'académie de Versailles"><img src="plugins/auto/scolaspip/images/crdp.jpg" alt="CRDP" class="format_png"></a>
+			| <a href="http://www.tice.ac-versailles.fr/" title="Consultez le site Tice académique"><img src="plugins/auto/scolaspip/images/tice.png" alt="tice" class="format_png"></a>
+			| <a href="http://www.spip.net/" title="Site réalisé avec SPIP"><img src="squelettes-dist/spip.png" alt="SPIP" width="48" height="16" class="format_png"></a>
+			| <a href="#entete" title="Revenir en haut de la page">Haut de page</a>
+		</small>
+	</div>
+	<div id="ours">
+		<small>
+			Lycée Gustave Eiffel (académie de Versailles)
+			<br>
+			 Responsable éditorial : Christiane IZARD (Proviseur)
+		</small>
+	</div>
+</div>
+
+<!-- SPIP-CRON --><div style="background-image: url('http://www.lyc-eiffel-rueil.ac-versailles.fr/spip.php?action=cron');"></div>
+</div>
+<!--#page-->
+</body>
+</html>

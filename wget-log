@@ -1,0 +1,19 @@
+--2013-09-04 12:58:59--  http://www.defi-metiers.fr/jcms/sd_6356/portail-seformer-32off-recherche-d-offres-/-organisme?jsp=plugins%2FExternalDbSearch%2Ftypes%2FTechniqueOffre%2FdoTechniqueOffreFullDisplay.jsp
+Résolution de www.defi-metiers.fr (www.defi-metiers.fr)... 194.98.158.80
+Connexion vers www.defi-metiers.fr (www.defi-metiers.fr)|194.98.158.80|:80... connecté.
+requête HTTP transmise, en attente de la réponse... 302 D\351plac\351 Temporairement
+Emplacement : http://www.defi-metiers.fr/ [suivant]
+--2013-09-04 12:59:04--  http://www.defi-metiers.fr/
+Réutilisation de la connexion existante vers www.defi-metiers.fr:80.
+requête HTTP transmise, en attente de la réponse... 301 D\351plac\351 de fa\347on Permanente
+Emplacement : http://www.defi-metiers.fr/jcms/j_6/accueil [suivant]
+--2013-09-04 12:59:04--  http://www.defi-metiers.fr/jcms/j_6/accueil
+Réutilisation de la connexion existante vers www.defi-metiers.fr:80.
+requête HTTP transmise, en attente de la réponse... 200 OK
+Taille : non spécifié [text/html]
+Enregistre : «-organisme?jsp=plugins%2FExternalDbSearch%2Ftypes%2FTechniqueOffre%2FdoTechniqueOffreFullDisplay.jsp.72»
+
+     0K .......... .......... .......... .........             90,2K=0,4s
+
+2013-09-04 12:59:13 (90,2 KB/s) - «-organisme?jsp=plugins%2FExternalDbSearch%2Ftypes%2FTechniqueOffre%2FdoTechniqueOffreFullDisplay.jsp.72» enregistré [40461]
+

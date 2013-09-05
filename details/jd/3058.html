@@ -1,0 +1,530 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Language" content="fr-FR">
+<meta name="Robots" content="index,follow">
+<meta name="Revisit-After" content="7 days">
+<meta name="Author" content="CetSI">
+<meta name="title" lang="fr" content="Hôpital Saint Joseph">
+<meta name="creator" content="CetSI">
+<meta name="format" content="text/html">
+<meta name="Keywords" lang="fr" content="Accueil IFSI">
+<meta name="Description" lang="fr" content="Accueil IFSI - Le Groupe hospitalier Paris Saint Joseph est un hôpital privé doté de services IFSI  et urgences 24h/24 à Paris.">
+<title>Accueil IFSI Paris : Groupe hospitalier Paris Saint Joseph, IFSI </title>
+<!-- CSS Dédié--><!-- CSS Commun--><link href="styles/stjoseph.css" rel="stylesheet" type="text/css" media="all">
+<!--[if IE 7]>
+        <link href="styles/stjoseph_ie7.css" rel="stylesheet" type="text/css" media="all" />
+        <![endif]--><!--[if IE 8]>
+        <link href="styles/stjoseph_ie8.css" rel="stylesheet" type="text/css" media="all" />
+        <![endif]--><style type="text/css" media="all">
+#global{width:996px; margin:0 auto; background:url(img/home_bg_global.jpg) repeat-y; position:relative;}
+#global #header{width:100%; height:204px; background:url(img/home_bg_header.jpg) no-repeat; position:relative;}
+#global #header .logo a{width:325px; height:115px; margin:12px 0 0 78px; position:absolute; z-index:25;}
+#global #header .logo span{display:none;}
+#global #header .banniere{width:100%; height:145px; position:relative; z-index:0; background:url(img/header/bg_banniere_bleu.jpg) no-repeat;}
+		/* menu vert */
+#global #header #menuvert{width:968px; height:96px;  margin-top:-59px; position:relative; z-index:10;left:14px;}
+#global #header #menuvert ul{margin:0; padding:0;}
+#global #header #menuvert ul li{list-style:none; float:left; width:auto;}
+#global #header #menuvert .professionnels,  #global #header #menuvert .recherche,  #global #header #menuvert .patients,  #global #header #menuvert .rdv,  #global #header #menuvert .don{height:96px; float:left; border:none; margin:0 auto; padding: 0; text-decoration:none; text-indent:-3000px;}
+#global #header #menuvert .professionnels{width:194px; background:url(img/header/bg_menuvert_bleu.jpg) no-repeat 0px 0%;}
+#global #header #menuvert .professionnels:hover{background:url(img/header/bg_menuvert_bleu.jpg) no-repeat 0px 100%;}
+#global #header #menuvert .recherche{width:195px; background:url(img/header/bg_menuvert_bleu.jpg) no-repeat -194px 0%;}
+#global #header #menuvert .recherche:hover{background:url(img/header/bg_menuvert_bleu.jpg) no-repeat -194px 100%;}
+#global #header #menuvert .patients{width:195px; background:url(img/header/bg_menuvert_bleu.jpg) no-repeat -389px 0%;}
+#global #header #menuvert .patients:hover{background:url(img/header/bg_menuvert_bleu.jpg) no-repeat -389px 100%;}
+#global #header #menuvert .rdv{width:194px; background:url(img/header/bg_menuvert_bleu.jpg) no-repeat -584px 0%;}
+#global #header #menuvert .rdv:hover{background:url(img/header/bg_menuvert_bleu.jpg) no-repeat -584px 100%;}
+#global #header #menuvert .don{width:190px; background:url(img/header/bg_menuvert_bleu.jpg) no-repeat -779px 0%;}
+#global #header #menuvert .don:hover{background:url(img/header/bg_menuvert_bleu.jpg) no-repeat -779px 100%;}
+
+
+
+</style>
+<script type="text/javascript" src="js/prototype.js"></script><script type="text/javascript" src="js/scriptaculous.js?load=effects"></script><script type="text/javascript" src="js/builder.js"></script><script type="text/javascript" src="js/controls.js"></script><script type="text/javascript" src="js/dialog.2.1.js"></script><script type="text/javascript" src="js/static.js"></script><script type="text/javascript" src="js/accordion.js"></script><script type="text/javascript" src="mediaplayer/swfobject.js"></script><script type="text/javascript" src="js/modalbox.js"></script><script src="inc/SpryAssets/SpryMenuBar.js" type="text/javascript"></script><script src="Scripts/swfobject_modified.js" type="text/javascript"></script><link rel="stylesheet" href="styles/modalbox.css" type="text/css" media="screen">
+<!-- JS Dédié--><script type="text/javascript">
+    function searchSpe(id,idForm,field)
+        {
+
+            // fonction qui recupere le l'url
+
+            if ( field == 'specialite' )
+                $('examen').value = '-1' ;
+            else if ( field == 'examen' )
+                $('specialite').value = '-1' ;
+         
+            new Ajax.Request('inc/ajax.php', {
+              method: 'get',
+              parameters: 'id_appel=1&spe='+id,
+                      onSuccess: function(r) {
+                      
+                    $(idForm).writeAttribute('action', r.responseText) ;
+                    /*if($('nomMedecin_id')){*/
+                    //alert($(idForm).action+','+$(idForm).id) ;
+                    $F('nomMedecin_id') = id ;
+                    /*}*/
+
+                      }
+                    });
+				           		
+        }
+</script><link href="inc/SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css">
+<!--[if IE 6]>
+        <link href="styles/ie6.css" rel="stylesheet" type="text/css" media="all" />
+        <![endif]-->
+</head>
+<body>
+
+<div id="global">
+    <div id="header">
+   
+    <h1>Groupe hospitalier Paris Saint Joseph</h1>
+    <cite>Soignez accompagner innover</cite>
+   
+<div class="logo"><a href="index.php"><span>Saint Joseph</span></a></div>
+<!-- retiré le titre du lien -->
+<div class="banniere">
+    <div id="navigation_global">
+
+    <div id="recherche_top">
+    <form action="index.php?p=recherche" method="post" style="display: inline; position:relative;" id="FormulaireRecherche">
+    <ul>
+<li><input type="text" name="keyword" class="recherche_top" value="Recherche sur le site ..." onfocus="this.value='';" id="keyword"></li>
+    <li><input type="image" src="img/btn_ok_recherche_haut.jpg" class="lancer" onclick="return verifRecherche();document.getElementById('FormulaireRecherche').submit()"></li>
+    </ul>
+</form>
+    </div>
+<!--Fin #recherche_top-->
+    </div>
+</div>
+    <div id="menuvert">
+
+        <ul>
+<li><a class="professionnels" href="index.php?p=auth">Professionnels de santé</a></li>
+                        <li><a class="recherche" href="index.php?p=searchMedecin">Rechercher un médecin</a></li>
+                        <li><a class="patients" href="les-formalites-administratives.html">Espace patients</a></li>
+                        <li><a class="rdv" href="prendre-un-rendez-vous-telephonique.html">Prendre un rendez-vous</a></li>
+                        <li><a class="don" href="faire-un-don1.html">FAIRE UN DON</a></li>
+            
+    </ul>
+</div>
+<!--Fin navigation_middle-->
+    <div id="navigation_bottom">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+<li class="first">
+            <a href="presentation-du-ghpsj.html">Qui sommes-nous ?</a><ul>
+<li><a class="MenuBarItemSubmenu" href="presentation-du-ghpsj.html">Présentation du GHPSJ</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="nos-missions-et-nos-valeurs.html">Nos missions et nos valeurs</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="ethique1.html">Ethique</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="chiffres-cles.html">Chiffres clés</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="rapport-annuel.html">Rapport annuel</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="conseil-dadministration.html">Organisation</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="demarche-qualite-gestion-des-risques.html">Démarche qualité gestion des risques</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="enquetes-et-questionnaires.html">Satisfaction patient</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="les-resultats-du-ghpsj.html">La lutte contre les infections nosocomiales</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="benevolat-au-ghpsj.html">Bénévolat au GHPSJ</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="nos-partenaires.html">Nos partenaires</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="historique.html">Historique</a></li>                        
+                        </ul>
+</li>
+<li class="first"><a class="classpipe">|</a></li>
+
+                        <li class="rub">
+            <a href="nos-specialites.html">Nos spécialités</a><ul>
+<li><a class="MenuBarItemSubmenu" href="anesthesie---reanimation-post-operatoire.html">Chirurgie</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="cardiologie2.html">Médecine</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="obstetrique-et-neonatalgie---maternite.html">Obstétrique et néonatalgie - Maternité</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="chirurgie-robotique1.html">Chirurgie robotique</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="http://www.hpsj.fr/oncologie---cancerologie.html">Oncologie - Cancérologie</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="urgences.html">Urgences</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="presentation1.html">Centre de la thyroïde</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="plateforme-de-reeducation.html">Plateforme de Rééducation</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="anatomie-et-cytologie-pathologiques.html">Plateaux techniques</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="departement-dinformation-medicale---dim.html">Autres</a></li>                        
+                        </ul>
+</li>
+<li class="rub"><a class="classpipe">|</a></li>
+
+                        <li class="rub">
+            <a href="recherche-et-ethique.html">Recherche et Innovation</a><ul>
+<li><a class="MenuBarItemSubmenu" href="recherche-et-ethique.html">Recherche et éthique</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="recherche-clinique.html">Recherche clinique</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="enseignement1.html">Enseignement</a></li>                        
+                        </ul>
+</li>
+<li class="rub"><a class="classpipe">|</a></li>
+
+                        <li class="rub">
+            <a href="gestion-des-carrieres.html">Carrières</a><ul>
+<li><a class="MenuBarItemSubmenu" href="gestion-des-carrieres.html">Gestion des carrières</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="rejoignez-nous.html">Rejoignez-nous</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="votre-integration.html">Votre intégration</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="formation1.html">Formation</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="prevention-des-risques-professionnels.html">Prévention des risques professionnels</a></li>                        
+                        </ul>
+</li>
+<li class="rub"><a class="classpipe">|</a></li>
+
+                        <li class="rub">
+            <a href="accueil-ifsi.html">IFSI</a><ul>
+<li><a class="MenuBarItemSubmenu" href="accueil-ifsi.html">Accueil IFSI</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="formation-infirmiere.html">Formations initiales - diplômes d'état</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="infirmier1.html">Concours</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="preparations-concours---formation-continue.html">Préparations concours - formation continue</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="vae-as-axp.html">VAE AS / AXP</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="erasmus.html">Erasmus</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="actualites2.html">Actualités</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="documents-a-telecharger.html">Documents à télécharger</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="la-taxe-dapprentissage.html">La taxe d'apprentissage</a></li>                        
+                        </ul>
+</li>
+<li class="rub"><a class="classpipe">|</a></li>
+
+                        <li class="last">
+            <a href="2013.html">Espace presse</a><ul>
+<li><a class="MenuBarItemSubmenu" href="2013.html">Communiqués de presse</a></li>                        
+                        <li><a class="MenuBarItemSubmenu" href="demande-de-tournage-interview1.html">Demande de tournage / interview</a></li>                        
+                        </ul>
+</li>
+<li class="last"><a class="classpipe"></a></li>
+
+            </ul>
+</div>
+<!--Fin #navigation_bottom-->
+
+</div>
+<!--Fin #header-->
+<div id="content">
+ <div id="ariane">
+
+    <ul>
+<li>
+<li class="first">
+<a href="accueil-ifsi.html">IFSI</a>  &gt;  </li>
+<li class="last">
+<a href="accueil-ifsi.html">Accueil IFSI</a> <img src="img/ariane_last.jpg">
+</li>
+</ul>
+</div>
+<!--Fin #ariane-->
+
+<div id="menu_fixe">
+<div id="haut_fixe">
+</div>
+            <div id="navigation">
+                <div id="titre_fixe"><h2>IFSI</h2></div>
+<!--Fin #titre_fixe-->
+<div id="centre_fixe">
+<ul class="menu">
+<li class="depli_acti">
+		 <a href="accueil-ifsi.html" class="MenuActif"><span>Accueil IFSI</span></a>
+		</li>
+
+	
+		<li class="">
+		 <a href="javascript:toggleMenu('__1551');" class="MenuActif"><span>Formations initiales - diplômes d'état</span></a>
+		</li>
+
+	                <li id="__1551" class="sousMenu" style="display:none;">
+<div class="cp"><ul class="sousmenu">
+<li class="depli ">
+		 <a href="formation-infirmiere.html"><span>Formation infirmière</span></a>
+		</li>
+
+	
+		<li class="depli ">
+		 <a href="formation-aide-soignante.html"><span>Formation aide soignante</span></a>
+		</li>
+
+	
+		<li class="depli ">
+		 <a href="formation-auxiliaire-de-puericulture.html"><span>Formation auxiliaire de puériculture</span></a>
+		</li>
+
+	</ul></div>
+                </li>
+        
+		<li class="">
+		 <a href="javascript:toggleMenu('__1558');" class="MenuActif"><span>Concours</span></a>
+		</li>
+
+	                <li id="__1558" class="sousMenu" style="display:none;">
+<div class="cp"><ul class="sousmenu">
+<li class="depli ">
+		 <a href="infirmier1.html"><span>Infirmier</span></a>
+		</li>
+
+	
+		<li class="depli ">
+		 <a href="aide-soignant1.html"><span>Aide soignant</span></a>
+		</li>
+
+	
+		<li class="depli ">
+		 <a href="auxiliaire-de-puericulture1.html"><span>Auxiliaire de puériculture</span></a>
+		</li>
+
+	</ul></div>
+                </li>
+        
+		<li class="depli ">
+		 <a href="preparations-concours---formation-continue.html" class="MenuActif"><span>Préparations concours - formation continue</span></a>
+		</li>
+
+	
+		<li class="depli ">
+		 <a href="vae-as-axp.html" class="MenuActif"><span>VAE AS / AXP</span></a>
+		</li>
+
+	
+		<li class="depli ">
+		 <a href="erasmus.html" class="MenuActif"><span>Erasmus</span></a>
+		</li>
+
+	
+		<li class="depli ">
+		 <a href="actualites2.html" class="MenuActif"><span>Actualités</span></a>
+		</li>
+
+	
+		<li class="depli ">
+		 <a href="documents-a-telecharger.html" class="MenuActif"><span>Documents à télécharger</span></a>
+		</li>
+
+	
+		<li class="">
+		 <a href="la-taxe-dapprentissage.html" class="MenuActif"><span>La taxe d'apprentissage</span></a>
+		</li>
+
+	                <li id="__1319" class="sousMenu" style="display:none;">
+<div class="cp"><ul class="sousmenu">
+<li class="depli ">
+		 <a href="fournisseurs-hopital.html"><span>Fournisseurs Hôpital</span></a>
+		</li>
+
+	</ul></div>
+                </li>
+        </ul>
+</div>
+<!--Fin #centre_fixe-->            </div>
+            <div id="bas_fixe"></div>
+<!--Fin #bas_fixe-->
+        </div>
+<!--Fin #menu_fixe-->
+
+<div id="centre_page">
+<img class="img_print" src="img/btn_imprimer.gif" title="Imprimer" alt="Imprimer" onclick="print_page(1318);"><div class="centre_page">
+<h1>IFSI : Accueil IFSI </h1>
+<div id="contenu_page">
+<p></p>
+<p> </p>
+<table width="620" cellspacing="1" cellpadding="1" border="0"><tbody>
+<tr nowrap>
+<td valign="top" nowrap>
+            <p style="font-size: 12px"><span style="color: rgb(233,128,18)"><strong>L' IFSI Paris Saint-Joseph </strong></span><strong><font color="#000000"><font face="Arial">- </font></font></strong><strong><font color="#003399"><a href="mailto:sifsi@hpsj.fr">sifsi@hpsj.fr</a></font></strong><font face="Arial"><strong><font size="2" style="font-size: 10pt"><br></font></strong></font></p>
+            </td>
+            <td rowspan="2" style="text-align: right">
+            <p style="text-align: left; font-size: 12px"><img border="0" alt="" src="/userfiles/GHPSJ/IMG/IFSI.gif"><br><br><br><span><a target="_blank" href="/userfiles/GHPSJ/IFSI/2012/Modele_livret_presentation_10102012.pdf">Catalogue de formation continue 2012/2013</a><br><br><strong>RESULTATS DEI - session juillet 2013</strong><br>
+            - <a target="_blank" href="/userfiles/GHPSJ/IFSI/2013/candidats%20admis.pdf">candidats admis</a><br>
+            - <a target="_blank" href="/userfiles/GHPSJ/IFSI/2013/affiche%20admis.pdf">affiche admis</a><br>
+            - <a target="_blank" href="/userfiles/GHPSJ/IFSI/2013/affiche%20ajourn%C3%A9s.pdf">affiche ajournés</a><br>
+            - <a target="_blank" href="/userfiles/GHPSJ/IFSI/2013/affiche%20non%20pr%C3%A9sent%C3%A9s.pdf">affiche non présentés</a><br>
+            - <a href="/userfiles/GHPSJ/IFSI/2013/Calendrier%20Evaluations%20session%20ao%C3%BBt%202013.pdf" target="_blank">Calendrier Evaluations session août 2013</a><br><br><a target="_blank" href="/userfiles/GHPSJ/IFSI/2013/concours_deas_deap_17052013.pdf"><strong>Résultats d'admission, DEAS-DEAP - liste 2</strong></a><br><br><strong>Résultats du concours infirmier 2013 <br></strong>- <a target="_blank" href="/userfiles/GHPSJ/IFSI/2013/inf/Proces-verbal_2013_Quotas.pdf">Procès verbal 2013 - quotas</a><br>
+            - <a target="_blank" href="/userfiles/GHPSJ/IFSI/2013/inf/L1LP2.pdf">Reçus L1LP - candidats bacheliers en liste principale</a><br>
+            - <a target="_blank" href="/userfiles/GHPSJ/IFSI/2013/inf/L1LC2.pdf">Reçus L1LC - candidats bacheliers en liste complémentaire</a><br>
+            - <a target="_blank" href="/userfiles/GHPSJ/IFSI/2013/inf/L4LP.pdf">Reçus L4LP - candidats PACES en liste principale</a></span></p>
+            </td>
+        </tr>
+<tr>
+<td valign="top">
+            <p style="font-size: 12px"><strong><font size="2" style="font-size: 10pt">Adresse postale : </font></strong><br>
+            185 rue Raymond Losserand<font style="font-size: 10pt"> - 75014 Paris<br>
+            Tél : 01 44 12 35 23 - Fax : 01 44 12 82 43<br><br><strong>Entrée de l'IFSI : </strong><br>
+            96, rue Didot 75014 Paris<br>
+            Métro Plaisance - Tramway Didot.</font><a target="_blank" href="/userfiles/GHPSJ/IFSI/Informations/ref%20de%20formation%20ANN%0A%20%20%20%20%20%20%20%20%20%20%20%20III68.pdf"><br><br><br></a></p>
+            <p style="font-size: 12px"> <a href="http://www.hpsj.fr/actualites2.html"><strong><img width="131" height="46" border="0" alt="" src="/userfiles/GHPSJ/IFSI/2012/idf.jpg"></strong><strong><img width="102" height="81" border="0" alt="" src="/userfiles/GHPSJ/IFSI/2012/logo%20europe.jpg"></strong></a></p>
+            <p style="font-size: 12px"><a href="javascript:location.href='mailto:'+String.fromCharCode(82,101,108,97,116,105,111,110,115,45,105,110,116,101,114,110,97,116,105,111,110,97,108,101,115,45,73,70,83,73,64,104,112,115,106,46,102,114,32)+'?'">Service des relations internationales de l'IFSI</a></p>
+            </td>
+        </tr>
+<tr>
+<td valign="top" colspan="2">
+            <p style="font-size: 12px">Les résultats d'admission seront envoyés par voie postale à tous les candidats.<br><br>
+            A partir du 12/07/2013, les candidats admis, ayant confirmé leur inscription par écrit, recevront par voie postale leur dossier d'inscription en formation. Il sera à compléter et à rendre le 28/08/2013 - 13h00, date de la pré-rentrée administrative (obligatoire - sauf dérogation médicale). La rentrée scolaire aura lieu le 2 septembre 2013.<br><br>
+            A partir du 16/07/2013, les candidats de la liste complémentaire qui ne seront pas affectés peuvent s'inscrire dans un autre IFSI. L'ARS d'Ile de France met à disposition un site afin de faciliter la gestion des listes complémentaires : <a target="_blank" href="http://www.ars.iledefrance.sante.fr">www.ars.iledefrance.sante.fr</a></p>
+            </td>
+        </tr>
+</tbody></table>
+<p style="font-size: 12px"><iframe width="560" height="315" frameborder="0" src="http://www.youtube.com/embed/zKMuYpg2YkU" allowfullscreen=""></iframe><br><br>
+L'IFSI est situé dans le sud ouest de Paris Intra Muros, dans un campus arboré dans des locaux neufs et spacieux, particulièrement propices à la formation : 1 amphithéâtre, 8 salles de cours, 2 salles de pratiques et bénéficie de :</p>
+<table width="620" cellspacing="0" cellpadding="0" border="0"><tbody>
+<tr valign="top">
+<td>
+            <p style="font-size: 12px">-</p>
+            </td>
+            <td>
+            <p style="font-size: 12px">Son  adossement au Groupe hospitalier Paris saint Joseph permettant la participation des experts du terrain aux enseignements, la disposition de terrains de stages variés et pointus, un travail de proximité des tuteurs avec l&#8217;IFSI, des allocations étude en troisième année,des offres d&#8217;emploi variés aux  des jeunes diplômés,</p>
+            </td>
+        </tr>
+<tr valign="top">
+<td>
+            <p style="font-size: 12px">-</p>
+            </td>
+            <td>
+            <p style="font-size: 12px">500 services d&#8217;accueil de stage Paris intra Muros et Petite couronne</p>
+            </td>
+        </tr>
+<tr valign="top">
+<td>
+            <p style="font-size: 12px">-</p>
+            </td>
+            <td>
+            <p style="font-size: 12px">une équipe pédagogique dynamique constituée de 19 cadres formateurs, de formation infirmière assurent sous la responsabilité de la directrice et de la directrice adjointe : l&#8217;organisation de la formation, les suivis pédagogiques et de stage, l&#8217;encadrement pédagogique, les enseignements spécifiques</p>
+            </td>
+        </tr>
+<tr valign="top">
+<td>
+            <p style="font-size: 12px">-</p>
+            </td>
+            <td>
+            <p style="font-size: 12px">une équipe administrative réactive composée de  4 assistantes de gestion administrative  qui assurent, sous la responsabilité de la directrice, le suivi des dossiers administratifs et financiers, le suivi des étudiants quant au financement de leurs études, les processus administratifs de sélection et de certification. 2 agents d&#8217;accueil qui assurent l&#8217;accueil et l&#8217;orientation physique et téléphonique, la maintenance des locaux et du matériel pédagogique</p>
+            </td>
+        </tr>
+<tr valign="top">
+<td>
+            <p style="font-size: 12px">-</p>
+            </td>
+            <td>
+            <p style="font-size: 12px">Le matériel pédagogique et de travaux pratiques fait l'objet d'un plan annuel de maintenance et de renouvellement afin que les étudiants, les formateurs disposent des conditions d'apprentissage et de travail les plus performantes.</p>
+            </td>
+        </tr>
+</tbody></table>
+<p style="font-size: 12px"><br>
+L'institut de formation en soins infirmiers Paris Saint-Joseph propose la formation initiale aux diplômes d'état<span style="font-weight: bold"> : </span></p>
+<table width="300" cellspacing="0" cellpadding="0" border="0"><tbody>
+<tr valign="top">
+<td>
+            <p style="font-size: 12px"><span style="color: rgb(233,128,18)"><strong><span style="font-weight: bold">&#8226;</span></strong></span></p>
+            </td>
+            <td>
+            <p style="font-size: 12px">d'infirmiers ID (quotas de 120), <strong><br></strong></p>
+            </td>
+        </tr>
+<tr valign="top">
+<td>
+            <p style="font-size: 12px"><span style="color: rgb(233,128,18)"><strong><span style="font-weight: bold">&#8226;</span></strong></span></p>
+            </td>
+            <td>
+            <p style="font-size: 12px">d'auxiliaires de puériculture (35 élèves),<strong><br></strong></p>
+            </td>
+        </tr>
+<tr valign="top">
+<td>
+            <p style="font-size: 12px"><span style="color: rgb(233,128,18)"><strong><span style="font-weight: bold">&#8226;</span></strong></span></p>
+            </td>
+            <td>
+            <p style="font-size: 12px">d'aides-soignants (60 élèves).<strong><br></strong></p>
+            </td>
+        </tr>
+</tbody></table>
+<p style="font-size: 12px"><br>
+Il propose par ailleurs :</p>
+<table width="620" cellspacing="0" cellpadding="0" border="0"><tbody>
+<tr valign="top">
+<td>
+            <p style="font-size: 12px"><span style="color: rgb(233,128,18)"><strong><span style="font-weight: bold">&#8226;</span></strong></span></p>
+            </td>
+            <td>
+            <p style="font-size: 12px">La formation continue pour des stagiaires en cycle de préparation aux concours d'entrée (30 prépas IDE et 20 prépas AS-AP),<strong> </strong></p>
+            </td>
+        </tr>
+<tr valign="top">
+<td>
+            <p style="font-size: 12px"><span style="color: rgb(233,128,18)"><strong><span style="font-weight: bold">&#8226;</span></strong></span></p>
+            </td>
+            <td>
+            <p style="font-size: 12px">Des sessions de VAE aide-soignantes,<strong> </strong></p>
+            </td>
+        </tr>
+<tr valign="top">
+<td>
+            <p style="font-size: 12px"><span style="color: rgb(233,128,18)"><strong><span style="font-weight: bold">&#8226;</span></strong></span></p>
+            </td>
+            <td>
+            <p style="font-size: 12px">Des sessions de formation continue pour les professionnels : formation au tutorat des stagiaires étudiants infirmiers ; responsabilité professionnelle<strong> </strong></p>
+            </td>
+        </tr>
+</tbody></table>
+<p style="font-size: 12px"><br>
+L'équipe pédagogique est dynamique, engagée dans une réflexion sur le projet d'établissement dans le cadre de la démarche d'amélioration continue de la qualité de l'IFSI.<br>
+L'équipe d'accueil et de secrétariat est particulièrement attentive à chercher avec les étudiants les modalités de prise en charge financières de leur formation.<br>
+La qualité des intervenants et des stages est évaluée et réajustée en cas de nécessité.<br>
+L'encadrement en stage fait l'objet d'une attention toute particulière.<br>
+ </p>
+<p style="font-size: 12px"><span style="color: rgb(233,128,18)">&#9658;</span> <a target="_blank" href="/userfiles/GHPSJ/IFSI/2013/LES%20FRAIS%20DE%20FORMATION%20ET%20LES%20AIDES%20A%20LA%20SCOLARITE%202013-2014.pdf">Frais de formation pour les étudiants</a><br><span style="color: rgb(233,128,18)">&#9658;</span> <a target="_blank" href="/userfiles/GHPSJ/IFSI/2013/LA%20LOCATION%20ETUDIANTE%202013-2014.pdf"><span style="text-decoration: underline">La location étudiante</span></a><span style="color: rgb(233,128,18)"><br></span><span style="color: rgb(233,128,18)">&#9658;</span> <a target="_blank" href="/userfiles/GHPSJ/IFSI/2013/Projet%20Etablissement%20IFSI%20PSJ%202013-2016%20V3%202013%2007%2014.pdf">Projet pédagogique</a><span style="color: rgb(233,128,18)"><br></span><span style="color: rgb(233,128,18)">&#9658;</span> <a target="_blank" href="/userfiles/GHPSJ/IFSI/2013/Page%20de%20garde%20Projet%20Etablissement%20IFSIPSJ%202013%202016.pdf">Page de garde du projet pédagogique</a><span style="color: rgb(233,128,18)"><br></span><span style="color: rgb(233,128,18)">&#9658;</span> <a target="_blank" href="/userfiles/GHPSJ/IFSI/2013/Planif%20iFSI%20sept%202013-sept%202014%20def%20etudiants.pdf">Planification d'année 2013-2014</a><span style="color: rgb(233,128,18)"><br></span></p>
+<p style="font-size: 12px"><em><strong><br>
+Mise à jour : juillet 2013</strong></em><strong><br></strong> </p>
+<p style="font-size: 12px"><span style="color: rgb(233,128,18)"><br></span></p> </div>
+</div>
+</div>
+<!--Fin #centre_page-->
+
+
+</div>
+<!--Fin #content-->
+
+</div>
+<!--Fin #global-->
+
+<div id="footer" class="">
+<div class="footer_links">
+<ul>
+<li>
+        <a href="contact2.html">Contact</a>        </li>
+<li class="first">|</li>
+                
+        <li>
+        <a href="mentions-legales.html">Mentions Légales</a>        </li>
+<li class="rub">|</li>
+                
+        <li>
+        <a href="plan-du-site.html">Plan du site</a>        </li>
+<li class="rub">|</li>
+                
+        <li>
+        <a href="liens.html">Liens</a>        </li>
+<li class="rub">|</li>
+                
+        <li>
+        <a href="venir-a-lhopital2.html">Venir à l'hôpital</a>        </li>
+<li class="last">|</li>
+            <li class="rub">|</li>
+                
+        <li>
+       <a href="http://www.hpsj.fr/hopital-paris-plan.html">Hôpital Saint Joseph</a> </li>
+       <li class="rub">|</li>
+        <li>
+       <a href="https://www.facebook.com/pages/Groupe-hospitalier-Paris-Saint-Joseph/116755031716483" target="_blank" style="background-image:url(../img/facebook.gif); background-repeat:no-repeat;height:20px;line-height:20px;padding-left:20px; background-position:0 -1px ; ">Suivez-nous sur Facebook</a>
+</li>
+       
+
+<li class="last">|</li>
+      
+</ul>
+</div>
+<!--Fin #footer_links-->
+</div>
+<!--Fin #footer-->
+<script type="text/javascript">
+<!--
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1");
+swfobject.registerObject("FlashID");
+
+function print_page(id)
+{
+	window.open('inc/print.php?fileId='+id,'Impression','height=800, width=745, toolbar=no, menubar=no, scrollbars=yes, resizable=yes, location=no, directories=no, status=no');
+}
+
+//-->
+</script><script id="tg_passage_cybercite" type="text/javascript" src="http://tracking.veille-referencement.com/TAG/TAG_passage.js?idsite=6430"></script>
+</body>
+</html>

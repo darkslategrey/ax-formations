@@ -1,0 +1,10 @@
+class AddColumnDest < ActiveRecord::Migration
+
+  def up
+    add_column :formations, :logo, :string
+  end
+
+  def down
+    drop_column :formations, :dest
+  end
+end

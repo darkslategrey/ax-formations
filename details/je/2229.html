@@ -1,0 +1,257 @@
+<html>
+<head>
+<title>Centre Hospitalier - Rodez : Accueil</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="print.css" rel="stylesheet" type="text/css" media="print">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+function afficherAmi(){
+	if(document.getElementById('ami').style.display == 'block'){
+		document.getElementById('ami').style.display = 'none';
+	}
+	else {
+		document.getElementById('ami').style.display = 'block'
+	}
+}
+</script>
+</head>
+<body bgcolor="#39526F">
+<table align="center" border="0" cellspacing="0" cellpadding="0"><tr>
+<td width="9" height="100%" align="right"><img width="9" height="100%" border="0" src="img/ombre.png" style="behavior:url(pngbehavior.htc);" alt=""></td>
+    <td> 
+      <table width="20" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><div id="header">						<script type="text/javascript" src="admin/js/flash.js"></script><script type="text/javascript" src="admin/js/javascript.inc.js"></script><script type="text/javascript" src="ajax.js"></script><script type="text/javascript">
+			function email(act,id){
+				        var arguments = "";
+				        var email = document.getElementById('email'+id).value;
+
+				        arguments = "email="+email;
+
+				        document.getElementById('email').value = 'Votre Email ici';
+				        if (act != 'ajout'){
+					          // on effectue la requete vers la base de donnee avec xmlhttprequest
+					          action2("newsletter.php?action="+act,"POST",arguments);
+				        }
+				        else {
+					          // on effectue la requete vers la base de donnee avec xmlhttprequest
+					          action("newsletter.php?action=ajouter","POST",arguments);
+				        }
+			}
+			</script><table width="20" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="8">
+
+            <!-- MENU FLASH -->
+            <script type="text/javascript" src="swfobject.js"></script><div id="topFlashMenuContent">
+						</div>
+						<script type="text/javascript">
+						var so = new SWFObject("menu.swf", "topFlashMenu", "957px", "50px", "7");
+						so.write("topFlashMenuContent");
+						</script><noscript>
+							<div style="background-color:#9FABC3; border:1px solid #8E93B9; color:white;">
+								<strong>
+								<a href="accueil_centre_hospitalier_rodez.php" class="menuprincipal">Accueil</a> <a href="contact_centre_hospitalier_rodez.php" class="menuprincipal">Contact et accès</a> <a href="info_centre_hospitalier_rodez.php" class="menuprincipal">Présentation</a> <a href="offredesoin_centre_hospitalier_rodez.php" class="menuprincipal">Offre de soins</a> <a href="patient_centre_hospitalier_rodez.php" class="menuprincipal">Espace patient</a> <a href="professionnel_centre_hospitalier_rodez.php" class="menuprincipal">Espace pro</a> <a href="formation_centre_hospitalier_rodez.php" class="menuprincipal">Formations et recrutement</a> <a href="appeloffre_centre_hospitalier_rodez.php" class="menuprincipal">Espace fournisseurs</a> <a href="ifsi_centre_hospitalier_rodez.php" class="menuprincipal">IFSI</a> <a href="radiotherapie_centre_hospitalier_rodez.php" class="menuprincipal">Radiothérapie</a> <a href="mentions_legales_centre_hospitalier_rodez.php" class="menuprincipal">Mentions Légales</a> 								</strong>
+							</div>
+						</noscript>
+            <!-- MENU FLASH (fin) -->
+
+					</td>
+        </tr>
+<tr>
+<td colspan="8"><img src="img/bandeau/bandeau_01.jpg" width="957" height="185" alt=""></td>
+		</tr>
+<tr>
+<td width="107" style="padding-left:40px;background-image:url(img/bouton_hopital.gif);" class="textblancarial10">
+					<div id="urg" class="menublanc">URGENCES<br> VITALES</div>
+			<font class="menujaune">appelez le 15</font>
+				  </td>
+				  				  <td width="135" style="padding-left:30px;cursor:pointer;background-image:url(img/btn_personnes_age.gif);" class="textblancarial10" onclick="location.href ='personnes_agees_centre_hospitalier_rodez.php?id=9';" onmouseover="document.getElementById('pers').className = 'menujaune'" onmouseout="document.getElementById('pers').className = 'menublanc'">
+            <div id="pers" class="menublanc">PERSONNES AGEES</div>
+				    découvrez nos sites spécialisés
+          </td>
+					<td width="121" style="padding-left:30px;cursor:pointer;background-image:url(img/btn_IFSI.gif);" class="textbleuarial9" onclick="location.href ='ifsi_centre_hospitalier_rodez.php?id=10';" onmouseover="document.getElementById('ifsi').className = 'menubleu'" onmouseout="document.getElementById('ifsi').className = 'menubleu'">
+            <div id="ifsi" class="menubleu">IFSI</div>
+				    Institut de Formation en Soins Infirmiers
+          </td>
+				  <td><img align="middle" src="img/separation_bandeau_bas.jpg" alt=""></td>
+
+		  <td align="right" valign="middle" width="580" style="background-image:url(img/fond_bandeau_bas.gif);">
+			<form name="recherche" method="post" action="recherche.php" style="margin:0px;padding:0px;">
+					  <table cellpadding="0" cellspacing="0"><tr>
+<td><img src="img/loupe.gif" width="35" height="34" alt=""></td>
+						    <td class="textblancarial12">
+						         Rechercher sur le site :  <input name="key" type="text" class="bandeau" onfocus="if(this.value == 'Entrer un mot clé'){ this.value = '' }" onblur="if(this.value == ''){ this.value = 'Entrer un mot clé' }" value="Entrer un mot clé" size="25"><input name="go" type="submit" id="go" class="button" value="Go">        
+						    </td>
+					    </tr></table>
+</form>
+			    </td>
+
+                  </tr>
+</table>
+<div id="calqueNewsletter" class="calqueNewsletter" onclick="document.getElementById('calqueNewsletter').style.display='none'"></div>
+</div></td>
+        </tr>
+<tr>
+<td>
+		  <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color:#9FABC3"><tr>
+<td width="280" valign="top" style="background-color:rgb(235,238,255);padding:3px;">
+				<div id="contenu1">
+				<img src="img/titre_Actualite.gif" width="242" height="44" alt=""><br><table width="100%" border="0" cellpadding="0" cellspacing="0" class="titrerubrique">
+<tr valign="top" style="background-color:#E1E5FF;">
+<td>
+					  <img src="img/icone_Trombone.gif" width="17" height="17" align="middle" alt="">
+</td>
+					  <td align="left" valign="middle" class="titrearticle" width="100%" style="padding-left:3px">
+					  Unité de consultation et de soins ambulatoires : la santé des personnes détenues					  </td>
+                    </tr>
+<tr>
+<td valign="top" class="datearticle2" style="padding-left:20px;" colspan="2">
+					                         Publiée le 30-07-2013</td>
+                    </tr>
+<tr>
+<td colspan="2" valign="top" class="texteactu" style="padding-bottom:10px;padding-left:20px;padding-right:10px;">
+					  Le transfert des détenus vers la nouvelle maison d'arrêt de Druelle, effectué le 25 juin dernier, est l'occasion d'attirer l'attention sur une des facettes souvent méconnue de la vie hospitalière : la santé en milieu pénitentiaire. ...
+					  <span class="lirelasuite">
+					  <img src="admin/img/flechedroite.gif" width="9" height="9" border="0" align="middle" alt="">
+					   <a href="actualite.php?id=11&amp;idactu=98" class="lienactu">Lire la suite</a></span>
+</td>
+
+                    </tr>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="titrerubrique">
+<tr valign="top" style="background-color:#E1E5FF;">
+<td>
+					  <img src="img/icone_Trombone.gif" width="17" height="17" align="middle" alt="">
+</td>
+					  <td align="left" valign="middle" class="titrearticle" width="100%" style="padding-left:3px">
+					  L'Education Thérapeutique du Patient au centre hospitalier de Rodez					  </td>
+                    </tr>
+<tr>
+<td valign="top" class="datearticle2" style="padding-left:20px;" colspan="2">
+					                         Publiée le 30-07-2013</td>
+                    </tr>
+<tr>
+<td colspan="2" valign="top" class="texteactu" style="padding-bottom:10px;padding-left:20px;padding-right:10px;">
+					  Dans le cadre de leurs missions, les centres hospitaliers peuvent conduire des programmes d'éducation thérapeutique du patient. Ces programmes ont pour objectif de rendre le patient plus autonome en facilitant son adhésion aux traitements prescrits ...
+					  <span class="lirelasuite">
+					  <img src="admin/img/flechedroite.gif" width="9" height="9" border="0" align="middle" alt="">
+					   <a href="actualite.php?id=11&amp;idactu=99" class="lienactu">Lire la suite</a></span>
+</td>
+
+                    </tr>
+</table>
+<a href="actualite_archive_centre_hospitalier_rodez.php?id=11" class="sousrub"><img src="admin/images/ui/query.png" width="16" height="16" border="0" align="middle" alt=""> Toutes les archives</a> 
+                  				  </div>
+              </td>
+			  
+                <td width="470" align="center" valign="top" bgcolor="#FFFFFF"> 
+				<div align="left" style="margin-right:5px;margin-left:20px;">
+				  <form method="post" name="form1" action="?">
+				  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><!--<img src="img/Editorial.gif" width="123" height="44" alt="">--></td>
+					  <td align="right" style="padding-right:20px;">					  
+					  <a href="javascript:window.print()"><img src="img/Icone_Print.gif" alt="Imprimer cet article" width="20" height="20" align="middle" border="0"></a>
+					  <a onclick="afficherAmi()" style="cursor:pointer"><img src="img/Icone_Mail.gif" alt="Recommander cet article à un ami" width="20" height="20" align="middle" border="0"></a>
+					  
+					  <div id="ami">
+						<input name="emailAmi" type="text" class="chptext" onfocus="this.style.backgroundColor='InfoBackground';" onblur="this.style.backgroundColor='White';" value="E-mail du destinataire" onclick="this.value=''"><br><textarea name="message" cols="50" rows="4" onfocus="this.style.backgroundColor='InfoBackground';this.value=''" onblur="this.style.backgroundColor='White';" onclick="this.value=''">Vous pouvez ajouter un message...</textarea><input type="button" name="annulerAmi" value="Annuler" class="bouton" onclick="javascript:document.getElementById('ami').style.display = 'none';"><input type="submit" name="envoyerAmi" value="Envoyer" class="bouton">
+</div>
+
+					  </td>
+                    </tr>
+<tr>
+<td>
+					</td>
+					</tr>
+</table>
+</form>
+										
+									                  <table border="0" cellpadding="0" cellspacing="0" class="titrerubrique"><tr>
+<td valign="top" class="texterubrique" style="padding-left:0px;padding-right:20px;padding-bottom:5px">
+												<p _fckxhtmljob="2"><font color="#003366" size="2" _fckxhtmljob="2"><strong _fckxhtmljob="2">Pour accéder aux numeros téléphoniques des secrétariats du Centre hospitalier Jacques PUEL cliquez sur les liens ci-dessous :</strong></font></p>
+<p _fckxhtmljob="2"><font color="#ffffff" _fckxhtmljob="2">'</font></p>
+<p _fckxhtmljob="2"><a href="/admin/medias/File/Maquette%20Burlat%20double%20page%201-2012.pdf" target="_blank" _fcksavedurl="/admin/medias/File/Maquette Burlat double page 1-2012.pdf"><strong><font color="#ff6600">Page 1</font></strong></a></p>
+<p _fckxhtmljob="2"><a href="/admin/medias/File/Maquette%20Burlat%20double%20page%202-2012.pdf" target="_blank" _fcksavedurl="/admin/medias/File/Maquette Burlat double page 2-2012.pdf"><font color="#ff6600"><strong>Page 2</strong></font></a></p>												</td>
+                      </tr></table>
+<div style="margin-top:10px;"></div>
+									 									 <table border="0" cellpadding="0" cellspacing="0" class="titrerubrique">
+<tr>
+<td style="height:1px; background-color:#9FABC3;"></td>
+											</tr>
+<tr><td style="height:10px;"> </td></tr>
+<tr>
+<td valign="top" class="texterubrique" style="padding-left:0px;padding-right:20px;padding-bottom:5px">
+												<p align="center" _fckxhtmljob="1"><font color="#ff6600" size="5" _fckxhtmljob="1"><strong _fckxhtmljob="1"><font size="4" _fckxhtmljob="1">PROJET MEDICAL COMMUN <br _fckxhtmljob="1"><br _fckxhtmljob="1">entre les centres hospitaliers de VILLEFRANCHE-DE-ROUERGUE et de RODEZ <br _fckxhtmljob="1"></font><br _fckxhtmljob="1"><font color="#003366" size="2" _fckxhtmljob="1">Les deux centres hospitaliers de VILLEFRANCHE-DE-ROUERGUE et de RODEZ sont placés dans le même territoire de santé, le département de l'Aveyron. Ils développent chacun une attractivité spécifique, non-concurrentielle entre eux, et allant : <br _fckxhtmljob="1"><br _fckxhtmljob="1">- au centre hospitalier de VILLEFRANCHE-DE-ROUERGUE : au delà du territoire, vers le Lot et le Tarn-et-Garonne, pour 25 % de son activité. <br _fckxhtmljob="1"><br _fckxhtmljob="1">- au centre hospitalier de RODEZ : surtout sur la partie Nord et Centre du territoire, et au delà, vers le Lot, le Cantal, la Lozère et le Sud Aveyron pour quelques spécialités. <br _fckxhtmljob="1"><br _fckxhtmljob="1">Eloignés de tout centre hospitalier universitaire, ils constituent un pôle d'équilibre dans l'offre de soins de proximité et de recours pour le Nord de la région Midi-Pyrénées. <br _fckxhtmljob="1"><br _fckxhtmljob="1">Les deux établissements publics de santé sont confrontés à des difficultés de recrutement médical et à des fuites non-négligeables de patients vers d'autres structures de soins. <br _fckxhtmljob="1"><br _fckxhtmljob="1">Dans le cadre de la mise en oeuvre du programme régional de santé, arrêté le 18 décembre 2012, les deux centres hospitaliers proposent de mettre en oeuvre une stratégie commune, en établissant des synergies entre eux, dans le respect de l'identité de chacun, avec pour objectifs : <br _fckxhtmljob="1"><br _fckxhtmljob="1">- de maintenir et d'améliorer l'offre de soins du territoire <br _fckxhtmljob="1">- de favoriser le recrutement médical <br _fckxhtmljob="1">- d'assurer l'efficience des organisations <br _fckxhtmljob="1">- de sécuriser et de favoriser l'excellence des pratiques professionnelles <br _fckxhtmljob="1"><br _fckxhtmljob="1">Pour décliner concrètement ces objectifs, les deux établissements ont élaboré un projet médical commun sur les activités qui nécessitent en priorité une approche d'évolution concertée, dans trois domaines : <br _fckxhtmljob="1"><br _fckxhtmljob="1">- la cancérologie (4 activités) <br _fckxhtmljob="1">- les urgences et les soins lourds (2 activités) <br _fckxhtmljob="1">- certaines spécialités médicales (3 activités) <br _fckxhtmljob="1"><br _fckxhtmljob="1">Ils les déclinent en 5 conventions opérationnelles : <br _fckxhtmljob="1"><br _fckxhtmljob="1">- chirurgie urologique des cancers <br _fckxhtmljob="1">- chirurgie gynécologique des cancers <br _fckxhtmljob="1">- activités de cancérologie <br _fckxhtmljob="1">- réanimation et soins continus <br _fckxhtmljob="1">- diabétologie-endocrinologie-nutrition <br _fckxhtmljob="1"><br _fckxhtmljob="1">Elles représentent autant d'équipes territoriales dans l'immédiat (oncologie, gynécologie des cancers, urologie, diabétologie-endocrinologie). La notion « d'équipe territoriale » se définit comme une équipe de médecins hospitaliers (de tous statuts) de même spécialité oeuvrant sur les deux établissements. <br _fckxhtmljob="1"><br _fckxhtmljob="1">Une 6ème convention (maladies infectieuses et tropicales) devrait pouvoir être finalisée prochainement. <br _fckxhtmljob="1"><br _fckxhtmljob="1">Au delà de ces conventions, les deux centres hospitaliers proposent d'élaborer des projets communs dès cette année 2013, dans trois autres activités : <br _fckxhtmljob="1"><br _fckxhtmljob="1">- anatomocytopathologie <br _fckxhtmljob="1">- cardiologie : rythmologie et angioplastie <br _fckxhtmljob="1">- dialyse rénale <br _fckxhtmljob="1"><br _fckxhtmljob="1">En signant ensemble le projet médical commun et 5 conventions de mise en oeuvre, les directeurs et présidents de commission médicale montrent que la synergie des deux centres hospitaliers sécurise et améliore l'offre de soins sur le territoire de santé. </font></strong></font></p>
+<p><font color="#ff6600" size="5" _fckxhtmljob="1"><strong _fckxhtmljob="1"><font color="#003366" size="2" _fckxhtmljob="1"></font></strong></font> </p>
+<p><font color="#ff6600" size="5" _fckxhtmljob="1"><strong _fckxhtmljob="1"><font color="#003366" size="2" _fckxhtmljob="1"></font></strong></font> </p>
+<p align="center"><font color="#ff6600" size="5" _fckxhtmljob="1"><strong _fckxhtmljob="1"><font color="#003366" size="2" _fckxhtmljob="1"><img style="WIDTH: 215px; HEIGHT: 150px" src="/admin/medias/Image/cooperation.jpg" width="150" height="111" _fcksavedurl="/admin/medias/Image/cooperation.jpg"></font></strong></font></p>
+<p align="center" _fckxhtmljob="1"><br _fckxhtmljob="1"></p>
+<p align="left" _fckxhtmljob="1"><font color="#ff6600" _fckxhtmljob="1"><strong _fckxhtmljob="1"></strong></font></p>												</td>
+                      </tr>
+</table>
+<div style="margin-top:10px;"></div>
+									                 </div>
+</td>
+                <td width="240" valign="top"> 
+				<div id="contenu2">
+                  <table align="right" width="238" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="admin/medias/miniature_DSC_0027.jpg" width="63" height="63" alt=""></td>
+					  <td width="180" style="background-image:url(img/case_01.gif);">
+					  <div class="cible">Les numéros d'appel utiles</div>  <a class="cible" href="patient_centre_hospitalier_rodez.php?id=2&amp;srub=48">Cliquez ici</a>
+					  </td>
+                    </tr>
+<tr>
+<td><img src="admin/medias/miniature_radioth.jpg" width="63" height="63" alt=""></td>
+					  <td width="180" style="background-image:url(img/case_01.gif);">
+					  <div class="cible">Zoom sur l'activité de Cancérologie</div>  <a class="cible" href="radiotherapie_centre_hospitalier_rodez.php?id=11">Cliquez ici</a>
+					  </td>
+                    </tr>
+<tr>
+<td><img src="admin/medias/miniature_vasculaire.jpg" width="63" height="63" alt=""></td>
+					  <td width="180" style="background-image:url(img/case_01.gif);">
+					  <div class="cible">Zoom sur l'Unité de Surveillance Continue Vasculaire</div>  <a class="cible" href="http://www.ch-rodez.fr/specialite_centre_hospitalier_rodez.php?id=8&amp;alpha=u&amp;idspecialite=41&amp;recherche=3">Cliquez ici</a>
+					  </td>
+                    </tr>
+<tr>
+<td><img src="admin/medias/miniature_radio.jpg" width="63" height="63" alt=""></td>
+					  <td width="180" style="background-image:url(img/case_01.gif);">
+					  <div class="cible">Zoom sur le plateau d'Imagerie Médicale</div>  <a class="cible" href="http://www.ch-rodez.fr/specialite_centre_hospitalier_rodez.php?id=8&amp;alpha=9&amp;idspecialite=42&amp;recherche=2">Cliquez ici</a>
+					  </td>
+                    </tr>
+<tr>
+<td><img src="admin/medias/miniature_P4150001.JPG" width="63" height="63" alt=""></td>
+					  <td width="180" style="background-image:url(img/case_01.gif);">
+					  <div class="cible">Zoom sur l'activité d'hémodialyse</div>  <a class="cible" href="http://www.ch-rodez.fr/specialite_centre_hospitalier_rodez.php?id=8&amp;alpha=h&amp;idspecialite=26&amp;recherche=3">Cliquez ici</a>
+					  </td>
+                    </tr>
+<tr>
+<td><img src="admin/medias/miniature_diabetol.JPG" width="63" height="63" alt=""></td>
+					  <td width="180" style="background-image:url(img/case_01.gif);">
+					  <div class="cible">Zoom sur l'activite de diabetologie</div>  <a class="cible" href="http://www.ch-rodez.fr/specialite_centre_hospitalier_rodez.php?id=8&amp;alpha=l&amp;idspecialite=43&amp;recherche=3">Cliquez ici</a>
+					  </td>
+                    </tr>
+<tr>
+<td colspan="2">
+												</td>
+				   </tr>
+</table>
+</div>
+                </td>
+              </tr></table>
+</td>
+        </tr>
+<tr>
+<td><div id="footer"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td height="40" align="center" style="background-image:url(img/fond_bandeau_bas.gif);">
+<a href="accueil_centre_hospitalier_rodez.php?id=1" class="menufooter">Accueil</a>  <a href="contact_centre_hospitalier_rodez.php?id=7" class="menufooter">Contact et accès</a>  <a href="info_centre_hospitalier_rodez.php?id=4" class="menufooter">Présentation</a>  <a href="offredesoin_centre_hospitalier_rodez.php?id=8" class="menufooter">Offre de soins</a>  <a href="patient_centre_hospitalier_rodez.php?id=2" class="menufooter">Espace patient</a>  <a href="professionnel_centre_hospitalier_rodez.php?id=3" class="menufooter">Espace pro</a>  <a href="formation_centre_hospitalier_rodez.php?id=5" class="menufooter">Formations et recrutement</a>  <a href="appeloffre_centre_hospitalier_rodez.php?id=6" class="menufooter">Espace fournisseurs</a>    <a href="plan_centre_hospitalier_rodez.php" class="menufooter">Plan du site</a>
+  <a href="mentions_legales_centre_hospitalier_rodez.php" class="menufooter">Mentions légales</a>
+</td></tr></table></div></td>
+        </tr>
+</table>
+</td>
+	<td width="9" height="100%" align="left"><img width="9" height="100%" border="0" src="img/ombre02.png" style="behavior:url(pngbehavior.htc);" alt=""></td>
+  </tr></table>
+</body>
+</html>

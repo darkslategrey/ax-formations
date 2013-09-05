@@ -40,4 +40,8 @@ namespace :db do
 
 end
 
+desc "Console"
+task :console do
+  `pry -r './console.rb'`
+end
 

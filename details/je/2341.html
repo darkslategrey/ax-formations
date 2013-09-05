@@ -1,0 +1,428 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-language" content="fr">
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="content-script-type" content="text/javascript">
+<meta http-equiv="imagetoolbar" content="no">
+<title>La MFR de Châteauneuf sur Isère Maison Familiale Rurale </title>
+<meta name="Keywords" content="MFR, maison, familiale, rurale, bac Pro, bepa, cap, alternance, apprentissage, services, services aux personnes, territoires, école, petite enfance, formation, adulte, CFA, économie sociale et familiale, association,  éducation                    ">
+<meta name="Description" content="L'originalité de notre Maison Familiale repose sur trois critères :
+1. Enseignement basé sur la pédagogie de l'alternance entre l'école et l'entreprise.
+2. Association loi 1901 constituée de parents d'élèves, de maîtres de stage.... qui pilote l'établissement.
+3. L'établissement dispense des formations sous contrat avec le Ministère de l'Agriculture et de l'Éducation Nationale.
+">
+<meta name="Author" content="Gestibase / www.isites.fr">
+<meta name="Copyright" content="Copyright ©2008-2013 Châteauneuf sur Isère">
+<meta name="Robots" content="index,follow,all">
+<meta name="Expire" content="never">
+<meta name="Distribution" content="global">
+<meta name="Rating" content="general">
+<meta name="Identifier-URL" content="http://www.mfr-chateauneuf.fr">
+<meta name="Date-Creation-yyyymmdd" content="2008-12-15">
+<meta name="Date-Revision-yyyymmdd" content="2012-11-28 13:40:48">
+<meta name="Category" content="">
+<meta name="GENERATOR" content="Gestibase / www.isites.fr">
+<meta name="abstract" content="L'originalité de notre Maison Familiale repose sur trois critères :
+1. Enseignement basé sur la pédagogie de l'alternance entre l'école et l'entreprise.
+2. Association loi 1901 constituée de parents d'élèves, de maîtres de stage.... qui pilote l'établissement.
+3. L'établissement dispense des formations sous contrat avec le Ministère de l'Agriculture et de l'Éducation Nationale.
+">
+<link href="http://www.isites-mfr.info/_fichiersCommuns/08/library/styles/fck_editorarea.css" rel="stylesheet" type="text/css">
+<link href="http://www.isites-mfr.info/_fichiersCommuns/08/library/styles/styles_Interface.css" rel="stylesheet" type="text/css">
+<link href="library/styles_Interface.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/gif" href="img/favIcon_MFR.gif">
+<script type="text/javascript" src="http://www.isites-mfr.info/_fichiersCommuns/shared_LIBRARY/splash.image/splash.image.js"></script><link type="text/css" rel="stylesheet" href="http://www.isites-mfr.info/_fichiersCommuns/shared_LIBRARY/splash.image/splash.image.css">
+<!-- Code à insérer dans le "head" de la page --><!--[if lte IE 6]>
+
+<link href="library/styles_Interface-ie.css" rel="stylesheet" type="text/css" />
+    
+    
+<script defer type="text/javascript" src="http://www.isites-mfr.info/_fichiersCommuns/shared_LIBRARY/js/pngfix.js"> </script>
+
+<![endif]--><!--[if lte IE 7]>
+
+<link href="library/styles_Interface-ie.css" rel="stylesheet" type="text/css" />
+    
+    
+<script defer type="text/javascript" src="http://www.isites-mfr.info/_fichiersCommuns/shared_LIBRARY/js/pngfix.js"> </script>
+
+<![endif]-->
+</head>
+<script language="javascript" type="text/javascript">
+	
+	// Déclaration des variables public
+	
+    window.onload = function() {init_tout();}
+    function init_tout()
+    {
+	   //init1(var1);
+       //init2(var2);
+    }
+	
+	
+
+	function openCloseDiv(leDivAOuvrir,leDivAFermer)
+	{
+		var nbDivSousMenu_Ouverts = array_sousMenu_OPENED.length;
+		var nbDivSousMenu_Fermes = array_sousMenu_CLOSED.length;
+		
+		for(var i=0;i<nbDivSousMenu_Fermes;i++){
+		   array_sousMenu_CLOSED[i].style.display = 'block';
+		}
+		
+		//alert('nbDivSousMenu_Fermes = '+nbDivSousMenu_Fermes+'\r\n nbDivSousMenu_Ouverts = '+nbDivSousMenu_Ouverts);
+		
+		for(var i=0;i<nbDivSousMenu_Ouverts;i++){
+		   array_sousMenu_OPENED[i].style.display = 'none';
+		}
+		
+		document.getElementById(leDivAFermer).style.display = 'none';
+		document.getElementById(leDivAOuvrir).style.display = 'block';
+			
+	}
+	
+	
+
+	function rockDivs(leDivAOuvrir,leDivAFermer)
+	{		
+		document.getElementById(leDivAFermer).style.display = 'none';
+		document.getElementById(leDivAOuvrir).style.display = 'block';			
+	}
+	
+	
+	function getElementsByClass(maClass)
+	{
+	/*##################################################### FCT - getElementsByClass(maClass)
+	# 	Cette fonction retourne, dans une liste (array), tous les éléments présents sur la page
+	#	dont le 'className' == maClass
+	#------------------------------------------------------------------------------#
+	#	IN 		maClass				String		Le 'className' à rechercher
+	#
+	#	OUT		tabRetour			array		Une liste contenant tous les éléments répondant au critère
+	#
+	#----------------------------------------------------------------------------#*/
+	
+	    /*    Tableau comportant les elements de retour*/
+	    var tabRetour = new Array();
+	    /* Tableau temporaire necessaire pour faire la boucle et rechercher
+	        les elements ayant la classe précisé, il va contenir tout les
+	        elements du documents */
+	    var tabTmp = new Array();
+	    /* Recupere tout les elements du document */
+	    tabTmp = document.getElementsByTagName("*");
+	    /* Compteur, sert à incrementer le tableau des valeurs de retour */
+	    j=0;
+	    /* Pour chaque element de tabTmp */
+	    for (i=0; i<tabTmp.length; i++) {
+	        /* on regarde si la classe de l'i-eme element est celle qu'on recherche */
+	        if (tabTmp[i].className==maClass)
+	        {
+	            /*si oui on ajoute dans notre tableau de retour à l'index j */
+	            tabRetour[j]=tabTmp[i];
+	            /* on incremente de 1 j pour pas réecrire l'element suivant par dessus */
+	            j++;
+	        }
+	    /* Element suivant ... */
+	    }
+	    /* on retourne notre tableau d'elements ayant la classe spécifié*/
+	   return tabRetour;
+	} 
+
+</script><body>
+<a name="haut"></a>
+<div id="RL_div_conteneurGeneral" align="center">
+
+	<div id="RL_div_header_master">	
+		<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td rowspan="2" align="left" valign="top"><img src="img/interface/header_LOGO.jpg" alt="Châteauneuf sur Isère" title="Châteauneuf sur Isère"></td>
+				<td colspan="2" style="background-image:url(img/interface/header_bgHaut.jpg);">
+					<table border="0" cellspacing="0" cellpadding="0"><tr>
+<td align="left" width="100%"><marquee behavior="scroll" scrollamount="3" id="txtDefil_HOME" class="INTERF_txtMarquee">REUSSIR AUTREMENT ... Dès la 4ème, LES JEUNES PEUVENT VIVRE L'ALTERNANCE ET FAIRE DE  LEUR PASSION UN METIER ...</marquee></td>
+							<td align="right">
+<div id="RL_div_header_B_M"><table border="0" cellspacing="0" cellpadding="0" class="INTERF_menu_HAUT_txt" align="right"><tr>
+<td align="right" valign="middle" nowrap>
+<img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/ico/flch_VERTE_D.gif" width="7" height="6" hspace="5" border="0" align="absmiddle"><a href="http://www.mfr-chateauneuf.com" class="INTERF_menu_HAUT_txt">accueil</a>
+</td>
+			<td align="right" valign="middle"><img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/pixUnik/pu_Transp.gif" width="5" height="1"></td>
+			<td align="right" valign="middle" nowrap>
+<img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/ico/flch_VERTE_D.gif" width="7" height="6" hspace="5" border="0" align="absmiddle"><a href="contact.html" class="INTERF_menu_HAUT_txt">contact</a>
+</td>
+			<td align="right" valign="middle"><img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/pixUnik/pu_Transp.gif" width="5" height="1"></td>
+			<td align="right" valign="middle" nowrap>
+<img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/ico/flch_VERTE_D.gif" width="7" height="6" hspace="5" border="0" align="absmiddle"><a href="acces.html" class="INTERF_menu_HAUT_txt">plan d'accès</a>
+</td>
+            
+        			
+
+		</tr></table></div>
+</td>
+						</tr></table>
+</td>
+			</tr>
+<tr>
+<td><img src="img/interface/header_nomMaison.jpg" alt="Châteauneuf sur Isère" title="Châteauneuf sur Isère"></td>
+				<td><img src="img/interface/header_visuel.jpg" alt="Châteauneuf sur Isère" title="Châteauneuf sur Isère"></td>
+			</tr>
+</table>
+</div>
+	     <div id="RL_div_body_master">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" id="RL_table_body_3cols"><tr>
+<td align="right" valign="top" id="RL_td_body_menuGch">
+<div id="RL_div_menuGch_VERTICAL">
+<div id="RL_div_menuGch_HEADER"></div>
+<div id="RL_div_menuGch_PAGES">
+	<table border="0" cellpadding="0" cellspacing="8" class="INTERF_menu_GAUCHE_txt">
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="La MFR de Chateauneuf sur isère, Maison Familiale Rurale " href="page-1-mfr-chateauneuf-isere.html" class="INTERF_menu_GAUCHE_txt lien_menu_1">MFR Chateauneuf/Isère</a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle">
+								<div id="RL_div_sousMenu_115_closed" style="display:block;" class="RL_div_sousMenu_CLOSED">
+								
+						
+                                        		
+									<a title="Une association de parents et de professionnels au service des jeunes" href="page-115-l-association.html" class="INTERF_menu_GAUCHE_txt lien_menu_115">L'association</a>
+									
+														
+									
+									
+								</div>
+								<div id="RL_div_sousMenu_115_opened" style="display:none;" class="RL_div_sousMenu_OPENED">
+									<a title="Une association de parents et de professionnels au service des jeunes" href="page-115-l-association.html" class="INTERF_menu_GAUCHE_txt lien_menu_115">L'association</a><br><div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="Vie associative" href="page-150-l-association-la-vie-associative.html" class="INTERF_sousMenu_GAUCHE_txt">La vie associative</a></div>								</div>
+							</td>
+						</tr>
+<tr>
+<td class="INTERF_menu_GAUCHE_spacer"></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Les formations" href="page-5-les-formations.html" class="INTERF_menu_GAUCHE_txt lien_menu_5">Les formations</a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="La pédagogie de l'alternance à la MFR de Chateauneuf sur Isère" href="page-98-la-pedagogie-de-l-alternance.html" class="INTERF_menu_GAUCHE_txt lien_menu_98">La pédagogie de l'alternance</a></div></td>
+						</tr>
+<tr>
+<td class="INTERF_menu_GAUCHE_spacer"></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Toute l'actualité" href="page-21-toute-l-actualite.html" class="INTERF_menu_GAUCHE_txt lien_menu_21">Toute l'actualité</a></div></td>
+						</tr>
+<tr>
+<td class="INTERF_menu_GAUCHE_spacer"></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Visite des locaux" href="page-151-visite-des-locaux.html" class="INTERF_menu_GAUCHE_txt lien_menu_151">Visite des locaux</a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="vie, services, transport," href="page-158-la-vie-a-la-mfr.html" class="INTERF_menu_GAUCHE_txt lien_menu_158">La vie à la MFR</a></div></td>
+						</tr>
+<tr>
+<td class="INTERF_menu_GAUCHE_spacer"></td>
+						</tr>
+<tr>
+<td align="right" valign="middle">
+								<div id="RL_div_sousMenu_129_closed" style="display:block;" class="RL_div_sousMenu_CLOSED">
+								
+										
+									<a title="La vie des classes" href="javascript:" onclick="openCloseDiv('RL_div_sousMenu_129_opened','RL_div_sousMenu_129_closed'); return false;" class="INTERF_menu_GAUCHE_txt lien_menu_129">La vie des classes</a>
+									
+
+                
+                
+                										
+									
+									
+								</div>
+								<div id="RL_div_sousMenu_129_opened" style="display:none;" class="RL_div_sousMenu_OPENED">
+									<a title="La vie des classes" class="INTERF_menu_GAUCHE_txt lien_menu_129">La vie des classes</a><br><div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="Classe de 4ème " href="page-139-la-vie-des-classes-classe-de-4eme-.html" class="INTERF_sousMenu_GAUCHE_txt">Classe de 4ème </a></div>
+<div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="Classe de 3ème" href="page-140-la-vie-des-classes-classe-de-3eme.html" class="INTERF_sousMenu_GAUCHE_txt">Classe de 3ème</a></div>
+<div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="Seconde SAPAT" href="page-161-la-vie-des-classes-seconde-sapat.html" class="INTERF_sousMenu_GAUCHE_txt">Seconde SAPAT</a></div>
+<div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="Premières SAPAT" href="page-145-la-vie-des-classes-premieres-sapat.html" class="INTERF_sousMenu_GAUCHE_txt">Premières SAPAT</a></div>
+<div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="Terminale Bac pro SMR " href="page-131-la-vie-des-classes-terminale-bac-pro-smr-.html" class="INTERF_sousMenu_GAUCHE_txt">Terminale Bac pro SMR </a></div>
+<div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="CAP 1 Petite Enfance" href="page-143-la-vie-des-classes-cap-1-petite-enfance.html" class="INTERF_sousMenu_GAUCHE_txt">CAP 1 Petite Enfance</a></div>
+<div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="CAP 2 Petite Enfance" href="page-144-la-vie-des-classes-cap-2-petite-enfance.html" class="INTERF_sousMenu_GAUCHE_txt">CAP 2 Petite Enfance</a></div>
+<div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="BTS Economie Sociale et Familiale" href="page-147-la-vie-des-classes-bts-economie-sociale-et-familiale.html" class="INTERF_sousMenu_GAUCHE_txt">BTS Economie Sociale et Familiale</a></div>								</div>
+							</td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Nos Partenaires" href="page-127-nos-partenaires.html" class="INTERF_menu_GAUCHE_txt lien_menu_127">Nos Partenaires</a></div></td>
+						</tr>
+<tr>
+<td class="INTERF_menu_GAUCHE_spacer"></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Taxe d'Apprentissage" href="page-157-taxe-d-apprentissage.html" class="INTERF_menu_GAUCHE_txt lien_menu_157">Taxe d'Apprentissage</a></div></td>
+						</tr>
+<tr>
+<td class="INTERF_menu_GAUCHE_spacer"></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="location, hébergement, vacances" href="page-160-location-des-locaux.html" class="INTERF_menu_GAUCHE_txt lien_menu_160">Location des locaux</a></div></td>
+						</tr>
+</table>
+</div>
+<div id="RL_div_menuGch_FOOTER"></div>
+
+
+</div>
+					
+<script>
+	var array_sousMenu_OPENED = getElementsByClass('RL_div_sousMenu_OPENED');
+	var array_sousMenu_CLOSED = getElementsByClass('RL_div_sousMenu_CLOSED');
+</script>
+</td>
+				<td width="100%" align="center" valign="top">
+<div id="RL_div_contenuPageType" class="page_index">
+	<div id="RL_div_contenuPageType_INTITULE_PARENT" class="INTERF_edito_intitule">Bienvenue à la MFR de Châteauneuf sur Isère</div>
+<div id="RL_div_contenuPageType_INTITULE_ENFANT" class="INTERF_edito_ttr">des formations par alternance</div> 
+ 
+ 
+	
+    <div id="page_accueil_bis">
+	<div id="RL_div_contenuPageType_PARAG_TEXTE" class="INTERF_edito_txt">
+<table width="493" height="331" cellspacing="" cellpadding="" border="0" align="left" summary=""><tbody>
+<tr>
+<td colspan="2">L'originalité de notre MFR est d'offrir une filière Services, cohérente et unique en Drôme-Ardèche, <strong>depuis la 4ème jusqu'au BTS</strong> en passant par le <strong>CAP Petite Enfance </strong>et le <strong>BAC PRO Services Aux Personnes et Aux Territoires (SAPAT)</strong>. Les formations sont accessibles sous le statut scolaire ou apprenti.</td>
+        </tr>
+<tr>
+<td><br></td>
+            <td>
+            <div align="center">
+<img width="269" height="201" alt="" src="http://www.mfr-chateauneuf.com/medias/Image/Photos%20locaux%20MFR/MFR_Cour_du_haut.jpg"><br><br>
+</div>
+            La MFR accueille les jeunes à partir de 14 ans pour une scolarité en alternance.  Ils passent au moins la moitié du temps en entreprise, soit en temps que stagiaire ou apprenti selon les formations.<br>
+</td>
+            <td> </td>
+        </tr>
+</tbody></table>
+<p><strong><font size="3"><br>
+Les formations de notre MFR</font></strong></p>
+<table width="685" cellspacing="2" cellpadding="10" border="0" align="center" summary=""><tbody>
+<tr>
+<td bgcolor="#ff0000" colspan="2"><font size="2" color="#ffffff"><strong>4e-3eme par alternance<br></strong></font></td>
+        </tr>
+<tr>
+<td align="center"><font size="2"><img width="296" height="201" alt="" src="http://www.mfr-chateauneuf.com/medias/Image/Classes/4_paris.jpg"><br><br></font></td>
+            <td align="justify">*Dispenser les connaissances générales de base indispensables à toute formation.<br>
+            *Préparer l'élève à suivre avec profit une filière conduisant à l'obtention d'un diplôme professionnel (CAP ou BAC PRO)<br>
+            *Accompagner le jeune par une approche personnalisée, dans sa découverte sur les réalités du monde du travail<br>
+            *L'aider à s'orienter grâce aux stages afin de définir son projet professionnel.<br>
+            *Préparer à l'obtention du Diplôme National du Brevet (DNB), série technologique, option agricole, à l'issue de la classe de 3ème.</td>
+        </tr>
+<tr>
+<td bgcolor="#00cc33" colspan="2"><font size="2"><strong><font color="#ffffff">BAC Pro Services Aux Personnes et Aux Territoires<br></font></strong></font></td>
+        </tr>
+<tr>
+<td align="center"><img width="287" height="163" alt="" src="http://www.mfr-chateauneuf.com/medias/Image/Classes/services_a_la_pesronne_lutte_contre_lisolement%5B1%5D.jpg"></td>
+            <td align="justify"><font size="2">Le BAC PRO SAPAT permet d'acquérir une polyvalence de compétences pour intervenir dans de nombreux domaines de la vie locale : services aux personnes, animation de la vie associative, participation au développement touristique local, valorisation du patrimoine pour s'insérer dans le secteur des services et/ou poursuivre ses études.<br><br></font></td>
+        </tr>
+<tr>
+<td bgcolor="#ffcc00" colspan="2">
+<font size="2">CAP Petite Enfance<br></font> </td>
+        </tr>
+<tr>
+<td align="justify"><font size="2">Le titulaire du CAP Petite Enfance est un professionnel compétent pour l'accueil et la garde des jeunes enfants. Par ses différentes activités auprès de l'enfant, il contribue à son éducation et son éveil. Il assure, en outre, l'entretien et l'hygiène de ses différents espaces de vie.<br>
+            Il s'agit d'un diplôme de niveau V délivré par l'Education Nationale</font></td>
+            <td align="center"><img width="353" height="264" alt="" src="http://www.mfr-chateauneuf.com/medias/Image/Classes/Salle_CAP.jpg"></td>
+        </tr>
+<tr>
+<td bgcolor="#ff33cc" colspan="2"><font size="2"><strong><font color="#ffffff">BTS Economie Sociale et Familiale<br></font></strong></font></td>
+        </tr>
+<tr>
+<td align="center"> </td>
+            <td align="justify"><font size="2">Le Technicien en Economie Sociale et Familiale concourt à l'information et à la formation des individus et des groupes pour contribuer à résoudre les situations de la vie quotidienne en mettant à leur service ses compétences techniques.</font></td>
+        </tr>
+<tr>
+<td bgcolor="#6600ff" colspan="2"><font size="2" color="#ffffff">Formation Continue et Professionnelle</font></td>
+        </tr>
+<tr>
+<td align="center">
+<font size="2"> <br></font> </td>
+            <td><font size="2"> </font></td>
+        </tr>
+</tbody></table>
+<p><br></p>
+<table width="650" cellspacing="10" cellpadding="1" border="0" align="center" summary=""><tbody>
+<tr>
+<td colspan="7"><strong><font size="3">Toute les nouvelles de la vie de la MFR</font></strong></td>
+        </tr>
+<tr>
+<td colspan="4">Vous trouverez  des nouvelles et activités réalisées par les élèves de ces différentes classes.<br>
+</td>
+        </tr>
+<tr>
+<td><a href="http://www.mfr-chateauneuf.fr/medias/Image/galerie/3eme%20final.jpg" title="Placer ici du texte pour que votre image soit zoomable" rel="splash.image|page"><img width="122" height="79" border="0" alt="Placer ici du texte pour que votre image soit zoomable" src="http://www.mfr-chateauneuf.fr/medias/Image/galerie/3eme%20final.jpg"></a></td>
+            <td><a href="http://www.mfr-chateauneuf.fr/medias/Image/galerie/cap1%20bis.jpg" title="Placer ici du texte pour que votre image soit zoomable" rel="splash.image|page"><img width="123" height="79" border="0" alt="Placer ici du texte pour que votre image soit zoomable" src="http://www.mfr-chateauneuf.fr/medias/Image/galerie/cap1%20bis.jpg"></a></td>
+            <td><a href="http://www.mfr-chateauneuf.fr/medias/Image/galerie/bacpro1b.jpg" title="Placer ici du texte pour que votre image soit zoomable" rel="splash.image|page"><img width="150" height="76" border="0" alt="Placer ici du texte pour que votre image soit zoomable" src="http://www.mfr-chateauneuf.fr/medias/Image/galerie/bacpro1b.jpg"></a></td>
+            <td><a href="http://www.mfr-chateauneuf.fr/medias/Image/galerie/bts2.jpg" title="Placer ici du texte pour que votre image soit zoomable" rel="splash.image|page"><img width="123" height="82" border="0" alt="Placer ici du texte pour que votre image soit zoomable" src="http://www.mfr-chateauneuf.fr/medias/Image/galerie/bts2.jpg"></a></td>
+        </tr>
+<tr>
+<td align="center"><em>Classe de 4e<br><a class="INTERF_liensUtilisateur" href="http://www.mfr-chateauneuf.fr/page-140-la-vie-des-classes.html">Classe de 3e</a><br></em></td>
+            <td align="center">Cap Petite enfance </td>
+            <td align="center">             Bac pro Services             </td>
+            <td align="center"><em><font size="1">BTS ESF<br></font></em></td>
+        </tr>
+</tbody></table>
+</div>
+	<div id="RL_div_accueilSyndication_CONTENEUR" class="INTERF_edito_txt">
+	<div id="RL_div_NEWS_header"></div>
+<div id="RL_div_NEWS_body"><table width="100%" border="0" cellspacing="5" cellpadding="0"><tr>
+<td valign="top">
+<div class="div_NEWS_uneNews">
+							<div id="news-content"> <a href="page-21-toute-l-actualite.html#13" class="div_NEWS_uneNews">
+							<span class="INTERF_accueilSyndication_ttr">
+								<img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/ico/flch_VERTE_D.gif" border="0" align="absmiddle"> Portes Ouvertes  : 23/03/2013 &amp; 17/05/2013
+							</span><br><span class="INTERF_accueilSyndication_accroche">Pour acquérir une réelle expérience professionnelle dans le secteur des Services</span>
+							</a>
+						</div>
+</div>		</td>	</tr></table></div>
+<div id="RL_div_NEWS_footer"></div>	
+    
+    </div>
+		</div>	
+</div>
+
+	<br><div id="RL_div_hautDePage" style="float:right;"><a href="#haut" class="INTERF_liensUtilisateur">haut de page<img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/ico/flch_VERTE_H.gif" width="7" height="6" hspace="5" border="0" align="absmiddle"></a></div>
+</td>
+			</tr></table>
+</div>
+
+	<div id="RL_div_footer_master" style="width: 955px;
+	height: 76px;
+	background-image: url(img/interface/footer_degradeBg.jpg);
+	background-repeat:no-repeat;
+	background-position:top;">
+		
+		<div id="RL_div_M_identite_MFR">MFR Châteauneuf sur Isère - le Village - B.P.3 - 26300 CHATEAUNEUF SUR ISERE<br>Tél. 04 75 71 88 00 - Fax 04 75 71 87 73 - eMail <a href="mailto:mfr.chateauneuf@mfr.asso.fr" class="INTERF_liensInfoMaison">mfr.chateauneuf@mfr.asso.fr</a>
+</div>
+			
+<div id="RL_div_mentions" class="INTERF_mentions_txt">
+	
+    
+    <form action="http://admin.mfr-chateauneuf.com" method="post" name="formAdmin">
+		Copyrights © 2008-2013 Châteauneuf sur Isère  |  <a href="mentions.html" class="INTERF_mentions_txt">Mentions légales</a>  |   <a href="mailto:mfr.chateauneuf@mfr.asso.fr" class="INTERF_mentions_txt">Webmaster</a>  |  <a href="http://www.gestibase.com" class="INTERF_mentions_txt" title="Gestibase : Créateur de iSolutions" target="_blank">Gestibase</a>  |   <a href="javascript:" onclick="window.document.formAdmin.submit(); return false;" class="INTERF_mentions_txt">admin</a>
+    </form>
+    
+</div>
+
+
+	</div>
+	
+</div>
+				   
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9920552-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

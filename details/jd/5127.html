@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>
+Centre Hospitalier de VIENNE
+</title>
+<link rel="shortcut icon" href="datas/icone.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script language="JavaScript"><!--
+
+function ejs_nodroit()
+  {
+  alert('Clic droit interdit');
+  return(false);
+  }
+
+document.oncontextmenu = ejs_nodroit;
+
+
+
+self.moveTo(0,0);
+self.resizeTo(screen.availWidth,screen.availHeight);
+
+if (top.frames.length!=0) top.location=self.document.location;
+
+var mess = "Centre Hospitalier LUCIEN HUSSEL - VIENNE                                                                                                                    ";
+var i = 0;
+function defilmess() {
+window.status = mess.substring(i, mess.length) + mess.substring(0, i);
+i++;
+if (i > mess.length) i = 0;
+window.setTimeout("defilmess()",200);
+}
+defilmess();
+//-->
+</script>
+</head>
+<frameset rows="110,*" frameborder="NO" border="N" framespacing="N" cols="*">
+<frame name="top" src="top.php" scrolling="NO" noresize>
+<frameset cols="200,*" frameborder="NO" border="N" framespacing="N" rows="*">
+<frame name="menu" src="menu.php">
+<frame name="main" src="/extranet/droite.php">
+</frameset>
+<noframes>
+
+<body bgcolor="#FFFFFF">
+</body>
+</noframes> 
+</frameset>
+</html>

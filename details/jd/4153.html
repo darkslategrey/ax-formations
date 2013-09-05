@@ -1,0 +1,486 @@
+<html xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<link rel="shortcut icon" href="/images/favicon.gif" type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Carif CREFOR</title>
+<link rel="stylesheet" href="/library/jquery/css/jquery-ui-1.8.5.custom.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/library/jquery/css/jquery.cluetip.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/library/jquery/css/jquery.tree.css" type="text/css" media="screen">
+<link rel="alternate" type="application/rss+xml" href="/rss" title="Dernières actualités du Crefor Haute Normandie">
+<link rel="stylesheet" href="/front/css/bloc-recherche.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/front/css/bloc-panier.css" type="text/css" media="screen">
+<script type="text/javascript" src="/library/jquery/jquery-1.4.2.min.js"></script><script type="text/javascript" src="/library/jquery/jquery.iu/jquery-ui-1.8.5.custom.min.js"></script><script type="text/javascript" src="/library/jquery/plugins/jquery.cluetip.js"></script><script type="text/javascript" src="/library/jquery/plugins/jquery.tree.js"></script><script type="text/javascript" src="/library/json.js"></script><script type="text/javascript" src="/front/js/panier.js"></script><link href="/css/global.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/css/nice_menus.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/css/nice_menus_default.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/css/custom_nice_menus.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/css/bloc-formulaire.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/css/bloc-tableau.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/front/css/global.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/front/css/bloc-fiche.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/front/css/bloc-fiche_formation.css" media="screen" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+        //<![CDATA[
+$.Cart.elements = [{"id":"root","text":"Mon classeur","label":"Mon classeur","showcheck":false,"complete":true,"isexpand":true,"checkstate":0,"locked":true,"type":3,"hasChildren":true,"ChildNodes":[{"id":"root_0_doc","text":"Mes fiches <span class=\"info\">(0 \u00e9l\u00e9ment)<\/span>","label":"Mes fiches","showcheck":false,"complete":true,"isexpand":false,"checkstate":0,"locked":true,"type":1,"hasChildren":true,"ChildNodes":[]},{"id":"root_0_search","text":"Mes recherches <span class=\"info\">(0 \u00e9l\u00e9ment)<\/span>","label":"Mes recherches","showcheck":false,"complete":true,"isexpand":false,"checkstate":0,"locked":true,"type":2,"hasChildren":true,"ChildNodes":[]}]}];$.Cart.elementsDefault = {"id":"root","text":"Mon classeur","label":"Mon classeur","showcheck":false,"complete":true,"isexpand":true,"checkstate":0,"locked":true,"type":3,"hasChildren":true,"ChildNodes":[{"id":"root_0_doc","text":"Mes fiches <span class=\"info\">(0 \u00e9l\u00e9ment)<\/span>","label":"Mes fiches","showcheck":false,"complete":true,"isexpand":false,"checkstate":0,"locked":true,"type":1,"hasChildren":true,"ChildNodes":[]},{"id":"root_0_search","text":"Mes recherches <span class=\"info\">(0 \u00e9l\u00e9ment)<\/span>","label":"Mes recherches","showcheck":false,"complete":true,"isexpand":false,"checkstate":0,"locked":true,"type":2,"hasChildren":true,"ChildNodes":[]}]};        //]]>
+    </script><script type="text/javascript" src="/front/js/functions.js"></script><script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><script type="text/javascript" src="/js/googleMap.js"></script><script type="text/javascript" src="/front/js/map.js"></script><script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var Carif=Carif||{'settings':{}};jQuery.extend(Carif.settings,{"debug":null,"urlRoutes":[],"front":"offredeformation.crefor-hn.fr","url":{"module":"actionformation","controller":"front-fiche","action":"index"},"isFront":true,"hasLock":false});
+//--><!]]>
+</script><link rel="stylesheet" href="/front/css/global.css" type="text/css" media="screen">
+</head>
+<body class="actionformation actionformation-front-fiche actionformation-front-fiche-index browser-0 browser-01">
+        <div id="page-wrapper" class="no-sidebar">
+            <div id="header-wrapper">
+                <div id="header-wrapper-account-login">
+	<form action="/account/connexion" method="post">
+		<ul>
+<li>
+				<label for="identity">Identifiant</label>
+				<input id="identity" name="identity" type="text">
+</li>
+			<li>
+				<label for="credential">Mot de passe</label>
+				<input id="credential" name="credential" type="password">
+</li>
+			<li>
+				<button type="submit" id="login">Connexion</button>
+			</li>
+			<li>
+				<a href="/account/request-new-password">Mot de passe oublié ? </a>
+			</li>
+			<li>
+				<a href="/account/inscription">Créer un compte</a>
+			</li>
+
+		</ul>
+</form>
+</div>
+                <a href="/" class="logo-link" title="Retourner à la page d'accueil"></a>
+                <div id="shortcut-links">
+                    <ul>
+<li class="shortcut-link shortcut-link-accueil"><a href="/" title="Page d'accueil">Accueil</a></li>
+                        <li class="shortcut-link shortcut-link-contact"><a href="http://www.crefor-hn.fr/contact" title="Contacter le CREFOR" target="_blank">Contact</a></li>
+                        <li class="shortcut-link shortcut-link-aide"><a href="/aide" title="Page d'aide">Aide</a></li>
+                        <li class="shortcut-link shortcut-link-panier"><a href="#" onclick="return false;" title="Mon classeur de documents">Classeur</a></li>
+                    </ul>
+</div>
+                <div id="primary-links">
+                    <ul class="links">
+<li class="menu-2">
+                            <a title="Recherche d'une formation" href="/recherche-formation.html">Formations</a>
+                        </li>
+                        <li class="menu-1">
+                            <a title="Recherche d'un organisme" href="/recherche-organisme.html">Organismes</a>
+                        </li>
+                        <li class="menu-3">
+                            <a title="Recherche d'une certification" href="/recherche-certification.html">Certifications</a>
+                        </li>
+                        <li class="menu-4">
+                            <a title="Recherche d'une habilitation" href="/recherche-habilitation.html">Habilitations</a>
+                        </li>
+                        <li class="menu-5">
+                            <a title="Recherche d'un dispositif" href="/recherche-dispositif.html">Dispositifs</a>
+                        </li>
+                        <li class="menu-6 last">
+                            <a title="Recherche d'une fiche métier" href="/recherche-metier.html">Métiers</a>
+                        </li>
+                        <!--<li class="menu-7 last">
+                            <a title="Acteurs locaux AIO" href="/recherche-acteurs-locaux.html">Acteurs locaux AIO</a>
+                        </li>-->
+                    </ul>
+</div>
+            </div>
+            
+            <div id="main-wrapper">
+                <div class="content-region" id="content-region">
+                    <div class="breadcrumbs">
+<a href="/" title="Retourne sur la page d'accueil">Accueil</a> › <a href="/recherche-formation.html" title="Recherche formations">Recherche formations</a> › <a href="/recherche-formation.html/all/1" title="Résultats">Résultats</a> › Se qualifier : Titre professionnel assistant(e) de vie aux familles</div>
+                    <div id="title">
+                        <h1></h1>
+                    </div>
+                    <div class="messages"></div>
+                    <!-- CONTENT -->
+                    <div id="main-content">
+                    <div class="bloc-fiche-principal">
+    <div class="bloc-fiche-principal_entete">
+        <ul>
+<li>Référence : A201105309520</li>
+            <li>Mise à jour : 01/07/2013</li>
+        </ul>
+</div>
+    <div class="bloc-fiche-principal_corps">
+        <h2>Se qualifier : Titre professionnel assistant(e) de vie aux familles</h2>
+        <div class="bloc-fiche-coordonnees">
+
+            <div class="bloc-fiche-coordonnees_entete"></div>
+            <div class="bloc-fiche-coordonnees_corps">
+
+                <div class="organisme-responsable">
+                    <strong class="titre-texte">Organisme responsable :</strong>
+                    <a href="/formations/cfa-cfppa-de-l-eure-chambray/organisme-13_e2002060002.html" title="Lien vers la fiche organisme">CFA CFPPA DE L'EURE (CHAMBRAY)</a>
+                    <span class="commune">GOUVILLE</span>
+                </div>
+
+                
+                                
+                                    <div>
+<strong class="titre-texte">Ville(s) de formation :</strong>
+                    GOUVILLE                    </div>        
+                                        
+                
+                                    <div>
+                        <strong class="titre-texte">Financement public :</strong>
+                        <div>
+            <img src="/media/logos-financeurs/logo-4e5f50f2646d1.jpg" width="70" title="Logo du financeur Conseil régional Haute-Normandie" alt="Logo financeur"><a href="/dispositif-7.html" title="Lien vers la fiche dispositif PRFP">
+         Programme Régional de Formation Professionnelle (PRFP)    </a>
+</div>                    </div>
+                
+                
+                <ul id="linksblocks">
+<li><a href="#diplomes">Voir les diplômes et habilitations préparées</a></li>
+                                        <li><a href="#calendrier">Calendrier et lieu de formation</a></li>
+                </ul>
+</div>
+            <div class="bloc-fiche-coordonnees_pied"></div>
+        </div>
+
+    </div>    
+    <div class="bloc-fiche-principal_pied"></div>
+</div>
+
+
+    <div class="bloc-encadre bloc-encadre-noresult">
+    </div>
+
+    <div class="bloc-outils">
+        <ul>
+<li><a href="/impression/formations/se-qualifier-titre-professionnel-assistant-e-de-vie-aux-familles/cfa-cfppa-de-l-eure-chambray/formation-13_a201105309520.html" target="_blank" class="outil-imprimer" title="Imprimer la fiche">Imprimer</a></li>
+            <li><a href="/export-pdf/formations/se-qualifier-titre-professionnel-assistant-e-de-vie-aux-familles/cfa-cfppa-de-l-eure-chambray/formation-13_a201105309520.html" class="outil-export_pdf" title="imprimer la fiche détaillée">Synthèse</a></li>
+            <li><a href="#" class="outil-panier" title="Ajouter la fiche à votre panier">Ajouter à votre panier</a></li>
+        </ul>
+</div>
+
+<div class="bloc-fiche-carte" id="mapContainer"></div>
+
+
+
+<!-- -------------------------------------- -->
+<!--               DESCRIPTION              -->
+<!-- -------------------------------------- -->
+<div class="bloc-fiche-detail bloc-depliable">
+    <div class="bloc-depliable_entete">
+        <h3>Description et contacts</h3>
+    </div>
+    <div class="bloc-depliable_corps">
+                    <div class="donneeCourte">
+                <h4>Finalité :</h4>
+                <div>Se Qualifier</div>
+            </div>
+        
+                    <div class="donnee">
+                <h4>Objectifs de l'action de formation</h4>
+                <div>
+<p style="text-align: justify;">
+	Valider des compétences professionnelles à travers une qualification reconnue par la profession : Titre Professionnel Assistant (e) de Vie aux Familles.</p>
+</div>
+            </div>
+        
+                    <div class="donnee">
+                <h4>Programme de l'action de formation</h4>
+                <div>
+<p style="text-align: justify;">
+	Le Titre Professionnel (niveau V) s'obtient par la validation de 3 Certificats de Compétences Professionnelles :</p>
+<ul>
+<li style="text-align: justify;">
+		CCP1 Assister les personnes dans leurs tâches domestiques</li>
+	<li style="text-align: justify;">
+		CCP2 Relayer les parents dans la prise en charge de leurs enfants a leur domicile</li>
+	<li style="text-align: justify;">
+		CCP3 Assister les personnes dans les actes essentiels de leur vie quotidienne</li>
+</ul>
+</div>
+            </div>
+        
+        
+            </div>
+</div>
+
+<!-- -------------------------------------- -->
+<!--        CONDTION D'ADMISSION            -->
+<!-- -------------------------------------- -->
+<div class="bloc-fiche-detail bloc-depliable">
+    <div class="bloc-depliable_entete">
+        <h3>Condition d'admission</h3>
+    </div>
+    <div class="bloc-depliable_corps">
+                    <div class="donneeCourte">
+                <h4>Modalités de recrutement :</h4>
+                <div>Admission après entretien</div>
+            </div>
+        
+        
+        
+                    <div class="donneeCourte">
+                                    <h4>Niveau d'entrée obligatoire :</h4>
+                                <div>
+                    Niveau 5 bis (niveau Brevet des collèges, CFG)                                    </div>
+            </div>
+        
+        <div class="block-session">
+            <div class="block-session_entete">  Session du 04/10/2013 au 04/04/2014 à GOUVILLE</div>            <div class="block-session_corps condition-admission session-13798">
+            <div class="donneeCourte">
+            <h4>Type de positionnement :</h4>
+            <div>pédagogique</div>
+        </div>
+    
+            <div class="donneeCourte">
+            <h4>Publics visés :</h4>
+            <div>Demandeur d'emploi, Bénéficiaire ARE, Demandeur d'emploi moins de 26 ans, Bénéficiaire du RSA</div>
+        </div>
+    
+    
+            <div class="donneeCourte">
+            <h4>Date limite d'inscription :</h4>
+            <div>04/10/2013</div>
+        </div>
+    
+                        <div class="donneeCourte">
+                <h4>Lieu d'insription :</h4>
+                <div> Site de Chambray 27240 GOUVILLE</div>
+            </div>
+            </div>        </div>
+    </div>
+</div>
+
+<!-- -------------------------------------- -->
+<!--       CALENDRIER ET LIEU               -->
+<!-- -------------------------------------- -->
+<div class="bloc-fiche-detail bloc-depliable" id="calendrier">
+    <div class="bloc-depliable_entete">
+        <h3>Calendrier et lieu de formation</h3>
+    </div>
+    <div class="bloc-depliable_corps">
+        <table>
+<thead><tr>
+<th>Ville<a class="triggerTooltip clickableTooltip" title="Aide" rel="#tooltipAideVilleSession"></a>
+</th>
+                    <th>Dates prévisionnelles</th>
+                    <th>Durée<a class="triggerTooltip clickableTooltip" title="Durée" rel="#tooltipDureeSessions"></a>
+</th>
+                    <th>Places restantes</th>
+                    <th>Dispositif</th>
+                </tr></thead>
+<tbody><tr class="even">
+<td>
+        <span class="triggerTooltip" title="Adresse de la formation" rel="#tooltipVilleSession1">
+            GOUVILLE        </span>
+        <div id="tooltipVilleSession1" class="tooltip" style="display: none;">
+             Site de Chambray 27240 GOUVILLE        </div>
+    </td>
+    <td class="datesprevionnelles">04/10/2013 - 04/04/2014</td>
+    <td class="duree">315 / 840 h</td>
+    <td class="placesdispo">
+                                     <span title="Données non disponible">?</span>
+                       
+                /
+                    10            </td>
+    <td class="dispositif">
+                    <a href="/dispositif-7.html" title="Voir la fiche du dispositif (nouvelle fenêtre)" target="_blank">PRFP</a>            </td>
+</tr></tbody>
+<tbody></tbody>
+</table>
+</div>
+</div>
+
+<!-- -------------------------------------- -->
+<!--    ORGANISATION DE LA FORMATION        -->
+<!-- -------------------------------------- -->
+<div class="bloc-fiche-detail bloc-depliable">
+    <div class="bloc-depliable_entete">
+        <h3>Organisation de la formation</h3>
+    </div>
+    <div class="bloc-depliable_corps">
+        <div class="block-session">
+            <div class="block-session_entete">  Session du 04/10/2013 au 04/04/2014 à GOUVILLE</div>            <div class="block-session_corps organisation-formation session-13798">
+            
+<div class="donneeCourte">
+            <h4>Modalité d'entrée/sortie :</h4>
+		<div>Entrée/sortie à dates fixes</div>
+    
+            <h4>Rythme :</h4>
+		<div>Temps plein</div>
+    
+            <h4>Modalités pédagogiques :</h4>
+		<div>formation entièrement présentielle</div>
+    
+            <h4>Type de parcours :</h4>
+		<div>En groupe (non personnalisable)</div>
+    
+            <h4>Type de positionnement :</h4>
+		<div>pédagogique</div>
+    </div>
+    </div>        </div>
+    </div>
+</div>
+
+<!-- -------------------------------------- -->
+<!--         INFORMATION PRATIQUE           -->
+<!-- -------------------------------------- -->
+<div class="bloc-fiche-detail bloc-depliable">
+    <div class="bloc-depliable_entete">
+        <h3>Informations pratiques</h3>
+    </div>
+    <div class="bloc-depliable_corps">
+        <div class="block-session">
+            <div class="block-session_entete">  Session du 04/10/2013 au 04/04/2014 à GOUVILLE</div>            <div class="block-session_corps information-pratique session-13798">
+            <div class="donneeCourte">
+            <h4>Rémunération possible (à étudier selon votre statut) :</h4>
+            <div>Oui</div>
+        </div>
+    
+    
+    
+    
+    <div class="donneeCourte">
+        <h4>Hébergement :</h4>
+        <div>Non</div>
+            </div>
+
+    <div class="donneeCourte">
+        <h4>Restauration :</h4>
+        <div>Non</div>
+            </div>
+
+    <div class="donneeCourte">
+        <h4>Accès handicapé :</h4>
+        <div>Oui</div>
+            </div>
+
+    </div>        </div>
+    </div>
+</div>
+
+
+    <!-- -------------------------------------- -->
+    <!--                  METIER                -->
+    <!-- -------------------------------------- -->
+    <div class="bloc-fiche-detail bloc-depliable" id="blockmetier">
+        <div class="bloc-depliable_entete">
+            <h3>Métier</h3>
+        </div>
+        <div class="bloc-depliable_corps" id="treemetier">
+        </div>
+    </div>
+
+    <!-- -------------------------------------- -->
+    <!--             DIPLOME PREPARE            -->
+    <!-- -------------------------------------- -->
+    <div id="diplomes">
+                    <div class="bloc-fiche-detail bloc-depliable">
+                <div class="bloc-depliable_entete">
+                                            <h3>Diplôme préparé</h3>
+                                    </div>
+                <div class="bloc-depliable_corps">
+                    <table id="diplomesprepares">
+<thead>
+<th>Niveau</th>
+                        <th>Libellé</th>
+                        <th>Code RNCP<a class="triggerTooltip clickableTooltip" title="RNCP" rel="#tooltipRNCP"></a>
+</th>
+                        </thead>
+<tbody><tr class="even">
+<td class="niveau">Niveau V (CAP, BEP)</td>
+    <td><a target="_blank" href="/fiche-certification-53176.html" title="Accéder à la fiche du diplôme">Titre professionnel assistant(e) de vie aux familles</a></td>
+            <td class="coderncp"><a href="http://193.17.19.166/grand-public/visualisationFiche?format=fr&amp;fiche=3" title="Accéder à la fiche RNCP (nouvelle fenêtre)" target="_blank">3</a></td>
+    </tr></tbody>
+</table>
+</div>
+            </div>
+        
+        <!-- -------------------------------------- -->
+        <!--          HABILITATION PREPAREE         -->
+        <!-- -------------------------------------- -->
+            </div>
+
+
+<!-- -------------------------------------- -->
+<!--               COMPOSANTES              -->
+<!-- -------------------------------------- -->
+
+<!-- -------------------------------------- -->
+<!--                TOOLTIP                 -->
+<!-- -------------------------------------- -->
+<div id="tooltipAideVilleSession" class="tooltip" style="display: none;">
+    Passer la souris sur la ville pour afficher l'adresse complète du lieu de formation.
+</div>
+<div id="tooltipDureeSessions" class="tooltip" style="display: none;">
+    Durée en entreprise / Durée totale
+</div>
+<div id="tooltipRNCP" class="tooltip" style="display: none;">
+    <strong>R</strong>épertoire <strong>N</strong>ational des <strong>C</strong>ertifications <strong>P</strong>rofessionnelles
+</div>
+
+
+<script type="text/javascript">
+    collaspeBlockDepliable();
+    initDefaultTooltip();
+    initLinksBlocks();
+    $(document).ready(function() {
+        $(".selecteur-session").change(function(){
+            var $block = $(this).parent().parent();
+            $block.find(".block-session_corps").hide().filter(".session-" + this.value).effect("highlight");
+        });
+        panier.addLinkForAddElement(".outil-panier", 1, {"name": "TP assistant(e) de vie aux familles", "type": "Formation", "url": "/formations/se-qualifier-titre-professionnel-assistant-e-de-vie-aux-familles/cfa-cfppa-de-l-eure-chambray/formation-13_a201105309520.html"});
+    });
+        $("#treemetier").treeview({
+            cbiconpath : '/library/jquery/css/images/icons/',
+            theme      : 'bbit-tree-lines',
+            showcheck  : false,
+            onnodeclick :  function(node){if(node.url){window.open(node.url)}},
+            data: [{"id":"r458","text":"<span style=\"color:green\">K1302 - Assistance aupr\u00e8s d'adultes<\/span>","label":"K1302 - Assistance aupr\u00e8s d'adultes","url":"\/fiche-metier-K1302.html","value":"458","code":"K1302","showcheck":false,"complete":true,"isexpand":false,"checkstate":0,"hasChildren":true,"ChildNodes":[{"id":"c27002","text":"53176 - Titre professionnel assistant(e) de vie aux familles","label":"53176 - Titre professionnel assistant(e) de vie aux familles","url":"\/fiche-certification-53176.html","value":"27002","code":"53176","showcheck":false,"complete":true,"isexpand":false,"checkstate":0,"hasChildren":false}]},{"id":"r459","text":"<span style=\"color:green\">K1303 - Assistance aupr\u00e8s d'enfants<\/span>","label":"K1303 - Assistance aupr\u00e8s d'enfants","url":"\/fiche-metier-K1303.html","value":"459","code":"K1303","showcheck":false,"complete":true,"isexpand":false,"checkstate":0,"hasChildren":true,"ChildNodes":[{"id":"c27002","text":"53176 - Titre professionnel assistant(e) de vie aux familles","label":"53176 - Titre professionnel assistant(e) de vie aux familles","url":"\/fiche-certification-53176.html","value":"27002","code":"53176","showcheck":false,"complete":true,"isexpand":false,"checkstate":0,"hasChildren":false}]},{"id":"r460","text":"<span style=\"color:green\">K1304 - Services domestiques<\/span>","label":"K1304 - Services domestiques","url":"\/fiche-metier-K1304.html","value":"460","code":"K1304","showcheck":false,"complete":true,"isexpand":false,"checkstate":0,"hasChildren":true,"ChildNodes":[{"id":"c27002","text":"53176 - Titre professionnel assistant(e) de vie aux familles","label":"53176 - Titre professionnel assistant(e) de vie aux familles","url":"\/fiche-certification-53176.html","value":"27002","code":"53176","showcheck":false,"complete":true,"isexpand":false,"checkstate":0,"hasChildren":false}]},{"id":"r461","text":"<span style=\"color:green\">K1305 - Intervention sociale et familiale<\/span>","label":"K1305 - Intervention sociale et familiale","url":"\/fiche-metier-K1305.html","value":"461","code":"K1305","showcheck":false,"complete":true,"isexpand":false,"checkstate":0,"hasChildren":true,"ChildNodes":[{"id":"c27002","text":"53176 - Titre professionnel assistant(e) de vie aux familles","label":"53176 - Titre professionnel assistant(e) de vie aux familles","url":"\/fiche-certification-53176.html","value":"27002","code":"53176","showcheck":false,"complete":true,"isexpand":false,"checkstate":0,"hasChildren":false}]}]        });
+        var mapMarqueurs = [["1","0.9927160","48.8500190","13798",""]];
+        var mapInfosBulle = [["&Agrave; GOUVILLE","Du 04\/10\/2013 au 04\/04\/2014"]];
+        initialiserCarte($("#mapContainer")[0], mapMarqueurs, mapInfosBulle, false);
+</script>
+</div>
+                    <!-- /CONTENT -->
+                </div>
+
+                <div class="footer-region" id="footer-region">
+					<div class="footer-region_entete">
+						<ul>
+<li>
+                        		<a href="http://www.crefor-hn.fr/lequipe-du-crefor" title="A propos">A Propos</a>
+                        	</li>
+							<li>
+                        		<a href="http://www.crefor-hn.fr/membres-du-groupement-dint%C3%A9r%C3%AAt-public-et-comit%C3%A9-consultatif" title="Groupement">GIP</a>
+                        	</li>
+							<li>
+                        		<a href="http://www.crefor-hn.fr/missions-et-services" title="Missions et Services">Missions et Services</a>
+                        	</li>
+							<li>
+                        		<a href="http://www.crefor-hn.fr/informations-l%C3%A9gales" title="Informations Légales">Informations Légales</a>
+                        	</li>
+                        </ul>
+</div>
+					<div class="footer-region_corps">
+						<a href="#" title=""><img src="/front/images/logos/etat.png" width="50" height="29" alt="République française"></a>
+						<a href="#" title=""><img src="/front/images/logos/logo_region.png" width="30" height="50" alt="Région Haute-Normandie"></a>
+						<a href="#" title=""><img src="/front/images/logos/cgpme.png" width="41" height="50" alt="CGPME"></a>
+						<a href="#" title=""><img src="/front/images/logos/medef.png" width="50" height="19" alt="MEDEF"></a>
+						<a href="#" title=""><img src="/front/images/logos/image.jpg" width="50" height="19" alt="UPA"></a>
+						<a href="#" title=""><img src="/front/images/logos/cfdt.png" width="50" height="36" alt="CFDT"></a>
+						<a href="#" title=""><img src="/front/images/logos/cfecge.png" width="39" height="50" alt="CFE-CGC"></a>
+						<a href="#" title=""><img src="/front/images/logos/cftc.png" width="50" height="42" alt="CFTC"></a>
+						<a href="#" title=""><img src="/front/images/logos/cgt.png" width="38" height="50" alt="CGT"></a>
+						<a href="#" title=""><img src="/front/images/logos/fo.jpg" width="50" height="50" alt="FO"></a>
+					</div>
+                </div>
+            </div>
+        </div>
+        <!-- InlineHtml -->                    <script type="text/javascript">
+            <!--//--><![CDATA[//><!--
+            var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-15688419-4"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+            //--><!]]>
+            </script>
+</body>
+</html><!-- 201305281040 -->

@@ -1,0 +1,178 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Accueil</title>
+<style type="text/css">
+<!--
+.Style5 {
+	font-family: "Comic Sans MS";
+	color: #FF6600;
+	font-size: 16px;
+	font-weight: bold;
+}
+.Style12 {font-family: "Comic Sans MS"; font-size: 14px; font-weight: bold; color: #FF6600; }
+.Style12 {
+}
+.Style12 {
+}
+#Layer1 {
+	position:absolute;
+	width:449px;
+	height:273px;
+	z-index:1;
+	left: 52px;
+	top: 458px;
+}
+.Cadre {
+	border: 1pt solid #FF6600;
+}
+#Layer2 {
+	position:absolute;
+	width:254px;
+	height:30px;
+	z-index:2;
+	left: 593px;
+	top: 370px;
+	background-color: #FFE6D5;
+}
+Fond {
+	background-color: #FFC69F;
+}
+#Layer3 {
+	position:absolute;
+	width:269px;
+	height:74px;
+	z-index:2;
+	left: 133px;
+	top: 744px;
+	background-color: #FFE6D5;
+}
+.Style22 {font-size: 10px; color: #FF6600; }
+.Style24 {font-family: "Comic Sans MS"; font-size: 12px;}
+#Layer4 {
+	position:absolute;
+	width:552px;
+	height:31px;
+	z-index:3;
+	left: 21px;
+	top: 299px;
+	background-color: #D3D3D3;
+}
+.Style38 {font-family: "Comic Sans MS"; font-size: 14px; font-weight: bold; color: #FF4D00; }
+.Style46 {
+	color: #656C30;
+	font-weight: bold;
+	font-family: "Comic Sans MS";
+}
+.Style50 {
+	color: #040404;
+	font-style: italic;
+	font-size: 12px;
+}
+.Style53 {font-family: "Comic Sans MS"; font-size: 16; font-weight: bold; color: #FF0000; }
+.Style54 {font-family: "Comic Sans MS"; font-size: 9px; font-weight: bold; color: #FF6600; }
+-->
+</style>
+<script type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0"><tr>
+<td><a href="index.html" target="_parent" onclick="MM_nbGroup('down','group1','Accueil','',1)" onmouseover="MM_nbGroup('over','Accueil','','',1)" onmouseout="MM_nbGroup('out')"><img src="Images/Accueil.gif" alt="" name="Accueil" width="128" height="53" border="0" id="Accueil" onload=""></a></td>
+    <td><a href="Institut_de_formation.html" target="_parent" onclick="MM_nbGroup('down','group1','Institut','',1)" onmouseover="MM_nbGroup('over','Institut','','',1)" onmouseout="MM_nbGroup('out')"><img src="Images/Inst_Formation.gif" alt="" name="Institut" width="129" height="53" border="0" id="Institut" onload=""></a></td>
+    <td><a href="javascript:;" target="_top" onclick="MM_nbGroup('down','group1','Formations','',1)" onmouseover="MM_nbGroup('over','Formations','','',1)" onmouseout="MM_nbGroup('out')"><img src="Images/Formations.gif" alt="" name="Formations" width="128" height="53" border="0" usemap="#FormationsMap" id="Formations" onload=""></a></td>
+    <td><a href="Informations_pratiques.html" target="_parent" onclick="MM_nbGroup('down','group1','Infos','',1)" onmouseover="MM_nbGroup('over','Infos','','',1)" onmouseout="MM_nbGroup('out')"><img src="Images/Infos_pratiques.gif" alt="" name="Infos" width="128" height="53" border="0" id="Infos" onload=""></a></td>
+    <td><a href="Nous_contacter.html" target="_parent" onclick="MM_nbGroup('down','group1','Contact','',1)" onmouseover="MM_nbGroup('over','Contact','','',1)" onmouseout="MM_nbGroup('out')"><img src="Images/Nous_contacter.gif" alt="" name="Contact" width="128" height="53" border="0" id="Contact" onload=""></a></td>
+  </tr></table>
+<map name="FormationsMap" id="FormationsMap"><area shape="rect" coords="7,25,51,44" href="Formation_IDE.html" target="_parent">
+<area shape="rect" coords="56,24,82,45" href="Formation_AS.html" target="_parent">
+<area shape="rect" coords="87,24,119,44" href="Formation_Continue.html" target="_parent"></map><p class="Style5">Bienvenue sur le site internet de      l&#8217;I.F.S.I. d&#8217;Abbeville <img src="Images/batiment%20vue%20devant.jpg" width="215" height="166" align="middle"></p>
+<p><img src="Images/Attention.gif" alt="Attention" width="50" height="50" align="absmiddle"><img src="Images/accueil_clip_image001.gif" alt="Ellipse: ACTUALITES" width="484" height="52" align="absmiddle"></p>
+<p align="left" class="Style46"> </p>
+<p align="left" class="Style46"><img src="Images/Flash.gif" width="61" height="32"><span class="Style38"><span class="Style53">	<a href="Formation_Continue.html">Formation Assistant de Soins en Gérontologie</a></span> <span class="Style50">=&gt; 2 sessions en 2013, renseignez-vous ! </span></span></p>
+<p class="Style12"></p>
+<p> </p>
+<div class="Cadre" id="Layer1">
+  <blockquote>
+    <p class="Style54">  </p>
+    <p class="Style12">Calendrier de sélection d'entrée infirmier(e) :</p>
+    <ul>
+<li class="Style24">Clôture des inscriptions : le 15 mars 2013</li>
+      <li class="Style24">Epreuves écrites (admissibilité) : le 10 avril 2013</li>
+      <li class="Style24">Entretiens (admission) : du 21 mai au 14 juin 2013   </li>
+    </ul>
+<p class="Style12">Calendrier de sélection d'entrée aide-soignant(e) :  </p>
+    <ul>
+<li class="Style24">Clôture des inscriptions : le 15 mars 2013</li>
+      <li class="Style24">Epreuves écrites (admissibilité) : le 21 mai 2013</li>
+      <li class="Style24">Entretiens (admission) : du 13 mai au 17 septembre 2013   </li>
+    </ul>
+</blockquote>
+</div>
+<p class="Style12"> </p>
+<p class="Style12"> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<div class="Cadre" id="Layer3">
+  <div align="center">    
+    <p align="center" class="Style22">Institut de Formation en Soins      Infirmiers<br>
+      25 rue Victor Hugo 80142 ABBEVILLE      Cédex<br>
+      Tél : 03.22.25.64.90   Fax : 03.22.25.28.74<br>
+      e-mail : ifsi@ch-abbeville.fr</p>
+  </div>
+</div>
+<p> </p>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Centre de Formation des Apprentis de Haute-Corse</title>
+<meta name="description" content="Centre de Formation des Apprentis de Haute-Corse - Formation initiale - Formation Continue - Corse.">
+<meta name="keywords" content="cfa, apprenti, formation, corse, bastia, furiani, 2b, stage, apprentissage">
+<link href="/css/style2013.css" rel="stylesheet" type="text/css">
+<link href="css/style-sondage.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/jquery.autocomplete.css">
+<!--[if IE 7]>
+<link href="css/style_ie7.css" rel="stylesheet" type="text/css">
+<![endif]--><!--[if IE 8]>
+<link href="css/style_ie8.css" rel="stylesheet" type="text/css">
+<![endif]--><script type="text/javascript">
+function Lien() {
+	i = document.Choix.Liste.selectedIndex;
+	if (i == 0) return;
+	url = document.Choix.Liste.options[i].value;
+	parent.location.href = url;
+}
+</script><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script><script type="text/javascript" src="js/jquery.autocomplete.js"></script><script type="text/javascript" src="js/script.js"></script><script src="./js/poll.js" type="text/javascript" charset="utf-8"></script><script src="./js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script><script type="text/javascript" src="./js/jquery.li-scroller.1.0.js"></script><script type="text/javascript"> // NEWS DEFILANTE
+
+$(function(){
+    //$("ul#ticker01").liScroll({travelocity: 0.1});
+    $("ul#ticker01").liScroll();
+});
+</script><script type="text/javascript" src="./js/easynews.js"></script><script type="text/javascript"> // NEWS DEFILANTE
+
+$(document).ready(function(){
+	var newsoption1 = {
+		firstname: "mynews",
+		secondname: "showhere",
+		thirdname:"news_display",
+		fourthname:"news_button",
+		playingtitle:"",
+		nexttitle:"",
+		prevtitle:"",
+		newsspeed:'5000',
+		effectis:'0',
+		mouseover:false,
+		imagedir:''
+	}
+	var newsoption2 = {
+		firstname: "mynews2",
+		secondname: "showhere2",
+		thirdname:"news_display2",
+		fourthname:"news_button2",
+		playingtitle:"",
+		nexttitle:"",
+		prevtitle:"",
+		newsspeed:'5000',
+		effectis:'0',
+		mouseover:false,
+		imagedir:''
+	}
+	$.init_news(newsoption1);
+	$.init_news(newsoption2);
+});
+</script><style type="text/css">
+
+	#dialog{position: absolute; top: 50%; left: 50%; width: 650px; height: 348px; margin: -174px 0 0 -316px;}
+	.close{position: absolute; top: -3px; left: 630px; display: block; width: 48px; height: 47px; cursor: pointer;}
+</style>
+<script type="text/javascript">
+  $(document).ready(function(){
+	$('ul.tabs').each(function(){
+	  var active, content;
+	  links = $(this).find('a');
+
+	  active = links.first().addClass('active');
+	  content = $(active.attr('href'));
+
+	  links.not(':first').each(function(){
+		$($(this).attr('href')).hide();
+	  });
+
+	  $(this).on('click','a',function(){
+		active.removeClass('active');
+		content.fadeOut('fast').hide();
+
+		active = $(this);
+		content = $($(this).attr('href'));
+
+		active.addClass('active');
+		content.fadeIn('fast').show();
+
+		return false;
+	  });
+	});
+  });
+</script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28881465-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body class="index">
+<div id="wrapper">
+
+		<div id="bandeau">
+
+			<div id="logo">
+
+				<a href="./"><img src="images/logo.png" alt="logo" width="282" height="128" border="0"></a>
+
+			</div>
+
+			<div id="date">
+
+				<p>
+				mercredi 04 septembre 2013				</p>
+
+			</div>
+
+			<div id="rechercher">
+				<p><span style="color:#67686a; text-transform:none;">Bienvenue au</span><br><span style="color:#5cc5ed;">centre de formation des</span><br>
+				   apprentis de haute-corse</p>
+
+				<div id="recherche">
+					<form action="apprentissage-corse/recherche.htm" method="post">
+
+						<input type="text" size="30" name="rechmot" value="Rechercher" onfocus="if(this.value=='Rechercher'){this.value='';}" onblur="if(this.value==''){this.value='Rechercher';}"><input class="bouton" type="submit" value="OK">
+</form>
+				</div>
+			</div>
+
+
+
+
+			<div id="menu1">
+
+				<ul>
+<li><a href="apprentissage-corse/160-cfa-mission.htm">Notre mission</a></li>
+					<li><a href="apprentissage-corse/161-cfa-pole-expertise.htm">Pôles d'expertise</a></li>
+					<li><a href="apprentissage-corse/162-cfa-notre-equipe.htm">Notre équipe</a></li>
+					<li><a href="apprentissage-corse/163-cfa-nos-engagements.htm">Nos engagements</a></li>
+					<li><a href="apprentissage-corse/164-cfa-partenaires.htm">Partenaires</a></li>
+					<li><a href="apprentissage-corse/165-cfa-chiffres.htm">Chiffres</a></li>
+					<li><a href="apprentissage-corse/166-cfa-communication.htm">Communication</a></li>
+				</ul>
+</div>
+
+		</div>
+
+		<div id="menu2">
+
+			<ul>
+<li><a href="apprentissage-corse/pole-btp.htm" class="bouton1">Pôle btp</a></li>
+				<li><a href="apprentissage-corse/pole-metiers-bouche.htm" class="bouton2">Pôle métiers de bouche</a></li>
+				<li><a href="apprentissage-corse/pole-automobile.htm" class="bouton3">Pôle automobile</a></li>
+				<li><a href="apprentissage-corse/pole-soins-sante.htm" class="bouton4">Pôle service et soins</a></li>
+				<li><a href="apprentissage-corse/pole-gestion.htm" class="bouton5">Pôle gestion et commerce</a></li>
+			</ul>
+</div>
+
+		<div id="corps">
+
+		<div id="gauche">
+	
+	<img src=".//images/apprentissage-choix-formation.png" alt="apprentissage-choix-formation" width="207" class="img_choix_formation"><script type="text/javascript">
+	$(document).ready( function () {
+	    $(".menu3 ul.submenu2").hide();
+	
+	    $(".menu3 li.toggleSubMenu > a").click( function () {
+	        if ($(this).next("ul.submenu2:visible").length != 0) {
+	            $(this).next("ul.submenu2").slideUp("normal", function () { $(this).parent().removeClass("open") });
+	        }
+	        else {
+	            $(".menu3 ul.submenu2").slideUp("normal", function () { $(this).parent().removeClass("open") });
+	            $(this).next("ul.submenu2").slideDown("normal", function () { $(this).parent().addClass("open") });
+	        }
+	        return false;
+	    });
+	});
+	</script><div id="menu-bloc">	
+		<h2>Vous êtes</h2>
+		<ul class="menu3">
+<li class="toggleSubMenu">
+<a href="#">Jeune de 16-26 ans</a>
+<ul class="submenu2">
+<li>
+<a href="apprentissage-corse/198-apprentissage-formation-professionnalisation-ppp.htm">Période de pré professionnalisation (PPP)</a>
+</li>
+<li>
+<a href="apprentissage-corse/199-apprentissage-formation-apprentissage.htm">Contrat d'apprentissage</a>
+</li>
+<li>
+<a href="apprentissage-corse/200-apprentissage-formation-contratpro.htm">Contrat de professionnalisation</a>
+</li>
+<li>
+<a href="apprentissage-corse/276-apprentissage-formation-jeune-auditeur-libre.htm">Auditeur libre</a>
+</li>
+</ul>
+<span></span>
+</li>
+<li class="toggleSubMenu">
+<a href="#">Salarié</a>
+<ul class="submenu2">
+<li>
+<a href="#">En reconversion profesionnelle</a>
+<ul class="submenu3">
+<li><a href="apprentissage-corse/203-apprentissage-formation-cif-cdi.htm">CIF CDI</a></li>
+</ul>
+</li>
+<li>
+<a href="#">En validation de qualification</a>
+<ul class="submenu3">
+<li><a href="apprentissage-corse/207-apprentissage-formation-dif.htm">DIF</a></li>
+<li><a href="apprentissage-corse/208-apprentissage-formation-formation-entreprise.htm">Plan de formation de l'entreprise</a></li>
+<li><a href="apprentissage-corse/209-apprentissage-formation-periode-professionnalisation.htm">Période de professionnalisation</a></li>
+<li><a href="apprentissage-corse/210-apprentissage-formation-apprentissage.htm">Contrat d'apprentissage</a></li>
+</ul>
+</li>
+<li>
+<a href="apprentissage-corse/277-apprentissage-formation-salarie-auditeur-libre.htm">Auditeur libre</a>
+</li>
+</ul>
+<span></span>
+</li>
+<li class="toggleSubMenu">
+<a href="#">Demandeur d'emploi</a>
+<ul class="submenu2">
+<li>
+<a href="#">- de 26 ans</a>
+<ul class="submenu3">
+<li><a href="apprentissage-corse/223-apprentissage-formation-parcours-ppp.htm">Parcours de pré professionnalisation (PPP)</a></li>
+<li><a href="apprentissage-corse/224-apprentissage-formation-apprentissage-26.htm">Contrat d'apprentissage</a></li>
+<li><a href="apprentissage-corse/225-apprentissage-formation-professionnalisation-26.htm">Contrat de professionnalisation</a></li>
+</ul>
+</li>
+<li>
+<a href="#">+ de 26 ans</a>
+<ul class="submenu3">
+<li><a href="apprentissage-corse/226-apprentissage-formation-professionnalisation-26.htm">Contrat de professionnalisation</a></li>
+<li><a href="apprentissage-corse/227-apprentissage-formation-action-qualification.htm">Action de qualification</a></li>
+<li><a href="apprentissage-corse/228-apprentissage-formation-cif-cdd.htm">CIF CDD</a></li>
+</ul>
+</li>
+<li>
+<a href="apprentissage-corse/278-apprentissage-formation-demandeur-auditeur-libre.htm">Auditeur libre</a>
+</li>
+</ul>
+<span></span>
+</li>
+<li class="toggleSubMenu">
+<a href="#">Chef d'entreprise/Artisan</a>
+<ul class="submenu2">
+<li>
+<a href="apprentissage-corse/229-apprentissage-formation-entreprise-apprentissage.htm">Contrat d'apprentissage secteur privé</a>
+</li>
+<li>
+<a href="apprentissage-corse/275-apprentissage-formation-entreprise-apprentissage-public.htm">Contrat d'apprentissage secteur public</a>
+</li>
+<li>
+<a href="apprentissage-corse/230-apprentissage-formation-entreprise-professionnalisation.htm">Contrat de professionnalisation</a>
+</li>
+<li>
+<a href="apprentissage-corse/231-apprentissage-formation-periode-professionnalisation.htm">Périodes de professionnalisation</a>
+</li>
+<li>
+<a href="apprentissage-corse/232-apprentissage-formation-plan-formation.htm">Plan de formation de l'entreprise</a>
+</li>
+<li>
+<a href="apprentissage-corse/233-apprentissage-formation-gpec.htm">Gestion prévisionnelle emplois et compétence</a>
+</li>
+<li>
+<a href="apprentissage-corse/279-apprentissage-formation-employeur-auditeur-libre.htm">Auditeur libre</a>
+</li>
+</ul>
+<span></span>
+</li>
+<li class="toggleSubMenu">
+<a href="#">Travailleur handicapé</a>
+<ul class="submenu2">
+<li>
+<a href="apprentissage-corse/234-apprentissage-formation-th-apprentissage.htm">Contrat d'apprentissage</a>
+</li>
+<li>
+<a href="apprentissage-corse/235-apprentissage-formation-th-contrat-professionnalisation.htm">Contrat de professionnalisation</a>
+</li>
+<li>
+<a href="apprentissage-corse/280-apprentissage-formation-handicape-auditeur-libre.htm">Auditeur libre</a>
+</li>
+</ul>
+<span></span>
+</li>
+<li class="toggleSubMenu">
+<a href="#">Parent</a>
+<ul class="submenu2">
+<li>
+<a href="apprentissage-corse/236-apprentissage-formation-cfa-vous.htm">Le CFA et vous</a>
+</li>
+<li>
+<a href="apprentissage-corse/237-apprentissage-formation-apprentissage-vous.htm">L'apprentissage et vous</a>
+</li>
+</ul>
+<span></span>
+</li>
+</ul>
+<h2>Tout Savoir</h2>
+<ul class="menu3">
+<li>
+<a href="apprentissage-corse/154-apprentissage-formation-apprentissage.htm">L'apprentissage</a>
+</li>
+<li class="toggleSubMenu">
+<a href="#">L'alternance</a>
+<ul class="submenu2">
+<li><a href="apprentissage-corse/238-apprentissage-formation-definition-alternance.htm">Définition</a></li>
+<li><a href="apprentissage-corse/239-apprentissage-formation-apprentissage-ou-professionnalisation.htm">Apprentissage ou Professionnalisation</a></li>
+</ul>
+<span></span>
+</li>
+<li class="toggleSubMenu">
+<a href="#">La formation continue</a>
+<ul class="submenu2">
+<li><a href="apprentissage-corse/240-apprentissage-formation-formation-continu-pour-qui.htm">Pour qui ?</a></li>
+<li><a href="apprentissage-corse/241-apprentissage-formation-courte-longue.htm">Formation courte et formation longue</a></li>
+</ul>
+<span></span>
+</li>
+<li>
+<a href="apprentissage-corse/157-apprentissage-formation-taxe-apprentissage.htm">La taxe d'apprentissage</a>
+</li>
+<li>
+<a href="apprentissage-corse/265-apprentissage-formation-glossaire.htm">Glossaire</a>
+</li>
+<li>
+<a href="apprentissage-corse/159-apprentissage-formation-faq.htm">Foire Aux Questions</a>
+</li>
+</ul>
+<h2>Infos Pratiques</h2>
+<ul class="menu3">
+<li><a href="apprentissage-corse/contact.htm" class="btn" target="_top">Contact</a></li>
+<li><a href="apprentissage-corse/agenda.htm" class="btn" target="_top">Agenda</a></li>
+<li><a href="apprentissage-corse/galerie.htm" class="btn" target="_top">Photothèque</a></li>
+<li><a href="apprentissage-corse/goodies.htm" class="green" target="_top">Goodies</a></li>
+</ul>
+</div>
+<div id="logos">
+		<a href="http://www.fse.gouv.fr/" target="_blank"><img src="./images/logo_fse.png" alt="logo_fse" width="100" border="0" height="70"></a>
+		<a href="http://www.corse.fr" target="_blank"><img src="./images/ctc_corse.jpg" alt="logo-ctc" width="170" border="0"></a>
+	</div>
+</div>
+
+
+
+			<div id="centre">
+
+				<div id="indexactu">
+					<h1><a href="/apprentissage-corse/actualite.htm" title="Vers la page actualité du CFA de haute-corse">l'actu</a></h1>
+					<div align="left" id="mynewsdis">
+<!-- div pour afficher les news -->
+						<div class="news_border">
+<!--cadre des news -->
+							<div id="showhere" class="news_show"> <!--le texte des news-->
+							</div>
+						</div>
+						<div style="display:none;" class="buttondiv" id="news_button">
+<span id="news_prev"></span><span id="news_pause"></span><span id="news_next"></span>
+</div>
+					</div>
+					<div id="mynews" style="overflow: hidden;">
+<div id="news0" class="news_style">
+<div class="img_actu"><img src="./admin/actu/files/200/_DSC0080.jpg" width="80"></div>
+<p class="news">Remise des prix du Rotary - Jeudi 27 juin, les membres du Rotary Club de…</p>
+<a href="./apprentissage-corse/actualite.htm#actu200" title="Remise des prix du Rotary" class="info">+ D‘INFOS</a>
+</div>
+<div id="news1" class="news_style">
+<div class="img_actu"><img src="./admin/actu/files/46/logo-ctc.jpg" width="80"></div>
+<p class="news">Formations demandées dans le cadre du Plan Régional de Formation financé par la CTC - Plateforme qualification second œuvre,…</p>
+<a href="./apprentissage-corse/actualite.htm#actu46" title="Formations demandées dans le cadre du Plan Régional de Formation financé par la CTC" class="info">+ D‘INFOS</a>
+</div>
+<div id="news2" class="news_style">
+<div class="img_actu"><img src="./admin/actu/files/183/logo-ctc.jpg" width="80"></div>
+<p class="news">Demande d’ouverture de sections - Accompagnement Soins et Services à la personne…</p>
+<a href="./apprentissage-corse/actualite.htm#actu183" title="Demande d’ouverture de sections" class="info">+ D‘INFOS</a>
+</div>
+<div id="news3" class="news_style">
+<div class="img_actu"><img src="./admin/actu/files/198/5579196-8320561.jpg" width="80"></div>
+<p class="news">Rendez-vous de l'alternance - Le CFA de Haute-Corse était présent Mercredi 5…</p>
+<a href="./apprentissage-corse/actualite.htm#actu198" title="Rendez-vous de l'alternance" class="info">+ D‘INFOS</a>
+</div>
+</div>				</div>
+
+				<div id="indexagenda">
+					<h1><a href="/apprentissage-corse/agenda.htm" title="Vers la page agenda du CFA de haute-corse">l'agenda</a></h1>
+					<div align="left" id="mynewsdis">
+<!-- div pour afficher les news -->
+						<div class="news_border">
+<!--cadre des news -->
+							<div id="showhere2" class="news_show"> <!--le texte des news-->
+							</div>
+						</div>
+						<div style="display:none;" class="buttondiv" id="news_button2">
+<span id="news_prev"></span><span id="news_pause"></span><span id="news_next"></span>
+</div>
+					</div>
+					<div id="mynews2" style="overflow: hidden;">
+<div id="news0" class="news_style">
+<p class="news">Jusqu’au 4 septembre 2013<br>Exposition « Polkapalace »  - Exposition « Polkapalace » au Musée Municipal d'art et d'histoire de Bastia.…</p>
+<a href="./apprentissage-corse/agenda.htm#actu180" title="Exposition « Polkapalace » " class="info">+ D‘INFOS</a><span class="date">30</span>
+</div>
+<div id="news1" class="news_style">
+<p class="news">Du 22 mars au 15 septembre<br>Exposition - Exposition « Théodore de Neuhoff, roi de Corse, prince des chimères », au Musée de…</p>
+<a href="./apprentissage-corse/agenda.htm#actu142" title="Exposition" class="info">+ D‘INFOS</a><span class="date">22</span>
+</div>
+<div id="news2" class="news_style">
+<p class="news">Jusqu’au 15 septembre 2013<br>Exposition « Théodore de Neuhoff » - Exposition « Théodore de Neuhoff, roi de Corse, prince des chimères », au Musée…</p>
+<a href="./apprentissage-corse/agenda.htm#actu181" title="Exposition « Théodore de Neuhoff »" class="info">+ D‘INFOS</a><span class="date">30</span>
+</div>
+<div id="news3" class="news_style">
+<p class="news">A partir du 16 Septembre 2013<br>Rentrée des 1ères années - Bac Pro et Brevet Professionnel</p>
+<a href="./apprentissage-corse/agenda.htm#actu188" title="Rentrée des 1ères années" class="info">+ D‘INFOS</a><span class="date">16</span>
+</div>
+<div id="news4" class="news_style">
+<p class="news">Tous les mardis de l’été<br>Les Légendines - Les Légendines, organisé par l’office de Tourisme de l’Agglomération de Bastia.…</p>
+<a href="./apprentissage-corse/agenda.htm#actu182" title="Les Légendines" class="info">+ D‘INFOS</a><span class="date">30</span>
+</div>
+<div id="news5" class="news_style">
+<p class="news">A partir du 14 Octobre 2013<br>Rentrée des 1ères années CAP - Rentrée des 1ères années CAP</p>
+<a href="./apprentissage-corse/agenda.htm#actu189" title="Rentrée des 1ères années CAP" class="info">+ D‘INFOS</a><span class="date">14</span>
+</div>
+<div id="news6" class="news_style">
+<p class="news">Le 19 et 20 novembre<br>GNFA - Mise à disposition de l’atelier de Mécanique automobile Formation continue pour les…</p>
+<a href="./apprentissage-corse/agenda.htm#actu120" title="GNFA" class="info">+ D‘INFOS</a><span class="date">19</span>
+</div>
+<div id="news7" class="news_style">
+<p class="news">Du 1er Juillet 2013 au 31 Décembre 2013<br>Campagne d’apprentissage - Période de signature des contrats d’apprentissage</p>
+<a href="./apprentissage-corse/agenda.htm#actu186" title="Campagne d’apprentissage" class="info">+ D‘INFOS</a><span class="date">01</span>
+</div>
+</div>				</div>
+			
+
+				<div id="video">
+
+				  <ul class="tabs">
+<li><a href="#tab1" id="un">A la Une</a></li>
+					<li><a href="#tab2" id="deux">Présentation du CFA</a></li>
+				  </ul>
+<div id="tab1">
+					<iframe src="http://player.vimeo.com/video/35574518?title=0&amp;byline=0&amp;portrait=0" width="433" height="241" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><h1>L’apprentissage, un choix de formation</h1>
+<p>L’apprentissage est un choix de formation. En associant un enseignement théorique, général et professionnel, dispensés par des formateurs qualifiés, et une formation pratique en entreprise, l’apprentissage permet aux jeunes d’avoir un métier en main et d’assurer leur avenir professionnel.</p>				  </div>
+
+				  <div id="tab2">
+					<iframe src="http://player.vimeo.com/video/58523798" width="433" height="241" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><h1>Présentation du CFA de Haute-Corse</h1>
+<p>Avec un espace de 7500 m2, une équipe de plus de 70 personnes, près de 800 apprentis par an, le Centre de Formation des Apprentis de Haute-Corse est un acteur majeur de la formation professionnelle. Par la qualité de ses équipements et la diversité de son offre de formation, le CFA de Haute-Corse est devenu aujourd’hui un lieu de référence pour les professionnels.</p>				  </div>
+				</div>
+
+				<div id="goodie">
+<div id="sep"> </div>
+<a href="http://www.cfa2b.fr/admin/telechargement/files/23/offre_emploi.pdf" title="Nos offres d" emploi><img src="./admin/partenaire/files/100/offre_centre.png" border="0"></a><a href="/saison-apprentissage/2013" title="Campagne apprentissage 2013"><img src="./admin/partenaire/files/98/apprentissage-centre.png" border="0"></a>
+</div>
+<div id="sep"> </div>
+<div class="bloc"><a href="/apprentissage-corse/199-apprentissage-formation-apprentissage.htm" title="Le contrat d‘apprentissage"><img src="/images/aleatoire/contrat-apprentissage.png" alt="contrat-apprentissage" width="433"></a></div>
+<div id="sep"> </div>
+<div class="bloc mt1 mb1"><a href="/apprentissage-corse/276-apprentissage-formation-jeune-auditeur-libre.htm" title="S‘inscrire en auditeur libre"><img src="/images/aleatoire/auditeur-libre.png" alt="auditeur-libre" width="433"></a></div>
+			</div>
+
+			<div id="droite">
+
+				<div id="flux">
+	<ul id="ticker01">
+<div id="goodie_flux">
+<li><span>Campagne d'apprentissage : du 1er juillet au 31 décembre 2013, c'est le moment de signer votre contrat d'apprentissage !  5 pôles d'expertise, plus de 80 diplômes, renseignez-vous vite et trouvez votre formation. N'hésitez pas à nous contacter pour plus d'information. Vacances scolaires : Fermeture du CFA du 12 juillet au 2 septembre 2013.</span></li>	
+</div>
+<div id="diplome">
+	<h3>Rechercher</h3>
+	<form name="form-metier" id="form-metier" action="/apprentissage-corse/moteur-metier.php">
+		<input class="metier" type="text" name="inmetier" id="inmetier" value="Un métier" autocomplete="off" onfocus="if(this.value=='Un métier'){this.value='';}" onblur="if(this.value==''){this.value='Un métier';}"><input type="text" id="mid" name="mid" style="visibility:hidden;width:0;height:0;margin:0;padding:0;"><input type="submit" value="">
+</form>
+	
+	<form name="form-diplome" id="form-diplome" action="/apprentissage-corse/moteur-diplome.php">
+		<input class="diplome" type="text" name="indiplome" id="indiplome" value="Un diplôme" autocomplete="off" onfocus="if(this.value=='Un diplôme'){this.value='';}" onblur="if(this.value==''){this.value='Un diplôme';}"><input type="text" id="did" name="did" style="visibility:hidden;width:0;height:0;margin:0;padding:0;"><input type="submit" value="">
+</form>				
+</div>
+<a href="/admin/telechargement/files/23/offre_emploi.pdf" target="_blank" class="droite_emploi">Nos offres<br>En contrat d'appentissage</a><a href="#" class="droite_resto">Restaurant d'application<br>Fermé jusqu’au mois de septembre</a><a href="/cfatv/" class="droite_video"></a>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

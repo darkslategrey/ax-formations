@@ -1,0 +1,1212 @@
+<html>
+<!--[  GuppY v4.5.10 CeCILL Copyright (C) 2002-2005 by Laurent Duveau - http://www.freeguppy.org/  ]--><head>
+<title>Portail du Lycée Professionnel MAGNAN </title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Description" lang="en" content="GuppY : the easy and free web portal that requires no database to run">
+<meta name="Keywords" lang="en" content="guppy, freeguppy, php, gpl, html, web, internet, portal, miniportail">
+<meta name="Identifier-url" content="http://www.ac-nice.fr/magnan">
+<meta name="Robots" content="Index, Follow">
+<meta name="Revisit-After" content="14 days">
+<meta name="Author" content="GuppY">
+<meta name="Owner" content="GuppY Team">
+<meta name="Reply-To" content="mail@guppy.cms">
+<meta name="Rating" content="General">
+<meta name="Distribution" content="Global">
+<meta name="Copyright" content="CeCILL Free License - (C) 2004-2007">
+<meta name="Language" content="en">
+<meta name="Title" content="GuppY">
+<meta name="Generator" content="GuppY">
+<link rel="shortcut icon" href="http://www.ac-nice.fr/magnan/guppy.ico">
+<style type="text/css">
+body {
+ background-color: #779AC1;background-image: url(img/fond_lyce4.jpg);background-attachment: fixed;scrollbar-base-color: #779AC1;scrollbar-arrow-color: #330099; margin: 8px 0px 0px 0px;
+}
+
+.header {
+ background-color: #779AC1 background-position: 100% 50%;
+ background-repeat: repeat-x;
+}
+
+.logo {
+ background-color: transparent;
+ padding: 4px;
+ text-align: left;
+}
+
+.banner {
+ margin-right: 2px;
+ background-repeat: no-repeat;
+ padding: 8px;
+ text-align: right;
+}
+
+.quote {
+ width: 100%;
+ white-space: nowrap;
+ text-align: center;
+}
+
+.headmenu {
+ width: 98%;
+}
+
+p {
+ margin: 4px 0px;
+ font-size: 12px;
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+}
+
+p.menu {
+ color: #000099;
+ text-align: center;
+}
+
+p.box {
+ margin: 0px;
+ font-size: 11px;
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+}
+
+.box {
+ font-size: 11px;
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+}
+
+.titre {
+ background-color: #A6C4E0;
+ padding: 5px;
+ white-space: nowrap;
+ font-size: 14px;
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+ font-weight: bold;
+}
+
+.titrebox {
+ background-color: #A6C4E0;
+ padding: 4px;
+ white-space: nowrap;
+ font-size: 14px;
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+ font-weight: bold;
+}
+
+.titrebox2 {
+ font-size: 14px;
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+ font-weight: bold;
+ text-align: center;
+}
+
+.cita {
+background-color: #0099FF; font-family: Arial, Helvetica, sans-serif;
+ font-size: 14px;
+ color: #000099;
+ text-align: center;
+ width: 100%;
+ border: 0px;
+ margin: 0px;
+ padding: 0px;
+}
+
+.htable {
+ margin-bottom: 8px;
+}
+
+.tbl {
+ background-color: #EFEFF7;
+ padding: 5px;
+}
+
+.tblover {
+ background-color: #FCFCFC;
+ padding: 5px;
+}
+
+.tbl2 {
+ background-color: #EFEFF7;
+ padding: ;
+}
+
+.htable1 {
+ margin-bottom: 8px;
+}
+
+.tblbox {
+ background-color: #EFEFF7;
+ padding: 4px;
+}
+
+.tblboxover {
+ background-color: #FCFCFC;
+ padding: 4px;
+}
+
+.bordure {
+ border: 1px solid #0000CC;
+}
+
+.forum {
+ background-color: #A6C4E0;
+ padding: 5px 5px;
+ font-size: 12px;
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+ text-align: center;
+ font-weight: bold;
+}
+
+.forum2 {
+ background-color: #A6C4E0;
+ padding: 5px 5px 5px 5px;
+ font-size: 12px;
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+}
+
+.quest {
+ background-color: #AFC6DB;
+ padding: 5px 5px 5px 5px;
+ font-size: 12px;
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+}
+
+.rep {
+ background-color: #CFDDEB;
+ padding: 10px 5px 5px 5px;
+ font-size: 12px;
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+}
+
+.bord {
+ border: 1px solid #A6C4E0;
+}
+
+.bord2 {
+ border: 4px double #A6C4E0;
+}
+
+a {
+ color: #0033CC;
+ text-decoration: none;
+}
+
+a:hover {
+ color: #FF3366;
+ text-decoration: none;
+background-color: transparent; position: relative; top: 1px; left: 1px;}
+
+a.box {
+ color: #0066CC;
+ text-decoration: none;
+ font-size: 11px;
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+a.box2 {
+ color: #FF3366;
+ text-decoration: none;
+ font-size: 11px;
+ font-family: Arial, Helvetica, sans-serif;
+ font-weight: bold;
+}
+
+a:hover.box {
+ color: #FF3366;
+ text-decoration: none;
+ font-size: 11px;
+ font-family: Arial, Helvetica, sans-serif;
+background-color: transparent; position: relative; top: 1px; left: 1px;}
+
+td.menu {
+ margin: 2px;
+ white-space: nowrap;
+ text-align: center;
+ padding: 9px 9px;
+}
+
+a.menu {
+ color: #000099;
+ text-decoration: none;
+ font-size: 10px;
+ font-family: Arial, sans-serif;
+}
+
+a:hover.menu {
+ color: #FFCC00;
+ text-decoration: none;
+ font-size: 10px;
+ font-family: Arial, sans-serif;
+background-color: transparent; position: relative; top: 1px; left: 1px;}
+
+hr {
+ height: 1px;
+ border-bottom: 1px dashed #6666CC;
+ border-top: 0 none; border-right: 0 none; border-left: 0 none;
+ width: 98%;
+}
+
+ul, ol, li {
+ font-size: 12px;
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+}
+
+ul.art {
+font-weight:bold; padding:0px; margin:0px;
+}
+
+li.art {
+font-weight:normal; list-style-type:none; padding:0px; margin-left:4px;
+}
+
+dl, dd, dt, address, dir, menu, blockquote, td {
+ font-size: 12px;
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+}
+
+h1, h2, h3, h4, h5, h6 {
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+}
+
+td.cal0 {
+ font-size: 11px;
+ font-family: Arial, sans-serif;
+ color: #000099;
+ background-color: ;
+ width: 14%;
+ text-align: center;
+}
+
+td.cal1 {
+ font-size: 11px;
+ font-family: Arial, sans-serif;
+ color: #000099;
+ background-color: #E0E0E0;
+ width: 14%;
+ text-align: center;
+}
+
+td.cal2 {
+ font-size: 11px;
+ font-family: Arial, sans-serif;
+ color: #000099;
+ background-color: #BAD0FF;
+ width: 14%;
+ text-align: center;
+}
+
+td.cal3 {
+ font-size: 11px;
+ font-family: Arial, sans-serif;
+ color: #000099;
+ background-color: #C6C6C6;
+ width: 14%;
+ text-align: center;
+}
+
+td.cal4 {
+ font-size: 11px;
+ font-family: Arial, sans-serif;
+ color: #000099;
+ background-color: #779AC1;
+ width: 14%;
+ text-align: center;
+}
+
+td.calevt {
+ font-size: 11px;
+ font-family: Arial, sans-serif;
+ font-weight: bold;
+ color: #000099;
+ background-color: #779AC1;
+ text-decoration: underline;
+ text-align: center;
+ width: 14%;
+ }
+
+tr.vdev {
+ background-color: #A6C4E0;
+}
+
+tr.vdevtr {
+ background-color: #A6C4E0;
+}
+
+body.vdev {
+ margin-left: 10px; 
+ font-family: Arial, sans-serif;
+ font-size: 12px;
+ background-color: #CFDDEB;
+}
+
+body.vdevdialog {
+ margin-left: 0px;
+ font-family: Arial, sans-serif;
+ font-size: 12px;
+ background-color: #CFDDEB;
+}
+
+select.vdev {
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+ font-size: 12px; 
+ height: 22px; 
+ background-color: #CFDDEB;
+}
+
+input.vdev {
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+ font-size: 12px; height: 22px; 
+ background-color: #CFDDEB;
+}
+
+input.vdevx {
+ font-family: Arial, Helvetica, sans-serif;
+ color: #330099;
+ background-color: #CFDDEB;
+ }
+
+form {
+ margin: 3px 0px;
+}
+
+input.bouton {
+ cursor: pointer;
+ margin: 4px 0px;
+ color: #000099;
+ border: -1px inset #000099;
+ background-color: #F0F0F0;
+ font-size: 11px;
+ font-family: Trebuchet MS, Helvetica, sans-serif;
+}
+
+input.texte {
+ background-color: #FFFFFF;
+ font-size: 11px;
+ font-family: Trebuchet MS, Helvetica, sans-serif;
+ color: #000099;
+ border: -1px solid #000099;
+ margin: 2px 0px;
+}
+
+select {
+ color: #000099;
+ background-color: #F0F0F0;
+ font-family: Trebuchet MS, Helvetica, sans-serif;
+ font-size: 11px;
+ border: -1px solid #000099;
+ margin: 4px 0px;
+}
+
+textarea {
+ color: #000099;
+ background-color: #F0F0F0;
+ border: -1px solid #000099;
+ overflow: auto;
+ scrollbar-base-color: #F0F0F0;
+ scrollbar-arrow-color: #000099;
+ margin: 4px 0px;
+}
+
+.top {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 0.8em;
+ text-align: center;
+}
+
+.foot {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 12px;
+ text-align: center; 
+ color: #000099;
+}
+
+.copyright {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 1em;
+ color: #000099;
+ text-align: center;
+}
+
+.timer {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 1em;
+ font-style: italic;
+ color: #000099;
+ text-align: center; 
+ padding: 8px;
+}
+
+.clsCursor {
+ cursor: pointer;
+}
+
+ .band {
+ background-image: url(img/fond_lyce3.jpg);
+ text-align: center;
+}
+</style>
+<link type="text/css" rel="stylesheet" href="plugins/ajoutemenu/ajoutemenu.css">
+<script type="text/javascript" language="javascript" src="plugins/ajoutemenu/ajoutemenu.js"></script><script language="javascript" type="text/javascript" src="inc/rollover.js"></script><script language="javascript" type="text/javascript">
+var texte='            ';
+var charset = "iso-8859-1";
+var site0 = "Portail du Lycée Professionnel MAGNAN ";
+var site3 = "http://www.ac-nice.fr/magnan/";
+var web91 = "Cette fonctionnalité n'est proposée que par Internet Explorer 4+";
+</script><script language="javascript" type="text/javascript" src="inc/hpage.js"></script>
+</head>
+<body>
+<a name="top"></a>
+<center>  <table summary="table" class="htable1" cellspacing="0" cellpadding="0" align="center" width="98%" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt="*" title="*"></td>
+    <td height="10" style="background-image: url(inc/img/skin/skn_1/tab_hc.gif);"></td>
+    <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt="*" title="*"></td>
+</tr>
+<tr>
+<td width="10" style="background-image: url(inc/img/skin/skn_1/tab_gc.gif);"></td>
+    <td style="background-image: url(img/fond3.gif);">    <table summary="table" class="band" cellspacing="0" cellpadding="0" bgcolor="#0099FF" border="0"><tr>
+<td style="white-space: nowrap; width:100%;" class="logo">
+  <a href="http://www.ac-nice.fr/magnan/index.php?lng=fr" title="Portail du Lycée Professionnel MAGNAN ">
+  <img src="img/logo.jpg" border="0" alt="Portail du Lycée Professionnel MAGNAN "></a>
+</td>
+  <td nowrap align="right" class="banner">      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="468" height="60" id="ban">
+       <param name="movie" value="img/magnan1.swf">
+<param name="wmode" value="transparent">
+<param name="quality" value="high">
+<param name="menu" value="false">
+<embed src="img/magnan1.swf" quality="high" width="468" height="60" wmode="transparent" name="ban" menu="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed></object>
+      </td>
+</tr></table>
+</td>
+<td width="10" style="background-image: url(inc/img/skin/skn_1/tab_dc.gif);"></td>
+</tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt="*"></td>
+    <td height="10" style="background-image: url(inc/img/skin/skn_1/tab_bc.gif);"></td>
+    <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt="*" title="*"></td>
+</tr>
+</table>
+<table class="headmenu" cellspacing="0" cellpadding="0" align="center" style="background-image: url(inc/img/skin/skn_1/);"><tr>
+<td class="menu"><a class="menu" href="index.php?lng=fr">
+  <img src="inc/img/icons/ico_1/home.gif" alt="Accueil" width="32" height="32" border="0" class="imgover"><br>
+  Accueil</a></td>
+  <td class="menu"><a class="menu" href="download.php?lng=fr">
+      <img src="inc/img/icons/ico_1/download.gif" alt="Téléchargements" width="32" height="32" border="0" class="imgover"><br>
+    Téléchargements  </a></td>
+    <td class="menu"><a class="menu" href="links.php?lng=fr">
+      <img src="inc/img/icons/ico_1/links.gif" alt="Liens" width="32" height="32" border="0" class="imgover"><br>
+    Liens  </a></td>
+  <td class="menu" width="100%"> </td>
+</tr></table>
+<table cellspacing="7" cellpadding="0" width="100%" border="0"><tr>
+<td valign="top">
+
+  <!-- Plugin ajoutemenu 15 Version 4.5p21 (10/01/2007) par Jean-Michel MISRACHI http://jmmis.free.fr/ -->  <table class="htable1" cellspacing="0" cellpadding="0" align="center" width="180" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_hc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt=" "></td>
+</tr>
+<tr>
+<td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_gc.gif)"></td>
+   <td class="titrebox" style="background-image:url(img/fond3.gif)">Les formations</td>
+   <td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_dc.gif)"></td>
+</tr>
+<tr><td class="tblbox" onmouseover="this.className = 'tblboxover'" onmouseout="this.className = 'tblbox'">
+  
+  <div class="am1">
+    <ul class="am1">
+<li class="am1">
+        <div class="box"><b>Schémas des formations</b></div>
+        <ul class="am2">
+<li class="am2">* <a class="box" href="articles.php?lng=fr&amp;pg=149" title="Lycée des métiers des Soins et Services à la personne">Lycée des métiers des Soins et Services à la personne</a>
+</li>
+          <li class="am2">* <a class="box" href="articles.php?lng=fr&amp;pg=150" title="Tertiaire">Tertiaire</a>
+</li>
+        </ul>
+</li>
+    </ul>
+</div>  </td></tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_bc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt=" "></td>
+  </tr>
+</table>
+<!-- Plugin ajoutemenu 0 Version 4.5p21 (10/01/2007) par Jean-Michel MISRACHI http://jmmis.free.fr/ --><table class="htable1" cellspacing="0" cellpadding="0" align="center" width="180" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_hc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt=" "></td>
+</tr>
+<tr>
+<td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_gc.gif)"></td>
+   <td class="titrebox" style="background-image:url(img/fond3.gif)">Formations du tertiaire</td>
+   <td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_dc.gif)"></td>
+</tr>
+<tr><td class="tblbox" onmouseover="this.className = 'tblboxover'" onmouseout="this.className = 'tblbox'">
+  
+  <div class="am1">
+    <ul class="am1">
+<li class="am1">
+        <div class="box">
+          <img class="am2" id="am0_1_0p" src="inc/img/general/open.gif" alt="+" title="+" onclick="am_toggle('am0_1_0');"><img class="am1" id="am0_1_0m" src="inc/img/general/close.gif" alt="-" title="-" onclick="am_toggle('am0_1_0');"><span class="am" onclick="am_toggle('am0_1_0');"> <b>Métiers de la relation aux clients et aux usagers</b></span>
+</div>
+        <ul class="am2" id="am0_1_0">
+<li class="am2">. <a class="box" href="articles.php?lng=fr&amp;pg=97" title="01- C.A.P. Employé de commerce multi spécialités">01- C.A.P. Employé de commerce multi spécialités</a>
+</li>
+          <li class="am2">. <a class="box" href="articles.php?lng=fr&amp;pg=152" title="BAC PRO Accueil Relation Clients Usagers">BAC PRO Accueil Relation Clients Usagers</a>
+</li>
+          <li class="am2">. <a class="box" href="articles.php?lng=fr&amp;pg=99" title="BAC PRO Commerce">BAC PRO Commerce</a>
+</li>
+          <li class="am2">. <a class="box" href="articles.php?lng=fr&amp;pg=100" title="BAC PRO Vente (Prospection - Négociation - Suivi de clientèle)">BAC PRO Vente (Prospection - Négociation - Suivi de clientèle)</a>
+</li>
+        </ul>
+</li>
+      <li class="am1">
+        <div class="box">
+          <img class="am2" id="am0_1_1p" src="inc/img/general/open.gif" alt="+" title="+" onclick="am_toggle('am0_1_1');"><img class="am1" id="am0_1_1m" src="inc/img/general/close.gif" alt="-" title="-" onclick="am_toggle('am0_1_1');"><span class="am" onclick="am_toggle('am0_1_1');"> <b>Métiers des services administratifs</b></span>
+</div>
+        <ul class="am2" id="am0_1_1">
+<li class="am2">. <a class="box" href="articles.php?lng=fr&amp;pg=96" title="BAC PRO Comptabilité">BAC PRO Comptabilité</a>
+</li>
+          <li class="am2">. <a class="box" href="articles.php?lng=fr&amp;pg=171" title="BAC PRO GESTION-ADMINISTRATION">BAC PRO GESTION-ADMINISTRATION</a>
+</li>
+          <li class="am2">. <a class="box" href="articles.php?lng=fr&amp;pg=93" title="BAC PRO Secrétariat">BAC PRO Secrétariat</a>
+</li>
+        </ul>
+</li>
+    </ul>
+</div>
+  <script type="text/javascript" language="javascript">
+  am_toggle('am0_1_0');
+  am_toggle('am0_1_1');
+  </script>
+</td></tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_bc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt=" "></td>
+  </tr>
+</table>
+<!-- Plugin ajoutemenu 1 Version 4.5p21 (10/01/2007) par Jean-Michel MISRACHI http://jmmis.free.fr/ --><table class="htable1" cellspacing="0" cellpadding="0" align="center" width="180" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_hc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt=" "></td>
+</tr>
+<tr>
+<td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_gc.gif)"></td>
+   <td class="titrebox" style="background-image:url(img/fond3.gif)">Formations de la santé</td>
+   <td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_dc.gif)"></td>
+</tr>
+<tr><td class="tblbox" onmouseover="this.className = 'tblboxover'" onmouseout="this.className = 'tblbox'">
+  
+  <div class="am1">
+    <ul class="am1">
+<li class="am1">
+        <div class="box">
+          <img class="am2" id="am1_1_0p" src="inc/img/general/open.gif" alt="+" title="+" onclick="am_toggle('am1_1_0');"><img class="am1" id="am1_1_0m" src="inc/img/general/close.gif" alt="-" title="-" onclick="am_toggle('am1_1_0');"><span class="am" onclick="am_toggle('am1_1_0');"> <b>Accompagnement Soins et Services à la personne</b></span>
+</div>
+        <ul class="am2" id="am1_1_0">
+<li class="am2">· <a class="box" href="articles.php?lng=fr&amp;pg=163" title="BAC PRO ASSP en structure">BAC PRO ASSP en structure</a>
+</li>
+          <li class="am2">· <a class="box" href="articles.php?lng=fr&amp;pg=101" title="BAC PRO ASSP à domicile">BAC PRO ASSP à domicile</a>
+</li>
+        </ul>
+</li>
+      <li class="am1">
+        <div class="box">
+          <img class="am2" id="am1_1_1p" src="inc/img/general/open.gif" alt="+" title="+" onclick="am_toggle('am1_1_1');"><img class="am1" id="am1_1_1m" src="inc/img/general/close.gif" alt="-" title="-" onclick="am_toggle('am1_1_1');"><span class="am" onclick="am_toggle('am1_1_1');"> <b>Ecole d'aide soignant</b></span>
+</div>
+        <ul class="am2" id="am1_1_1">
+<li class="am2">· <a class="box" href="articles.php?lng=fr&amp;pg=103" title="Diplôme d'aide soignant">Diplôme d'aide soignant</a>
+</li>
+        </ul>
+</li>
+      <li class="am1">
+        <div class="box">
+          <img class="am2" id="am1_1_2p" src="inc/img/general/open.gif" alt="+" title="+" onclick="am_toggle('am1_1_2');"><img class="am1" id="am1_1_2m" src="inc/img/general/close.gif" alt="-" title="-" onclick="am_toggle('am1_1_2');"><span class="am" onclick="am_toggle('am1_1_2');"> <b>Mention complémentaire Aide à domicile</b></span>
+</div>
+        <ul class="am2" id="am1_1_2">
+<li class="am2">· <a class="box" href="articles.php?lng=fr&amp;pg=102" title="M.C.A.D.">M.C.A.D.</a>
+</li>
+        </ul>
+</li>
+    </ul>
+</div>
+  <script type="text/javascript" language="javascript">
+  am_toggle('am1_1_0');
+  am_toggle('am1_1_1');
+  am_toggle('am1_1_2');
+  </script>
+</td></tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_bc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt=" "></td>
+  </tr>
+</table>
+<!-- Plugin ajoutemenu 2 Version 4.5p21 (10/01/2007) par Jean-Michel MISRACHI http://jmmis.free.fr/ --><table class="htable1" cellspacing="0" cellpadding="0" align="center" width="180" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_hc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt=" "></td>
+</tr>
+<tr>
+<td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_gc.gif)"></td>
+   <td class="titrebox" style="background-image:url(img/fond3.gif)">Formations des services</td>
+   <td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_dc.gif)"></td>
+</tr>
+<tr><td class="tblbox" onmouseover="this.className = 'tblboxover'" onmouseout="this.className = 'tblbox'">
+  
+  <div class="am1">
+    <ul class="am1">
+<li class="am1">
+        <div class="box">
+          <img class="am2" id="am2_1_0p" src="inc/img/general/open.gif" alt="+" title="+" onclick="am_toggle('am2_1_0');"><img class="am1" id="am2_1_0m" src="inc/img/general/close.gif" alt="-" title="-" onclick="am_toggle('am2_1_0');"><span class="am" onclick="am_toggle('am2_1_0');"> <b>Agent polyvalent de restauration</b></span>
+</div>
+        <ul class="am2" id="am2_1_0">
+<li class="am2">. <a class="box" href="articles.php?lng=fr&amp;pg=106" title="C.A.P. Agent polyvalent de restauration">C.A.P. Agent polyvalent de restauration</a>
+</li>
+        </ul>
+</li>
+      <li class="am1">
+        <div class="box">
+          <img class="am2" id="am2_1_1p" src="inc/img/general/open.gif" alt="+" title="+" onclick="am_toggle('am2_1_1');"><img class="am1" id="am2_1_1m" src="inc/img/general/close.gif" alt="-" title="-" onclick="am_toggle('am2_1_1');"><span class="am" onclick="am_toggle('am2_1_1');"> <b>Assistant technique en milieu familial ou collectif</b></span>
+</div>
+        <ul class="am2" id="am2_1_1">
+<li class="am2">. <a class="box" href="articles.php?lng=fr&amp;pg=107" title="C.A.P. A.T.M.F.C.">C.A.P. A.T.M.F.C.</a>
+</li>
+        </ul>
+</li>
+    </ul>
+</div>
+  <script type="text/javascript" language="javascript">
+  am_toggle('am2_1_0');
+  am_toggle('am2_1_1');
+  </script>
+</td></tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_bc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt=" "></td>
+  </tr>
+</table>
+<!-- Plugin ajoutemenu 3 Version 4.5p21 (10/01/2007) par Jean-Michel MISRACHI http://jmmis.free.fr/ --><table class="htable1" cellspacing="0" cellpadding="0" align="center" width="180" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_hc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt=" "></td>
+</tr>
+<tr>
+<td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_gc.gif)"></td>
+   <td class="titrebox" style="background-image:url(img/fond3.gif)">Formations de l'esthétique</td>
+   <td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_dc.gif)"></td>
+</tr>
+<tr><td class="tblbox" onmouseover="this.className = 'tblboxover'" onmouseout="this.className = 'tblbox'">
+  
+  <div class="am1">
+    <ul class="am1">
+<li class="am1">
+        <div class="box">
+          <img class="am2" id="am3_1_0p" src="inc/img/general/open.gif" alt="+" title="+" onclick="am_toggle('am3_1_0');"><img class="am1" id="am3_1_0m" src="inc/img/general/close.gif" alt="-" title="-" onclick="am_toggle('am3_1_0');"><span class="am" onclick="am_toggle('am3_1_0');"> <b>Esthétique Cosmétique</b></span>
+</div>
+        <ul class="am2" id="am3_1_0">
+<li class="am2">. <a class="box" href="articles.php?lng=fr&amp;pg=105" title="BAC PRO Esthétique Cosmétique Parfumerie">BAC PRO Esthétique Cosmétique Parfumerie</a>
+</li>
+        </ul>
+</li>
+    </ul>
+</div>
+  <script type="text/javascript" language="javascript">
+  am_toggle('am3_1_0');
+  </script>
+</td></tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_bc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt=" "></td>
+  </tr>
+</table>
+<table class="htable1" cellspacing="0" cellpadding="0" align="center" width="180" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_hc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt=" "></td>
+</tr>
+<tr>
+<td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_gc.gif)"></td>
+   <td class="titrebox" style="background-image:url(img/fond3.gif)">Ressources documentaires</td>
+   <td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_dc.gif)"></td>
+</tr>
+<tr><td class="tblbox" onmouseover="this.className = 'tblboxover'" onmouseout="this.className = 'tblbox'">
+  <div class="box"><p align="center"><a target="_blank" href="http://sites.google.com/site/cdimagnan/"><img title="logoCDI seul.jpg" style="WIDTH: 74px; HEIGHT: 40px" height="104" alt="logoCDI seul.jpg" width="142" border="0" src="img/logoCDI%20seul.jpg"></a></p></div>
+  </td></tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_bc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt=" "></td>
+  </tr>
+</table>
+<!-- Plugin ajoutemenu 5 Version 4.5p21 (10/01/2007) par Jean-Michel MISRACHI http://jmmis.free.fr/ --><table class="htable1" cellspacing="0" cellpadding="0" align="center" width="180" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_hc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt=" "></td>
+</tr>
+<tr>
+<td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_gc.gif)"></td>
+   <td class="titrebox" style="background-image:url(img/fond3.gif)">Accès réservé</td>
+   <td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_dc.gif)"></td>
+</tr>
+<tr><td class="tblbox" onmouseover="this.className = 'tblboxover'" onmouseout="this.className = 'tblbox'">
+  
+<form name="menu5" action="" method="POST"><p align="center">
+<select size="1" onchange="document.menu5.action=this.value; document.menu5.submit();" style="width:135px"><option>Elèves</option>
+<option value="articles.php?lng=fr&amp;pg=166">  - BCDI</option>
+<option value="articles.php?lng=fr&amp;pg=140">  - Notes et cahier de texte</option>
+<option value="articles.php?lng=fr&amp;pg=160">  - Orientation post_bac</option></select><select size="1" onchange="document.menu5.action=this.value; document.menu5.submit();" style="width:135px"><option>Enseignants</option>
+<option value="articles.php?lng=fr&amp;pg=134">  - ACCES SERVICES</option>
+<option value="articles.php?lng=fr&amp;pg=131">  - CORRELYCE</option>
+<option value="articles.php?lng=fr&amp;pg=129">  - STAGES MAGNAN NET</option></select><select size="1" onchange="document.menu5.action=this.value; document.menu5.submit();" style="width:135px"><option>Parents</option>
+<option value="articles.php?lng=fr&amp;pg=172">  - Dossier de réinscription </option>
+<option value="articles.php?lng=fr&amp;pg=139">  - Infos - Actualité</option>
+<option value="articles.php?lng=fr&amp;pg=138">  - Notes - cahier de texte</option></select></p></form>
+  </td></tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_bc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt=" "></td>
+  </tr>
+</table>
+<table class="htable1" cellspacing="0" cellpadding="0" align="center" width="180" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_hc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt=" "></td>
+</tr>
+<tr>
+<td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_gc.gif)"></td>
+   <td class="titrebox" style="background-image:url(img/fond3.gif)">Visites</td>
+   <td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_dc.gif)"></td>
+</tr>
+<tr><td class="tblbox" onmouseover="this.className = 'tblboxover'" onmouseout="this.className = 'tblbox'">
+  <p class="box" align="left"> <img src="inc/img/counter/cnt_1/cnt0.gif" alt="" border="0">  visiteurs</p>
+<p class="box" align="left"> <img src="inc/img/counter/cnt_1/cnt5.gif" alt="" border="0">  visiteurs en ligne</p>  </td></tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_bc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt=" "></td>
+  </tr>
+</table>
+</td>
+<td width="100%" valign="top">
+  <table class="htable" cellspacing="0" cellpadding="0" align="center" width="100%" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt=""></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_hc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt=""></td>
+</tr>
+<tr>
+<td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_gc.gif)"></td>
+   <td class="titre" width="100%" style="background-image:url(img/fond3.gif)">
+<img src="inc/img/icons/ico_1/home.gif" align="right" width="32" height="32" alt="home.gif">Bienvenue sur Portail du Lycée Professionnel MAGNAN </td>
+   <td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_dc.gif)"></td>
+</tr>
+<tr><td class="tbl" onmouseover="this.className = 'tblover'" onmouseout="this.className = 'tbl'">
+  <br><div class="bord" style="padding:5px;margin:2px;">
+<p align="center"><font style="FONT-WEIGHT: bold"><span style="FONT-STYLE: italic"></span></font><font size="6" color="#ff9900" style="TEXT-DECORATION: underline"><strong></strong></font></p>
+<p align="center"><span style="COLOR: rgb(51,102,255)"><font size="4"><span style="TEXT-DECORATION: underline"><span style="FONT-WEIGHT: bold">CALENDRIER DE RENTREE 2013/2014</span></span></font></span><br><!--[if gte mso 9]><xml><br /> <w:WordDocument><br />  <w:View>Normal</w:View><br />  <w:Zoom>0</w:Zoom><br />  <w:TrackMoves /><br />  <w:TrackFormatting /><br />  <w:HyphenationZone>21</w:HyphenationZone><br />  <w:PunctuationKerning /><br />  <w:ValidateAgainstSchemas /><br />  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid><br />  <w:IgnoreMixedContent>false</w:IgnoreMixedContent><br />  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText><br />  <w:DoNotPromoteQF /><br />  <w:LidThemeOther>FR</w:LidThemeOther><br />  <w:LidThemeAsian>X-NONE</w:LidThemeAsian><br />  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript><br />  <w:Compatibility><br />   <w:BreakWrappedTables /><br />   <w:SnapToGridInCell /><br />   <w:WrapTextWithPunct /><br />   <w:UseAsianBreakRules /><br />   <w:DontGrowAutofit /><br />   <w:SplitPgBreakAndParaMark /><br />   <w:DontVertAlignCellWithSp /><br />   <w:DontBreakConstrainedForcedTables /><br />   <w:DontVertAlignInTxbx /><br />   <w:Word11KerningPairs /><br />   <w:CachedColBalance /><br />  </w:Compatibility><br />  <m:mathPr><br />   <m:mathFont m:val="Cambria Math" /><br />   <m:brkBin m:val="before" /><br />   <m:brkBinSub m:val="--" /><br />   <m:smallFrac m:val="off" /><br />   <m:dispDef /><br />   <m:lMargin m:val="0" /><br />   <m:rMargin m:val="0" /><br />   <m:defJc m:val="centerGroup" /><br />   <m:wrapIndent m:val="1440" /><br />   <m:intLim m:val="subSup" /><br />   <m:naryLim m:val="undOvr" /><br />  </m:mathPr></w:WordDocument><br /></xml><![endif]--></p>
+<p align="center"><!--[if gte mso 9]><xml><br /> <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"<br />  DefSemiHidden="true" DefQFormat="false" DefPriority="99"<br />  LatentStyleCount="267"><br />  <w:LsdException Locked="false" Priority="0" SemiHidden="false"<br />   UnhideWhenUsed="false" QFormat="true" Name="Normal" /><br />  <w:LsdException Locked="false" Priority="9" SemiHidden="false"<br />   UnhideWhenUsed="false" QFormat="true" Name="heading 1" /><br />  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2" /><br />  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3" /><br />  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4" /><br />  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5" /><br />  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6" /><br />  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7" /><br />  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8" /><br />  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9" /><br />  <w:LsdException Locked="false" Priority="39" Name="toc 1" /><br />  <w:LsdException Locked="false" Priority="39" Name="toc 2" /><br />  <w:LsdException Locked="false" Priority="39" Name="toc 3" /><br />  <w:LsdException Locked="false" Priority="39" Name="toc 4" /><br />  <w:LsdException Locked="false" Priority="39" Name="toc 5" /><br />  <w:LsdException Locked="false" Priority="39" Name="toc 6" /><br />  <w:LsdException Locked="false" Priority="39" Name="toc 7" /><br />  <w:LsdException Locked="false" Priority="39" Name="toc 8" /><br />  <w:LsdException Locked="false" Priority="39" Name="toc 9" /><br />  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption" /><br />  <w:LsdException Locked="false" Priority="10" SemiHidden="false"<br />   UnhideWhenUsed="false" QFormat="true" Name="Title" /><br />  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font" /><br />  <w:LsdException Locked="false" Priority="11" SemiHidden="false"<br />   UnhideWhenUsed="false" QFormat="true" Name="Subtitle" /><br />  <w:LsdException Locked="false" Priority="22" SemiHidden="false"<br />   UnhideWhenUsed="false" QFormat="true" Name="Strong" /><br />  <w:LsdException Locked="false" Priority="20" SemiHidden="false"<br />   UnhideWhenUsed="false" QFormat="true" Name="Emphasis" /><br />  <w:LsdException Locked="false" Priority="59" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Table Grid" /><br />  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text" /><br />  <w:LsdException Locked="false" Priority="1" SemiHidden="false"<br />   UnhideWhenUsed="false" QFormat="true" Name="No Spacing" /><br />  <w:LsdException Locked="false" Priority="60" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light Shading" /><br />  <w:LsdException Locked="false" Priority="61" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light List" /><br />  <w:LsdException Locked="false" Priority="62" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light Grid" /><br />  <w:LsdException Locked="false" Priority="63" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Shading 1" /><br />  <w:LsdException Locked="false" Priority="64" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Shading 2" /><br />  <w:LsdException Locked="false" Priority="65" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium List 1" /><br />  <w:LsdException Locked="false" Priority="66" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium List 2" /><br />  <w:LsdException Locked="false" Priority="67" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 1" /><br />  <w:LsdException Locked="false" Priority="68" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 2" /><br />  <w:LsdException Locked="false" Priority="69" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 3" /><br />  <w:LsdException Locked="false" Priority="70" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Dark List" /><br />  <w:LsdException Locked="false" Priority="71" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful Shading" /><br />  <w:LsdException Locked="false" Priority="72" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful List" /><br />  <w:LsdException Locked="false" Priority="73" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful Grid" /><br />  <w:LsdException Locked="false" Priority="60" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light Shading Accent 1" /><br />  <w:LsdException Locked="false" Priority="61" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light List Accent 1" /><br />  <w:LsdException Locked="false" Priority="62" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light Grid Accent 1" /><br />  <w:LsdException Locked="false" Priority="63" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1" /><br />  <w:LsdException Locked="false" Priority="64" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1" /><br />  <w:LsdException Locked="false" Priority="65" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium List 1 Accent 1" /><br />  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision" /><br />  <w:LsdException Locked="false" Priority="34" SemiHidden="false"<br />   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph" /><br />  <w:LsdException Locked="false" Priority="29" SemiHidden="false"<br />   UnhideWhenUsed="false" QFormat="true" Name="Quote" /><br />  <w:LsdException Locked="false" Priority="30" SemiHidden="false"<br />   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote" /><br />  <w:LsdException Locked="false" Priority="66" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium List 2 Accent 1" /><br />  <w:LsdException Locked="false" Priority="67" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1" /><br />  <w:LsdException Locked="false" Priority="68" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1" /><br />  <w:LsdException Locked="false" Priority="69" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1" /><br />  <w:LsdException Locked="false" Priority="70" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Dark List Accent 1" /><br />  <w:LsdException Locked="false" Priority="71" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful Shading Accent 1" /><br />  <w:LsdException Locked="false" Priority="72" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful List Accent 1" /><br />  <w:LsdException Locked="false" Priority="73" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful Grid Accent 1" /><br />  <w:LsdException Locked="false" Priority="60" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light Shading Accent 2" /><br />  <w:LsdException Locked="false" Priority="61" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light List Accent 2" /><br />  <w:LsdException Locked="false" Priority="62" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light Grid Accent 2" /><br />  <w:LsdException Locked="false" Priority="63" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2" /><br />  <w:LsdException Locked="false" Priority="64" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2" /><br />  <w:LsdException Locked="false" Priority="65" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium List 1 Accent 2" /><br />  <w:LsdException Locked="false" Priority="66" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium List 2 Accent 2" /><br />  <w:LsdException Locked="false" Priority="67" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2" /><br />  <w:LsdException Locked="false" Priority="68" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2" /><br />  <w:LsdException Locked="false" Priority="69" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2" /><br />  <w:LsdException Locked="false" Priority="70" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Dark List Accent 2" /><br />  <w:LsdException Locked="false" Priority="71" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful Shading Accent 2" /><br />  <w:LsdException Locked="false" Priority="72" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful List Accent 2" /><br />  <w:LsdException Locked="false" Priority="73" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful Grid Accent 2" /><br />  <w:LsdException Locked="false" Priority="60" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light Shading Accent 3" /><br />  <w:LsdException Locked="false" Priority="61" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light List Accent 3" /><br />  <w:LsdException Locked="false" Priority="62" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light Grid Accent 3" /><br />  <w:LsdException Locked="false" Priority="63" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3" /><br />  <w:LsdException Locked="false" Priority="64" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3" /><br />  <w:LsdException Locked="false" Priority="65" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium List 1 Accent 3" /><br />  <w:LsdException Locked="false" Priority="66" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium List 2 Accent 3" /><br />  <w:LsdException Locked="false" Priority="67" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3" /><br />  <w:LsdException Locked="false" Priority="68" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3" /><br />  <w:LsdException Locked="false" Priority="69" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3" /><br />  <w:LsdException Locked="false" Priority="70" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Dark List Accent 3" /><br />  <w:LsdException Locked="false" Priority="71" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful Shading Accent 3" /><br />  <w:LsdException Locked="false" Priority="72" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful List Accent 3" /><br />  <w:LsdException Locked="false" Priority="73" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful Grid Accent 3" /><br />  <w:LsdException Locked="false" Priority="60" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light Shading Accent 4" /><br />  <w:LsdException Locked="false" Priority="61" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light List Accent 4" /><br />  <w:LsdException Locked="false" Priority="62" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light Grid Accent 4" /><br />  <w:LsdException Locked="false" Priority="63" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4" /><br />  <w:LsdException Locked="false" Priority="64" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4" /><br />  <w:LsdException Locked="false" Priority="65" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium List 1 Accent 4" /><br />  <w:LsdException Locked="false" Priority="66" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium List 2 Accent 4" /><br />  <w:LsdException Locked="false" Priority="67" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4" /><br />  <w:LsdException Locked="false" Priority="68" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4" /><br />  <w:LsdException Locked="false" Priority="69" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4" /><br />  <w:LsdException Locked="false" Priority="70" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Dark List Accent 4" /><br />  <w:LsdException Locked="false" Priority="71" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful Shading Accent 4" /><br />  <w:LsdException Locked="false" Priority="72" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful List Accent 4" /><br />  <w:LsdException Locked="false" Priority="73" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful Grid Accent 4" /><br />  <w:LsdException Locked="false" Priority="60" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light Shading Accent 5" /><br />  <w:LsdException Locked="false" Priority="61" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light List Accent 5" /><br />  <w:LsdException Locked="false" Priority="62" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light Grid Accent 5" /><br />  <w:LsdException Locked="false" Priority="63" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5" /><br />  <w:LsdException Locked="false" Priority="64" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5" /><br />  <w:LsdException Locked="false" Priority="65" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium List 1 Accent 5" /><br />  <w:LsdException Locked="false" Priority="66" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium List 2 Accent 5" /><br />  <w:LsdException Locked="false" Priority="67" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5" /><br />  <w:LsdException Locked="false" Priority="68" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5" /><br />  <w:LsdException Locked="false" Priority="69" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5" /><br />  <w:LsdException Locked="false" Priority="70" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Dark List Accent 5" /><br />  <w:LsdException Locked="false" Priority="71" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful Shading Accent 5" /><br />  <w:LsdException Locked="false" Priority="72" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful List Accent 5" /><br />  <w:LsdException Locked="false" Priority="73" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful Grid Accent 5" /><br />  <w:LsdException Locked="false" Priority="60" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light Shading Accent 6" /><br />  <w:LsdException Locked="false" Priority="61" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light List Accent 6" /><br />  <w:LsdException Locked="false" Priority="62" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Light Grid Accent 6" /><br />  <w:LsdException Locked="false" Priority="63" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6" /><br />  <w:LsdException Locked="false" Priority="64" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6" /><br />  <w:LsdException Locked="false" Priority="65" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium List 1 Accent 6" /><br />  <w:LsdException Locked="false" Priority="66" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium List 2 Accent 6" /><br />  <w:LsdException Locked="false" Priority="67" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6" /><br />  <w:LsdException Locked="false" Priority="68" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6" /><br />  <w:LsdException Locked="false" Priority="69" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6" /><br />  <w:LsdException Locked="false" Priority="70" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Dark List Accent 6" /><br />  <w:LsdException Locked="false" Priority="71" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful Shading Accent 6" /><br />  <w:LsdException Locked="false" Priority="72" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful List Accent 6" /><br />  <w:LsdException Locked="false" Priority="73" SemiHidden="false"<br />   UnhideWhenUsed="false" Name="Colorful Grid Accent 6" /><br />  <w:LsdException Locked="false" Priority="19" SemiHidden="false"<br />   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis" /><br />  <w:LsdException Locked="false" Priority="21" SemiHidden="false"<br />   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis" /><br />  <w:LsdException Locked="false" Priority="31" SemiHidden="false"<br />   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference" /><br />  <w:LsdException Locked="false" Priority="32" SemiHidden="false"<br />   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference" /><br />  <w:LsdException Locked="false" Priority="33" SemiHidden="false"<br />   UnhideWhenUsed="false" QFormat="true" Name="Book Title" /><br />  <w:LsdException Locked="false" Priority="37" Name="Bibliography" /><br />  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading" /><br /> </w:LatentStyles><br /></xml><![endif]--><!--[if gte mso 10]><br /><style><br /> /* Style Definitions */<br /> table.MsoNormalTable<br />	{mso-style-name:"Tableau Normal";<br />	mso-tstyle-rowband-size:0;<br />	mso-tstyle-colband-size:0;<br />	mso-style-noshow:yes;<br />	mso-style-priority:99;<br />	mso-style-qformat:yes;<br />	mso-style-parent:"";<br />	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;<br />	mso-para-margin-top:0cm;<br />	mso-para-margin-right:0cm;<br />	mso-para-margin-bottom:10.0pt;<br />	mso-para-margin-left:0cm;<br />	line-height:115%;<br />	mso-pagination:widow-orphan;<br />	font-size:11.0pt;<br />	font-family:"Calibri","sans-serif";<br />	mso-ascii-font-family:Calibri;<br />	mso-ascii-theme-font:minor-latin;<br />	mso-hansi-font-family:Calibri;<br />	mso-hansi-theme-font:minor-latin;<br />	mso-fareast-language:EN-US;}<br /></style><br /><![endif]--></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"> </p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong><font size="3">Journée de rentrée des professeurs <a href="file/journee_de_rentree.pdf" target="_blank" title="journee_de_rentree.pdf"><img width="32" height="32" border="0" src="img/bouton_025.gif" alt="bouton_025.gif" title="bouton_025.gif"></a></font></strong></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"> <img width="575" height="10" border="0" src="img/ligne_2_054.gif" alt="ligne_2_054.gif" title="ligne_2_054.gif"></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><font size="3"><strong>Journées de rentrée des élèves</strong></font></p>
+<div style="BORDER-RIGHT: windowtext 1pt solid; PADDING-RIGHT: 4pt; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 4pt; PADDING-BOTTOM: 1pt; BORDER-LEFT: windowtext 1pt solid; PADDING-TOP: 1pt; BORDER-BOTTOM: windowtext 1pt solid; mso-element: para-border-div">
+<p align="center" style="PADDING-RIGHT: 0cm; PADDING-LEFT: 0cm; PADDING-BOTTOM: 0cm; BORDER-TOP-STYLE: none; PADDING-TOP: 0cm; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; TEXT-ALIGN: center; BORDER-BOTTOM-STYLE: none; mso-padding-alt: 1.0pt 4.0pt 1.0pt 4.0pt" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 18pt">MARDI 3 SEPTEMBRE 2013</span></strong></p>
+<p align="center" style="PADDING-RIGHT: 0cm; PADDING-LEFT: 0cm; PADDING-BOTTOM: 0cm; BORDER-TOP-STYLE: none; PADDING-TOP: 0cm; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; TEXT-ALIGN: center; BORDER-BOTTOM-STYLE: none; mso-padding-alt: 1.0pt 4.0pt 1.0pt 4.0pt" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 18pt">Accueil des élèves de 2<sup>nde</sup> et de 3<sup>ème</sup> Prépa-Pro</span></strong></p>
+</div>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><em style="mso-bidi-font-style: normal"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%"> </span></em></strong></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><span fb="" sans="" berlin="" style="FONT-SIZE: 18pt; LINE-HEIGHT: 115%; FONT-FAMILY: ">MATIN</span></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><span fb="" sans="" berlin="" style="FONT-SIZE: 18pt; LINE-HEIGHT: 115%; FONT-FAMILY: "> </span></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">Accueil par l’équipe de Direction et l’équipe Vie Scolaire à l’AGORA</span></strong></p>
+<br><ul><li>
+<strong style="mso-bidi-font-weight: normal"><span lang="EN-US" style="FONT-SIZE: 16pt; mso-ansi-language: EN-US">8h-8h30</span></strong><span lang="EN-US" style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%; mso-ansi-language: EN-US"><span style="mso-tab-count: 1">   </span>:</span><span lang="EN-US" style="LINE-HEIGHT: 115%; mso-ansi-language: EN-US; mso-bidi-font-size: 11.0pt"> <span style="mso-tab-count: 1"> <font size="4"> </font></span><font size="4">2ECMS – 2COM1– 2COM2 – 2GA1 – 2GA2</font></span>
+</li></ul>
+<p align="center"> </p>
+<ul><li>
+<strong style="mso-bidi-font-weight: normal"><span lang="EN-US" style="FONT-SIZE: 16pt; mso-ansi-language: EN-US">8h30-9h<span style="mso-tab-count: &lt;br /&gt;1">   </span></span></strong><span lang="EN-US" style="FONT-SIZE: 16pt; mso-ansi-language: EN-US">:</span><span lang="EN-US" style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-ansi-language: EN-US"><span style="mso-tab-count: 1">   </span>2BPEC – 2ASSP1 – 2ASSP2 – 2APR – 2ATMFC</span>
+</li></ul>
+<p align="center"> </p>
+<ul><li>
+<strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 16pt">9h<span style="mso-tab-count: 1">             </span></span></strong><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">:</span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%"><span style="mso-tab-count: 1">   </span>3<sup>ème</sup> PREPA PRO</span>
+</li></ul>
+<p align="center"> </p>
+<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt"> </span></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">Prise en charge par le Professeur Principal de chaque classe et les membres des équipes pédagogiques</span></strong></p>
+<br><ul><li>
+<strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">9h – 12h</span></strong><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%"> : </span>
+</li></ul>
+<p align="center"> </p>
+<p style="MARGIN-LEFT: 88.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpFirst"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Distribution des emplois-du-temps</span></p>
+<p style="MARGIN-LEFT: 88.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Distribution de carnets de correspondance</span></p>
+<p style="MARGIN-LEFT: 88.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Lecture du Règlement Intérieur</span></p>
+<p style="MARGIN-LEFT: 88.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Accompagnement Personnalisé</span></p>
+<p style="MARGIN-LEFT: 88.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Visite de l’établissement </span></p>
+<p style="MARGIN-LEFT: 88.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Passage à la biométrie </span></p>
+<p style="MARGIN-LEFT: 88.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Retrait des livres en salle de réunion </span></p>
+<p style="MARGIN-LEFT: 88.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Consignes diverses</span></p>
+<p style="MARGIN-LEFT: 88.8pt; mso-add-space: auto" class="MsoListParagraphCxSpLast"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt"> </span></p>
+<br><ul><li>
+<strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">12h – 13h30</span></strong><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt"> : Repas offert par l’Etablissement à tous les élèves</span>
+</li></ul>
+<p align="center"> </p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><span fb="" sans="" berlin="" style="FONT-SIZE: 18pt; LINE-HEIGHT: 115%; FONT-FAMILY: "> </span></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><span fb="" sans="" berlin="" style="FONT-SIZE: 2pt; LINE-HEIGHT: 115%; FONT-FAMILY: "> </span></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><span fb="" sans="" berlin="" style="FONT-SIZE: 18pt; LINE-HEIGHT: 115%; FONT-FAMILY: ">Mardi 3 septembre 2013 APRES-MIDI</span><span fb="" sans="" berlin="" style="FONT-FAMILY: "><br></span></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><span fb="" sans="" berlin="" style="FONT-FAMILY: "><br></span></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><span fb="" sans="" berlin="" style="FONT-FAMILY: "></span><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><u><span fb="" sans="" berlin="" style="FONT-SIZE: 20pt; LINE-HEIGHT: 115%; FONT-FAMILY: ">2nde</span></u></strong></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><u><span fb="" sans="" berlin="" style="FONT-SIZE: 20pt; LINE-HEIGHT: 115%; FONT-FAMILY: "><br></span></u></strong></p>
+<p align="center" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 16pt">Présentation des contenus des champs professionnels</span></strong></p>
+<p align="center" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal" class="MsoNormal"><em style="mso-bidi-font-style: normal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt">Animation de la séquence par les deux professeurs d’enseignement professionnel</span></em></p>
+<p style="MARGIN-LEFT: 63.8pt" class="MsoNormal"><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%"><br></span></strong></p>
+<br><ul><li>
+<strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">13h30 à 14h45</span></strong><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt"> : <span style="mso-tab-count: 1">  </span></span>
+</li></ul>
+<p align="center"> </p>
+<p style="MARGIN: 0cm 0cm 0pt 81.8pt; TEXT-INDENT: -18pt; LINE-HEIGHT: normal; TEXT-ALIGN: left" class="MsoListParagraphCxSpFirst"><span style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; mso-bidi-font-size: &lt;br /&gt;11.0pt">Groupe 1 avec le professeur A </span></p>
+<p style="MARGIN: 0cm 0cm 0pt 81.8pt; TEXT-INDENT: -18pt; LINE-HEIGHT: normal; TEXT-ALIGN: left" class="MsoListParagraphCxSpLast"><span style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; mso-bidi-font-size: &lt;br /&gt;11.0pt">Groupe 2 avec le professeur B</span></p>
+<p class="MsoNormal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%"> </span></p>
+<br><ul><li>
+<strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">14h45 à 16h</span></strong><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt"> :<span style="mso-tab-count: 1">        </span></span>
+</li></ul>
+<p align="center"> </p>
+<p style="MARGIN: 0cm 0cm 0pt 81.8pt; TEXT-INDENT: -18pt; LINE-HEIGHT: normal; TEXT-ALIGN: left" class="MsoListParagraphCxSpFirst"><span style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; mso-bidi-font-size: &lt;br /&gt;11.0pt">Groupe 1 avec le professeur B </span></p>
+<p style="MARGIN: 0cm 0cm 0pt 81.8pt; TEXT-INDENT: -18pt; LINE-HEIGHT: normal; TEXT-ALIGN: left" class="MsoListParagraphCxSpLast"><span style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; mso-bidi-font-size: &lt;br /&gt;11.0pt">Groupe 2 avec le professeur A</span></p>
+<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt"> </span></p>
+<span new="" times="" style="FONT-FAMILY: "></span><p style="MARGIN-LEFT: 53.4pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpFirst"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Wingdings; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings"><span style="mso-list: Ignore"><span new="" times="" style="FONT-FAMILY: "></span><span new="" times=""></span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">- Périodes de Formation en Milieu Professionnel </span></p>
+<p style="MARGIN-LEFT: 53.4pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">(calendrier – conventions de stage – consignes)</span></p>
+<p style="MARGIN-LEFT: 53.4pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Wingdings; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings"><span style="mso-list: Ignore">- </span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">Sensibilisation sur les métiers du champ professionnel</span></p>
+<p style="MARGIN-LEFT: 53.4pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Wingdings; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings"><span style="mso-list: Ignore">- (<span new="" times=""></span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">Présentation des contenus du référentiel</span></p>
+<p style="MARGIN-LEFT: 53.4pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Wingdings; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings"><span style="mso-list: Ignore">- </span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">Présentation du ou des projets de la classe en relation avec le domaine professionnel et le domaine d’enseignement général.</span></p>
+<p style="MARGIN-LEFT: 53.4pt; mso-add-space: auto" class="MsoListParagraphCxSpLast"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt"> </span></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><span style="FONT-SIZE: 18pt; LINE-HEIGHT: 115%; FONT-FAMILY: ">Mardi 3 septembre 2013 APRES-MIDI</span><span style="FONT-FAMILY: "><br></span></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><span style="FONT-FAMILY: "><br></span></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><u><span fb="" sans="" berlin="" style="FONT-SIZE: 20pt; LINE-HEIGHT: 115%; FONT-FAMILY: ">3<sup>ème</sup> PREPA-PRO</span></u></strong></p>
+<p align="center" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal" class="MsoNormal"><em style="mso-bidi-font-style: normal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt">Animation de la séquence par le Professeur Principal et les Professeurs d’Enseignement Général</span></em></p>
+<p align="center" style="MARGIN-LEFT: 0cm; TEXT-ALIGN: center" class="MsoListParagraphCxSpFirst"><strong style="mso-bidi-font-weight: normal"><em style="mso-bidi-font-style: normal"><span style="FONT-SIZE: 16pt"> </span></em></strong></p>
+<br><ul><li><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 16pt">13h à 15h30 :</span></strong></li></ul>
+<p align="center"> </p>
+<p style="MARGIN-LEFT: 89.4pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: Symbol; mso-fareast-font-family: &lt;br /&gt;Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%">D.N.B.</span></p>
+<p style="MARGIN-LEFT: 89.4pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: Symbol; mso-fareast-font-family: &lt;br /&gt;Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%">Livret de compétences</span></p>
+<p style="MARGIN-LEFT: 89.4pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%">Orientation…</span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt"></span></p>
+<p style="MARGIN-LEFT: 89.4pt; mso-add-space: auto" class="MsoListParagraphCxSpLast"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt"> </span></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><u><span style="FONT-SIZE: 18pt; LINE-HEIGHT: 115%">REMARQUES</span></u></strong><span style="FONT-SIZE: 18pt; LINE-HEIGHT: 115%"> </span></p>
+<p style="TEXT-INDENT: -18pt; TEXT-ALIGN: justify" class="MsoListParagraphCxSpFirst"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: Symbol; mso-fareast-font-family: &lt;br /&gt;Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">Les élèves de 3<sup>ème</sup> Prépa-Pro et de 2<sup>nde</sup> n’auront pas cours le mercredi 4 septembre.</span></p>
+<p style="TEXT-INDENT: -18pt; TEXT-ALIGN: justify" class="MsoListParagraphCxSpLast"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: Symbol; mso-fareast-font-family: &lt;br /&gt;Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">Les cours commenceront pour tous les élèves le <strong style="mso-bidi-font-weight: normal">jeudi 5 septembre</strong> à partir de 8h selon l’emploi du temps qui leur a été remis.</span></p>
+<p align="center" style="TEXT-INDENT: -18pt; TEXT-ALIGN: justify" class="MsoListParagraphCxSpLast"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt"></span> </p>
+<p align="center" style="TEXT-INDENT: -18pt; TEXT-ALIGN: justify" class="MsoListParagraphCxSpLast"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt"></span> </p>
+<div style="BORDER-RIGHT: windowtext 1pt solid; PADDING-RIGHT: 4pt; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 4pt; PADDING-BOTTOM: 1pt; BORDER-LEFT: windowtext 1pt solid; PADDING-TOP: 1pt; BORDER-BOTTOM: windowtext 1pt solid; mso-element: para-border-div">
+<p align="center" style="PADDING-RIGHT: 0cm; PADDING-LEFT: 0cm; PADDING-BOTTOM: 0cm; BORDER-TOP-STYLE: none; PADDING-TOP: 0cm; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; TEXT-ALIGN: center; BORDER-BOTTOM-STYLE: none; mso-padding-alt: 1.0pt 4.0pt 1.0pt 4.0pt" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 18pt">MERCREDI 4 SEPTEMBRE 2013 matin</span></strong></p>
+<p align="center" style="PADDING-RIGHT: 0cm; PADDING-LEFT: 0cm; PADDING-BOTTOM: 0cm; BORDER-TOP-STYLE: none; PADDING-TOP: 0cm; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; TEXT-ALIGN: center; BORDER-BOTTOM-STYLE: none; mso-padding-alt: 1.0pt 4.0pt 1.0pt 4.0pt" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 18pt">Rentrée des élèves de 1ère</span></strong></p>
+</div>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><u><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt"><span style="TEXT-DECORATION: none"> </span></span></u></strong></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">Accueil par l’équipe de Direction et l’équipe Vie Scolaire à l’AGORA</span></strong></p>
+<br><ul><li>
+<strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span lang="EN-US" style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%; mso-ansi-language: &lt;br /&gt;EN-US">8h-8h30</span></strong><span lang="EN-US" style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-ansi-language: EN-US; mso-bidi-font-size: &lt;br /&gt;11.0pt"> : <span style="mso-tab-count: 1">     </span>1ASSP1 – 1ASSP2 – 1BPEC – 1APR – 1ATMFC</span>
+</li></ul>
+<p align="center"> </p>
+<ul><li>
+<strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">8h30-9h</span></strong><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt"> :<span style="mso-tab-count: 1">      </span>1COM – 1VA – 1GA1 – 1GA2 – MCAD</span>
+</li></ul>
+<p align="center"> </p>
+<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt"> </span></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">Prise en charge par le Professeur Principal de chaque classe et les membres des équipes pédagogiques</span></strong></p>
+<br><ul><li>
+<strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">9h-10h</span></strong><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt"> : </span></strong>
+</li></ul>
+<p align="center"> </p>
+<p style="MARGIN-LEFT: 88.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpFirst"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Distribution des emplois-du-temps</span></p>
+<p style="MARGIN-LEFT: 88.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Accompagnement personnalisé</span></p>
+<p style="MARGIN-LEFT: 88.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Retrait des livres en salle de réunion </span></p>
+<p style="MARGIN-LEFT: 88.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Consignes diverses</span></p>
+<p style="MARGIN-LEFT: 71.55pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpLast"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt"> </span></p>
+<p align="center" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 16pt">Présentation des contenus des champs professionnels</span></strong></p>
+<p align="center" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal" class="MsoNormal"><em style="mso-bidi-font-style: normal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt">Animation de la séquence par les deux professeurs d’enseignement professionnel</span></em></p>
+<br><ul><li>
+<strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">10h- 12h</span></strong><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt"> </span></strong><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">: <span style="mso-tab-count: 1">   </span></span>
+</li></ul>
+<p align="center"> </p>
+<p style="MARGIN: 0cm 0cm 0pt 88.8pt; TEXT-INDENT: -18pt; LINE-HEIGHT: normal; TEXT-ALIGN: left" class="MsoListParagraphCxSpFirst"><span style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; mso-bidi-font-size: &lt;br /&gt;11.0pt">Groupe 1 avec le professeur A </span></p>
+<p style="MARGIN: 0cm 0cm 0pt 88.8pt; TEXT-INDENT: -18pt; LINE-HEIGHT: normal; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; mso-bidi-font-size: &lt;br /&gt;11.0pt">Groupe 2 avec le professeur B</span></p>
+<p style="MARGIN: 0cm 0cm 0pt 88.8pt; mso-add-space: auto" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt"> </span></p>
+<p style="MARGIN-LEFT: 71.55pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Wingdings; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings"><span style="mso-list: Ignore">- <span new="" times=""></span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">Périodes de Formation en Milieu Professionnel </span></p>
+<p style="MARGIN-LEFT: 71.55pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">(calendrier – conventions de stage – consignes)</span></p>
+<p style="MARGIN-LEFT: 71.55pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Wingdings; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings"><span style="mso-list: Ignore">- <span new="" times=""> </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">Les enjeux de la classe de 1<sup>ère</sup></span></p>
+<span new="" times="" style="FONT-FAMILY: "></span><p style="MARGIN-LEFT: 71.55pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Wingdings; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings"><span style="mso-list: Ignore"><span new="" times=""></span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">- Les contenus d’enseignement du champ professionnel</span></p>
+<p style="MARGIN-LEFT: 71.55pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpLast"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Wingdings; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings"><span style="mso-list: Ignore"><span new="" times=""></span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">- La certification intermédiaire</span></p>
+<p style="MARGIN-LEFT: 71.55pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpLast"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt"><br></span></p>
+<p class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><u><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">REMARQUES</span></u></strong><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt"> :</span></strong></p>
+<p style="TEXT-INDENT: -18pt; mso-list: l7 level1 lfo9" class="MsoListParagraphCxSpFirst"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">      </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Fin des cours pour les classes de 1<sup>ère</sup> le mercredi 4 septembre à 12h</span></p>
+<p style="TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpFirst"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt"><br></span></p>
+<p style="TEXT-INDENT: -18pt; TEXT-ALIGN: center" class="MsoListParagraphCxSpLast"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: Symbol; mso-fareast-font-family: &lt;br /&gt;Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">    </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">Les cours commenceront pour tous les élèves le jeudi 5 septembre 2013 <br></span></p>
+<p style="TEXT-INDENT: -18pt; TEXT-ALIGN: center" class="MsoListParagraphCxSpLast"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">à partir de 8h selon l’emploi du temps qui leur a été remis.</span></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><u><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt"><span style="TEXT-DECORATION: none"> </span></span></u></strong></p>
+<div style="BORDER-RIGHT: windowtext 1pt solid; PADDING-RIGHT: 4pt; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 4pt; PADDING-BOTTOM: 1pt; BORDER-LEFT: windowtext 1pt solid; PADDING-TOP: 1pt; BORDER-BOTTOM: windowtext 1pt solid; mso-element: para-border-div">
+<p align="center" style="PADDING-RIGHT: 0cm; PADDING-LEFT: 0cm; PADDING-BOTTOM: 0cm; BORDER-TOP-STYLE: none; PADDING-TOP: 0cm; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; TEXT-ALIGN: center; BORDER-BOTTOM-STYLE: none; mso-padding-alt: 1.0pt 4.0pt 1.0pt 4.0pt" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 18pt">MERCREDI 4 SEPTEMBRE 2013 Après-Midi</span></strong></p>
+<p align="center" style="PADDING-RIGHT: 0cm; PADDING-LEFT: 0cm; PADDING-BOTTOM: 0cm; BORDER-TOP-STYLE: none; PADDING-TOP: 0cm; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; TEXT-ALIGN: center; BORDER-BOTTOM-STYLE: none; mso-padding-alt: 1.0pt 4.0pt 1.0pt 4.0pt" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 18pt">Rentrée des élèves de Terminale</span></strong></p>
+</div>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt"> </span></strong></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">Accueil par l’équipe de Direction et l’équipe Vie Scolaire à l’AGORA</span></strong></p>
+<br><ul><li>
+<strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">13h-13h30</span></strong><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt"> : TASSP1 – TASSP2 – TBPEC </span>
+</li></ul>
+<p align="center"> </p>
+<ul><li>
+<strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">13h30-14h</span></strong><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt"> :<span style="mso-tab-count: 1"> </span>TSEC – TCOM – TCPT - TVA</span>
+</li></ul>
+<p align="center"> </p>
+<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt"> </span></p>
+<p align="center" style="TEXT-ALIGN: center" class="MsoNormal"><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">Prise en charge par le Professeur Principal de chaque classe et les membres des équipes pédagogiques</span></strong></p>
+<br><ul><li><strong style="mso-bidi-font-weight: &lt;br /&gt;normal"><span style="FONT-SIZE: 16pt; LINE-HEIGHT: 115%">14h-15h : </span></strong></li></ul>
+<p align="center"> </p>
+<p style="MARGIN-LEFT: 81.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpFirst"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Distribution des emplois-du-temps</span></p>
+<p style="MARGIN-LEFT: 81.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Accompagnement Personnalisé</span></p>
+<p style="MARGIN-LEFT: 81.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Retrait des livres en salle de réunion </span></p>
+<p style="MARGIN-LEFT: 81.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Consignes diverses</span></p>
+<p style="MARGIN-LEFT: 71.55pt; mso-add-space: &lt;br /&gt;auto" class="MsoListParagraphCxSpLast"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt"> </span></p>
+<p align="center" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 16pt">Présentation des contenus des champs professionnels</span></strong></p>
+<p align="center" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal" class="MsoNormal"><em style="mso-bidi-font-style: normal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt">Animation de la séquence par les deux professeurs d’enseignement professionnel</span></em></p>
+<p align="center" style="MARGIN-BOTTOM: 0pt; LINE-HEIGHT: normal" class="MsoNormal"><em style="mso-bidi-font-style: normal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt"> </span></em></p>
+<br><ul><li><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 16pt">15h-17h</span></strong></li></ul>
+<p align="center"> </p>
+<p style="MARGIN-LEFT: 81.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpFirst"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Groupe 1 avec le professeur A </span></p>
+<p style="MARGIN-LEFT: 81.8pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Symbol; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><span style="mso-list: Ignore">-<span new="" times="">       </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">Groupe 2 avec le professeur B</span></p>
+<p style="MARGIN-LEFT: 81.8pt; TEXT-ALIGN: left" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt"> </span></p>
+<span new="" times="" style="FONT-FAMILY: "></span><p style="TEXT-INDENT: -18pt; TEXT-ALIGN: center" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Wingdings; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings"><span style="mso-list: Ignore"><span new="" times=""></span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">- Périodes de Formation en Milieu Professionnel</span></p>
+<p style="TEXT-ALIGN: center" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: &lt;br /&gt;11.0pt">(calendrier – conventions de stage – consignes)</span></p>
+<p style="TEXT-INDENT: -18pt; TEXT-ALIGN: center" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Wingdings; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings"><span style="mso-list: Ignore">-<span new="" times=""> </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">Les enjeux de la classe de Terminale</span></p>
+<p style="TEXT-INDENT: -18pt; TEXT-ALIGN: center" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Wingdings; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings"><span style="mso-list: Ignore">-<span new="" times=""> </span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">Les contenus d’enseignement du champ professionnel</span></p>
+<p style="TEXT-INDENT: -18pt; TEXT-ALIGN: center" class="MsoListParagraphCxSpMiddle"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Wingdings; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings"><span style="mso-list: Ignore"><span new="" times=""></span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">- Affectation Post-Bac (A.P.B.)</span></p>
+<div style="TEXT-ALIGN: center"><span new="" times="" style="FONT-FAMILY: "></span></div>
+<p style="TEXT-INDENT: -18pt; TEXT-ALIGN: center" class="MsoListParagraphCxSpLast"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; FONT-FAMILY: &lt;br /&gt;Wingdings; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings"><span style="mso-list: Ignore"><span new="" times=""></span></span></span><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">- L’Insertion professionnelle</span></p>
+<p class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><u><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%; mso-bidi-font-size: 11.0pt">REMARQUES : </span></u></strong></p>
+<p style="TEXT-ALIGN: justify" class="MsoNormal"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%">Les cours commenceront pour tous les élèves le <strong style="mso-bidi-font-weight: normal">jeudi 5 septembre</strong> à partir de 8h selon l’emploi du temps qui leur a été remis.</span></p>
+<p style="TEXT-ALIGN: justify" class="MsoNormal"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%"></span></p>
+<p style="TEXT-ALIGN: justify" class="MsoNormal"><span style="FONT-SIZE: 14pt; LINE-HEIGHT: 115%"></span></p>
+<p style="TEXT-ALIGN: justify" class="MsoNormal"><br></p>
+<div style="BORDER-RIGHT: windowtext 1pt solid; PADDING-RIGHT: 4pt; BORDER-TOP: windowtext 1pt solid; PADDING-LEFT: 4pt; PADDING-BOTTOM: 1pt; BORDER-LEFT: windowtext 1pt solid; PADDING-TOP: 1pt; BORDER-BOTTOM: windowtext 1pt solid; mso-element: para-border-div">
+<p align="center" style="PADDING-RIGHT: 0cm; PADDING-LEFT: 0cm; PADDING-BOTTOM: 0cm; BORDER-TOP-STYLE: none; PADDING-TOP: 0cm; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; TEXT-ALIGN: center; BORDER-BOTTOM-STYLE: none; mso-padding-alt: 1.0pt 4.0pt 1.0pt 4.0pt" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 18pt">JEUDI 5 SEPTEMBRE 2013 Après-Midi</span></strong></p>
+<p align="center" style="PADDING-RIGHT: 0cm; PADDING-LEFT: 0cm; PADDING-BOTTOM: 0cm; BORDER-TOP-STYLE: none; PADDING-TOP: 0cm; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; TEXT-ALIGN: center; BORDER-BOTTOM-STYLE: none; mso-padding-alt: 1.0pt 4.0pt 1.0pt 4.0pt" class="MsoNormal"><strong style="mso-bidi-font-weight: normal"><span style="FONT-SIZE: 18pt">Rentrée des élèves de l'école d'aides soignants<br></span></strong></p>
+</div>
+<br><p align="center"><font size="5"><strong><u>Accueil par l'équipe de direction en salle polyvalente</u></strong></font></p>
+<ul><li><font size="5"><strong>14h-16h :</strong></font></li></ul>
+<ul>
+<li><div><p><font size="3"><span style="FONT-FAMILY: Arial"><strong>Distribution des emplois du temps</strong></span></font></p></div></li>
+<li><div><p><font size="5"><strong><font size="3"><span style="FONT-FAMILY: Arial">Organisation de la formation</span></font><u><br></u></strong></font></p></div></li>
+</ul>
+<p><font size="5"><strong><u></u></strong></font></p>
+<p align="center"><font size="5"><strong><u><img width="575" height="10" border="0" src="img/ligne_2_054.gif" alt="ligne_2_054.gif" title="ligne_2_054.gif"></u></strong></font></p>
+<p align="center"><font size="5"><strong><u>Résultats examens session juin 2013</u></strong><br><br><br><strong><u>Baccalauréats professionnels</u></strong></font><br><br>Affichage devant l'établissement le vendredi 5 juillet 2013 à 16h<br><br>Diffusion sur internet le vendredi 5 juillet 2013 à 19h Cliquez <a href="http://publinet.ac-nice.fr/publinet/resultats" target="_blank">ICI</a><br><a><br></a></p>
+<p align="center"><strong><u><font size="5">BEP et CAP</font></u></strong><br></p>
+<p align="center"><br>Diffusion sur internet le lundi 8 juillet 2013 à 15h Cliquez <a href="http://publinet.ac-nice.fr/publinet/resultats" target="_blank">ICI</a></p>
+<p align="center"> </p>
+<p align="center"> </p>
+<p align="center"><a><br></a><a><br></a>Orientation post bac - Classes de terminales (TBPEC - TCPT - TSEC - TCOM - TVA)<br><br>Toutes les informations (calendrier, programme des journées d'information organisées sur Nice) dans la boîte réservée ELEVES - Orientation post bac<strong> </strong><br></p>
+<p><br></p>
+<br><font size="4"><div style="FONT-WEIGHT: bold; TEXT-ALIGN: left">
+<font size="4"><span style="FONT-SIZE: large">                                          </span></font><font size="4"><span style="FONT-SIZE: large"><strong><span style="FONT-SIZE: large"><br><br><br></span></strong></span></font><br>
+</div></font><br><p><br><br><br><a href="http://sites.google.com/site/lpmagnanap/" target="_blank"><br></a></p>
+<p align="center"><a href="http://sites.google.com/site/lpmagnanap/" target="_blank">34 rue Auguste Renoir</a></p>
+<p align="center"><a href="http://sites.google.com/site/lpmagnanap/" target="_blank">06000 NICE</a></p>
+<p align="center"><a href="http://sites.google.com/site/lpmagnanap/" target="_blank">Tél 04 97 07 22 22 - Télécopie 04 97 07 22 26</a></p>
+<p align="center"><a href="http://sites.google.com/site/lpmagnanap/" target="_blank"><font size="3">Adresse électronique</font> <img width="92" height="53" border="0" src="img/email%20env.gif" alt="email env.gif" title="email env.gif"></a><a href="mailto:ce.0060043p@ac-nice.fr"><font size="3">ce.0060043p@ac-nice.fr</font></a></p>
+<p align="center"> <a href="file/241109.swf" title="241109.swf"></a></p>
+<p align="center"> <br></p>
+<div style="TEXT-ALIGN: center"> </div>
+<br><br><p body=""> </p>
+<br><p align="center"><br></p>
+</div>  </td></tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_bc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt=" "></td>
+  </tr>
+</table>
+</td>
+ <td valign="top">
+  <table class="htable1" cellspacing="0" cellpadding="0" align="center" width="180" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_hc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt=" "></td>
+</tr>
+<tr>
+<td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_gc.gif)"></td>
+   <td class="titrebox" style="background-image:url(img/fond3.gif)">http://www.regionpaca.fr/</td>
+   <td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_dc.gif)"></td>
+</tr>
+<tr><td class="tblbox" onmouseover="this.className = 'tblboxover'" onmouseout="this.className = 'tblbox'">
+  <div class="box"><div style="text-align: center;"><a href="http://www.regionpaca.fr"><img height="74" width="150" border="0" src="img/logo_generique_paca.jpg" alt="logo_generique_paca.jpg" title="logo_generique_paca.jpg"></a></div></div>
+  </td></tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_bc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt=" "></td>
+  </tr>
+</table>
+<!-- Plugin ajoutemenu 16 Version 4.5p21 (10/01/2007) par Jean-Michel MISRACHI http://jmmis.free.fr/ --><table class="htable1" cellspacing="0" cellpadding="0" align="center" width="180" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_hc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt=" "></td>
+</tr>
+<tr>
+<td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_gc.gif)"></td>
+   <td class="titrebox" style="background-image:url(img/fond3.gif)">Actualités</td>
+   <td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_dc.gif)"></td>
+</tr>
+<tr><td class="tblbox" onmouseover="this.className = 'tblboxover'" onmouseout="this.className = 'tblbox'">
+  
+  <div class="am1">
+    <ul class="am1"></ul>
+</div>  </td></tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_bc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt=" "></td>
+  </tr>
+</table>
+<!-- Plugin ajoutemenu 6 Version 4.5p21 (10/01/2007) par Jean-Michel MISRACHI http://jmmis.free.fr/ --><table class="htable1" cellspacing="0" cellpadding="0" align="center" width="180" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_hc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt=" "></td>
+</tr>
+<tr>
+<td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_gc.gif)"></td>
+   <td class="titrebox" style="background-image:url(img/fond3.gif)">Présentation</td>
+   <td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_dc.gif)"></td>
+</tr>
+<tr><td class="tblbox" onmouseover="this.className = 'tblboxover'" onmouseout="this.className = 'tblbox'">
+  
+<form name="menu6" action="" method="POST"><p align="center">
+<select size="1" onchange="document.menu6.action=this.value; document.menu6.submit();" style="width:135px"><option>Découverte du lycée</option>
+<option value="articles.php?lng=fr&amp;pg=116">  . Accès</option>
+<option value="articles.php?lng=fr&amp;pg=123">  . Contact</option>
+<option value="articles.php?lng=fr&amp;pg=113">  . Historique</option>
+<option value="articles.php?lng=fr&amp;pg=114">  . Visite</option></select><select size="1" onchange="document.menu6.action=this.value; document.menu6.submit();" style="width:135px"><option>Menus</option>
+<option value="articles.php?lng=fr&amp;pg=165">  . Semaine du 13/02/12</option></select><select size="1" onchange="document.menu6.action=this.value; document.menu6.submit();" style="width:135px"><option>Projet d'établissement</option>
+<option value="articles.php?lng=fr&amp;pg=115">  . Les grands axes</option></select></p></form>
+  </td></tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_bc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt=" "></td>
+  </tr>
+</table>
+<!-- Plugin ajoutemenu 8 Version 4.5p21 (10/01/2007) par Jean-Michel MISRACHI http://jmmis.free.fr/ --><table class="htable1" cellspacing="0" cellpadding="0" align="center" width="180" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_hc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt=" "></td>
+</tr>
+<tr>
+<td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_gc.gif)"></td>
+   <td class="titrebox" style="background-image:url(img/fond3.gif)">Partenariat Lycée - Entreprises</td>
+   <td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_dc.gif)"></td>
+</tr>
+<tr><td class="tblbox" onmouseover="this.className = 'tblboxover'" onmouseout="this.className = 'tblbox'">
+  
+  <div class="am1">
+    <ul class="am1">
+<li class="am1">
+        <div class="box">
+          <img class="am2" id="am8_1_0p" src="inc/img/general/open.gif" alt="+" title="+" onclick="am_toggle('am8_1_0');"><img class="am1" id="am8_1_0m" src="inc/img/general/close.gif" alt="-" title="-" onclick="am_toggle('am8_1_0');"><span class="am" onclick="am_toggle('am8_1_0');"> <b>Calendrier des stages 2013 - 2014</b></span>
+</div>
+        <ul class="am2" id="am8_1_0">
+<li class="am2">. <a class="box" href="articles.php?lng=fr&amp;pg=121" title="Formations des soins et  services à la personne">Formations des soins et  services à la personne</a>
+</li>
+          <li class="am2">. <a class="box" href="articles.php?lng=fr&amp;pg=118" title="Formations du tertiaire">Formations du tertiaire</a>
+</li>
+        </ul>
+</li>
+    </ul>
+</div>
+  <script type="text/javascript" language="javascript">
+  am_toggle('am8_1_0');
+  </script>
+</td></tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_bc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt=" "></td>
+  </tr>
+</table>
+<!-- Plugin ajoutemenu 9 Version 4.5p21 (10/01/2007) par Jean-Michel MISRACHI http://jmmis.free.fr/ --><table class="htable1" cellspacing="0" cellpadding="0" align="center" width="180" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_hc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt=" "></td>
+</tr>
+<tr>
+<td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_gc.gif)"></td>
+   <td class="titrebox" style="background-image:url(img/fond3.gif)">Nos projets</td>
+   <td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_dc.gif)"></td>
+</tr>
+<tr><td class="tblbox" onmouseover="this.className = 'tblboxover'" onmouseout="this.className = 'tblbox'">
+  
+  <div class="am1">
+    <ul class="am1"></ul>
+</div>  </td></tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_bc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt=" "></td>
+  </tr>
+</table>
+<table class="htable1" cellspacing="0" cellpadding="0" align="center" width="180" border="0">
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_hc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_hd.gif" alt=" "></td>
+</tr>
+<tr>
+<td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_gc.gif)"></td>
+   <td class="titrebox" style="background-image:url(img/fond3.gif)">Calendrier</td>
+   <td rowspan="2" width="10" style="background-image:url(inc/img/skin/skn_1/tab_dc.gif)"></td>
+</tr>
+<tr><td class="tblbox" onmouseover="this.className = 'tblboxover'" onmouseout="this.className = 'tblbox'">
+  <p align="center" style="margin:0px">
+<iframe src="inc/calendar.php?lng=fr" width="156" height="152" frameborder="0" scrolling="no"></iframe>
+</p>
+  </td></tr>
+<tr>
+<td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bg.gif" alt=" "></td>
+   <td height="10" style="background-image:url(inc/img/skin/skn_1/tab_bc.gif)"></td>
+   <td width="10" height="10"><img src="inc/img/skin/skn_1/tab_bd.gif" alt=" "></td>
+  </tr>
+</table>
+</td>
+</tr></table>
+<div align="center"><a class="top" href="#top"><img src="inc/img/general/up.gif" border="0" alt="^"><b> Haut </b><img src="inc/img/general/up.gif" border="0" alt="^"></a></div>
+<hr>
+<div class="foot">Directeur de la publication : Jean-Noël REMY - Proviseur <hr>
+<span class="copyright">  <a class="copyright" href="http://www.freeguppy.org/" title="Le site GuppY" target="_blank"> Site créé avec GuppY v4.5.10 </a>  © 2004-2005 -  <a class="copyright" href="http://www.cecill.info/index.fr.html" title="En savoir plus ..." target="_blank"> Licence Libre CeCILL </a> </span><p class="timer">Document généré en 0.04 seconde</p>
+</div>
+</center>
+</body>
+</html>

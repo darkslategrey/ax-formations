@@ -1,0 +1,965 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+<meta name="GENERATOR" content="Microsoft Visual Studio 6.0">
+<meta name="description" content="Fiche de la formation 155928F">
+<meta name="titrecust" content="Animateur périscolaire">
+<meta name="sstitrecust" content="Institut national de formation et de recherche sur l'éducation permanente Le Mans Métropole">
+<meta name="contenucust" content="Maîtriser la spécificité des temps d'accueil périscolaire ; préparer un projet d'animation de loisirs pour des publics enfants (3 à 12 ans) ; maîtriser les outils et les techniques nécessaires à la mise en oeuvre d'actions d'animation">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>[CARIF-OREF] Fiche formation</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="rubrique" content="#Offre de formation#">
+<meta name="version" content="5.20.20.03">
+<meta name="versionModulesCommuns" content="5.20.20.03">
+<link rel="SHORTCUT ICON" href="http://www.cariforef-pdl.org/favicon.ico">
+<link media="screen, print" href="/media/css/global.css" rel="stylesheet" type="text/css">
+<link media="screen, print" href="/media/css/global_menu.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 7]>
+<link media="screen, print" href="/media/css/global_IE6.css" rel="stylesheet" type="text/css" />
+<![endif]--><link media="screen, print" href="/media/css/global_public.css" rel="stylesheet" type="text/css">
+<link media="screen, print" href="/media/css/global_rubriques.css" rel="stylesheet" type="text/css">
+<link media="screen, print" href="/media/css/page_accueil.css" rel="stylesheet" type="text/css">
+<style media="screen, print" rel="stylesheet" type="text/css">
+#contenuRubrique_entete #trainDeNavigation ul#trainDeNavigation_contenu p
+{
+	display: inline;
+}
+</style>
+<script language="javascript" type="text/javascript" src="/include/sigma-navigateurs.js"></script><script language="javascript" type="text/javascript" src="/include/sigma-types.js"></script><script language="javascript" type="text/javascript" src="/include/lib_mm.js"></script><script language="javascript" type="text/javascript" src="/include/lib_txt.js"></script><script language="javascript" type="text/javascript" src="/include/lib_frm.js"></script><script language="javascript" type="text/javascript" src="/include/routinesString.js"></script><script language="javascript" type="text/javascript" src="/include/validate.js"></script><script language="javascript" type="text/javascript" src="/include/cariforef-JS.asp"></script><script language="javascript" type="text/javascript" src="/include/lib_xmlhttp.js"></script><script language="javascript" type="text/javascript" src="/include/lib_portail-js.asp"></script><script language="javascript" type="text/javascript" src="/include/arbo.js"></script><script language="javascript" type="text/javascript" src="/include/AC_RunActiveContent.js"></script><!-- menu déroulant // --><script language="javascript" type="text/javascript" src="/include/menu/menu3.js"></script><script language="javascript" type="text/javascript">
+//<![CDATA[
+function loadMenuAccessible()
+{
+    var imgLoaded = new Image();
+    var tmp = new Date();
+    var suffix = tmp.getTime();
+    
+    
+    initMenuAvecImages();
+    
+    /*imgLoaded.onload = initMenuAvecImages;
+    
+    imgLoaded.onabort = initMenuSansImages;
+    imgLoaded.onerror = initMenuSansImages;
+    
+    imgLoaded.src = "/include/menu/testImgActives.gif?"+suffix;*/
+}
+
+function initMenuAvecImages(arg)
+{
+    // chargement du menu
+    initMenus(arg);
+    
+    // les sous-menus doivent être rendus visibles
+    for (var cptSsMenu=1; cptSsMenu<=50; cptSsMenu++)
+    {
+        if (document.getElementById("ssMenu" + cptSsMenu))
+            document.getElementById("ssMenu" + cptSsMenu).style.display = "block";
+        else
+            break;
+    }
+}
+
+function initMenuSansImages()
+{
+    try
+    {
+        // renommage du menu pour ne pas prendre en compte les styles
+        document.getElementById("menu").id = "menuSansImages";
+        
+        // suppression de la hauteur du conteneur
+        document.getElementById("haut2").style.height = "auto";        
+    }
+    catch (err)
+    {
+    }
+}
+
+/*function ecrireIndicateurChargement(strDisplay)
+{
+    document.write (
+            '<div id="idIndicateurChargement" style="display: ' + strDisplay + ';">\r\n' +
+	        '<div style="width: 285px; height: 115px; position: absolute; left: 38%; top: 38%; border-width: 1px; border-style: solid; border-color: #4A7194;  background-color: #C9E3FF;"></div>\r\n' +
+	        '<div class="verdana11" style="width: 285px; height: 115px; position: absolute; left: 38%; top: 38%; color: #000000;"><center><br /><br /><img border="0" src="/media/images/chargement2.gif" alt="Chargement en cours" /></center></div>\r\n' +
+            '</div>\r\n'
+    );
+}*/
+
+// codage des caractères significatifs HTML, pour que swish-e n'indexe pas le javascript
+var carInf = String.fromCharCode(60);
+var carSup = String.fromCharCode(62);
+
+function unloadPage() {
+    try
+    {    
+		afficherRechargement();
+    }
+    catch (err)
+    {
+        //alert(err);
+    }
+}
+
+function afficherImgChargement(numChargement) {
+	//if (std_isDHTML && !std_isNetscape4) {
+		document.write(carInf + 'div style="position: absolute; top: 300px; left: 0px; width: 100%" align="center"' + carSup + carInf + 'img name="imgChargement" id="imgChargement" border="0" src="/media/images/chargement' + numChargement + '.gif" /' + carSup + carInf + '/div' + carSup);
+	//}
+}
+
+function cacherImgChargement() {
+	if (std_isDHTML && !std_isNetscape4) {
+		if (document.images.imgChargement) {
+			document.images.imgChargement.src = '/media/images/pixel-invisible.gif';
+			document.images.imgChargement.height = 0;
+			document.images.imgChargement.width = 0;
+		}
+	}
+}
+
+// Pour la partie admin : actualiser les onglets pour la visualisation, et empecher clic
+try {
+	if (window.parent && window.parent.synchTabByName) {
+		/*window.parent.synchTabByName('FrameVisu');
+		window.parent.loadVisu();*/
+		document.onclick = noClick;
+	}
+}
+catch(err) {
+}
+
+function noClick(){	return false; }
+
+function retourSiteSyndication(url) {
+	//if (self.opener) {
+		try {
+			if (self.opener.document.location.href.substr(0, url.length).toLowerCase == url.toLowerCase) {
+				self.opener.document.location.href = url;
+			}
+			else {
+				self.document.location.href = url;
+			}
+		}
+		catch(e) {
+			self.document.location.href = url;
+			try {
+				self.opener.close();
+			}	
+			catch(e) {
+			}		
+		}
+	//}
+	//else
+	//	self.document.location.href = url;
+}
+
+function ajouterAuxFavoris() {
+
+	var strUrl = "/Consultation/getAllCriteres.asp";
+	//alert("génération de l'url");
+	getContentURL("GET", strUrl, "", "ajouterAuxFavoris_action(contentUrl);");
+
+}
+
+function ajouterAuxFavoris_action(strParam) {
+	var strUrl = "http://www.cariforef-pdl.org/consultationStage/detailsStage.asp?id=60&pg=1&tri=FOR_INTITABREGE&za=&syndication=&code=155928F&par_code=29926P";
+	
+	if (strParam != "")
+		strUrl += "&amp;" + strParam;
+		
+	//alert(strUrl);
+
+	if (std_isInternetExplorer)
+		window.external.AddFavorite(strUrl, document.title);
+	else if (window.sidebar)
+		window.sidebar.addPanel(document.title, strUrl, "");
+	else
+		alert("Faites Ctrl/D pour ajouter cette page à vos favoris");
+}
+
+function afficherRechargement() {
+	document.getElementById("idIndicateurChargement").style.display = "block";
+}
+function cacherRechargement() {
+	document.getElementById("idIndicateurChargement").style.display = "none";
+}
+
+/*
+var Wwidth_old;
+var Wheight_old;
+
+function onbeforeprint() {
+	if (std_isInternetExplorer) {
+		Wwidth_old = document.body.offsetWidth;
+		Wheight_old = document.body.offsetHeight;
+	}
+	else {
+		Wwidth_old = window.innerWidth;
+		Wheight_old = window.innerHeight;
+	}
+	//Wheight_old = screen.height;
+	
+	window.resizeTo(800, Wheight_old);
+	window.moveTo(0, 0);
+	
+	// replacement du menu
+	MScan();
+}
+function onafterprint() {
+	window.resizeTo(Wwidth_old, Wheight_old);
+	window.moveTo(0, 0);
+}
+*/
+
+function ouvrirPanierSessions(){
+	afficherRechargement();
+	window.open("/consultationStage/panier_sessionFormation.asp?id=&lastId=60&amp;pageParente=detailsStage","Parcours", 
+		"toolbar=no,menubar=no,location=no,directories=no,resizable=yes,width=800,height=700,scrollbars=yes");
+}
+
+/*
+function verifTailleNav() {
+	var widthNav, heightNav;
+	if (!std_isInternetExplorer) {
+		widthNav = window.innerWidth;
+		//heightNav = window.innerHeight;
+	
+		if (widthNav < parseInt("979")) {
+			diffWidth = parseInt("979") - widthNav;
+			//window.resizeBy(diffWidth, 0);
+			//window.resizeBy(diffWidth * (-1), 0);
+			//var timer = setTimeout("window.resizeBy(diffWidth * (-1), 0);", 100);
+		}		
+	}
+}
+*/
+//]]>
+</script><!--<title>CARIF-OREF Détails d'une formation</title>--><script language="javascript" type="text/javascript">
+<!--
+function fnOpen(fen){
+	
+	window.open(fen,"Organismes", "toolbar=no,menubar=no,location=no,directories=no,width=790,height=500,scrollbars=yes,resizable=yes")
+}
+
+function ouvre_fen_module(fen){
+	
+	window.open(fen, "module", "toolbar=no,menubar=no,location=no,directories=no,width=790,height=500,scrollbars=yes,resizable=yes")
+	
+}
+
+//14/06/2004 : XTH fonction qui permet de valoriser/devaloriser la variable de session du panier de sessions
+function chkSession_onclick(objChk, for_code,ses_code, datedeb, datefin)
+{	/*if ((datedeb=='') || (datefin==''))
+		{
+			alert('Cette session possède une date de début et/ou une date de fin de session non renseignée(s) : vous ne pouvez pas l\'ajouter au panier des sessions de formation.')
+			document.form1['chkSession_'+for_code+'_'+ ses_code].checked = false
+		}
+	else
+	{*/
+		iFrameCarif.location = "http://www.cariforef-pdl.org/consultationSTAGE/ajout_sessionFormation.asp?for_code="+ for_code +"&ses_code="+ses_code + "&coche=" + (objChk.checked ? "1" : "0");
+	//}
+}
+//fonction appelée dans panier_sessionFormation qui permet de décocher la session...
+function Decoche_chkSession(for_code,ses_code)
+{
+	document.form1['chkSession_'+for_code+'_'+ ses_code].checked = false
+}
+//-->
+</script><style type="text/css">
+.listePAT {
+    scrollbar-face-color: #E5F1FE;
+    scrollbar-shadow-color: #4A7194;
+    scrollbar-highlight-color: #4A7194;
+    scrollbar-3dlight-color: #E5F1FE;
+    scrollbar-darkshadow-color: #E5F1FE;
+}
+</style>
+</head>
+<body onload="loadMenuAccessible(); self.focus();" onunload="unloadPage();" class="page">	
+	
+		<script language="javascript" type="text/javascript">
+		<!--
+			afficherImgChargement("");
+			//ecrireIndicateurChargement("none");
+		//-->
+		</script><div id="page">	
+	    <ul id="menuAccessibilite">
+<li><a href="#titrePage" accesskey="c">Aller au contenu</a></li>
+	        <!--<li><a href="#contenuRubrique_onglets" accesskey="m">Aller à la liste des pages de la rubrique en cours</a></li>-->
+	        <li><a href="#menu" accesskey="m">Aller au menu</a></li>
+	        <li><a href="#trainDeNavigation" accesskey="n">Aller au train de navigation</a></li>
+	        <li><a href="#liensAnnexes" accesskey="a">Aller aux liens annexes</a></li>    
+	        <li><a href="#contenuRubrique_outils" accesskey="o">Aller aux outils</a></li>    
+	        <li><a href="#recherche" accesskey="r">Aller à la recherche</a></li>
+        </ul>
+<form name="fmRechSite" method="get" action="/annexes/recherche.asp">
+    
+    <div id="haut1">
+        <div id="bandeau"></div>
+        <div id="menuHaut">
+            <ul id="liensAnnexes">
+<li><a href="/getPage.asp?id=901" class="navigation">Qui sommes-nous?</a></li>
+<li><a href="/getPage.asp?id=171" class="navigation">Nous contacter</a></li>
+<li><a href="/getPage.asp?id=47" class="navigation">Plan du site</a></li>
+<li><a href="/getPage.asp?id=49" class="navigation">Infos légales</a></li>
+</ul>
+<div id="recherche">
+                <input type="hidden" name="id" value="80"><input type="hidden" name="nometa" value="1"><input id="critereRecherche" name="critereRecherche" type="text" class="formulaires" value="Rechercher dans le site" size="23" maxlength="23" onfocus="if (this.value == 'Rechercher dans le site') this.value = '';" onblur="if (this.value == '') this.value = 'Rechercher dans le site';"><input id="boutonRecherche" type="image" src="/media/images/BT_ok.gif" title="Recherche dans tout le site" onclick="javascript:document.fmRechSite.submit();">
+</div>
+            
+        </div>
+    </div>
+    </form>
+
+    <div id="haut2">
+        <div id="menu">
+<ul>
+<li id="menu1">
+<a href="#" title="Rechercher une formation"><span>Rechercher une formation</span></a>
+<ul id="ssMenu1" style="/*display: none;*/">
+<li>
+<a href="/getPage.asp?id=58&amp;allCriteres=no"><p>Recherche libre</p></a>
+</li>
+<li>
+<a href="/getPage.asp?id=28&amp;allCriteres=no">Recherche d'organismes</a>
+</li>
+<li>
+<a href="/getPage.asp?id=1075">Recherche hors région</a>
+</li>
+<li>
+<a href="/getPage.asp?id=1161">Les formations du Conseil régional</a>
+</li>
+<li>
+<a href="/getPage.asp?id=999">Les formations compétences clés Etat-Région</a>
+</li>
+<li>
+<a href="/getPage.asp?id=962">Les formations sport et animation</a>
+</li>
+<li>
+<a href="/getPage.asp?id=785">Les formations sanitaires et sociales</a>
+</li>
+<li>
+<a href="/getPage.asp?id=784">Les formations aux métiers de la formation</a>
+</li>
+
+</ul>
+</li>
+<li id="menu2">
+<a href="#" title="Trouver un lieu d'information"><span>Trouver un lieu d'information</span></a>
+<ul id="ssMenu2" style="/*display: none;*/">
+<li>
+<a href="/getPage.asp?id=9&amp;allCriteres=no">Chercher par critères</a>
+</li>
+<li>
+<a href="/getPage.asp?id=44">Les Missions locales </a>
+</li>
+
+</ul>
+</li>
+<li id="menu3">
+<a href="#" title="Connaître les aides et démarches"><span>Connaître les aides et démarches</span></a>
+<ul id="ssMenu3" style="/*display: none;*/">
+<li>
+<a href="/getPage.asp?id=890">Rechercher une aide, un contrat, une mesure</a>
+</li>
+<li>
+<a href="/getPage.asp?id=1079">La Validation des acquis de l'expérience</a>
+<ul id="ssMenu3_530" style="/*display: none;*/">
+<li>
+<a href="/getPage.asp?id=1042">Entreprises</a>
+</li>
+<li>
+<a href="/getPage.asp?id=1061">Acteurs de la VAE</a>
+</li>
+<li>
+<a href="/getPage.asp?id=386">Bulletin de veille VAE et certification</a>
+</li>
+
+</ul>
+</li>
+<li>
+<a href="#">Fiches pratiques organismes</a>
+<ul id="ssMenu3_465" style="/*display: none;*/">
+<li>
+<a href="/getPage.asp?id=854">Infos et démarches</a>
+</li>
+<li>
+<a href="/getPage.asp?id=856">Convention collective et fédérations</a>
+</li>
+<li>
+<a href="/getPage.asp?id=860">Programmes du Conseil régional des Pays de la Loire</a>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li id="menu4">
+<a href="#" title="S'informer se documenter"><span>S'informer se documenter</span></a>
+<ul id="ssMenu4" style="/*display: none;*/">
+<li>
+<a href="#">Lettre d'information</a>
+<ul id="ssMenu4_476" style="/*display: none;*/">
+<li>
+<a href="/getPage.asp?id=1156">À la une</a>
+</li>
+<li>
+<a href="/getPage.asp?id=372">Actus nationales</a>
+</li>
+<li>
+<a href="/getPage.asp?id=371">Actus régionales</a>
+</li>
+<li>
+<a href="/getPage.asp?id=363">Agenda</a>
+</li>
+<li>
+<a href="/getPage.asp?id=440">Les dernières acquisitions</a>
+</li>
+<li>
+<a href="/getPage.asp?id=1157">Inscription</a>
+</li>
+
+</ul>
+</li>
+<li class="separateur">
+<a href="#">Recherche documentaire</a>
+<ul id="ssMenu4_68" style="/*display: none;*/">
+<li>
+<a href="/getPage.asp?id=362">Recherche libre</a>
+</li>
+<li>
+<a href="/getPage.asp?id=930">Sélections documentaires</a>
+</li>
+<li>
+<a href="/getPage.asp?id=1131">Revues</a>
+</li>
+
+</ul>
+</li>
+<li class="separateur">
+<a href="#">CCREFP</a>
+<ul id="ssMenu4_556" style="/*display: none;*/">
+<li>
+<a href="/getPage.asp?id=1080">Le service public de l'orientation</a>
+</li>
+<li>
+<a href="/getPage.asp?id=1130">CPRDFP</a>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li id="menu5">
+<a href="#" title="Observer et analyser"><span>Observer et analyser</span></a>
+<ul id="ssMenu5" style="/*display: none;*/">
+<li>
+<a href="#">Métiers / Formations</a>
+<ul id="ssMenu5_411" style="/*display: none;*/">
+<li class="separateur">
+<a href="/getPage.asp?id=1025">Outils web : Compa / Safran</a>
+</li>
+<li>
+<a href="/getPage.asp?id=963">Sport et Animation</a>
+</li>
+<li>
+<a href="/getPage.asp?id=945">Sanitaire et social</a>
+</li>
+
+</ul>
+</li>
+<li>
+<a href="/getPage.asp?id=1065">Parcours professionnels</a>
+</li>
+<li class="separateur">
+<a href="/getPage.asp?id=736">Territoires - extranet GDT</a>
+</li>
+<li>
+<a href="#">Outils et méthodes</a>
+<ul id="ssMenu5_414" style="/*display: none;*/">
+<li>
+<a href="/getPage.asp?id=881">Nomenclatures</a>
+</li>
+<li>
+<a href="/getPage.asp?id=766">Zonages</a>
+</li>
+<li>
+<a href="/getPage.asp?id=289">Aides méthodologiques</a>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li id="menu6">
+<a href="#" title="Accès réservé"><span>Accès réservé</span></a>
+<ul id="ssMenu6" style="/*display: none;*/">
+<li>
+<a href="#">Organisme de formation</a>
+<ul id="ssMenu6_25" style="/*display: none;*/">
+<li>
+<a href="/getPage.asp?id=1035">Auto-saisie</a>
+</li>
+<li>
+<a href="/getPage.asp?id=62">Consulter les appels d'offre</a>
+</li>
+
+</ul>
+</li>
+<li>
+<a href="#">Entreprises et institution</a>
+<ul id="ssMenu6_27" style="/*display: none;*/">
+<li>
+<a href="/getPage.asp?id=55">Déposer un appel d'offre</a>
+</li>
+
+</ul>
+</li>
+<li>
+<a href="/getPage.asp?id=681">Extranet VAE</a>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</div>
+
+    </div>
+     
+    <div id="cadreContenu">
+        <div id="cadreContenu_haut">
+            <div id="cadreContenu_gauche"><div id="cadreContenu_innerGauche"></div></div>
+            <div id="contenuRubrique" class="rubrique1">
+                <div id="contenuRubrique_entete">
+                	
+                        <div id="trainDeNavigation">
+                            <div id="trainDeNavigation_haut"></div>
+                            <ul id="trainDeNavigation_contenu">
+<li>
+                                    <a href="/default.asp" class="accueil">Accueil</a>  &gt; 
+                                </li>      
+                                <li>Rechercher une formation  &gt; </li>
+
+                                <li>
+                                    <p>Recherche libre</p>
+                                </li>
+                            </ul>
+<div id="trainDeNavigation_bas"></div>
+                        </div>
+                    
+                </div>
+                <div id="contenuRubrique_corps">
+                
+                    <div id="contenuRubrique_contexte">
+                    
+                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DEBUT LISTE DES PAGES DE LA RUBRIQUE EN COURS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //-->
+                        <ul id="contenuRubrique_onglets">
+<li class="onglet">
+                        <div class="ongletInactif_Haut"></div>
+                        <div class="ongletInactif"><a href="/consultationStage/menuStage.asp?id=58">Vos critères</a></div>
+                        <div class="ongletInactif_Bas"></div>
+			        </li>
+				
+			        <li class="onglet">
+                        <div class="ongletInactif_Haut"></div>
+                        <div class="ongletInactif"><a href="/consultationStage/listeStage.asp?id=59">Liste des formations</a></div>
+                        <div class="ongletInactif_Bas"></div>
+			        </li>
+							
+                <li class="onglet">
+                    <div class="ongletActif_Haut"></div>
+                    <div class="ongletActif"><a><h1>Fiche formation</h1></a></div>
+                    <div class="ongletActif_Bas"></div>
+                </li>
+			
+
+                        </ul>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FIN LISTE DES PAGES DE LA RUBRIQUE EN COURS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //--><ul id="contenuRubrique_outils">
+<li class="outilImprimer"><a href="javascript:ouvrirVersionImprimable('');">Imprimer cette page</a></li>
+
+	                        
+	                        <li class="outilFavoris">
+		                        <a href="javascript:ajouterAuxFavoris();">Ajouter aux favoris</a>
+	                        </li>
+	                        	                        
+	                        
+	                        <li id="idPanierSes" class="outilPanier" style="display: none">
+		                        <a href="javascript:ouvrirPanierSessions();">Parcours de formations</a>
+	                        </li>	                        
+	                        
+	                        <li class="outilSOS">
+		                        <a href="javascript:ouvrirSOS('http://www.cariforef-pdl.org/consultationStage/detailsStage.asp?id=60&amp;pg=1&amp;tri=FOR_INTITABREGE&amp;za=&amp;syndication=&amp;code=155928F&amp;par_code=29926P',%20'60');">S.O.S</a>
+                        	</li>
+                        	
+	                        
+                            
+                            
+                        </ul>
+</div>  <!-- fin contenuRubrique_contexte // -->
+
+	
+    <script language="javascript" type="text/javascript">
+    <!--
+    
+    self.focus();
+    
+    //-->
+    </script><!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DEBUT PAGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //--><script language="javascript" type="text/javascript">
+<!--
+// 22/06/2004 DD : paramètres pour l'impression
+var imp_htmlHaut = '<p>Recherche libre</p> > Fiche formation';
+var imp_synd_cssSyndic = "charte2.css";
+var imp_synd_codeSyndic = "CARIFOREF";
+var imp_portail_couleurRoll = "#C9E3FF";
+var imp_couleurCadre = "#4A7194";
+//-->
+</script><div id="contenu">
+        
+	<script language="javascript" type="text/javascript">
+	<!--
+	    if (typeof(cPortail_page)!="undefined") {
+		    var PAGE_objPage = new cPortail_page("PAGE");		    
+		}
+		else {
+			// cas du mode impression : l'objet page n'existe pas (!)
+		}
+	//-->
+	</script><!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ENTETE DE PAGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //--><!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CONTENU PAGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //--><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0"><tr><td>
+<table width="100%" border="0"><tr>
+<td id="preview_pgh_width_71" width="100%" colspan="1" valign="top">
+<h2 id="preview_pgh_titre_71">
+</h2>
+
+<form name="form1" action="">
+        <!--<table width="100%" border="0" cellspacing="0" cellpadding="0">          <tr align="right">             <td>  -->
+                     
+			
+		<table border="0" width="100%" cellpadding="6" cellspacing="0"><tr>
+<td valign="top" align="left">
+					
+					<span class="noDisplayInPrint"><a href="javascript:fnOpen('/consultationOrg/detailsOrga.asp?id=&amp;lastId=60&amp;code=29926P&amp;syndication=&amp;par_code=29926P');"><img alt="Accès à l'organisme" src="../media/images/BT_accesOrganismes.gif" border="0" align="middle"></a></span>
+						
+				</td>
+				<td valign="top" align="right">			
+					
+                    
+				</td>
+			</tr></table>
+<table width="100%" cellspacing="0" cellpadding="5" style="border: 1px solid #4A7194"><tr>
+<td>
+                    <table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tr bgcolor="#2578D3">
+<td valign="top" class="arial12" style="padding: 5px;"> 
+						  <strong><font color="#FFFFFF">Animateur périscolaire</font></strong> 
+						  <input type="hidden" name="txtFor_code" value="155928F">
+</td>
+                        <td align="right" valign="top" class="verdana9" style="padding: 5px;"> 
+                        
+                        <table border="0" cellpadding="0" cellspacing="0"><tr>
+<td align="left" valign="top" width="35"><a href="#signet_CENTRE"><img src="../media/images/logo_centre.gif" border="0" align="middle" alt="En centre de formation"></a></td>
+						
+							<td align="right" valign="top" class="verdana9" width="150" nowrap>
+							<strong><font color="#FFFFFF">
+							
+								Mis à jour : 03/06/2013<br>
+							
+							Réf : 155928F</font></strong>
+							</td>
+						</tr></table>
+</td>
+                      </tr>
+<tr valign="top" bgcolor="#C9E3FF">
+<td width="55%" style="padding: 5px;"><b><font class="verdana10" color="#000000">
+							Institut national de formation et de recherche sur l'éducation permanente Le Mans Métropole (réf : 29926P)<br>7A rue de Belle Ile  <br>72190 COULAINES
+                          </font></b></td>
+                        <td width="45%" style="padding: 5px;">
+<font class="verdana10">
+							
+								<b>Tél. : </b>02-43-51-27-00<br><b>Fax : </b>02-43-85-75-55<br><b>Email : </b><a href="mailto:infrep61@infrep.org">infrep61@infrep.org</a><br><b>Web : </b><a href="http://sites.google.com/site/infrepmortagne/" target="_blank">http://sites.google.com/site/infrepmortagne/</a>
+							
+							</font>
+						</td>
+                      </tr>
+</table>
+</td>
+                </tr></table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td><img src="../media/images/CaleTab.gif" width="8" height="8" alt=""></td>
+			</tr></table>
+<table width="100%" border="0" cellspacing="1" cellpadding="1" bgcolor="#4A7194"><tr>
+<td>
+			      <table width="100%" border="0" cellpadding="5" cellspacing="7" bgcolor="#E5F1FE">
+<tr>
+<td valign="top" width="32%" align="right"><font class="verdana10"><b><font color="#FF0000">Type modularisation</font> :</b></font></td>
+<td valign="top"><font class="verdana10">Non modulaire</font></td>
+</tr>
+<tr align="center">
+<td valign="top" colspan="2"><div class="separation"><img src="../media/images/pixel-gris.gif" width="100%" height="1" alt=""></div></td>
+</tr>
+<tr>
+<td valign="top" width="32%" align="right"><font class="verdana10"><b>Objectifs :</b></font></td>
+<td valign="top"><font class="verdana10">Maîtriser la spécificité des temps d'accueil périscolaire ; préparer un projet d'animation de loisirs pour des publics enfants (3 à 12 ans) ; maîtriser les outils et les techniques nécessaires à la mise en oeuvre d'actions d'animation</font></td>
+</tr>
+<tr align="center">
+<td valign="top" colspan="2"><div class="separation"><img src="../media/images/pixel-gris.gif" width="100%" height="1" alt=""></div></td>
+</tr>
+<tr>
+<td valign="top" width="32%" align="right"><font class="verdana10"><b>Programme :</b></font></td>
+<td valign="top"><font class="verdana10">Accueillir les enfants dans les temps de loisirs périscolaires. Concevoir un projet d'animation. Conduire des temps d'animation périscolaire</font></td>
+</tr>
+<tr align="center">
+<td valign="top" colspan="2"><div class="separation"><img src="../media/images/pixel-gris.gif" width="100%" height="1" alt=""></div></td>
+</tr>
+<tr>
+<td valign="top" width="32%" align="right"><font class="verdana10"><b>Formacode principal :</b></font></td>
+<td valign="top"><font class="verdana10">44067 animation socioculturelle</font></td>
+</tr>
+<tr align="center">
+<td valign="top" colspan="2"><div class="separation"><img src="../media/images/pixel-gris.gif" width="100%" height="1" alt=""></div></td>
+</tr>
+<tr>
+<td valign="top" width="32%" align="right"><font class="verdana10"><b>Contacts :</b></font></td>
+<td valign="top"><font class="verdana10">Madame <b><font color="#FF0000">Annie Audoux</font></b> - Formatrice<br>Tél. : 02-43-51-27-00, Email : <a href="mailto:infrep61.aaudoux1@orange.fr">infrep61.aaudoux1@orange.fr</a><br></font></td>
+</tr>
+</table>
+</td>
+			  </tr></table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td><img src="../media/images/CaleTab.gif" width="8" height="8" alt=""></td>
+			</tr></table>
+<table width="100%" border="0" cellspacing="1" cellpadding="1" bgcolor="#4A7194"><tr>
+<td>
+			      <table width="100%" border="0" cellpadding="5" cellspacing="7" bgcolor="#E5F1FE">
+<tr>
+<td valign="top" width="32%" align="right"><font class="verdana10"><b>Publics concernés :</b></font></td>
+<td valign="top"><font class="verdana10">Tout public</font></td>
+</tr>
+<tr align="center">
+<td valign="top" colspan="2"><div class="separation"><img src="../media/images/pixel-gris.gif" width="100%" height="1" alt=""></div></td>
+</tr>
+<tr>
+<td valign="top" width="32%" align="right"><font class="verdana10"><b>Pré-requis :</b></font></td>
+<td valign="top"><font class="verdana10">Expérience dans l'animation conseillée</font></td>
+</tr>
+<tr align="center">
+<td valign="top" colspan="2"><div class="separation"><img src="../media/images/pixel-gris.gif" width="100%" height="1" alt=""></div></td>
+</tr>
+<tr>
+<td valign="top" width="32%" align="right"><font class="verdana10"><b>Validations :</b></font></td>
+<td valign="top"><font class="verdana10">CQP animateur périscolaire</font></td>
+</tr>
+<tr align="center">
+<td valign="top" colspan="2"><div class="separation"><img src="../media/images/pixel-gris.gif" width="100%" height="1" alt=""></div></td>
+</tr>
+<tr>
+<td valign="top" width="32%" align="right"><font class="verdana10"><b>Niveau formation en sortie :</b></font></td>
+<td valign="top"><font class="verdana10">Niveau non précisé</font></td>
+</tr>
+<tr align="center">
+<td valign="top" colspan="2"><div class="separation"><img src="../media/images/pixel-gris.gif" width="100%" height="1" alt=""></div></td>
+</tr>
+<tr>
+<td valign="top" width="32%" align="right"><font class="verdana10"><b>Durée de la formation en entreprise :</b></font></td>
+<td valign="top"><font class="verdana10">200 heures</font></td>
+</tr>
+<tr align="center">
+<td valign="top" colspan="2"><div class="separation"><img src="../media/images/pixel-gris.gif" width="100%" height="1" alt=""></div></td>
+</tr>
+<tr>
+<td valign="top" width="32%" align="right"><font class="verdana10"><b>Durée de la formation en centre :</b></font></td>
+<td valign="top"><font class="verdana10">217 heures</font></td>
+</tr>
+<tr align="center">
+<td valign="top" colspan="2"><div class="separation"><img src="../media/images/pixel-gris.gif" width="100%" height="1" alt=""></div></td>
+</tr>
+<tr>
+<td valign="top" width="32%" align="right"><font class="verdana10"><img src="../media/images/logo_centre.gif" border="0" align="middle" alt="En centre de formation" style="float: left"> <b>Dates et lieux :</b></font></td>
+<td valign="top"><font class="verdana10"><a name="signet_CENTRE"></a><b>COULAINES</b><br>Du 08/07/2013 au 19/02/2014<br>Inscription permanente : Non<br>Places disponibles : non<br>Frais de formation : Nous contacter<br>Dispositif : Financement privé (entreprise, individuel)<br><table border="0" cellspacing="0" cellpadding="0" class="noDisplayInPrint"><tr>
+<td valign="middle" height="20" class="verdana10" nowrap><label for="idChkSession_155928F_1"><img src="../media/images/panier.gif" alt="Ajouter au panier"> <b><font color="#FF0000">Cocher pour ajouter au parcours de formations </font></b></label></td>
+<td valign="bottom" height="20" align="left">  <input type="checkbox" name="chkSession_155928F_1" id="idChkSession_155928F_1" value="1" onclick="chkSession_onclick(this, '155928F','1','08/07/2013','19/02/2014' );">
+</td>
+</tr></table>
+<br></font></td>
+</tr>
+</table>
+</td>
+			  </tr></table>
+<!--      </td>          </tr>        </table>--><table border="0" width="100%" cellpadding="6" cellspacing="0"><tr>
+<td valign="top" align="left">
+					
+					<span class="noDisplayInPrint"><a href="javascript:fnOpen('/consultationOrg/detailsOrga.asp?id=&amp;lastId=60&amp;code=29926P&amp;syndication=&amp;par_code=29926P');"><img alt="Accès à l'organisme" src="../media/images/BT_accesOrganismes.gif" border="0" align="middle"></a></span>
+						
+				</td>
+				<td valign="top" align="right">			
+					
+                    
+				</td>
+			</tr></table>
+</form>
+
+
+
+<script language="javascript" type="text/javascript">
+<!--
+function imprimerUF()
+{
+	
+	var strUrlAImprimer
+
+	strUrlAImprimer = '';
+	strUrlAImprimer = '';
+	if (strUrlAImprimer != "")
+		imprimerUrls('/consultationStage/detailsStage.asp?id=60&amp;syndication=CARIFOREF&amp;code=155928F&amp;par_code=29926P\n'+ strUrlAImprimer + "\n");
+
+}
+
+function goToFormationParent()
+{
+	document.location.href = "/consultationStage/detailsStage.asp?id=60&amp;syndication=CARIFOREF&amp;code=155928F&amp;par_code=29926P";	
+}
+//-->
+</script><!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PIED DE PAGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //-->
+</td>
+</tr></table>
+</td></tr></table>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FIN PAGE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //-->
+</div> <!-- fin contenu // -->
+                </div>  <!-- fin contenuRubrique_corps // -->
+                <div id="contenuRubrique_pied"></div>
+            </div>  <!-- fin contenuRubrique // -->
+            <div id="cadreContenu_droite"><div id="cadreContenu_innerDroite"></div></div>
+        </div>  <!-- fin cadreContenu_haut // -->
+        <div id="cadreContenu_bas"></div>
+    </div>  <!-- fin cadreContenu // -->
+  
+    <div id="bandeauFlash">
+    
+<script language="javascript">
+<!--
+    try
+    {
+		AC_FL_RunContent(
+			'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0',
+			'width', '961',
+			'height', '98',
+			'src', 'bandeau',
+			'quality', 'high',
+			'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+			'align', 'middle',
+			'play', 'true',
+			'loop', 'true',
+			'scale', 'showall',
+			'wmode', 'window',
+			'devicefont', 'false',
+			'id', 'bandeauvague',
+			'bgcolor', '#ffffff',
+			'name', 'bandeau',
+			'menu', 'true',
+			'allowFullScreen', 'false',
+			'allowScriptAccess','sameDomain',
+			'movie', '/media/flashs/bandeau?lien=',
+			'salign', ''
+			); //end AC code
+	}
+	catch (err)
+	{
+	}
+//-->
+</script><noscript>
+    <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="961" height="98" align="middle">
+        <param name="allowScriptAccess" value="sameDomain">
+<param name="allowFullScreen" value="false">
+<param name="movie" value="/media/flashs/bandeau.swf?lien=">
+<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<param name="wmode" value="window">
+<embed src="/media/flashs/bandeau.swf?lien=" quality="high" bgcolor="#ffffff" wmode="window" width="961" height="98" name="bandeau" align="middle" allowscriptaccess="sameDomain" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed></object>
+</noscript>
+
+    </div>
+    </div>  <!-- fin page // -->
+    
+
+
+<script language="javascript" type="text/javascript">
+//<![CDATA[
+
+cacherImgChargement();
+
+//]]>    
+</script><iframe name="iFrameCarif" src="/include/vide.htm" style="display: none;" height="200" width="100%" frameborder="0">
+</iframe>
+
+
+<div title="Indicateur de chargement">
+    <div id="idImgPrint1" style="width: 285px; height: 120px; position: absolute; left: 38%; top: 38%; border-width: 1px; border-style: solid; border-color: #4A7194;  background-color: #C9E3FF; display: none;">
+    </div>
+    <div id="idImgPrint2" class="verdana11" style="width: 285px; height: 120px; position: absolute; left: 38%; top: 38%; color: #000000; display: none;"><center>
+<br><br>Chargement des fiches à imprimer<br>Veuillez patienter...<br><br><table border="0" cellpadding="0" cellspacing="0" style="height: 5px; width: 210px; border-width: 1px; border-style: solid; border-color: #4A7194" bgcolor="#E5F1FE"><tr>
+<td width="210" height="5" align="left"><img name="idAvancementImpression" id="idAvancementImpression" src="/media/images/pixel-invisible.gif" border="0" style="width: 0px; height: 5px; background-color: #2578D3" alt="Chargement en cours"></td>
+	    </tr></table>
+<br><b><a href="javascript:annulerImpressionUrl();">Cliquez ici pour annuler.</a></b>
+</center></div>
+
+    <!--<div id="idImgChargement" style="z-index: 1000; display: none; position: absolute; top: 200px; left: 0px; width: 100%" align="center" /><img border="0" src="/media/images/chargement.gif" alt="Chargement en cours" /></div>-->
+
+    <div id="idIndicateurChargement" style="display: none;">
+	    <div style="width: 285px; height: 115px; position: absolute; left: 38%; top: 38%; border-width: 1px; border-style: solid; border-color: #4A7194;  background-color: #C9E3FF;"></div>
+	    <div class="verdana11" style="width: 285px; height: 115px; position: absolute; left: 38%; top: 38%; color: #000000;"><center>
+<br><br><img border="0" src="/media/images/chargement2.gif" alt="Chargement en cours">
+</center></div>
+    </div>
+</div>
+
+
+<script language="javascript" type="text/javascript">
+<!--
+
+
+
+
+/*if (self.parent) {
+	window.status = "cariforef:" + getHeight(100) + ":" + getWidth(100);
+}
+
+function getHeight(tailleWin) {
+	// capture de la hauteur du body (y a peut-être mieux)
+	self.scrollTo(0,0);
+	self.scrollTo(0,100000);
+	var yClient = window.document.body.scrollTop;	
+	window.scrollTo(0,0);
+	yClient += parseInt(tailleWin);
+
+	return yClient +  "px";
+	return 0;
+}
+
+function getWidth(tailleWin) {
+	// capture de la longeur du body (y a peut-être mieux)
+	window.scrollTo(0,0);
+	window.scrollTo(100000,0);
+	var xClient = window.document.body.scrollLeft;
+	window.scrollTo(0,0);
+	xClient += parseInt(tailleWin);
+	
+	return xClient +  "px";
+}*/
+
+
+//-->
+</script><!-- </td></tr></table> //--><!-- Marquage Google Analytics //--><script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script><script type="text/javascript">
+        <!--
+        try {
+        var pageTracker = _gat._getTracker("UA-11013209-5");
+        pageTracker._trackPageview();
+        } catch(err) {}
+        //-->
+        </script>
+</body>
+</html>

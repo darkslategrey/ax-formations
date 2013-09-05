@@ -1,0 +1,446 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
+<head>
+<title>Form'Action, Ecole de Travail Social</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="generator" content="SPIP 2.1.8 [16966]">
+<link rel="shortcut icon" href="squelettes/favicon.ico" type="image/x-icon">
+<link rel="alternate" type="application/rss+xml" title="Suivez l'actualité de ce site" href="http://www.formaction.org/ecole_travail_social/spip.php?page=backend">
+<link rel="stylesheet" href="prive/spip_style.css" type="text/css" media="all">
+<link rel="stylesheet" href="squelettes-dist/spip_formulaires.css" type="text/css" media="projection, screen, tv">
+<link rel="stylesheet" href="squelettes-dist/habillage.css" type="text/css" media="projection, screen, tv">
+<link rel="stylesheet" href="squelettes-dist/impression.css" type="text/css" media="print">
+<link rel="stylesheet" href="squelettes/etablissement.css" type="text/css" media="projection, screen, tv">
+<link rel="stylesheet" href="http://www.formaction.org/ecole_travail_social/spip.php?page=couleurs" type="text/css" media="projection, screen, tv">
+<script type="text/javascript">
+<!--
+function masque(identifiant,num) {
+		$("dd").each(function( intIndex ){if ($(this).attr("id")!=$(identifiant).attr("id") && $(this).css("display")!="none" ) $(this).hide('slow');});
+		$("img.imageplus").each(function( intIndex ){if ($(this).attr("id")!="img"+num ) $(this).attr({ src: "squelettes/images/deplierhaut.png", alt : " - " , title : "Voir les sous-rubriques"});});
+}
+
+function montre(id,num) {
+	masque(id,num);
+	if (id!="")
+		if ($(id).css("display")=="none") {
+				$(id).show('slow');
+				$("#img"+num).attr({ src: "squelettes/images/deplierbas.png",  alt : " + " , title : "Masquer les sous-rubriques"  });
+		}
+		else  {
+				$(id).hide('slow');
+				$("#img"+num).attr({ src: "squelettes/images/deplierhaut.png", alt : " - " , title : "Voir les sous-rubriques" });
+		}
+}
+var tout_masque=true;
+
+function montre_tout(){
+		if (tout_masque){
+				$("dd").each(function( intIndex ){if ( $(this).css("display")=="none" ) $(this).show('slow');});
+				$("img.imageplus").each(function( intIndex ){$(this).attr({ src: "squelettes/images/deplierbas.png", alt : " - " , title : "Masquer les sous-rubriques"});});
+				tout_masque=false;
+		}
+		else{
+				$("dd").each(function( intIndex ){if ( $(this).css("display")!="none" ) $(this).hide('slow');});
+				$("img.imageplus").each(function( intIndex ){$(this).attr({ src: "squelettes/images/deplierhaut.png", alt : " + " , title : "Montrer les sous-rubriques"});});
+				tout_masque=true;
+		}
+}
+// --></script><link rel="stylesheet" type="text/css" media="all" href="extensions/porte_plume/css/barre_outils.css">
+<link rel="stylesheet" type="text/css" media="all" href="http://www.formaction.org/ecole_travail_social/spip.php?page=barre_outils_icones.css">
+<!-- CS vide --><link rel="stylesheet" href="plugins/Lecteur_multimedia/player.css" type="text/css" media="all">
+<script src="prive/javascript/jquery.js" type="text/javascript"></script><script src="prive/javascript/jquery.form.js" type="text/javascript"></script><script src="prive/javascript/ajaxCallback.js" type="text/javascript"></script><script src="prive/javascript/jquery.cookie.js" type="text/javascript"></script><!-- insert_head --><!--[if lt IE 7]>
+	<script src='extensions/msie_compat/javascript/jquery.ifixpng.js'></script>
+	<script type='text/javascript'>//<![CDATA[
+		jQuery.ifixpng('rien.gif');		
+		function fixie() {
+			jQuery('img').ifixpng();
+		}
+		$(document).ready(function() { fixie(); });
+		onAjaxLoad(fixie);	
+	//]]></script>
+<![endif]--><script type="text/javascript" src="extensions/porte_plume/javascript/xregexp-min.js"></script><script type="text/javascript" src="extensions/porte_plume/javascript/jquery.markitup_pour_spip.js"></script><script type="text/javascript" src="extensions/porte_plume/javascript/jquery.previsu_spip.js"></script><script type="text/javascript" src="http://www.formaction.org/ecole_travail_social/spip.php?page=porte_plume_start.js&amp;lang=fr"></script><!-- Debut CS --><script type="text/javascript"><!--
+var cs_prive=window.location.pathname.match(/\/ecrire\/$/)!=null;
+jQuery.fn.cs_todo=function(){return this.not('.cs_done').addClass('cs_done');};
+if(window.jQuery) {
+var cs_sel_jQuery=typeof jQuery(document).selector=='undefined'?'@':'';
+var cs_CookiePlugin="prive/javascript/jquery.cookie.js";
+}
+// --></script><!-- Fin CS --><!-- Player JS --><script type="text/javascript" src="plugins/Lecteur_multimedia/soundmanager/soundmanager2.js"></script><script type="text/javascript"><!--
+var musicplayerurl="";
+var key_espace_stop = true;
+var image_play="plugins/Lecteur_multimedia/images/playl.gif";
+var image_pause="plugins/Lecteur_multimedia/images/pausel.gif";
+soundManager.url = "plugins/Lecteur_multimedia/soundmanager/soundmanager2.swf";
+soundManager.nullURL = "plugins/Lecteur_multimedia/soundmanager/null.mp3";
+var videoNullUrl = "null.flv";
+var DIR_PLUGIN_PLAYER = "plugins/Lecteur_multimedia/";//--></script><script type="text/javascript" src="plugins/Lecteur_multimedia/javascript/jscroller.js"></script><script type="text/javascript" src="plugins/Lecteur_multimedia/player_enclosure.js"></script>
+</head>
+<body class="page_sommaire">
+<div id="page">
+
+	
+	<div id="entete">
+
+
+<!--<div class="logo-formaction"><a target="_blank" href="http://www.formaction.org/" title="Site r&eacute;alis&eacute; avec SPIP"><img src="squelettes/images/logo_formaction.gif" alt="Formaction"   class="format_png" /></a></div>-->
+
+<a rel="start" href="http://www.formaction.org/ecole_travail_social/" title="Accueil du site">
+<img class="spip_logos" alt="Form'Action, Ecole de Travail Social" src="local/cache-vignettes/L959xH101/siteon0-e5814.png" width="959" height="101" style="height:101px;width:959px;" title="Form'Action, Ecole de Travail Social"></a>
+<!--
+<ul id="menuhorizontal">
+	<li>Aller &agrave; :</li>
+	<li><a href="#contenu" title="Aller au contenu">Contenu</a> |</li>
+	<li><a href="#montre_ou_masque_tout" title="Aller au menu de navigation">Sommaire</a> |</li>
+	<li><a href="#formulaire_recherche" title="Aller à la recherche"  >Recherche</a> |</li>
+	<li class=""><a href="http://www.formaction.org/ecole_travail_social/spip.php?page=calendrier&amp;annee=2013&amp;mois=09&amp;jour=3&amp;type=mois&amp;echelle=120&amp;partie_cal=sansheure" title="Agenda complet">Agenda</a> |</li>
+	<li><a href="http://www.formaction.org/ecole_travail_social/spip.php?page=sites" title="Les sites sélectionnés">Liens</a> |</li>
+	
+	
+</ul>
+-->
+</div>
+	
+	<div class="hfeed" id="conteneur">
+	<div id="contenu">
+        
+        <div id="hierarchie">Accueil du site</div>
+
+		<div class="cartouche invisible">
+			<h1 class="invisible">Form’Action, Ecole de Travail Social</h1>
+		</div>
+
+		
+		<div class=" " id="calendrier">
+			
+			<div id="calendar">
+
+	<table summary="Calendrier">
+<caption>
+			<a rel="nofollow" href="./?date=2013-08" title="août 2013">«</a>
+			septembre 2013
+			<a rel="nofollow" href="./?date=2013-10" title="octobre 2013">»</a>
+		</caption>
+		<thead><tr>
+<th scope="col"><abbr title="lundi">L</abbr></th>
+				<th scope="col"><abbr title="mardi">M</abbr></th>
+				<th scope="col"><abbr title="mercredi">M</abbr></th>
+				<th scope="col"><abbr title="jeudi">J</abbr></th>
+				<th scope="col"><abbr title="vendredi">V</abbr></th>
+				<th scope="col"><abbr title="samedi">S</abbr></th>
+				<th scope="col"><abbr title="dimanche">D</abbr></th>
+			</tr></thead>
+<tbody>
+<tr>
+<td class="horsperiode">26</td>
+	<td class="horsperiode">27</td>
+	<td class="horsperiode">28</td>
+	<td class="horsperiode">29</td>
+	<td class="horsperiode">30</td>
+	<td class="horsperiode">31</td>
+	<td class="libre">1
+	</td>
+</tr>
+<tr>
+<td class="libre">2
+	</td>
+	<td class="libre">3
+	</td>
+	<td class="libre today">4
+	</td>
+	<td class="libre">5
+	</td>
+	<td class="libre">6
+	</td>
+	<td class="libre">7
+	</td>
+	<td class="libre">8
+	</td>
+</tr>
+<tr>
+<td class="libre">9
+	</td>
+	<td class="libre">10
+	</td>
+	<td class="libre">11
+	</td>
+	<td class="libre">12
+	</td>
+	<td class="libre">13
+	</td>
+	<td class="libre">14
+	</td>
+	<td class="libre">15
+	</td>
+</tr>
+<tr>
+<td class="libre">16
+	</td>
+	<td class="libre">17
+	</td>
+	<td class="libre">18
+	</td>
+	<td class="libre">19
+	</td>
+	<td class="libre">20
+	</td>
+	<td class="libre">21
+	</td>
+	<td class="libre">22
+	</td>
+</tr>
+<tr>
+<td class="libre">23
+	</td>
+	<td class="libre">24
+	</td>
+	<td class="libre">25
+	</td>
+	<td class="libre">26
+	</td>
+	<td class="libre">27
+	</td>
+	<td class="libre">28
+	</td>
+	<td class="libre">29
+	</td>
+</tr>
+<tr>
+<td class="libre">30
+	</td>
+	<td class="horsperiode">1</td>
+	<td class="horsperiode">2</td>
+	<td class="horsperiode">3</td>
+	<td class="horsperiode">4</td>
+	<td class="horsperiode">5</td>
+	<td class="horsperiode">6</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+		<tr>
+<br><br>
+</tr>
+<tr>
+<div class="ajaxbloc env-BGtQ1QgYpDsyRbPDSCv0LlwM9mPV4/4d/JWkI7DOsMS1W4BMWRNC/OqqDUbIhZuFX4Xe4eOjyQe65Iqz+eHi34EGOXOClxKxfSfXjGVe1itc3eEnbq2HAy/SfiytL0963oAKedezumx5UrM3Gwb75nPGJfA5wQrTXOu4nR+ohHRnknGSj4zlAS1z/JsHq0yu+ZWo">
+
+<div class="menu articles">
+	<a name="pagination_breves" id="pagination_breves"></a>
+	<h2>Les actualités</h2>
+	<ul>
+<!--added by sebfox 
+CONFIG{scolaspip_accueil/pagination_breves}}{scolaspip_nb_breves}{doublons}--><li><a href="spip.php?breve26">Candidats admissibles DEAMP</a></li>
+	
+<!--added by sebfox 
+CONFIG{scolaspip_accueil/pagination_breves}}{scolaspip_nb_breves}{doublons}-->
+		<li><a href="spip.php?breve25" title="Liste des candidats retenus à l'issue de l'épreuve">Candidats retenus ASS 2013</a></li>
+	
+	</ul>
+<p class="pagination"><span class="pagination_label">Pages</span>
+
+
+
+<strong class="on">1</strong>
+<span class="sep separateur">|</span>
+
+
+<a href="./?debut_breves=2#pagination_breves" class="lien_pagination" rel="nofollow">2</a>
+<span class="sep separateur">|</span>
+
+
+<a href="./?debut_breves=4#pagination_breves" class="lien_pagination" rel="nofollow">3</a>
+<span class="sep separateur">|</span>
+
+
+<a href="./?debut_breves=6#pagination_breves" class="lien_pagination" rel="nofollow">4</a>
+<span class="sep separateur">|</span>
+
+
+<a href="./?debut_breves=8#pagination_breves" class="lien_pagination" rel="nofollow">5</a>
+<span class="sep separateur">|</span>
+
+
+<a href="./?debut_breves=10#pagination_breves" class="lien_pagination" rel="nofollow">6</a>
+<span class="sep separateur">|</span>
+
+
+<a href="./?debut_breves=12#pagination_breves" class="lien_pagination" rel="nofollow">7</a>
+<span class="sep separateur">|</span>
+
+
+<a href="./?debut_breves=14#pagination_breves" class="lien_pagination" rel="nofollow">8</a>
+<span class="sep separateur">|</span>
+
+
+<a href="./?debut_breves=16#pagination_breves" class="lien_pagination" rel="nofollow">9</a></p>
+</div>
+</div>
+<!-- ajaxbloc -->
+		</tr>
+</div>
+
+		
+    
+
+<!--added by sebfox-->
+<div>
+<object type="application/x-shockwave-flash" data="/contenu/media/animation_logo.swf" style="width:400px;height:291px;">
+<param name="base" value="/contenu/media/animation_logo.swf">
+<param name="movie" value="/contenu/media/animation_logo.swf">
+<param name="quality" value="high">
+<param name="wmode" value="transparent">
+<param name="menu" value="true"></object>
+</div>
+<!--end -->
+
+		
+
+		
+		
+
+		
+
+		
+		 
+
+
+		
+		 
+
+    
+    
+
+		
+		 
+
+	</div>
+<!--#contenu-->
+	</div>
+<!--#conteneur-->
+
+	
+	<div id="navigation">
+
+		
+		<div class="formulaire_spip formulaire_recherche" id="formulaire_recherche">
+<form action="http://www.formaction.org/ecole_travail_social/spip.php?page=recherche" method="get"><div>
+	<input name="page" value="recherche" type="hidden"><label for="recherche">Rechercher :</label>
+	<input type="text" class="text" size="10" name="recherche" id="recherche" accesskey="4"><input type="submit" class="submit" value="OK" title="Rechercher">
+</div></form>
+</div>
+
+
+
+
+	<div onmouseover="this.style.cursor='pointer';" onclick="javascript:montre_tout();" title="Voir toutes les sous-rubriques"><span id="montre_ou_masque_tout">Sommaire <img class="imageplus" id="img_toute_rubrique" src="squelettes/images/deplierhaut.png" alt=" + "></span></div>
+		<dl id="menu">
+<!--<dt onmouseover="this.style.cursor='pointer';" onclick="javascript:masque();">Fermer</dt>--><dt>
+					<span onmouseover="this.style.cursor='pointer';" onclick="javascript:montre('#smenu3',3);"><img class="imageplus" id="img3" src="squelettes/images/deplierhaut.png" alt=" + " title="Voir les sous-rubriques"></span>
+					<a href="spip.php?rubrique3">Form’Action en bref</a>
+				</dt>
+			
+
+			
+			<dd id="smenu3" class="dd">
+				<ul class="ss-rubrique">
+<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique4">Présentation générale de Form’Action</a>
+							
+					</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique5">Form’Action en images</a>
+							
+					</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique10">Contact</a>
+							
+					</li>
+				
+				</ul>
+</dd>
+			
+	
+
+			
+			
+			
+			
+			
+				<dt>
+					<span onmouseover="this.style.cursor='pointer';" onclick="javascript:montre('#smenu2',2);"><img class="imageplus" id="img2" src="squelettes/images/deplierhaut.png" alt=" + " title="Voir les sous-rubriques"></span>
+					<a href="spip.php?rubrique2">Filières de formation</a>
+				</dt>
+			
+
+			
+			<dd id="smenu2" class="dd">
+				<ul class="ss-rubrique">
+<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique7">Animation socio-éducative/ culturelle</a>
+							
+					</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique8">Secteur social</a>
+							
+					</li>
+				
+					<li class="ss-ss-rubrique">
+<a href="spip.php?rubrique16">Prépas concours</a>
+							
+					</li>
+				
+				</ul>
+</dd>
+			
+	
+
+			
+			  <dt class="rubrique_vide">
+			  	<a href="spip.php?rubrique1">Form’Action Online</a>
+			  </dt>
+			
+
+			
+	
+		</dl>
+</div>
+<!--#navigation-->
+
+	
+	<div id="extra">
+
+		
+		
+
+	</div>
+<!--#extra-->
+
+	
+	<br class="nettoyeur"><div id="pied">
+	<div class="pied">
+		<small>
+			<a href="http://www.formaction.org/ecole_travail_social/spip.php?page=backend" title="Suivez l'actualité de ce site"><img src="squelettes-dist/feed.png" alt="Suivre la vie du site" width="16" height="16" class="format_png"> RSS 2.0</a>
+			| <a href="http://www.formaction.org/ecole_travail_social/spip.php?page=plan" title="Cette page vous présente l'organisation du site">Plan du site</a>
+			| <a href="http://www.formaction.org/ecole_travail_social/spip.php?page=mentions" title="Mentions légales de ce site">Mentions légales</a> | <a href="http://www.formaction.org/ecole_travail_social/spip.php?page=login&amp;url=.%2F" rel="nofollow" class="login_modal">Se connecter</a>
+<!--
+			| <a href="http://www.crdp.ac-versailles.fr/" title="Site du CRDP l'acad&eacute;mie de Versailles"><img src="squelettes/images/crdp.jpg" alt="CRDP"  class="format_png" /></a>
+			| <a href="http://www.tice.ac-versailles.fr/" title="Consultez le site Tice acad&eacute;mique"><img src="squelettes/images/tice.png" alt="tice"  class="format_png" /></a>
+-->
+			| <a href="http://www.spip.net/" title="Site réalisé avec SPIP"><img src="squelettes-dist/spip.png" alt="SPIP" width="48" height="16" class="format_png"></a>
+			| <a href="#entete" title="Revenir en haut de la page">Haut de page</a>
+		</small>
+	</div>
+	<div id="ours">
+		<small>
+			Form’Action, Ecole de Travail Social
+			<br><!--Responsable &eacute;ditorial : Annick Onteniente--></small>
+	</div>
+</div>
+
+<!-- SPIP-CRON --><div style="background-image: url('http://www.formaction.org/ecole_travail_social/spip.php?action=cron');"></div>
+</div>
+<!--#page-->
+</body>
+</html>

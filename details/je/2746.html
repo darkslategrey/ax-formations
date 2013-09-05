@@ -1,0 +1,921 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Lycée Carcado-Saisseval</title>
+<meta name="description" content="Lycée des métiers des activités sanitaires et sociales et des activités commerciales, Lycée catholique sous contrat d'association avec l'Etat">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="/template/carcado/css/site.css" type="text/css">
+<link rel="icon" type="image/png" href="/template/carcado/img/favicon.png">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script><script type="text/javascript" src="/js/carcado/slides.min.jquery.js"></script><script type="text/javascript" src="/js/carcado/liteaccordion.jquery.js"></script><script type="text/javascript" src="/js/carcado/jquery.mousewheel.js"></script><script type="text/javascript" src="/js/common/jquery.li-scroller.1.0.js"></script><script type="text/javascript" src="/js/carcado/jquery.jscrollpane.min.js"></script><script type="text/javascript">
+		$(document).ready(function(){
+			
+			$('body').click(function(){
+				$('.subMenu').hide();
+				$('.leftColumn').hide();
+				$('.rightColumn').hide();
+				$('#topMenu .subSubMenu').hide();
+			});
+			
+			$('#topMenu .menu').click(function(event){
+  				event.stopPropagation();
+				$('.subMenu').hide();
+				$('.leftColumn').hide();
+				$('.rightColumn').hide();
+				$('#topMenu .subSubMenu').hide();
+				$(this).parent().find('.subMenu').show();
+				$(this).parent().find('.subMenu').find('.leftColumn').fadeIn(500);
+			});
+			
+			$('#topMenu .subMenu .leftColumn a').click(function(event){
+  				event.stopPropagation();
+				$('#topMenu .subSubMenu').hide();
+				$('#' + $(this).attr('rel')).fadeIn(500);
+				$(this).parents('.subMenu').find('.rightColumn').show();
+			});
+			$('#input_searchValue').focus(function(){
+				if($(this).val() == 'searchOnWebSite')
+					$(this).val('');
+			}).blur(function(){
+				if($(this).val() == '')
+					$(this).val('searchOnWebSite');
+			});
+var rightColumnHeight = $('#rightColumn').height() + 145;
+			var centerColumnHeight = $('#centerColumn').height() + 10;
+			if(rightColumnHeight > centerColumnHeight)
+			{
+				$('#centerColumn #mainMiddle').height(rightColumnHeight - 10);	
+			}
+		});
+	
+	</script>
+</head>
+<body class="">
+	
+	<div id="global">
+		<div id="header">
+			<div class="content">
+				<h1 id="logo">Carcado-Saisseval</h1>
+				<ul id="topMenu">
+<li class="accueil firstItem">
+							<a href="/fr/" class="menu accueil">Accueil</a>
+						</li>
+					
+						<li class="le-lycee ">
+							<a href="javascript:void(0);" class="menu le-lycee">Le Lycée</a>
+								<div class="subMenu" style="display:none">
+									<div class="leftColumn" style="display:none">
+										<ul>
+<li><a target="_self" href="/fr/le-lycee/historique/2/historique_5.html" title="" rel="subSubMenu_5"><span class="bullet">&gt;</span>Historique</a></li>
+											<li><a target="_self" href="/fr/le-lycee/label-lycee-des-metiers/2/lycee-des-metiers_9.html" title="" rel="subSubMenu_6"><span class="bullet">&gt;</span>Label Lycée des Métiers</a></li>
+											<li><a target="_self" href="/fr/le-lycee/projet-d-etablissement/2/le-projet-educatif-de-l-etablissement_4.html" title="" rel="subSubMenu_7"><span class="bullet">&gt;</span>Projet d'établissement</a></li>
+											<li><a target="_self" href="/fr/le-lycee/pastorale/2/pastorale_12.html" title="" rel="subSubMenu_21"><span class="bullet">&gt;</span>Pastorale</a></li>
+											<li><a target="_self" href="/fr/le-lycee/informations-pratiques/9/index.html" title="" rel="subSubMenu_27"><span class="bullet">&gt;</span>Informations pratiques</a></li>
+											<li><a target="_self" href="javascript:void(0);" title="" rel="subSubMenu_22"><span class="bullet">&gt;</span>Structure et ressources pédagogiques</a></li>
+											<li class="lastItem"><a target="_self" href="javascript:void(0);" title="" rel="subSubMenu_96"><span class="bullet">&gt;</span>Cadre de vie</a></li>
+										</ul>
+</div>
+									<div class="rightColumn" style="display:none">
+										<ul class="subSubMenu" id="subSubMenu_22" style="display:none">
+<li>
+<a rel="subSubSubMenu_22" target="_self" href="javascript:void(0);" title=""><span class="bullet">&gt;</span>Encadrement éducatif</a>
+												<ul class="subSubSubMenu" id="#subSubSubMenu_22">
+<li><a target="_self" href="/fr/le-lycee/structure-et-ressources-pedagogiques/encadrement-educatif/equipe-de-direction/2/equipe-de-direction_68.html" title=""><span class="bullet">&gt;</span>Equipe de direction</a></li>
+													<li><a target="_self" href="/fr/le-lycee/structure-et-ressources-pedagogiques/encadrement-educatif/equipe-pedagogique/2/equipe-pedagogique_71.html" title=""><span class="bullet">&gt;</span>Equipe pédagogique</a></li>
+													<li><a target="_self" href="/fr/le-lycee/structure-et-ressources-pedagogiques/encadrement-educatif/equipe-d-education/2/equipe-d-education--vie-scolaire_70.html" title=""><span class="bullet">&gt;</span>Equipe d'éducation</a></li>
+													<li><a target="_self" href="/fr/le-lycee/structure-et-ressources-pedagogiques/encadrement-educatif/equipe-administrative/2/equipe-administrative_69.html" title=""><span class="bullet">&gt;</span>Equipe administrative</a></li>
+												</ul>
+</li>
+											<li>
+<a rel="subSubSubMenu_22" target="_self" href="/fr/le-lycee/structure-et-ressources-pedagogiques/ressources-pedagogiques/2/ressources-pedagogiques_11.html" title=""><span class="bullet">&gt;</span>Ressources pédagogiques</a>
+											</li>
+											<li class="lastItem">
+<a rel="subSubSubMenu_22" target="_self" href="/fr/le-lycee/structure-et-ressources-pedagogiques/moyens-mis-en-oeuvre/2/moyens-2_16.html" title=""><span class="bullet">&gt;</span>Moyens mis en oeuvre</a>
+											</li>
+										</ul>
+<ul class="subSubMenu" id="subSubMenu_96" style="display:none">
+<li>
+<a rel="subSubSubMenu_96" target="_self" href="/fr/le-lycee/cadre-de-vie/self/2/la-restauration--le-self_20.html" title=""><span class="bullet">&gt;</span>Self</a>
+											</li>
+											<li class="lastItem">
+<a rel="subSubSubMenu_96" target="_self" href="/fr/le-lycee/cadre-de-vie/la-cour/2/la-cour-de-l-etablissement_60.html" title=""><span class="bullet">&gt;</span>Cour</a>
+											</li>
+										</ul>
+</div>
+								</div>
+						</li>
+					
+						<li class="les-formations ">
+							<a href="javascript:void(0);" class="menu les-formations">Les Formations</a>
+								<div class="subMenu" style="display:none">
+									<div class="leftColumn" style="display:none">
+										<ul>
+<li><a target="_self" href="javascript:void(0);" title="" rel="subSubMenu_32"><span class="bullet">&gt;</span>Lycée professionnel</a></li>
+											<li><a target="_self" href="javascript:void(0);" title="" rel="subSubMenu_19"><span class="bullet">&gt;</span>Lycée technologique</a></li>
+											<li><a target="_self" href="javascript:void(0);" title="" rel="subSubMenu_33"><span class="bullet">&gt;</span>Enseignement supérieur</a></li>
+											<li><a target="_self" href="javascript:void(0);" title="" rel="subSubMenu_34"><span class="bullet">&gt;</span>UFA</a></li>
+											<li><a target="_self" href="javascript:void(0);" title="" rel="subSubMenu_35"><span class="bullet">&gt;</span>IFAS IFAP</a></li>
+											<li><a target="_self" href="/fr/les-formations/resultats-aux-examens/2/resultats-aux-examens_7.html" title="" rel="subSubMenu_36"><span class="bullet">&gt;</span>Résultats aux examens</a></li>
+											<li><a target="_self" href="/fr/les-formations/inscriptions/2/modalites-d-inscriptions_79.html" title="" rel="subSubMenu_37"><span class="bullet">&gt;</span>Inscriptions</a></li>
+											<li><a target="_self" href="/fr/les-formations/reglement-interieur/2/reglement-interieur_67.html" title="" rel="subSubMenu_106"><span class="bullet">&gt;</span>Règlement intérieur</a></li>
+											<li class="lastItem"><a target="_self" href="/fr/les-formations/internat--partenariat-avec-le-lycee-ste-jeanne-elisabeth/2/internat_255.html" title="" rel="subSubMenu_166"><span class="bullet">&gt;</span>Internat - Partenariat avec le lycée Ste Jeanne Elisabeth</a></li>
+										</ul>
+</div>
+									<div class="rightColumn" style="display:none">
+										<ul class="subSubMenu" id="subSubMenu_32" style="display:none">
+<li>
+<a rel="subSubSubMenu_32" target="_self" href="/fr/les-formations_3/lycee-professionnel_32/4e-a-parcours-professionnel--3e-prepa-professionnelle-6h_38/2/4e-a-parcours-professionnel--3e-prepa-professionnelle-6h_37.html" title=""><span class="bullet">&gt;</span>4e à Parcours Professionnel - 3e Prépa Professionnelle 6h</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_32" target="_self" href="/fr/les-formations/lycee-professionnel/cap-petite-enfance/2/le-cap-petite-enfance_39.html" title=""><span class="bullet">&gt;</span>CAP Petite Enfance</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_32" target="_self" href="/fr/les-formations/lycee-professionnel/bac-pro-accompagnement-soins-et-services-a-la-personne/2/le-bac-pro-assp--accompagnement-soins-et-services-a-la-personne_42.html" title=""><span class="bullet">&gt;</span>Bac Pro Accompagnement Soins et Services à la Personne</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_32" target="_self" href="/fr/les-formations/lycee-professionnel/bac-pro-service-de-proximite-et-vie-locale/2/le-bac-pro-spvl--service-de-proximite-et-vie-locale_41.html" title=""><span class="bullet">&gt;</span>Bac Pro Service de Proximité et Vie Locale</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_32" target="_self" href="/fr/les-formations/lycee-professionnel/bac-pro-commerce/2/le-bac-pro-commerce_40.html" title=""><span class="bullet">&gt;</span>Bac Pro Commerce</a>
+											</li>
+											<li class="lastItem">
+<a rel="subSubSubMenu_32" target="_self" href="/fr/les-formations/lycee-professionnel/preparation-concours/2/la-preparation-concours-aide-soignant--auxiliaire-de-puericulture-_62.html" title=""><span class="bullet">&gt;</span>Préparation Concours</a>
+											</li>
+										</ul>
+<ul class="subSubMenu" id="subSubMenu_19" style="display:none">
+<li>
+<a rel="subSubSubMenu_19" target="_self" href="/fr/les-formations/lycee-technologique/2nde-generale-et-technologique/2/la-2nde-generale-et-technologique_43.html" title=""><span class="bullet">&gt;</span>2nde Générale et Technologique</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_19" target="_self" href="/fr/les-formations/lycee-technologique/2nde-generale-et-technologique-a-pedagogie-adaptee/2/la-2nde-generale-et-technologique-a-pedagogie-adaptee_63.html" title=""><span class="bullet">&gt;</span>2nde générale et technologique à pédagogie adaptée</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_19" target="_self" href="/fr/les-formations/lycee-technologique/bac-sciences-et-technologies-de-la-sante-et-du-social/2/le-bac-st2s--sciences-et-technologies-de-la-sante-et-du-social_45.html" title=""><span class="bullet">&gt;</span>Bac Sciences et Technologies de la Santé et du Social</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_19" target="_self" href="/fr/les-formations_3/lycee-technologique_19/bac-sciences-et-technologies-du-management-et-de-la-gestion--gestion-finance_47/2/bac-stmg--sciences-et-technologies-du-management-et-de-la-gestion_44.html" title=""><span class="bullet">&gt;</span>Bac Sciences et Technologies du Management et de la Gestion - Gestion  Finance</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_19" target="_self" href="/fr/les-formations_3/lycee-technologique_19/bac-sciences-et-technologies-du-management-et-de-la-gestion--ressources-humaines-et-communication_48/2/bac-stmg--sciences-et-technologies-du-management-et-de-la-gestion_44.html" title=""><span class="bullet">&gt;</span>Bac Sciences et Technologies du Management et de la Gestion - Ressources Humaines et Communication</a>
+											</li>
+											<li class="lastItem">
+<a rel="subSubSubMenu_19" target="_self" href="/fr/les-formations_3/lycee-technologique_19/bac-sciences-et-technologies-du-management-et-de-la-gestion--mercatique_49/2/bac-stmg--sciences-et-technologies-du-management-et-de-la-gestion_44.html" title=""><span class="bullet">&gt;</span>Bac Sciences et Technologies du Management et de la Gestion - Mercatique</a>
+											</li>
+										</ul>
+<ul class="subSubMenu" id="subSubMenu_33" style="display:none">
+<li>
+<a rel="subSubSubMenu_33" target="_self" href="/fr/les-formations/enseignement-superieur/bts-assistant-de-manager/2/le-bts-assistant-de-manager_46.html" title=""><span class="bullet">&gt;</span>BTS Assistant de Manager</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_33" target="_self" href="/fr/les-formations/enseignement-superieur/bts-assistant-de-gestion-de-pme-pmi/2/le-bts-assistant-de-gestion-de-pme-pmi_47.html" title=""><span class="bullet">&gt;</span>BTS Assistant de Gestion de PME PMI</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_33" target="_self" href="/fr/les-formations/enseignement-superieur/bts-communication/2/le-bts-communication_48.html" title=""><span class="bullet">&gt;</span>BTS Communication</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_33" target="_self" href="/fr/les-formations/enseignement-superieur/bts-commerce-international/2/le-bts-commerce-international_49.html" title=""><span class="bullet">&gt;</span>BTS Commerce International</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_33" target="_self" href="/fr/les-formations/enseignement-superieur/bts-management-des-unites-commerciales/2/le-bts-management-des-unites-commerciales_51.html" title=""><span class="bullet">&gt;</span>BTS Management des Unités Commerciales</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_33" target="_self" href="/fr/les-formations/enseignement-superieur/bts-services-et-prestations-des-secteurs-sanitaire-et-social/2/le-bts-services-et-prestations-des-secteurs-sanitaire-et-social--sp3s_50.html" title=""><span class="bullet">&gt;</span>BTS Services et Prestations des Secteurs Sanitaire et Social</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_33" target="_self" href="/fr/les-formations/enseignement-superieur/via-sts--voie-d-integration-amenagee-en-bts/2/la-via-sts_52.html" title=""><span class="bullet">&gt;</span>VIA STS - Voie d'Intégration Aménagée en BTS</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_33" target="_self" href="/fr/les-formations/enseignement-superieur/licence-pro-commerce--collaborateur-des-activites-internationales/2/la-licence-professionnelle-commerce--collaborateur-des-activtes-internationales_53.html" title=""><span class="bullet">&gt;</span>Licence Pro Commerce - Collaborateur des Activités Internationales</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_33" target="_self" href="/fr/les-formations/enseignement-superieur/licence-pro-management-des-organisations/2/licence-pro-management-des-organisations--option-gestion-des-etablissements-sanitaires--sociaux-et-medico-sociaux_334.html" title=""><span class="bullet">&gt;</span>Licence Pro Management des Organisations</a>
+											</li>
+											<li class="lastItem">
+<a rel="subSubSubMenu_33" target="_self" href="/fr/les-formations/enseignement-superieur/bachelor-coventry/2/bachelor-coventry_333.html" title=""><span class="bullet">&gt;</span>Bachelor Coventry</a>
+											</li>
+										</ul>
+<ul class="subSubMenu" id="subSubMenu_34" style="display:none">
+<li>
+<a rel="subSubSubMenu_34" target="_self" href="/fr/les-formations/ufa/passerelle-vers-l-apprentissage/2/passerelle-vers-l-apprentissage_89.html" title=""><span class="bullet">&gt;</span>Passerelle vers l'apprentissage</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_34" target="_self" href="/fr/les-formations/ufa/cap-agent-polyvalent-de-restauration/2/le-cap-agent-polyvalent-de-restauration_36.html" title=""><span class="bullet">&gt;</span>CAP Agent Polyvalent de Restauration</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_34" target="_self" href="/fr/les-formations/ufa/cap-petite-enfance-en-un-an/2/le-cap-petite-enfance-en-apprentissage_54.html" title=""><span class="bullet">&gt;</span>CAP Petite Enfance en un an</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_34" target="_self" href="/fr/les-formations/ufa/diplome-d-etat-d-auxiliaire-de-puericulture-en-18-mois/2/le-deap_55.html" title=""><span class="bullet">&gt;</span>Diplôme d'Etat d'Auxiliaire de Puériculture en 16 mois</a>
+											</li>
+											<li class="lastItem">
+<a rel="subSubSubMenu_34" target="_self" href="/fr/les-formations/ufa/diplome-d-etat-d-aide-soignant-en--mois/2/deas_56.html" title=""><span class="bullet">&gt;</span>Diplôme d'Etat d'Aide Soignant en 16 mois</a>
+											</li>
+										</ul>
+<ul class="subSubMenu" id="subSubMenu_35" style="display:none">
+<li>
+<a rel="subSubSubMenu_35" target="_self" href="/fr/les-formations/ifas-ifap/diplome-d-etat-d-auxilaire-de-puericulture/2/le-deap_55.html" title=""><span class="bullet">&gt;</span>Diplôme d'Etat d'Auxilaire de Puériculture</a>
+											</li>
+											<li class="lastItem">
+<a rel="subSubSubMenu_35" target="_self" href="/fr/les-formations/ifas-ifap/diplome-d-etat-d-aide-soignant/2/deas_56.html" title=""><span class="bullet">&gt;</span>Diplôme d'Etat d'Aide Soignant</a>
+											</li>
+										</ul>
+</div>
+								</div>
+						</li>
+					
+						<li class="la-vie-du-lycee ">
+							<a href="javascript:void(0);" class="menu la-vie-du-lycee">La Vie du Lycée</a>
+								<div class="subMenu" style="display:none">
+									<div class="leftColumn" style="display:none">
+										<ul>
+<li><a target="_self" href="/fr/la-vie-du-lycee/rentree-scolaire-2013/2/rentree-2013--quelques-informations-utiles-pour-les-eleves-et-etudiants_382.html" title="" rel="subSubMenu_185"><span class="bullet">&gt;</span>Rentrée scolaire 2013</a></li>
+											<li><a target="_self" href="/fr/la-vie-du-lycee/dates-a-retenir/2/dates-a-retenir_17.html" title="" rel="subSubMenu_63"><span class="bullet">&gt;</span>Dates à retenir</a></li>
+											<li><a target="_self" href="javascript:void(0);" title="Carcado se fait une beauté" rel="subSubMenu_107"><span class="bullet">&gt;</span>Agenda</a></li>
+											<li><a target="_self" href="javascript:void(0);" title="" rel="subSubMenu_65"><span class="bullet">&gt;</span>Activités - Voyages - Sorties...</a></li>
+											<li><a target="_self" href="/fr/la-vie-du-lycee/temoignages-des-anciens/2/les-anciens-temoignent_31.html" title="" rel="subSubMenu_76"><span class="bullet">&gt;</span>Témoignages des anciens</a></li>
+											<li><a target="_self" href="/fr/la-vie-du-lycee/apel/2/l-association-de-parents-d-eleves_8.html" title="" rel="subSubMenu_64"><span class="bullet">&gt;</span>APEL</a></li>
+											<li><a target="_self" href="/fr/la-vie-du-lycee/partenaires-de-formation/2/partenaires_65.html" title="" rel="subSubMenu_66"><span class="bullet">&gt;</span>Partenaires de formation</a></li>
+											<li><a target="_self" href="javascript:void(0);" title="" rel="subSubMenu_67"><span class="bullet">&gt;</span>Mobilité européenne et internationale</a></li>
+											<li class="lastItem"><a target="_self" href="/fr/la-vie-du-lycee/mediatheque/10/index.html" title="" rel="subSubMenu_117"><span class="bullet">&gt;</span>Médiathèque</a></li>
+										</ul>
+</div>
+									<div class="rightColumn" style="display:none">
+										<ul class="subSubMenu" id="subSubMenu_107" style="display:none">
+<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/offre-de-mission-service-civique/2/offre-de-mission-service-civique_404.html" title=""><span class="bullet">&gt;</span>Offre de mission service civique</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/carcado-change-d-adresse-postale/2/attention-l-adresse-postale-de-carcado-change_384.html" title=""><span class="bullet">&gt;</span>carcado change d'adresse postale</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/semaine-sainte-2013/2/semaine-sainte-2013_284.html" title=""><span class="bullet">&gt;</span>Semaine Sainte 2013</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/portes-ouvertes/2/portes-ouvertes-2013_261.html" title=""><span class="bullet">&gt;</span>Portes ouvertes</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/adrep-2013/2/salon-de-l-adrep--25-et-26-janvier-2013_87.html" title=""><span class="bullet">&gt;</span>Adrep 2013</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/salon-virtuel-de-l-adrep/2/salon-virtuel-de-l-adrep_145.html" title=""><span class="bullet">&gt;</span>Salon virtuel de l'ADREP</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/inscriptions-via-sts/2/inscriptions-en-via-sts_91.html" title=""><span class="bullet">&gt;</span>Inscriptions VIA STS</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/bonne-annee/2/bonne-annee_237.html" title=""><span class="bullet">&gt;</span>Bonne année</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/ceremonie-de-remise-des-diplomes-de-bts-2012/2/ceremonie-de-remise-des-diplomes-de-bts--2012_202.html" title=""><span class="bullet">&gt;</span>Cérémonie de remise des diplômes de BTS 2012</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/telethon-2012/2/telethon-2012_199.html" title=""><span class="bullet">&gt;</span>Téléthon 2012</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/licence-pro-management-des-organisations/2/licence-professionnelle-management-des-organisations--gestion-des-etablissements-sanitaires-et-sociaux_189.html" title=""><span class="bullet">&gt;</span>Licence pro Management des Organisations</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/retrait-des-livrets-scolaires-et-diplomes-de-bts/2/retrait-des-diplomes-et-livrets-scolaires-de-bts_73.html" title=""><span class="bullet">&gt;</span>Retrait des livrets scolaires et diplômes de BTS</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/messe-de-rentree-2012/2/messe-de-rentree_180.html" title=""><span class="bullet">&gt;</span>Messe de rentrée 2012</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/au-revoir-jean-marie/2/au-revoir-jean-marie_155.html" title=""><span class="bullet">&gt;</span>Au revoir Jean-Marie</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/prof-un-metier-d-avenir/2/prof-un-metier-d-avenir_101.html" title=""><span class="bullet">&gt;</span>Prof  un métier d'avenir</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/procedure-de-demande-d-amenagement-aux-examens/2/prodedure-de-demande-d-amenagement-aux-examens_97.html" title=""><span class="bullet">&gt;</span>Procédure de demande d'aménagement aux examens</a>
+											</li>
+											<li class="lastItem">
+<a rel="subSubSubMenu_107" target="_self" href="/fr/la-vie-du-lycee/agenda/bours-mobil-access/2/bourse-mobil-acces-_95.html" title="Bourse pour la mobilité internationale"><span class="bullet">&gt;</span>Bours Mobil'Access</a>
+											</li>
+										</ul>
+<ul class="subSubMenu" id="subSubMenu_65" style="display:none">
+<li>
+<a rel="subSubSubMenu_65" target="_self" href="javascript:void(0);" title="Compte-rendus et photos de voyages et sorties"><span class="bullet">&gt;</span>Voyages - Sorties</a>
+												<ul class="subSubSubMenu" id="#subSubSubMenu_65">
+<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/voyages--sorties/sortie-au-parc-asterix-cap-petite-enfance-apprentissage/2/sortie-au-parc-asterix-des-eleves-apprenties-de-cap-petite-enfance_377.html" title=""><span class="bullet">&gt;</span>Sortie au Parc Astérix CAP Petite Enfance Apprentissage</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/voyages--sorties/voyage-a-barcelone--2gt--avril-2013/2/voyage-a-barcelone--2gt--avril-2013_365.html" title=""><span class="bullet">&gt;</span>Voyage à Barcelone - 2GT - avril 2013</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/voyages--sorties/voyage-a-londres--tbp-commerce--fevrier-2013/2/voyage-a-londres--terminale-bac-pro-commerce--fevrier-2013_351.html" title=""><span class="bullet">&gt;</span>Voyage à Londres - TBP Commerce - Février 2013</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/voyages--sorties/sorties-histoire-des-arts-en-3e-pp/2/sorties-histoire-des-arts-en-3e-prepa-professionnelle_332.html" title=""><span class="bullet">&gt;</span>Sorties Histoire des Arts en 3e PP</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/voyages--sorties/voyage-au-futuroscope-de-poitiers--cap2/2/voyage-au-futuroscope-de-poitiers--cap2_307.html" title=""><span class="bullet">&gt;</span>Voyage au futuroscope de Poitiers - CAP2</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/voyages--sorties/voyage-a-madrid--bts-pme/2/voyage-a-madrid-des-bts-pme_246.html" title=""><span class="bullet">&gt;</span>Voyage à Madrid - BTS PME</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/voyages--sorties/mission-stockholm--bts-ci2/2/mission-stockholm--bts-ci2_233.html" title=""><span class="bullet">&gt;</span>Mission Stockholm - BTS CI2</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/voyages--sorties/voyage-a-londres--bts-am/2/voyage-a-londres-des-bts-assistant-de-manager_219.html" title=""><span class="bullet">&gt;</span>Voyage à Londres - BTS AM</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/voyages--sorties/voyage-en-bourgogne--bts-sps3s/2/voyage-en-bourgogne-des-bts-sp3s_218.html" title=""><span class="bullet">&gt;</span>Voyage en Bourgogne - BTS SPS3S</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/voyages--sorties/visite-du-memorial-de-caen-et-des-plages-du-debarquement--e--juin-/2/visite-du-memorial-de-caen-et-des-plages-du-debarquement_116.html" title=""><span class="bullet">&gt;</span>Visite du Mémorial de Caen et des plages du débarquement - 3e - juin 2012</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/voyages--sorties/voyage-a-madrid-et-tolede--gt--mars-/2/voyage-a-madrid-et-tolede-des-gt-en-mars-_112.html" title=""><span class="bullet">&gt;</span>Voyage à Madrid et Tolède - 2GT - mars 2012</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/voyages--sorties/voyage-a-rochefort--stgb--mars-/2/voyage-a-rochefort--stgb--mars-_113.html" title=""><span class="bullet">&gt;</span>Voyage à Rochefort - 1STGB - Mars 2012</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/voyages--sorties/sejour-linguistique-en-bts/2/sejours-linguistiques-en-bts_111.html" title=""><span class="bullet">&gt;</span>Séjour linguistique en BTS</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/voyages--sorties/voyage-a-boulogne-sur-mer-des-ere-bac-pro-co/2/voyage-a-boulogne-sur-mer-des-ere-bac-pro-co_110.html" title=""><span class="bullet">&gt;</span>Voyage à Boulogne sur Mer des 1ère Bac Pro Co</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites-educatives-et-pedagogiques/voyages--sorties/journee-d-integration-des-bts/2/journee-d-integration-des-bts_33.html" title="Journée d'intégration des BTS"><span class="bullet">&gt;</span>Journée d'intégration des BTS</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites-educatives-et-pedagogiques/voyages--sorties/journee-d-integration-cap1-a-vincennes/2/journee-d-integration-des-cap1--vincennes--septembre-2011_34.html" title=""><span class="bullet">&gt;</span>Journée d'intégration CAP1 à Vincennes</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites-educatives-et-pedagogiques/voyages--sorties/voyage-en-normandie-2pssa-mai2011/2/voyage-en-normandie--2pssa--mai-2011_18.html" title=""><span class="bullet">&gt;</span>Voyage en Normandie-2PSSA-mai2011</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites-educatives-et-pedagogiques/voyages--sorties/sortie-a-la-vilette--2nde-gt--septembre-2011/2/sortie-a-la-vilette-des-2nde-gt-_58.html" title=""><span class="bullet">&gt;</span>Sortie à La Vilette - 2nde GT - Septembre 2011</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites-educatives-et-pedagogiques/voyages--sorties/voyage-en-pologne-des-tst2s-et-bts-sp3s--octobre-2011/2/voyage-a-cracovie--pologne-des-tst2s-et-bts-sp3s--octobre-2011_64.html" title=""><span class="bullet">&gt;</span>Voyage en Pologne des TST2S et BTS SP3S - Octobre 2011</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites-educatives-et-pedagogiques/voyages--sorties/voyage-a-barcelone--2gt--mai-2011/2/voyage-a-barcelone--2nde-gt--mai-2011_57.html" title=""><span class="bullet">&gt;</span>Voyage à Barcelone - 2GT - mai 2011</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites-educatives-et-pedagogiques/voyages--sorties/voyage-a-cambridge-3dp6--mai-2011/2/voyage-a-cambridge--3e-dp6--mai-2011_59.html" title=""><span class="bullet">&gt;</span>Voyage à Cambridge-3DP6 - Mai 2011</a></li>
+												</ul>
+</li>
+											<li>
+<a rel="subSubSubMenu_65" target="_self" href="javascript:void(0);" title=""><span class="bullet">&gt;</span>activités</a>
+												<ul class="subSubSubMenu" id="#subSubSubMenu_65">
+<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/2nde-bac-pro-commerce--a-la-decouverte-du-commerce/2/2nde-bac-pro-commerce--a-la-decouverte-du-commerce_378.html" title=""><span class="bullet">&gt;</span>2nde Bac Pro Commerce : à la découverte du commerce</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/1ere-bac-pro-commerce--on-poursuit-la-decouverte/2/1ere-bac-pro-commerce--on-poursuit-la-decouverte_379.html" title=""><span class="bullet">&gt;</span>1ère Bac Pro Commerce : on poursuit la découverte</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/don-du-sang--collecte-2013/2/don-du-sang--collecte-013_338.html" title=""><span class="bullet">&gt;</span>Don du sang - Collecte 2013</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/projet-professionnel-bts-2e-annee--2013/2/projet-professionnel-des-bts-2e-annee--edition-2013_331.html" title=""><span class="bullet">&gt;</span>Projet Professionnel BTS 2e année - 2013</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/restos-du-coeur/2/restos-du-coeur_326.html" title=""><span class="bullet">&gt;</span>Restos du Coeur</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/chemin-de-croix--vendredi-saint--29-mars-2013/2/chemin-de-croix--vendredi-saint--29-mars-2013_312.html" title=""><span class="bullet">&gt;</span>Chemin de Croix - Vendredi Saint - 29 mars 2013</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/festival-du-film-judiciaire--1spvl/2/festival-du-film-judiciaire--1svpl_308.html" title=""><span class="bullet">&gt;</span>Festival du film judiciaire - 1SPVL</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/les-sp3s-s-investissent-/2/les-sp3s-s-investissent-_290.html" title=""><span class="bullet">&gt;</span>Les SP3S s'investissent...</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/des-etudiants-du-kentucky-a-carcado/2/des-etudiants-du-kentucky-a-carcado_287.html" title=""><span class="bullet">&gt;</span>Des étudiants du Kentucky à Carcado</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/ceremonie-de-remise-des-diplomes-de-bts-2012/2/ceremonie-de-remise-des-diplomes-de-bts--2012_202.html" title=""><span class="bullet">&gt;</span>Cérémonie de remise des diplômes de BTS 2012</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/telethon-2012/2/telethon-2012_199.html" title=""><span class="bullet">&gt;</span>Téléthon 2012</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/licence-pro-management-des-organisations/2/licence-professionnelle-management-des-organisations--gestion-des-etablissements-sanitaires-et-sociaux_189.html" title=""><span class="bullet">&gt;</span>Licence Pro Management des Organisations</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/carcado-s-est-fait-une-beaute/2/carcado-s-est-fait-une-beaute_114.html" title=""><span class="bullet">&gt;</span>Carcado s'est fait une beauté</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/marionnettes-des-deap/2/les-marionnettes-des-deap_115.html" title=""><span class="bullet">&gt;</span>Marionnettes des DEAP</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/les-apr-nous-invitent-a-leur-table/2/les-apr-nous-invitent-a-leur-table_109.html" title=""><span class="bullet">&gt;</span>Les APR2 nous invitent à leur table</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/theatre-comedie-musicale/2/theatre--comedie-musicale_108.html" title=""><span class="bullet">&gt;</span>Théâtre-Comédie Musicale</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/don-du-sang/2/don-du-sang_106.html" title=""><span class="bullet">&gt;</span>Don du sang</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/montparnasse-rencontres/2/montparnasse-rencontres_102.html" title=""><span class="bullet">&gt;</span>Montparnasse Rencontres</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/semaine-de-la-presse/2/semaine-de-la-presse_104.html" title=""><span class="bullet">&gt;</span>Semaine de la presse</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/projet-professionnel--en-bts/2/projet-professionnel--en-bts_105.html" title=""><span class="bullet">&gt;</span>Projet professionnel 2012 en BTS</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/clowns-sans-frontiere/2/clowns-sans-frontiere_100.html" title=""><span class="bullet">&gt;</span>Clowns sans frontière</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/interview-des-eleves-de-bac-pro-commerce/2/video-bac-pro-commerce_99.html" title="Interview de Shannon et Marina pour l'Etudiant"><span class="bullet">&gt;</span>Interview des élèves de Bac Pro Commerce</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/vente-artisans-du-monde/2/vente-artisans-du-monde_107.html" title=""><span class="bullet">&gt;</span>Vente Artisans du Monde</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/animation-des-tpssa-en-maison-de-retraite/2/animation-en-maison-de-retraite_96.html" title=""><span class="bullet">&gt;</span>Animation des TPSSA en maison de retraite</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/marche-de-noel/2/marche-de-noel_94.html" title=""><span class="bullet">&gt;</span>Marché de Noël</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/collecte-alimentaire/2/collecte-alimentaire_92.html" title=""><span class="bullet">&gt;</span>Collecte alimentaire</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/ambition-sup-pro/2/ambition-sup-pro_168.html" title=""><span class="bullet">&gt;</span>Ambition Sup Pro</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/ambition-sup-technol/2/ambtion-sup-techno_88.html" title=""><span class="bullet">&gt;</span>Ambition Sup Techno</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites-educatives-et-pedagogiques/voyages--sorties/handisport--bts-sp3s1/2/action-handisport--bts-sp3s1_14.html" title="Action Handisport BTS SP3S1"><span class="bullet">&gt;</span>Handisport - BTS SP3S1</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites-educatives-et-pedagogiques/voyages--sorties/ppcp-cap1-et-maternelle-blomet/2/ppcp-des-cap1-avec-la-maternelle-de-bloment_19.html" title=""><span class="bullet">&gt;</span>PPCP CAP1 et maternelle Blomet</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites-educatives-et-pedagogiques/activites/secourisme/2/formation-au-secourisme_35.html" title=""><span class="bullet">&gt;</span>Secourisme</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites-educatives-et-pedagogiques/activites/conference-sur-panama/2/decouverte-de-panama_61.html" title=""><span class="bullet">&gt;</span>Conférence sur Panama</a></li>
+													<li><a target="_self" href="/fr/la-vie-du-lycee/activites-educatives-et-pedagogiques/activites/cap-agent-polyvalent-de-restauration--la-ronde-des-desserts/2/cap-apr--la-ronde-des-desserts_66.html" title=""><span class="bullet">&gt;</span>CAP Agent Polyvalent de Restauration : la ronde des desserts</a></li>
+												</ul>
+</li>
+											<li>
+<a rel="subSubSubMenu_65" target="_self" href="/fr/la-vie-du-lycee/activites-educatives-et-pedagogiques/association-sportive-et-culturelle/2/l-association-sportive-et-culturelle_6.html" title=""><span class="bullet">&gt;</span>Association Sportive et Culturelle</a>
+											</li>
+											<li class="lastItem">
+<a rel="subSubSubMenu_65" target="_self" href="/fr/la-vie-du-lycee/activites-educatives-et-pedagogiques/atelier-theatre/2/l-atelier-theatre_10.html" title=""><span class="bullet">&gt;</span>Atelier théâtre</a>
+											</li>
+										</ul>
+<ul class="subSubMenu" id="subSubMenu_67" style="display:none">
+<li>
+<a rel="subSubSubMenu_67" target="_self" href="/fr/la-vie-du-lycee/mobilite-europeenne-et-internationale/bourses/2/bourses-a-l-international_387.html" title=""><span class="bullet">&gt;</span>Bourses</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_67" target="_self" href="/fr/la-vie-du-lycee/mobilite-europeenne-et-internationale/formations-a-l-international/2/formations-a-l-international_388.html" title=""><span class="bullet">&gt;</span>Formations à l'international</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_67" target="_self" href="/fr/la-vie-du-lycee/mobilite-europeenne-et-internationale/systeme-de-transfert-de-credits--ects/2/systeme-de-transfert-de-credits_389.html" title=""><span class="bullet">&gt;</span>Système de transfert de crédits - ECTS</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_67" target="_self" href="/fr/la-vie-du-lycee/mobilite-europeenne-et-internationale/partenariats-et-reseaux/2/partenariats-et-reseaux_390.html" title=""><span class="bullet">&gt;</span>Partenariats et réseaux</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_67" target="_self" href="/fr/la-vie-du-lycee/mobilite-europeenne-et-internationale/certification-linguistique/2/certification-linguistique_391.html" title=""><span class="bullet">&gt;</span>Certification linguistique</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_67" target="_self" href="/fr/la-vie-du-lycee/mobilite-europeenne-et-internationale/mobilite-entrante/2/mobilite-entrante_393.html" title=""><span class="bullet">&gt;</span>Mobilité entrante</a>
+											</li>
+											<li>
+<a rel="subSubSubMenu_67" target="_self" href="/fr/la-vie-du-lycee/mobilite-europeenne-et-internationale/projets-et-voyages-internationaux/2/projets-et-voyages-internationaux_392.html" title=""><span class="bullet">&gt;</span>Projets et voyages internationaux</a>
+											</li>
+											<li class="lastItem">
+<a rel="subSubSubMenu_67" target="_self" href="/fr/la-vie-du-lycee/mobilite-europeenne-et-internationale/outils-pour-les-stages/2/outils-pour-les-stages_394.html" title=""><span class="bullet">&gt;</span>Outils pour les stages</a>
+											</li>
+										</ul>
+</div>
+								</div>
+						</li>
+					</ul>
+<select id="searchDropDown" name="searchDropDown"><option value="#">Je recherche</option>
+<option value="/fr/les-formations/lycee-professionnel/cap-petite-enfance/2/le-cap-petite-enfance_39.html _self">un CAP Petite Enfance</option>
+<option value="/fr/les-formations/lycee-professionnel/4e-a-parcours-professionnel/2/la-4e-a-parcours-professionnel_37.html _self">une 4e à Parcours Professionnel</option>
+<option value="/fr/les-formations/lycee-professionnel/4e-a-parcours-professionnel/2/la-4e-a-parcours-professionnel_37.html _self">Une 3e Prépa Professionnelle</option>
+<option value="/fr/les-formations/lycee-professionnel/bac-pro-accompagnement-soins-et-services-a-la-personne/2/le-bac-pro-assp--accompagnement-soins-et-services-a-la-personne_42.html _self">Un Bac Pro ASSP</option>
+<option value="/fr/les-formations/lycee-professionnel/bac-pro-service-de-proximite-et-vie-locale/2/le-bac-pro-spvl--service-de-proximite-et-vie-locale_41.html _self">Un Bac Pro SPVL</option>
+<option value="/fr/les-formations/lycee-professionnel/bac-pro-commerce/2/le-bac-pro-commerce_40.html _self">Un Bac Pro Commerce</option>
+<option value="/fr/les-formations/lycee-professionnel/preparation-concours/2/la-preparation-concours-aide-soignant--auxiliaire-de-puericulture-_62.html _self">Une préparation concours</option>
+<option value="/fr/les-formations/lycee-technologique/2nde-generale-et-technologique/2/la-2nde-generale-et-technologique_43.html _self">Une 2nde Générale et Technologique</option>
+<option value="/fr/les-formations/lycee-technologique/2nde-generale-et-technologique-a-pedagogie-adaptee/2/la-2nde-generale-et-technologique-a-pedagogie-adaptee_63.html _self">Une 2nde Générale et Technologique à pédagogie adaptée</option>
+<option value="/fr/les-formations/lycee-technologique/bac-sciences-et-technologies-de-la-sante-et-du-social/2/le-bac-st2s--sciences-et-technologies-de-la-sante-et-du-social_45.html _self">Un Bac ST2S</option>
+<option value="/fr/les-formations/lycee-technologique/bac-sciences-et-technologies-de-la-gestion--comptabilite-et-finances-d-entreprise/2/le-bac-stg--sciences-et-technologies-de-la-gestion_44.html _self">Un Bac STMG Gestion Finance</option>
+<option value="/fr/les-formations/lycee-technologique/bac-sciences-et-technologies-de-la-gestion--communication-et-gestion-des-ressources-humaines/2/le-bac-stg--sciences-et-technologies-de-la-gestion_44.html _self">Un Bac STMG Ressources Humaines et Communication</option>
+<option value="/fr/les-formations/lycee-technologique/bac-sciences-et-technologies-de-la-gestion--mercatique/2/le-bac-stg--sciences-et-technologies-de-la-gestion_44.html _self">Un Bac STMG Mercatique</option>
+<option value="/fr/les-formations/enseignement-superieur/bts-assistant-de-manager/2/le-bts-assistant-de-manager_46.html _self">Un BTS Assistant de Manager</option>
+<option value="/fr/les-formations/enseignement-superieur/bts-assistant-de-gestion-de-pme-pmi/2/le-bts-assistant-de-gestion-de-pme-pmi_47.html _self">Un BTS Assistant de Gestion de PME PMI</option>
+<option value="/fr/les-formations/enseignement-superieur/bts-communication/2/le-bts-communication_48.html _self">Un BTS Communication</option>
+<option value="/fr/les-formations/enseignement-superieur/bts-commerce-international/2/le-bts-commerce-international_49.html _self">Un BTS Commerce International</option>
+<option value="/fr/les-formations/enseignement-superieur/bts-management-des-unites-commerciales/2/le-bts-management-des-unites-commerciales_51.html _self">Un BTS Management des Unités Commerciales</option>
+<option value="/fr/les-formations/enseignement-superieur/bts-services-et-prestations-des-secteurs-sanitaire-et-social/2/le-bts-services-et-prestations-des-secteurs-sanitaire-et-social--sp3s_50.html _self">Un BTS Services et Prestations des Secteurs Sanitaire et Social</option>
+<option value="/fr/les-formations/enseignement-superieur/via-sts--voie-d-integration-amenagee-en-bts/2/la-via-sts_52.html _self">Une voie d'intégration aménagée en STS</option>
+<option value="/fr/les-formations/enseignement-superieur/via-sts--voie-d-integration-amenagee-en-bts/2/la-via-sts_52.html _self">Une licence professionnelle</option>
+<option value="/fr/les-formations/ufa/cap-agent-polyvalent-de-restauration/2/le-cap-agent-polyvalent-de-restauration_36.html _self">Un CAP Agent Polyvalent de Restauration en Apprentissage</option>
+<option value="/fr/les-formations/ufa/cap-petite-enfance-en-un-an/2/le-cap-petite-enfance-en-apprentissage_54.html _self">Un CAP Petite Enfance en 1 an en apprentissaage</option>
+<option value="/fr/les-formations/ufa/diplome-d-etat-d-auxiliaire-de-puericulture-en-18-mois/2/le-deap_55.html _self">Un DEAP en 18 mois en apprentissage</option>
+<option value="/fr/les-formations/ufa/diplome-d-etat-d-aide-soignant-en-18-mois/2/le-deas_56.html _self">Un DEAS en 18 mois en apprentissage</option>
+<option value="/fr/les-formations/ifas-ifap/diplome-d-etat-d-auxilaire-de-puericulture/2/le-deap_55.html _self">Un DEAP</option>
+<option value="/fr/les-formations/ifas-ifap/diplome-d-etat-d-aide-soignant/2/le-deas_56.html _self">Un DEAS</option>
+<option value="/fr/les-formations/resultats-aux-examens/2/resultats-aux-examens_7.html _self">Les résultats aux examens</option></select><script type="text/javascript">
+$(document).ready(function(){
+	$('#searchDropDown').change(function(){
+		var value = $(this).val().split(' ');
+		var target = value[1];
+		value = value[0];
+		if(value != '#')
+		{
+			if(target == '_self')
+				document.location.href = value;	
+			else if(target == '_blank')
+				window.open(value);
+		}
+	});
+});
+</script>
+</div>
+		</div>
+		
+		<div id="content">
+			<div class="top"></div>
+			<div class="middle">
+				<div id="centerColumn">
+					<div class="top"></div>
+					<div class="middle" id="mainMiddle">
+						<ul id="articleSlideNews">
+<li>
+<span class="date">03.09.2013</span> <a href="/fr/la-vie-du-lycee/agenda/offre-de-mission-service-civique/2/offre-de-mission-service-civique_404.html">Offre de mission Service Civique</a>
+</li>
+ 						
+	<li>
+<span class="date">23.08.2013</span> <a href="/fr/la-vie-du-lycee/agenda/carcado-change-d-adresse-postale/2/attention-l-adresse-postale-de-carcado-change_384.html">Attention CARCADO change d'adresse postale</a>
+</li>
+ 						
+	<li>
+<span class="date">11.07.2013</span> <a href="/fr/la-vie-du-lycee/rentree-scolaire-2013/2/rentree-2013--quelques-informations-utiles-pour-les-eleves-et-etudiants_382.html">Rentrée 2013 : quelques informations utiles pour les élèves et étudiants</a>
+</li>
+</ul>
+<script language="javascript">
+    $(function(){
+    	$("ul#articleSlideNews").liScroll();
+    }); 
+</script><script type="text/javascript" src="/js/carcado/slides.min.jquery.js"></script><script type="text/javascript">
+					$(document).ready(function(){
+						$('#homeSlideshow').slides({
+							preload: true,
+							preloadImage: '/template/carcado/img/slideshow/loading.gif',
+							play: 5000,
+							pause: 2500,
+							hoverPause: true,
+							animationStart: function(current){
+								$('.caption').animate({
+									bottom:-35
+								},100);
+							},
+							animationComplete: function(current){
+								$('.caption').animate({
+									bottom:0
+								},200);
+							},
+							slidesLoaded: function() {
+								$('.caption').animate({
+									bottom:0
+								},200);
+							}
+						});
+						
+					});
+				</script><div id="homeSlideshow">
+					<h2>A la une</h2>
+					<div class="slides_container">
+						<div class="slide">
+							<a href="" target="_self" title=""><img src="/uploads/carcado/slideshow/2/fr_383.jpg"></a>
+							<div class="caption" style="bottom:0">
+								<p></p>
+							</div>
+						</div>
+						<div class="slide">
+							<a href="" target="_self" title=""><img src="/uploads/carcado/slideshow/2/slideshow_fr_2_328.jpg"></a>
+							<div class="caption" style="bottom:0">
+								<p></p>
+							</div>
+						</div>
+						<div class="slide">
+							<a href="" target="_self" title=""><img src="/uploads/carcado/slideshow/2/fr_385.jpg"></a>
+							<div class="caption" style="bottom:0">
+								<p></p>
+							</div>
+						</div>
+						<div class="slide">
+							<a href="" target="_self" title=""><img src="/uploads/carcado/slideshow/2/slideshow_fr_2_329.jpg"></a>
+							<div class="caption" style="bottom:0">
+								<p></p>
+							</div>
+						</div>
+						<div class="slide">
+							<a href="" target="_self" title=""><img src="/uploads/carcado/slideshow/2/fr_386.jpg"></a>
+							<div class="caption" style="bottom:0">
+								<p></p>
+							</div>
+						</div>
+						<div class="slide">
+							<a href="" target="_self" title=""><img src="/uploads/carcado/slideshow/2/fr_387.jpg"></a>
+							<div class="caption" style="bottom:0">
+								<p></p>
+							</div>
+						</div>
+						<div class="slide">
+							<a href="" target="_self" title=""><img src="/uploads/carcado/slideshow/2/slideshow_fr_2_128.png"></a>
+							<div class="caption" style="bottom:0">
+								<p></p>
+							</div>
+						</div>
+						<div class="slide">
+							<a href="" target="_self" title=""><img src="/uploads/carcado/slideshow/2/slideshow_fr_2_330.jpg"></a>
+							<div class="caption" style="bottom:0">
+								<p></p>
+							</div>
+						</div>
+						<div class="slide">
+							<a href="" target="_self" title=""><img src="/uploads/carcado/slideshow/2/fr_391.jpg"></a>
+							<div class="caption" style="bottom:0">
+								<p></p>
+							</div>
+						</div>
+					</div>
+				</div>						
+						<div id="homeNewsBlock">
+							<h1 class="title">Actualités</h1>
+							<div class="contentBlock">
+								<div class="shortViewArticle">
+	<h2 class="title">
+<span class="date">11.07.2013</span> Rentrée 2013 : quelques informations utiles pour les élèves et étudiants</h2>
+	<div class="pilotePicture" style="background-image: url(/?module=tools&amp;action=getFile&amp;type=pilotPicture&amp;typeModule=cms&amp;id=382&amp;isThumb=1&amp;thumbWidth=116&amp;thumbHeight=90);"></div>
+	<div class="text">
+	<p> </p>
+<p>Toute la communauté éducative est heureuse d'accueillir ses élèves et étudiants pour la rentrée 2013</p>	</div>
+	<a href="/fr/la-vie-du-lycee/rentree-scolaire-2013/2/rentree-2013--quelques-informations-utiles-pour-les-eleves-et-etudiants_382.html" class="readMore">&gt;&gt;&gt; Lire la suite</a>
+	<p class="clear"></p>
+</div>								
+								
+								
+								<div class="listArticle">
+									<ul>
+<li>
+<span class="date">03.09.2013</span> <a href="/fr/la-vie-du-lycee/agenda/offre-de-mission-service-civique/2/offre-de-mission-service-civique_404.html">Offre de mission Service Civique</a>
+</li>
+ 						
+	<li>
+<span class="date">23.08.2013</span> <a href="/fr/la-vie-du-lycee/agenda/carcado-change-d-adresse-postale/2/attention-l-adresse-postale-de-carcado-change_384.html">Attention CARCADO change d'adresse postale</a>
+</li>
+ 						
+	<li>
+<span class="date">11.07.2013</span> <a href="/fr/la-vie-du-lycee/rentree-scolaire-2013/2/rentree-2013--quelques-informations-utiles-pour-les-eleves-et-etudiants_382.html">Rentrée 2013 : quelques informations utiles pour les élèves et étudiants</a>
+</li>
+ 						
+	<li>
+<span class="date">18.04.2013</span> <a href="/fr/les-formations/enseignement-superieur/bachelor-coventry/2/bachelor-coventry_333.html">Bachelor Coventry</a>
+</li>
+ 						
+	<li>
+<span class="date">21.01.2013</span> <a href="/fr/les-formations/internat--partenariat-avec-le-lycee-ste-jeanne-elisabeth/2/internat_255.html">Internat St André - Ste Jeanne Elisabeth</a>
+</li>
+ 						
+	<li>
+<span class="date">19.09.2012</span> <a href="/fr/la-vie-du-lycee/agenda/salon-virtuel-de-l-adrep/2/salon-virtuel-de-l-adrep_145.html">Salon virtuel de l'ADREP</a>
+</li>
+ 						
+	<li>
+<span class="date">14.03.2012</span> <a href="/fr/la-vie-du-lycee/activites--voyages--sorties--/activites/montparnasse-rencontres/2/montparnasse-rencontres_102.html">Montparnasse Rencontres</a>
+</li>
+ 						
+	<li>
+<span class="date">02.04.2012</span> <a href="/fr/la-vie-du-lycee/agenda/prof-un-metier-d-avenir/2/prof-un-metier-d-avenir_101.html">Prof  un métier d'avenir</a>
+</li>
+ 						
+	<li>
+<span class="date">03.02.2012</span> <a href="/fr/la-vie-du-lycee/agenda/procedure-de-demande-d-amenagement-aux-examens/2/prodedure-de-demande-d-amenagement-aux-examens_97.html">Prodédure de demande d'aménagement aux examens</a>
+</li>
+ 						
+	<li>
+<span class="date">03.09.2012</span> <a href="/fr/la-vie-du-lycee/dates-a-retenir/2/dates-a-retenir_17.html">Dates à retenir</a>
+</li>
+</ul>
+<p class="clear"></p>
+								</div>
+							</div>
+						</div>
+						<script type="text/javascript">
+	$(document).ready(function(){
+		$('#inscriptionDiv .accordion').liteAccordion({ 
+			containerWidth : 708, 
+			containerHeight : 232, 
+			slideSpeed : 600, 
+			firstSlide : 1 
+		});
+		
+		$('#inscriptionDiv div.block div.scroll-pane').jScrollPane({
+			showArrows: true,
+			horizontalArrowPositions: 'split'
+		});
+	});
+</script><div id="inscriptionDiv">
+	<h1>Inscriptions</h1>
+	<h2 class="note">Cliquer sur les classeurs pour les ouvrir</h2>
+	<div class="accordion">
+		<ol>
+<li>
+				<h2><span>Lycée Professionnel</span></h2>
+				<div class="block" style="background-image: url(/template/carcado/img/homePageInscriptionHandle_1.png);">
+					<div class="scroll-pane">
+						<p style="width: 660px;">	
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_1.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=57&amp;fileLang=fr" class="fileLink">Dossier d'inscription en LP LT 2013-2014</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=57&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_1.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=85&amp;fileLang=fr" class="fileLink">Règlement financier 2013-2014</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=85&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_1.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=107&amp;fileLang=fr" class="fileLink">Règlement financier - Annexe détermination tarif</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=107&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_1.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=13&amp;fileLang=fr" class="fileLink">Règlement intérieur Lycée Pro - Lycée Techno</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=13&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_1.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=88&amp;fileLang=fr" class="fileLink">Charte informatique</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=88&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_1.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=367&amp;fileLang=fr" class="fileLink">Internat AISAHJE</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=367&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+						</p>
+					</div>
+				</div>
+			</li>
+					<li>
+				<h2><span>Lycée Technologique</span></h2>
+				<div class="block" style="background-image: url(/template/carcado/img/homePageInscriptionHandle_2.png);">
+					<div class="scroll-pane">
+						<p style="width: 660px;">	
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_2.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=64&amp;fileLang=fr" class="fileLink">Dossier d'inscription en LP LT 2013-2014</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=64&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_2.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=86&amp;fileLang=fr" class="fileLink">Règlement financier 2013-2014</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=86&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_2.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=108&amp;fileLang=fr" class="fileLink">Règlement financier - Annexe détermination tarif</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=108&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_2.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=65&amp;fileLang=fr" class="fileLink">Règlement intérieur lycée pro lycée techno</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=65&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_2.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=89&amp;fileLang=fr" class="fileLink">Charte informatique</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=89&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_2.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=368&amp;fileLang=fr" class="fileLink">Internat AISAHJE</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=368&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+						</p>
+					</div>
+				</div>
+			</li>
+					<li>
+				<h2><span>Ens. Supérieur</span></h2>
+				<div class="block" style="background-image: url(/template/carcado/img/homePageInscriptionHandle_3.png);">
+					<div class="scroll-pane">
+						<p style="width: 1320px;">	
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_3.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=111&amp;fileLang=fr" class="fileLink">Calendrier Admission Post Bac 2013</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=111&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_3.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=369&amp;fileLang=fr" class="fileLink">Internat AISAHJE</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=369&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_3.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=144&amp;fileLang=fr" class="fileLink">Dossier d'Inscription en BTS 1ère année 2013-2014</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=144&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_3.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=143&amp;fileLang=fr" class="fileLink">Dossier d'inscription en BTS 2e année - 2013-2014</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=143&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_3.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=115&amp;fileLang=fr" class="fileLink">Dossier d'inscription VIA STS 2013</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=115&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_3.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=126&amp;fileLang=fr" class="fileLink">Licence Pro - Dossier d'information 2013 2014</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=126&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_3.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=127&amp;fileLang=fr" class="fileLink">Licence Pro - Complément d'information 2013-2014</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=127&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_3.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=124&amp;fileLang=fr" class="fileLink">Licence pro - Dossier d'inscription 2013 2014</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=124&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_3.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=118&amp;fileLang=fr" class="fileLink">Règlement financier BTS 2013-2014</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=118&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_3.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=109&amp;fileLang=fr" class="fileLink">Règlement financier - Annexe détermination tarif</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=109&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_3.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=11&amp;fileLang=fr" class="fileLink">Règlement intérieur Enseignement Supérieur </a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=11&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_3.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=90&amp;fileLang=fr" class="fileLink">Charte informatique</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=90&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+						</p>
+					</div>
+				</div>
+			</li>
+					<li>
+				<h2><span>Apprentissage</span></h2>
+				<div class="block" style="background-image: url(/template/carcado/img/homePageInscriptionHandle_4.png);">
+					<div class="scroll-pane">
+						<p style="width: 440px;">	
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_4.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=94&amp;fileLang=fr" class="fileLink">Dossier d'inscription UFA</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=94&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_4.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=95&amp;fileLang=fr" class="fileLink">Dossier d'inscription UFA Annexe 1</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=95&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_4.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=96&amp;fileLang=fr" class="fileLink">Dossier d'Inscription UFA Annexe 2</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=96&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_4.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=91&amp;fileLang=fr" class="fileLink">Charte informatique</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=91&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+						</p>
+					</div>
+				</div>
+			</li>
+					<li>
+				<h2><span>DEAS DEAP</span></h2>
+				<div class="block" style="background-image: url(/template/carcado/img/homePageInscriptionHandle_1.png);">
+					<div class="scroll-pane">
+						<p style="width: 550px;">	
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_1.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=67&amp;fileLang=fr" class="fileLink">DEAP En savoir plus</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=67&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_1.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=158&amp;fileLang=fr" class="fileLink">Réglement intérieur IFAP</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=158&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_1.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=66&amp;fileLang=fr" class="fileLink">DEAS  En savoir plus</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=66&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_1.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=157&amp;fileLang=fr" class="fileLink">Règlement intéieur IFAS</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=157&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+							<span class="fileIcon" style="background-image: url(/template/carcado/img/homePageInscriptionFile_1.png);"><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=92&amp;fileLang=fr" class="fileLink">Charte informatique</a><a href="/?module=tools&amp;action=getFile&amp;type=file&amp;typeModule=cms&amp;id=92&amp;fileLang=fr" class="extension" style="background-image:url(/template/default/common/img/fileExt/pdf.png)">Télécharger</a></span>
+
+
+						</p>
+					</div>
+				</div>
+			</li>
+		</ol>
+</div>
+</div>
+					
+					</div>
+				</div>
+				
+				<div id="rightColumn">
+				
+					<form id="searchForm" action="/fr/reference_search/3/index.html" method="post">
+				<input type="hidden" name="submitSearch" value="1"><input type="text" name="q" id="input_searchValue" value="searchOnWebSite"><input type="submit" name="submitForm" id="input_submitSearchForm" value="search">
+</form>
+
+					<p><a class="administrationAccess" href="/fr/espace-administration/12/index.html">Administration</a></p>
+<div class="jobOfferMenuDiv"><a class="studentAccess" href="/fr/espace-etudiant/5/index.html">Espace étudiant</a></div>
+<p><a class="familyAccess" href="/fr/espace-famille/20/index.html">Espace Famille</a></p>
+<div class="jobOfferMenuDiv"><a class="companyAccess" href="/fr/espace-entreprise/4/index.html">Espace entreprise</a></div>
+<div id="calendarShortViewList">	
+	<div class="top"></div>
+	<div class="middle">
+		<ul>
+<li>
+<span class="eventDone"></span><span class="date">03.09.2013</span><a href="/fr/la-vie-du-lycee/agenda/offre-de-mission-service-civique/2/offre-de-mission-service-civique_404.html">Offre de mission Service Civique</a>
+</li>
+			<li>
+<span class="eventDone"></span><span class="date">11.07.2013</span><a href="/fr/la-vie-du-lycee/rentree-scolaire-2013/2/rentree-2013--quelques-informations-utiles-pour-les-eleves-et-etudiants_382.html">Rentrée 2013 : quelques informations utiles pour les élèves et étudiants</a>
+</li>
+			<li>
+<span class="eventDone"></span><span class="date">19.09.2012</span><a href="/fr/la-vie-du-lycee/agenda/salon-virtuel-de-l-adrep/2/salon-virtuel-de-l-adrep_145.html">Salon virtuel de l'ADREP</a>
+</li>
+			<li>
+<span class="eventDone"></span><span class="date">03.02.2012</span><a href="/fr/la-vie-du-lycee/agenda/procedure-de-demande-d-amenagement-aux-examens/2/prodedure-de-demande-d-amenagement-aux-examens_97.html">Prodédure de demande d'aménagement aux examens</a>
+</li>
+			<li>
+<span class="eventDone"></span><span class="date">25.01.2012</span><a href="/fr/la-vie-du-lycee/agenda/bours-mobil-access/2/bourse-mobil-acces-_95.html">Bourse Mobil'acces </a>
+</li>
+		</ul>
+</div>
+	<div class="bottom"></div>
+</div>
+
+<div id="tagCloudDiv">
+	<div class="top"></div>
+	<div class="middle">
+		<a href="/fr/reference_search/3/index.html?q=licence&amp;submitSearch=1" style="font-size:9px">licence</a>
+		<a href="/fr/reference_search/3/index.html?q=apel&amp;submitSearch=1" style="font-size:9px">apel</a>
+		<a href="/fr/reference_search/3/index.html?q=historique&amp;submitSearch=1" style="font-size:9px">historique</a>
+		<a href="/fr/reference_search/3/index.html?q=asc&amp;submitSearch=1" style="font-size:9px">asc</a>
+		<a href="/fr/reference_search/3/index.html?q=atelier-theatre&amp;submitSearch=1" style="font-size:9px">atelier-theatre</a>
+		<a href="/fr/reference_search/3/index.html?q=projet-educatif&amp;submitSearch=1" style="font-size:9px">projet-educatif</a>
+		<a href="/fr/reference_search/3/index.html?q=lycee-des-metiers&amp;submitSearch=1" style="font-size:9px">lycee-des-metiers</a>
+		<a href="/fr/reference_search/3/index.html?q=pastorale&amp;submitSearch=1" style="font-size:9px">pastorale</a>
+		<a href="/fr/reference_search/3/index.html?q=examens&amp;submitSearch=1" style="font-size:9px">examens</a>
+		<a href="/fr/reference_search/3/index.html?q=ressources-pedagogiques&amp;submitSearch=1" style="font-size:9px">ressources-pedagogiques</a>
+		<a href="/fr/reference_search/3/index.html?q=infos-pratiques&amp;submitSearch=1" style="font-size:10.645161290323px">infos-pratiques</a>
+		<a href="/fr/reference_search/3/index.html?q=sp3s&amp;submitSearch=1" style="font-size:9px">sp3s</a>
+		<a href="/fr/reference_search/3/index.html?q=moyens-pedagogiques&amp;submitSearch=1" style="font-size:9px">moyens-pedagogiques</a>
+		<a href="/fr/reference_search/3/index.html?q=calendrier&amp;submitSearch=1" style="font-size:9px">calendrier</a>
+		<a href="/fr/reference_search/3/index.html?q=voyages-sorties&amp;submitSearch=1" style="font-size:16.322580645161px">voyages-sorties</a>
+		<a href="/fr/reference_search/3/index.html?q=self&amp;submitSearch=1" style="font-size:9px">self</a>
+		<a href="/fr/reference_search/3/index.html?q=anciens-eleves&amp;submitSearch=1" style="font-size:9px">anciens-eleves</a>
+		<a href="/fr/reference_search/3/index.html?q=integration&amp;submitSearch=1" style="font-size:9px">integration</a>
+		<a href="/fr/reference_search/3/index.html?q=formation&amp;submitSearch=1" style="font-size:20.58064516129px">formation</a>
+		<a href="/fr/reference_search/3/index.html?q=cadre-de-vie&amp;submitSearch=1" style="font-size:9px">cadre-de-vie</a>
+		<a href="/fr/reference_search/3/index.html?q=activites-pedagogiques&amp;submitSearch=1" style="font-size:21.290322580645px">activites-pedagogiques</a>
+		<a href="/fr/reference_search/3/index.html?q=organigramme&amp;submitSearch=1" style="font-size:9px">organigramme</a>
+		<a href="/fr/reference_search/3/index.html?q=bts&amp;submitSearch=1" style="font-size:22px">bts</a>
+		<a href="/fr/reference_search/3/index.html?q=salons&amp;submitSearch=1" style="font-size:9px">salons</a>
+		<a href="/fr/reference_search/3/index.html?q=inscriptions&amp;submitSearch=1" style="font-size:9px">inscriptions</a>
+		<a href="/fr/reference_search/3/index.html?q=erasmus&amp;submitSearch=1" style="font-size:9px">erasmus</a>
+		<a href="/fr/reference_search/3/index.html?q=apprentissage&amp;submitSearch=1" style="font-size:9px">apprentissage</a>
+		<a href="/fr/reference_search/3/index.html?q=journee-pedagogique&amp;submitSearch=1" style="font-size:9px">journee-pedagogique</a>
+		<a href="/fr/reference_search/3/index.html?q=quoi-de-neuf&amp;submitSearch=1" style="font-size:9px">quoi-de-neuf</a>
+		<a href="/fr/reference_search/3/index.html?q=deap&amp;submitSearch=1" style="font-size:9px">deap</a>
+		<a href="/fr/reference_search/3/index.html?q=international&amp;submitSearch=1" style="font-size:16.322580645161px">international</a>
+		<a href="/fr/reference_search/3/index.html?q=petite-enfance&amp;submitSearch=1" style="font-size:9px">petite-enfance</a>
+		<a href="/fr/reference_search/3/index.html?q=bac-pro-commerce&amp;submitSearch=1" style="font-size:9px">bac-pro-commerce</a>
+		<a href="/fr/reference_search/3/index.html?q=seconde&amp;submitSearch=1" style="font-size:9px">seconde</a>
+		<a href="/fr/reference_search/3/index.html?q=quatrieme-troisieme&amp;submitSearch=1" style="font-size:9px">quatrieme-troisieme</a>
+		<a href="/fr/reference_search/3/index.html?q=bac-pro-spvl&amp;submitSearch=1" style="font-size:9px">bac-pro-spvl</a>
+		<a href="/fr/reference_search/3/index.html?q=pme-pmi&amp;submitSearch=1" style="font-size:9px">pme-pmi</a>
+		<a href="/fr/reference_search/3/index.html?q=commerce-international&amp;submitSearch=1" style="font-size:9px">commerce-international</a>
+		<a href="/fr/reference_search/3/index.html?q=assistant-de-manager&amp;submitSearch=1" style="font-size:9px">assistant-de-manager</a>
+		<a href="/fr/reference_search/3/index.html?q=stmg&amp;submitSearch=1" style="font-size:9px">stmg</a>
+		<a href="/fr/reference_search/3/index.html?q=stage&amp;submitSearch=1" style="font-size:9px">stage</a>
+		<a href="/fr/reference_search/3/index.html?q=bac-pro&amp;submitSearch=1" style="font-size:9px">bac-pro</a>
+		<a href="/fr/reference_search/3/index.html?q=bac-pro-assp&amp;submitSearch=1" style="font-size:9px">bac-pro-assp</a>
+		<a href="/fr/reference_search/3/index.html?q=bac-techno&amp;submitSearch=1" style="font-size:9px">bac-techno</a>
+		<a href="/fr/reference_search/3/index.html?q=stss&amp;submitSearch=1" style="font-size:9px">stss</a>
+		<a href="/fr/reference_search/3/index.html?q=cap&amp;submitSearch=1" style="font-size:9px">cap</a>
+		<a href="/fr/reference_search/3/index.html?q=communication&amp;submitSearch=1" style="font-size:9px">communication</a>
+		<a href="/fr/reference_search/3/index.html?q=commerce&amp;submitSearch=1" style="font-size:9px">commerce</a>
+		<a href="/fr/reference_search/3/index.html?q=social&amp;submitSearch=1" style="font-size:9px">social</a>
+	</div>
+	<div class="bottom"></div>
+</div>
+					
+					
+				</div>
+					<div id="footerPicture"></div>
+				<div id="footer">
+					
+					<div class="menu le-lycee firstItem">
+						<h1>Le Lycée</h1>
+							<a target="_self" href="/fr/le-lycee/historique/2/historique_5.html" title="">Historique</a>
+							<a target="_self" href="/fr/le-lycee/label-lycee-des-metiers/2/lycee-des-metiers_9.html" title="">Label Lycée des Métiers</a>
+							<a target="_self" href="/fr/le-lycee/projet-d-etablissement/2/le-projet-educatif-de-l-etablissement_4.html" title="">Projet d'établissement</a>
+							<a target="_self" href="/fr/le-lycee/pastorale/2/pastorale_12.html" title="">Pastorale</a>
+							<a target="_self" href="/fr/le-lycee/informations-pratiques/9/index.html" title="">Informations pratiques</a>
+					</div>
+					<div class="menu le-lycee">
+							<a target="_self" href="" title="">Structure et ressources pédagogiques</a>
+							<a target="_self" href="" title="">Cadre de vie</a>
+					</div>
+					
+					<div class="menu les-formations ">
+						<h1>Les Formations</h1>
+							<a target="_self" href="/fr/les-formations/lycee-professionnel/7/index.html" title="">Lycée professionnel</a>
+							<a target="_self" href="" title="">Lycée technologique</a>
+							<a target="_self" href="/fr/les-formations/enseignement-superieur/2/licence-pro-management-des-organisations--option-gestion-des-etablissements-sanitaires--sociaux-et-medico-sociaux_334.html" title="">Enseignement supérieur</a>
+							<a target="_self" href="" title="">UFA</a>
+							<a target="_self" href="" title="">IFAS IFAP</a>
+					</div>
+					<div class="menu les-formations">
+							<a target="_self" href="/fr/les-formations/resultats-aux-examens/2/resultats-aux-examens_7.html" title="">Résultats aux examens</a>
+							<a target="_self" href="/fr/les-formations/inscriptions/2/modalites-d-inscriptions_79.html" title="">Inscriptions</a>
+							<a target="_self" href="/fr/les-formations/reglement-interieur/2/reglement-interieur_67.html" title="">Règlement intérieur</a>
+							<a target="_self" href="/fr/les-formations/internat--partenariat-avec-le-lycee-ste-jeanne-elisabeth/2/internat_255.html" title="">Internat - Partenariat avec le lycée Ste Jeanne Elisabeth</a>
+					</div>
+					
+					<div class="menu la-vie-du-lycee ">
+						<h1>La Vie du Lycée</h1>
+							<a target="_self" href="/fr/la-vie-du-lycee/rentree-scolaire-2013/2/rentree-2013--quelques-informations-utiles-pour-les-eleves-et-etudiants_382.html" title="">Rentrée scolaire 2013</a>
+							<a target="_self" href="/fr/la-vie-du-lycee/dates-a-retenir/2/dates-a-retenir_17.html" title="">Dates à retenir</a>
+							<a target="_self" href="/fr/la-vie-du-lycee/agenda/2/semaine-sainte-2013_284.html" title="Carcado se fait une beauté">Agenda</a>
+							<a target="_self" href="" title="">Activités - Voyages - Sorties...</a>
+							<a target="_self" href="/fr/la-vie-du-lycee/temoignages-des-anciens/2/les-anciens-temoignent_31.html" title="">Témoignages des anciens</a>
+					</div>
+					<div class="menu la-vie-du-lycee">
+							<a target="_self" href="/fr/la-vie-du-lycee/apel/2/l-association-de-parents-d-eleves_8.html" title="">APEL</a>
+							<a target="_self" href="/fr/la-vie-du-lycee/partenaires-de-formation/2/partenaires_65.html" title="">Partenaires de formation</a>
+							<a target="_self" href="/fr/la-vie-du-lycee/mobilite-europeenne-et-internationale/2/certification-linguistique_391.html" title="">Mobilité européenne et internationale</a>
+							<a target="_self" href="/fr/la-vie-du-lycee/mediatheque/10/index.html" title="">Médiathèque</a>
+					</div>
+					<ul id="bottomMenu">
+<li class="firstItem"><a target="_self" href="/fr/contact/8/contact.html" title="">Contact</a></li>
+					
+					<li class=""><a target="_self" href="" title="">Mentions Légales</a></li>
+					
+					<li class=""><a target="_self" href="/fr/plan-d-acces/9/index.html" title="">Plan d'accès</a></li>
+					
+					<li class=""><a target="_blank" href="http://www.goondi.net" title="">Site réalisé par la société Goondi</a></li>
+					</ul>
+<div class="companyInformations">
+						<p>121, bd Raspail - CS10622</p>
+<p>75006 Paris <br> Accueil : 01 45 48 43 46 <br> Fax : 01 45 44 31 91<br><a href="mailto:contact@carcado-saisseval.com">contact@carcado-saisseval.com</a></p>					</div>
+				</div>
+			</div>
+			<div class="bottom"></div>
+				
+			
+		</div>
+	</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-42398181-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

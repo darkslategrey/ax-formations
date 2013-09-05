@@ -1,0 +1,434 @@
+<html dir="ltr" lang="fr">
+<head>
+<title>Profession Sport et Loisirs - Alpes-Maritimes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="generator" content="SPIP">
+<meta name="verify-v1" content="yxjCuRRpmhnNMBJZ8T4BCAOTYeyC6UN06+Q86nTAnV0=">
+<link rel="shortcut icon" href="squelettes/orange/favicon.ico">
+<!-- Lien vers le backend pour navigateurs eclaires --><link rel="alternate" type="application/rss+xml" title="Syndiquer tout le site" href="http://www.appascam.org/spip.php?page=backend">
+<!-- Feuille de styles CSS pour l'affichage du site sur ecran --><link rel="stylesheet" href="squelettes/orange/habillage.css" type="text/css" media="projection, screen, tv">
+<!-- Feuille de styles CSS pour l'impression --><link rel="stylesheet" href="squelettes/orange/impression.css" type="text/css" media="print">
+<!-- Ceci est la feuille de style par defaut pour le code genere par SPIP --><link rel="stylesheet" href="squelettes/orange/spip_style.css" type="text/css" media="all">
+<script language="JavaScript" type="text/javascript" src="./includes/javascript/swfobject.js"></script><style type="text/css">
+#logo-partenaire IMG {
+	margin-top:3px;
+	margin-left:30px;
+}
+</style>
+</head>
+<body>
+
+<div id="main">
+	<table width="949" border="0" cellspacing="0" cellpadding="0">
+<tr height="150" valign="top">
+<td>
+<!-- Header HP-->
+		<script language="JavaScript1.2" type="text/javascript">
+<!--
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+MM_preloadImages('squelettes/orange/IMG/rub-article-off.gif','squelettes/orange/IMG/rub-article-on.gif','squelettes/orange/IMG/rub-article-on.gif','squelettes/orange/IMG/rub-article-on.gif');
+//-->
+</script><script language="javascript" type="text/javascript">
+function changebackground(i) {
+	document.getElementById('bouton'+i).style.backgroundImage = 'url(squelettes/orange/IMG/rub-article-on.gif)';
+}
+
+function restorebackground(i) {
+	document.getElementById('bouton'+i).style.backgroundImage = 'url(squelettes/orange/IMG/rub-article-off.gif)';
+}
+
+
+function emailvalide(adresse)
+{
+		var str = new String(adresse);
+		var point = str.lastIndexOf('.');
+		var arobase = str.lastIndexOf('@');
+		var espace = str.indexOf(' ');
+		var lgtotal = str.length;
+		
+		if( (lgtotal-point <3) || point == -1 || arobase == -1 || espace != -1 || point < arobase || (point-arobase <=1))
+			return false;
+		else return true;
+}
+
+	
+function testercodepostal(codepostal)
+{
+	var erreur = 0;
+	var str = new String(codepostal);
+	for(i=0; i<str.length ; i++)
+	{
+		if(isNaN(str.charAt(i))) erreur++;
+	}
+	
+	if(codepostal.length > 5 || /*isNaN(codepostal)*/ erreur!=0 || str.indexOf(' ') != -1) return false;
+	else return true;
+}
+	
+function testertel(tel)
+{
+	var erreur = 0;
+	var str = new String(tel);
+	for(i=0; i<str.length ; i++)
+	{
+		if(isNaN(str.charAt(i))) erreur++;
+	}
+	
+	if(erreur!=0) return false;
+	else return true;
+}
+
+		
+function verifform()
+{
+	var erreur = "";
+	
+	with(document.form)
+	{
+		var chpcivilite = candidat_civilite.value;
+		var chpnom = candidat_nom.value;
+		var chpprenom = candidat_prenom.value;
+		var chptel = candidat_telephone.value;
+		var chpportable = candidat_portable.value;
+		var chpemail = candidat_email.value;
+		var chpcp = candidat_codepostal.value;
+		var chpville = candidat_ville.value;
+		var chpverif = verif.value;
+	}
+	
+	if(!chpnom || !chpprenom || !chpemail || !chpcp || !chpville || !chpverif)
+	{
+		erreur += "Veuillez remplir les champs obligatoires :\n";
+		
+		if(!chpnom) erreur += "\t- votre nom\n";
+		
+		if(!chpprenom) erreur += "\t- votre prenom\n";
+		
+		if(!chpemail) erreur += "\t- votre e-mail\n";
+		
+		if(!chpcp) erreur += "\t- votre code postal\n";
+		
+		if(!chpville) erreur += "\t- votre ville\n";
+		
+		if(!chpverif) erreur += "\t- le code de verification\n";
+		
+		erreur += "\n";
+	}
+	
+	if(chpemail && !emailvalide(chpemail))
+	{
+		erreur += "L'adresse e-mail saisie n'a pas un format correct.\n\n";
+	}
+	
+	if(chpcp && !testercodepostal(chpcp))
+	{
+		erreur += "Le code postal saisi n'a pas un format correct.\n\n";
+	}
+	
+	if(chptel && !testertel(chptel))
+	{
+		erreur += "votre numero de telephone ne doit etre compose que de 10 chiffres.\n\n";
+	}
+	
+	if(chpportable && !testertel(chptel))
+	{
+		erreur += "votre numero de portable ne doit etre compose que de 10 chiffres.\n\n";
+	}
+	if(erreur != "")
+	{
+		alert(erreur);
+		return false;
+	}
+	else 
+	{
+		return true;
+	}
+}
+		
+function verifform2()
+{
+	var erreur = "";
+	
+	with(document.form)
+	{
+		var chpnom = contact_nom.value;
+		var chpprenom = contact_prenom.value;
+		var chpemail = contact_email.value;
+		var chpcp = contact_codepostal.value;
+		var chpville = contact_ville.value;
+		var chpmessage = contact_message.value;
+		var chpverif = verif.value;
+	}
+	
+	if(!chpnom || !chpprenom || !chpemail || !chpcp || !chpville || !chpmessage || !chpverif)
+	{
+		erreur += "Veuillez remplir les champs obligatoires :\n";
+		
+		if(!chpnom) erreur += "\t- votre nom\n";
+		
+		if(!chpprenom) erreur += "\t- votre prenom\n";
+		
+		if(!chpemail) erreur += "\t- votre e-mail\n";
+		
+		if(!chpcp) erreur += "\t- votre code postal\n";
+		
+		if(!chpville) erreur += "\t- votre ville\n";
+		
+		if(!chpmessage) erreur += "\t- votre message\n";
+		
+		if(!chpverif) erreur += "\t- code de verification\n";
+		
+		erreur += "\n";
+	}
+	
+	if(chpemail && !emailvalide(chpemail))
+	{
+		erreur += "L'adresse e-mail saisie n'a pas un format correct.\n\n";
+	}
+	
+	if(chpcp && !testercodepostal(chpcp))
+	{
+		erreur += "Le code postal saisi n'a pas un format correct.\n\n";
+	}
+	
+	if(erreur != "")
+	{
+		alert(erreur);
+		return false;
+	}
+	else 
+	{
+		return true;
+	}				
+}			
+</script><style type="text/css">td{padding:0; margin:0} tr{padding:0; margin:0}</style>
+<div id="navig-top" class="textegris-11">
+	<a href="http://www.appascam.org" class="liengris-11">Accueil</a>  -  
+	
+    
+    	<a href="spip.php?page=actualite" class="liengris-11">Actualités</a>  -  
+    
+    
+    
+    
+    
+    	<a href="spip.php?page=agenda" class="liengris-11">Agenda</a>  -  
+    
+    
+    
+	
+		<a href="spip.php?rubrique7" class="liengris-11">Ressources</a>  -  
+	
+	
+		<a href="-Partenaires-" class="liengris-11">Partenaires</a>  -  
+	
+	<a href="http://www.intranet-psl.com/" class="liengris-11" target="_blank">Intranet National</a>  -  
+	<a href="http://www.appascam.org/spip.php?page=contact" class="liengris-11">Contact</a>  -  
+	<a href="http://www.profession-sport-loisirs.fr/newsletter.php" target="_blank" class="lienorange-10" style="font-size: 11px;">Newsletter</a>
+</div>
+<div id="menu" style="padding:0; margin:0">
+  <table width="949" border="0" cellspacing="0" cellpadding="0" style="background:url(IMG/siteon0.gif) top left no-repeat"><tr>
+<td height="150" colspan="7" valign="top"><a href="http://www.appascam.org" title="Profession Sport et Loisirs - Alpes-Maritimes|textebrut"><img src="squelettes/orange/IMG/espaceur.gif" width="260" height="105" border="0" alt="Profession Sport et Loisirs - Alpes-Maritimes|textebrut"></a></td>
+      <td width="148" valign="bottom"><a href="spip.php?rubrique1" onmouseout="MM_swapImgRestore();" onmouseover="MM_swapImage('quisommesnous','','squelettes/orange/IMG/menu-quisommesnous-on.gif',1);"><img src="squelettes/orange/IMG/menu-quisommesnous-off.gif" alt="Qui sommes-nous ?" width="148" height="59" border="0" id="quisommesnous"></a></td>
+			<td width="106" valign="bottom"><a href="spip.php?rubrique2" onmouseout="MM_swapImgRestore();" onmouseover="MM_swapImage('services','','squelettes/orange/IMG/menu-services-on.gif',1);"><img src="squelettes/orange/IMG/menu-services-off.gif" alt="Nos services" width="106" height="59" border="0" id="services"></a></td>
+      <td width="115" valign="bottom"><a href="spip.php?rubrique3" onmouseout="MM_swapImgRestore();" onmouseover="MM_swapImage('adherents','','squelettes/orange/IMG/menu-adherents-on.gif',1);"><img src="squelettes/orange/IMG/menu-adherents-off.gif" alt="Les adhérents" width="115" height="59" border="0" id="adherents"></a></td>
+		  <td width="119" valign="bottom"><a href="spip.php?rubrique4" onmouseout="MM_swapImgRestore();" onmouseover="MM_swapImage('groupement','','squelettes/orange/IMG/menu-groupement-on.gif',1);"><img src="squelettes/orange/IMG/menu-groupement-off.gif" alt="Le groupement" width="119" height="59" border="0" id="groupement"></a></td>
+      <td width="131" valign="bottom"><a href="bourse-emploi.php" onmouseout="MM_swapImgRestore();" onmouseover="MM_swapImage('bourse','','squelettes/orange/IMG/menu-bourse-emploi-on.gif',1);"><img src="squelettes/orange/IMG/menu-bourse-emploi-off.gif" alt="Bourse d'emploi" width="131" height="59" border="0" id="bourse"></a></td>
+		<td width="52"></td>
+    </tr></table>
+</div>
+</td>
+	  </tr>
+<tr height="545" valign="top">
+<td class="cell_contenu">
+<div id="hp-bloc-bas" class="contenu" style="position:absolute;">
+	<table width="671" border="0" cellpadding="0" cellspacing="0" style="background:url(squelettes/orange/IMG/hp-bloc-bas-middle.gif) top left repeat-y;">
+<tr height="46">
+<td width="316" style="background:url('squelettes/orange/IMG/hp-bloc-bas-top1.gif') top left no-repeat">
+			<h1 style="visibility:hidden;">Actualités du groupement nationnal</h1>
+			</td>
+			<td width="355" colspan="2" style="background:url('squelettes/orange/IMG/hp-bloc-bas-top2.gif') top left no-repeat">
+			<h1 style="visibility:hidden;">Agenda du groupement nationnal</h1>
+			</td>
+		</tr>
+<tr height="126" valign="top">
+<td width="316" style="background:url('squelettes/orange/IMG/hp-bloc-bas-bottom3.gif') bottom left no-repeat;">
+			<span style="padding-top:5px; padding-left:20px; padding-right:10px; display:block;">
+			
+			
+			<a href="http://www.profession-sport-loisirs.fr/spip.php?page=actualite&amp;id_actualite=554" class="lien_menu" target="_blank">Emplois d'Avenir : Quelques précisions</a><br>
+			Les services du Ministère du travail (...)  <img src="squelettes/orange/IMG/fleche.gif" alt=""><br style="line-height:5px"><a href="http://www.profession-sport-loisirs.fr/spip.php?page=actualite&amp;id_actualite=553" class="lien_menu" target="_blank">RNESL 2013 : C'est dans moins d'un mois (...)</a><br>
+			Les inscriptions sont encore accessibles  <img src="squelettes/orange/IMG/fleche.gif" alt=""><br style="line-height:5px"><a href="http://www.profession-sport-loisirs.fr" target="_blank"><img src="squelettes/orange/IMG/espaceur.gif" width="270" height="60" border="0" style="cursor:pointer;"></a>
+			</span>
+			</td>
+			<td width="4"><img src="squelettes/orange/IMG/hp-ligne-verticale.gif"></td>
+			<td style="background:url('squelettes/orange/IMG/hp-bloc-bas-bottom4.gif') bottom right no-repeat">
+			<span style="padding-top:10px;padding-left:24px;margin-right:15px;display:block;"><a href="http://www.profession-sport-loisirs.fr/spip.php?page=agenda&amp;id_agenda=174" class="lien_menu" target="_blank">RNESL 2013</a><br>  <img src="squelettes/orange/IMG/fleche.gif" alt=""></span><br><!--<br />
+			<a href="http://www.intranet-psl.com/" target="_blank">Acc&eacute;dez &agrave; l&rsquo;Intranet du Groupement National<br />
+			Profession Sport et Loisirs</a><img src="squelettes/orange/IMG/fleche.gif" />-->
+</td>
+		</tr>
+</table>
+</div>
+	<div id="hp-blocs">
+	<div id="hp-bloc-gauche" class="contenu">
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td height="43" style="background:url(squelettes/orange/IMG/hp-bloc-gauche-top.gif) top left no-repeat;"><h1 style="padding-top:15px;padding-left:40px;visibility:hidden;"> Actualités</h1></td>
+        </tr>
+<tr style="background:url(squelettes/orange/IMG/hp-bloc-gauche-middle.gif) top left repeat-y;">
+<td valign="top" height="222" style="padding-left:25px; padding-right:20px;">
+            
+            
+                 <br style="line-height:5px;"><a href="spip.php?page=actualite&amp;id_actualite=5" class="lien_menu"> Nous trouver </a><br><br style="line-height:5px;">
+                APPASCAM
+
+2 rue de la Foux
+
+ Résidence "Le Grand Large"
+
+ Bâtiment (...)<a href="spip.php?page=actualite&amp;id_actualite=5" class="lien_menu"><img src="squelettes/orange/IMG/fleche.gif" border="0" alt=""></a><br>
+</td>
+        </tr>
+<tr>
+<td height="30" style="background:url(squelettes/orange/IMG/hp-bloc-gauche-middle2.gif) top left no-repeat;"><h1 style="visibility:hidden;"> Agenda</h1></td>
+        </tr>
+<tr style="background:url(squelettes/orange/IMG/hp-bloc-gauche-middle.gif) top left repeat-y;">
+<td valign="top" height="165" style="padding-left:25px; padding-right:20px;">
+            
+            
+                 <br style="line-height:5px;"><a href="spip.php?page=agenda&amp;id_agenda=91" class="lien_menu">17-19 juin ou 16-18 septembre 2013</a>
+                 <br><br style="line-height:5px;">
+                 Formation au milieu marin méditérranéen<a href="spip.php?page=agenda&amp;id_agenda=91" class="lien_menu"><img src="squelettes/orange/IMG/fleche.gif" border="0" alt=""></a><br>
+</td>
+        </tr>
+<tr>
+<td height="36"><img src="squelettes/orange/IMG/hp-bloc-gauche-bottom.gif" alt=""></td>
+        </tr>
+</table>
+</div>
+	<div id="hp-bloc-centre" class="contenu">
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" height="43" style="background:url(squelettes/orange/IMG/hp-bloc-centre-top.gif) top left no-repeat;"><h1 style="visibility:hidden;">Les services de l'association</h1></td>
+        </tr>
+<tr style="background:url(squelettes/orange/IMG/hp-bloc-centre-bottom.gif) bottom left no-repeat;">
+<td height="324" valign="top" style="padding-left:25px; padding-right:20px; padding-top:5px;">
+						<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr valign="top">
+<td height="108">
+<div>
+							<a href="spip.php?article41" class="accroche">Gestion Sociale</a><br>
+							Tiers de confiance de l’U.R.S.S.A.F dans le cadre du dispositif "IMPACT EMPLOI (...)<!--IMG/accrocheon1.jpg-->
+							<p align="right" style="margin-bottom:5px;margin-top:5px;margin-right:5px;"><a href="spip.php?article41" class="lienbleu-10">Lire l'info</a><img src="squelettes/orange/IMG/fleche.gif" width="14" height="10" alt=""></p>
+</div>
+							
+							</td>
+							<td width="150" align="left">
+<div id="accroche-visuel1" style="position:relative;"></div>
+<script language="javascript" type="text/javascript">var so = new SWFObject("squelettes/orange/IMG/hp-acccroche-visuel.swf", "visuel1", "149", "91", "6", ""); so.addParam("wmode", "transparent"); so.addParam("FlashVars", "curr=IMG/accrocheon1.jpg"); so.write("accroche-visuel1"); </script>
+</td>
+						</tr>
+<tr valign="top">
+<td height="108">
+<div>
+							<a href="spip.php?article40" class="accroche">Soutien aux associations</a><br>
+							L’APPASCAM est Centre de Ressource et d’Information  pour les Bénévoles et Pôle Régional (...)<!--IMG/accrocheon2.jpg-->
+							<p align="right" style="margin-bottom:5px;margin-top:5px;margin-right:5px;"><a href="spip.php?article40" class="lienbleu-10">Lire l'info</a><img src="squelettes/orange/IMG/fleche.gif" width="14" height="10" alt=""></p>
+</div>
+							
+							</td>
+							<td width="150" align="left">
+<div id="accroche-visuel2" style="position:relative;"></div>
+<script language="javascript" type="text/javascript">var so = new SWFObject("squelettes/orange/IMG/hp-acccroche-visuel.swf", "visuel2", "149", "91", "6", ""); so.addParam("wmode", "transparent"); so.addParam("FlashVars", "curr=IMG/accrocheon2.jpg"); so.write("accroche-visuel2"); </script>
+</td>
+						</tr>
+<tr valign="top">
+<td height="108">
+<div>
+							<a href="spip.php?article127" class="accroche">Notre Bourse à l’Emploi</a><br>
+							Consulter les offres, déposer une offre d’emploi, consulter des profils...<!--IMG/accrocheon3.jpg-->
+							<p align="right" style="margin-bottom:5px;margin-top:5px;margin-right:5px;"><a href="spip.php?article127" class="lienbleu-10">Lire l'info</a><img src="squelettes/orange/IMG/fleche.gif" width="14" height="10" alt=""></p>
+</div>
+							
+							</td>
+							<td width="150" align="left">
+<div id="accroche-visuel3" style="position:relative;"></div>
+<script language="javascript" type="text/javascript">var so = new SWFObject("squelettes/orange/IMG/hp-acccroche-visuel.swf", "visuel3", "149", "91", "6", ""); so.addParam("wmode", "transparent"); so.addParam("FlashVars", "curr=IMG/accrocheon3.jpg"); so.write("accroche-visuel3"); </script>
+</td>
+						</tr>
+</table>
+</td>
+        </tr>
+</table>
+</div>
+	<div id="hp-bloc-droit" class="contenu">
+	 <table width="100%" height="327" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" height="68" style="background:url(squelettes/orange/IMG/hp-bloc-droit-top.gif) top left no-repeat;"><h1 style="visibility:hidden;">Bourse de l'emploi sport et loisirs</h1></td>
+        </tr>
+<tr>
+<td><img src="squelettes/orange/IMG/hp-bloc-droit-visuel.jpg" alt=""></td>
+		</tr>
+<tr>
+<td><img src="squelettes/orange/IMG/hp-bloc-droit-accroche.gif" alt=""></td>
+		</tr>
+<tr style="background:url(squelettes/orange/IMG/hp-bloc-droit-bottom.gif) bottom left no-repeat;">
+<td valign="top" height="98" style="text-align:center;padding-top:5px;">
+             <a href="bourse-recherche-offres.php" id="lienbourse">Accédez à la bourse de l'emploi </a><img src="squelettes/orange/IMG/fleche.gif" alt=""><br><div id="logo-partenaire" style="width:230px;margin-left:7px; ">
+            
+            <a href="http://www.anpe.fr" target="_blank"><img src="squelettes/orange/IMG/logo-anpe.gif" border="0" style="margin-left:20px;"></a>
+<a href="http://www.jeunesse-sports.gouv.fr/" target="_blank"><img src="squelettes/orange/IMG/logo-ministere.gif" border="0" style="margin-left:0px;"></a> 
+			
+            </div>
+          </td>
+		</tr>
+</table>
+</div>
+	
+</div>
+</td>
+	  </tr>
+<tr height="140" valign="top">
+<td>
+<div id="bas-page" class="textegris-11">
+<p style="padding-top:60px;margin-left:530px;">
+<a href="http://www.appascam.org/spip.php?page=infos-legales" class="liengris-11">Mentions légales </a> - <a href="http://www.appascam.org/spip.php?page=plan" class="liengris-11">Plan du site </a> - Réalisation: <a href="http://www.compagnie-hyperactive.com" target="_blank" class="liengris-11">La Compagnie Hyperactive</a>
+</p>
+</div>
+<!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4786793-39");
+pageTracker._trackPageview();
+} catch(err) {}
+</script><!-- /google analytics -->
+</td>
+	  </tr>
+</table>
+</div>
+</body>
+</html>

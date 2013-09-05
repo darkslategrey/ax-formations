@@ -1,0 +1,1801 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<script type="text/javascript" language="javascript" src="/js/jq/jquery-1.4.2.js"></script><script type="text/javascript" language="javascript" src="/js/jq/jquery-ui.js"></script><script type="text/javascript" language="javascript" src="/js/jq/jquery.autocomplete.js"></script><script type="text/javascript" language="javascript" src="/js/jq/itooltip.js"></script><script type="text/javascript" language="javascript" src="/js/jq/iutil.js"></script><script type="text/javascript" language="javascript">function blink(id,nb,time){
+var div = document.getElementById(id);
+var imgs = div.getElementsByTagName("img");
+var as = div.getElementsByTagName("a");
+if (nb>0){
+
+var new_nb = nb;
+var change = false;
+
+for (var i=0 ; i<(imgs.length-1) ; i++){
+
+if (imgs[i].src.search(/\/img\/main.gif/) != -1){
+imgs[i].src="/img/main2.gif";
+as[i].style.color="#EC7B1D";
+change=true;
+//alert('rouge');
+}else{
+imgs[i].src="/img/main.gif";
+as[i].style.color="#97C324";
+}
+
+}
+
+if (change == true) new_nb--;
+
+setTimeout("blink('"+id+"',"+(new_nb)+","+time+")",time);
+//alert(div.style.visibility+" blink("+div+","+(nb-1)+","+time+")");
+}else{
+for (var i=0 ; i<(imgs.length-1) ; i++){
+imgs[i].src="/img/main.gif";
+as[i].style.color="#97C324";
+}
+}
+
+}
+
+function afficheReponses(type,id_form,action){
+
+if (document.getElementById(id_form)){
+var form = document.getElementById(id_form);
+form.type.value = type;
+actionSubmit(action,form);
+}else{
+document.form_action.type.value = type;
+actionSubmit('changement_type_result',document.form_action);
+}
+}
+
+
+
+/*
+Grisage de l'écran avec message d'attente
+*/
+function startPatienterTotal(){
+if (!document.getElementById('patienter_rech')){
+var div = document.createElement('div');
+div.setAttribute("class","patienter_rech");
+div.setAttribute("className","patienter_rech");
+div.setAttribute("id","patienter_rech");
+var img = document.createElement('img');
+img.setAttribute("src","/img/espaceur.gif");
+img.setAttribute("class","centpourcent");
+img.setAttribute("className","centpourcent");
+div.appendChild(img);
+document.getElementById("bloc_corps").appendChild(div);
+}
+document.getElementById('patienter_rech').style.display="block";
+
+startPatienterNonStop();
+}
+
+/*
+Message d'attente (ne s'arrete pas automatiquement)
+*/
+function startPatienterNonStop(){
+
+if (!document.getElementById('patienter')){
+var div = document.createElement('div');
+div.setAttribute("class","patienter");
+div.setAttribute("className","patienter");
+div.setAttribute("id","patienter");
+var img = document.createElement("img");
+img.setAttribute("src","/img/patienter.gif");
+div.appendChild(img);
+document.getElementById("bloc_corps").appendChild(div);
+}
+document.getElementById('patienter').style.display="block";
+}
+
+/*
+Dégrisage de l'écran
+*/
+function stopPatienterTotal(){
+if (document.getElementById('patienter_rech'))document.getElementById('patienter_rech').style.display="none";
+stopPatienter();
+}
+
+var num_file_attente = 0;
+
+/*
+Message d'attente (s'arrête au bout de 30 secondes)
+*/
+function startPatienter(){
+
+num_file_attente++;
+
+if (!document.getElementById('patienter')){
+var div = document.createElement('div');
+div.setAttribute("class","patienter");
+div.setAttribute("className","patienter");
+div.setAttribute("id","patienter");
+var img = document.createElement("img");
+img.setAttribute("src","/img/patienter.gif");
+div.appendChild(img);
+document.getElementById("bloc_corps").appendChild(div);
+}
+document.getElementById('patienter').style.display="block";
+setTimeout("verifPatienter("+num_file_attente+")",20000);
+}
+
+/*
+Arret du message d'attente
+*/
+function stopPatienter(){
+if (document.getElementById('patienter'))document.getElementById('patienter').style.display="none";
+}
+
+/*
+Arret du message d'attente si la div est encore visible au bout de 30 secondes (plantage probable)
+*/
+function verifPatienter(num){
+if (document.getElementById('patienter'))
+if (document.getElementById('patienter').style.display=="block" && num == num_file_attente){
+stopPatienter();
+//alert("L'action demandée ne semble pas aboutir.\nIl se peut qu'il s'agisse d'un problème venant de votre réseau si ce dernier dispose d'un serveur \"Proxy\".\n Merci de contacter votre administrateur réseau pour vérifier si vous disposez d'un serveur proxy. Il faudra alors ajouter une règle à ce dernier pour autoriser l'application en cours.\n Veuillez nous excuser pour le désagrément encouru.");
+openDialog('avertissement_bloquage', 'Avertissement', 620, 200);
+}
+}
+
+/*
+Vérification d'un nombre de caractère minimal pour la recherche d'affinage dans les listes de valeurs
+*/
+function checkAffinage(input,name,type,commentaire){
+var nb_mini=0;
+if (input.value.length<nb_mini){
+alert('Votre recherche doit porter sur au moins '+nb_mini+' caractères');
+}else{
+afficheListing(name,type,commentaire);
+}
+}
+
+/*
+Cache les balises select (elles passent au dessus des pop ups sous IE6)
+*/
+function hideSelects(){
+var selects = document.getElementsByTagName('select');
+for (var i=0 ; i<selects.length ; i++){
+selects[i].style.visibility="hidden";
+}
+}
+
+/*
+Rend visible les balises select
+*/
+function showSelects(){
+var selects = document.getElementsByTagName('select');
+for (var i=0 ; i<selects.length ; i++){
+selects[i].style.visibility="visible";
+}
+}
+
+/*
+Stockage de l'action à effectuer sur le formulaire et validation du formulaire
+*/
+function actionSubmit(action,form){
+form.action_submit.value=action;
+form.submit();
+}
+
+
+// echappe les caractère spéciaux
+function escapeURI(text){
+if(encodeURIComponent) {
+return encodeURIComponent(text);
+}
+
+if(escape) {
+return escape(text);
+}
+}
+
+function cocherFormacodes(button){
+var checked;
+
+var chkbox = document.getElementById('childs_code_0').getElementsByTagName('input');
+
+if (chkbox.length > 0){
+if (button.value == 'Tout cocher'){
+button.value = 'Tout décocher';
+checked = true;
+}else{
+button.value = 'Tout cocher';
+checked = false;
+}
+
+
+
+for (var i = 0 ; i < chkbox.length ; i++){
+if (chkbox[i].type=='checkbox')chkbox[i].checked = checked;
+}
+}
+
+}
+
+/*
+Fonction pour cocher ou décocher tous les éléments d'une liste de valeurs
+*/
+function cocherListe(button,form){
+var checked;
+var chkbox = form.getElementsByTagName('input');
+if (chkbox.length > 0){
+if (button.value == 'Tout cocher'){
+button.value = 'Tout décocher';
+checked = true;
+}else{
+button.value = 'Tout cocher';
+checked = false;
+}
+
+for (var i = 0 ; i < chkbox.length ; i++){
+if (chkbox[i].type=='checkbox')chkbox[i].checked = checked;
+}
+}
+}
+
+
+/*
+Remet à zéro la recherche d'affinage pour les listes de valeur
+*/
+function razAffinage(form,input,button,name,type,commentaire){
+if (form) form.innerHTML='';
+if (button) button.value='Tout cocher';
+if (document.getElementById('div_nb_resultat_listing')) document.getElementById('div_nb_resultat_listing').innerHTML = '';
+input.value='';
+afficheListing(name,type,commentaire);
+input.focus();
+}
+
+function razRechAvancee(){
+
+var names=['niveau_sortie','diplome','formacode','bassin_emploi'];
+
+for (var i=0 ; i<names.length ; i++){
+var name=names[i];
+if (document.getElementById('nb_'+name))document.getElementById('nb_'+name).value=0;
+if (document.getElementById('liste_'+name))document.getElementById('liste_'+name).innerHTML="";
+}
+
+names=['geo_calvados','geo_manche','geo_orne','foad'];
+
+for (var i=0 ; i<names.length ; i++){
+var name=names[i];
+if (document.getElementById(name))document.getElementById(name).checked=false;
+}
+
+if (document.getElementById('departements')) document.getElementById('departements').style.display='none';
+
+}
+
+function showHideDepts(){
+var div = document.getElementById('departements');
+
+if (div.style.display=='none'){
+$("#departements").slideDown();
+//div.style.display='block';
+}else{
+//div.style.display='none';
+$("#departements").slideUp();
+var checked=false;
+
+if (document.getElementById('geo_calvados').checked==true || document.getElementById('geo_manche').checked==true || document.getElementById('geo_orne').checked==true)
+checked=true;
+
+document.getElementById('geo_calvados').checked=false;
+document.getElementById('geo_manche').checked=false;
+document.getElementById('geo_orne').checked=false;
+
+if (checked == true){
+calculReponses(document.form_rech);
+}
+
+}
+
+}
+
+function checkFoad(){
+document.getElementById('foad').checked=!document.getElementById('foad').checked;
+calculReponses(document.form_rech);
+}
+
+function calculReponsesDep(dep){
+
+if (document.getElementById('full_text_dep').value==dep){
+document.getElementById('dep'+dep).className="cliquable";
+document.getElementById('full_text_dep').value='';
+}else{
+document.getElementById('dep14').className="cliquable";
+document.getElementById('dep50').className="cliquable";
+document.getElementById('dep61').className="cliquable";
+document.getElementById('dep'+dep).className="selectDep cliquable";
+document.getElementById('full_text_dep').value=dep;
+}
+
+//if (document.getElementById('input_full_text').value!='')
+calculReponsesFullText(document.getElementById('input_full_text').value);
+}
+
+function razRechFullText(){
+document.getElementById('dep14').className="cliquable";
+document.getElementById('dep50').className="cliquable";
+document.getElementById('dep61').className="cliquable";
+document.getElementById('full_text_dep').value='';
+document.getElementById('full_text').value='';
+document.getElementById('input_full_text').value='';
+}
+
+function clickAllListing(name,checked){
+
+if (document.getElementById('form_listing_'+name)){
+var inputs=document.getElementById('form_listing_'+name).getElementsByTagName('input');
+
+for (var i=0 ; i<inputs.length ; i++){
+if (inputs[i].type=='checkbox')inputs[i].checked=checked;
+}
+
+}
+
+}
+
+function clickAllForPrint(name,checked){
+if (document.getElementById(name)){
+var inputs=document.getElementById(name).getElementsByTagName('input');
+
+for (var i=0 ; i<inputs.length ; i++){
+if (inputs[i].type=='checkbox')inputs[i].checked=checked;
+}
+
+}
+}
+
+function printSelection(type){
+
+if (document.getElementById('liste_resu_organisme')){
+var inputs=document.getElementById('liste_resu_organisme').getElementsByTagName('input');
+var ids=new Array();
+
+var print=false;
+
+for (var i=0 ; i<inputs.length ; i++){
+if (inputs[i].type=='checkbox' && inputs[i].id!='click_all' && inputs[i].checked==true){
+ids.push(inputs[i].value);
+print=true;
+}
+}
+
+if (print==false){
+alert('Merci de sélectionner au moins une fiche');
+}else{
+new_win = window.open('/multiprint.jsp?type='+type+'&ids='+ids+'&popup=true','_blank','menubar=no,location=no,resizable=yes,scrollbars=yes,status=no,width=1000,height=800');
+
+}
+
+}
+}
+
+var new_win = null;
+
+
+function showHidePlusMoins(id_div_moins,id_div_plus,link){
+
+if (document.getElementById(id_div_moins).style.display=="block"){
+/*$("#"+id_div_moins).slideUp();
+$("#"+id_div_plus).slideDown();*/
+$("#"+id_div_moins).toggle();
+$("#"+id_div_plus).toggle();
+link.innerHTML = "<img src=\"img/zoommoins.gif\" border=\"0\" alt=\"zoom-\"/> Réduire...";
+}else{
+/*$("#"+id_div_moins).slideDown();
+$("#"+id_div_plus).slideUp();*/
+$("#"+id_div_moins).toggle();
+$("#"+id_div_plus).toggle();
+link.innerHTML = "<img src=\"img/zoomplus.gif\" border=\"0\" alt=\"zoom+\"/> Lire la suite...";
+}
+
+}
+
+function showHideAfficherMasquer(id_div_plus,link,texte,afficher){
+
+if (document.getElementById(id_div_plus).style.display=="block"){
+//document.getElementById(id_div_plus).style.display="none";
+$("#"+id_div_plus).slideUp();
+if (afficher)texte = "Afficher "+texte;
+link.innerHTML = "<img src=\"img/zoomplus.gif\" border=\"0\" alt=\"zoom-\"/>"+texte;
+}else{
+//document.getElementById(id_div_plus).style.display="block";
+$("#"+id_div_plus).slideDown();
+if (afficher)texte = "Masquer "+texte;
+link.innerHTML = "<img src=\"img/zoomplus.gif\" border=\"0\" alt=\"zoom+\"/>"+texte;
+}
+
+}
+
+//function d'ajout d'une fonction au window.onlaod
+function addLoadEvent(func) {
+var oldonload = window.onload;
+if (typeof window.onload != 'function') {
+window.onload = func;
+} else {
+window.onload = function() {
+if (oldonload) {
+oldonload();
+}
+func();
+}
+}
+}
+
+$(document).ready(function(){
+
+if (document.getElementById("input_full_text")){
+
+var auto_width=0;
+
+if ($('#form_recherche_avancee').length == 0)
+auto_width=300;
+else
+auto_width=370;
+
+$("#input_full_text").autocomplete("/ajax_autocomplete", {
+extraParams:{mode:"quoi"},
+minChars: 3,
+scrollHeight: 300,
+width: auto_width,
+max: 100,
+matchContains:true,
+matchSubset:false,
+selectFirst:false
+});
+
+$("#input_full_text_ou").autocomplete("/ajax_autocomplete", {
+extraParams:{mode:"ou"},
+minChars: 4,
+scrollHeight:300,
+width:300,
+max: 100,
+matchContains:true,
+matchSubset:false,
+selectFirst:false
+});
+
+$("#input_full_text_diplome").autocomplete("/ajax_autocomplete", {
+extraParams:{mode:"diplome"},
+minChars: 4,
+scrollHeight:300,
+width:300,
+max: 100,
+matchContains:true,
+matchSubset:false,
+selectFirst:false
+});
+
+$("#input_full_text").result(function(event, data, formatted) {
+if (document.getElementById('form_recherche_avancee'))
+calculReponses(document.form_rech);
+else
+calculReponsesFullText('');
+
+});
+
+$("#input_full_text_ou").result(function(event, data, formatted) {
+calculReponsesFullText('');
+});
+
+$("#input_full_text_diplome").result(function(event, data, formatted) {
+calculReponsesFullText('');
+});
+
+if (document.getElementById('form_recherche_avancee')==null)
+document.getElementById('input_full_text').focus();
+
+
+prepareMap();
+
+}
+
+$(".enable_tool_tips").ToolTip({
+className: 'tooltips',
+position: 'mouse',
+delay: 20
+});
+
+$(".enable_dialog").dialog({
+autoOpen: false ,
+buttons: {
+"Fermer": function() { $(this).dialog("close"); }
+},
+dialogClass: "dialog_listing",
+minWidth : 300,
+minHeight : 150,
+resizable : false
+});
+
+});
+
+function openDialog(id,titre,width,height){
+$( "#"+id ).dialog( "option", "title", titre );
+$( "#"+id ).dialog( "option", "height", height );
+$( "#"+id ).dialog( "option", "width", width );
+$( "#"+id ).dialog("open");
+}
+
+var mapWindow;
+function showMap(type){
+var titre="Carte";
+if (type=='ofs')titre+= " des organismes";
+if (type=='afm')titre+= " des lieux de formation";
+
+if ($("#cartographieGMAP").length == 0){
+$("#bloc_page").append("<div id='cartographieGMAP' style='display:none;'></div>");
+$("#cartographieGMAP").append("<iframe src=\"/gmap.jsp?type="+type+"\" style=\"border: medium none; margin: 0pt; padding: 0pt; width: 100%; height: 100%;\">Votre navigateur ne supporte pas les iFrames</iframe>");
+}
+$("#cartographieGMAP").dialog({
+buttons: {
+"Fermer": function() { $(this).dialog("close"); }
+},
+dialogClass: "dialog_listing",
+width : 720,
+height : 590,
+resizable : false,
+title : titre
+});
+
+}
+
+function showMapWithId(type,id){
+var titre="Carte";
+if (type=='ofs')titre+= " des organismes";
+if (type=='afm')titre+= " des lieux de formation";
+
+if ($("#cartographieGMAP"+id).length == 0){
+$("#bloc_page").append("<div id='cartographieGMAP"+id+"' style='display:none;'></div>");
+$("#cartographieGMAP"+id).append("<iframe src=\"/gmap.jsp?type="+type+"&id="+id+"\" style=\"border: medium none; margin: 0pt; padding: 0pt; width: 100%; height: 100%;\">Votre navigateur ne supporte pas les iFrames</iframe>");
+}
+
+$("#cartographieGMAP"+id).dialog({
+buttons: {
+"Fermer": function() { $(this).dialog("close"); }
+},
+dialogClass: "dialog_listing",
+width : 720,
+height : 590,
+resizable : false,
+title : titre
+});
+
+}
+
+function hideDiplomes(){
+$("#criteres_diplomes").slideUp();
+supprAllValues("niveau_sortie");
+supprAllValues("diplome");
+}
+
+function showDiplomes(){
+//new Effect.BlindDown('criteres_diplomes');
+$("#criteres_diplomes").slideDown();
+}
+
+function applyClass(element,classe){
+
+element.setAttribute("className",classe);
+element.setAttribute("class",classe);
+
+}
+
+function checkallvalues(name,checked){
+
+var boxes = document.getElementById('listing_value_'+name).getElementsByTagName("input");
+for (var i=0 ; i<boxes.length ; i++){
+boxes[i].checked=checked;
+}
+}
+
+
+function prepareMap(){
+
+var default_use_map="/img/BN-ELC.gif";
+
+$(".area_map").each(
+function() {
+
+var id = $(this).attr("id");
+
+$(this).click(function(){
+
+$("#BN-ELC-bn").removeClass("map-highlight");
+$("#img-BN-ELC-bn").hide();
+
+if ($("#img-" + id + ":visible").length == 0){
+$("#img-" + id).show();
+$("."+id).addClass("map-highlight");
+}else{
+$("#img-" + id).hide();
+$("."+id).removeClass("map-highlight");
+}
+
+var new_val=new Array();
+
+$(".img-ela:visible").each(function(){
+var img_id = $(this).attr("id").substring(4);
+new_val.push($("#value"+img_id).val());
+});
+
+if (new_val.length==0){
+$("#img-BN-ELC-bn").show();
+$("#BN-ELC-bn").addClass("map-highlight");
+}
+
+$("#elc").val(new_val);
+
+calculReponsesFullText("");
+
+});
+});
+
+
+$("#BN-ELC-bn").click(function(){
+
+$(".map-highlight").removeClass("map-highlight");
+$(this).addClass("map-highlight");
+$("#elc").val("");
+$(".img-ela").hide();
+$("#img-BN-ELC-bn").show();
+calculReponsesFullText("");
+});
+}
+/* ################################################ */
+/* SCRIPTS EN RAPPORT AVEC LES FONCTIONNALITES AJAX */
+/* Auteur : Yann VOLEAU (Edenweb)                   */
+/* ################################################ */
+
+
+
+/************************************************//*
+//  AJAX LISTING GENERAL
+/************************************************/
+
+//Affichage d'une liste de valeurs donnée
+//name : le nom de la liste
+//type : choix unqiue ou multiple dans la liste
+//commentaire : paramètre d'options
+function afficheListing(name,type,like){
+
+startPatienter();
+
+var options="";
+
+
+var titre="Liste ";
+
+var width=420;
+var height=400;
+
+if (name=="diplome"){
+titre+="des certifications";
+width=600;
+}
+if (name=="niveau_sortie"){
+titre+="des niveaux de sortie";
+height=310;
+}
+if (name=="mesures"){
+titre+="des dispositifs de formation";
+width=640;
+height=380;
+}
+if (name=="bassin_emploi"){
+titre+="des bassins d'emploi";
+height=410;
+}
+
+if (name=="formacodes"){
+titre+="des domaines de formation";
+width=600;
+}
+
+if (name=="gd_domaine"){
+titre+="des grands domaines";
+}
+
+if (name=='diplome'){
+var ids_niveau_sortie = new Array();
+$("#form_recherche_avancee :input[name='niveau_sortie_id[]']").each(
+function(){
+ids_niveau_sortie.push($(this).val());
+}
+);
+if (ids_niveau_sortie.length>0)options+="&filtre="+ids_niveau_sortie;
+}
+
+if (name=='bassin_emploi'){
+var ids_depts = new Array();
+
+if (document.getElementById('geo_calvados').checked==true)
+ids_depts.push('14');
+if (document.getElementById('geo_manche').checked==true)
+ids_depts.push('50');
+if (document.getElementById('geo_orne').checked==true)
+ids_depts.push('61');
+
+if (ids_depts.length>0)options+="&filtre="+ids_depts;
+}
+
+
+
+var parameters = "type="+type+"&requete="+name+"&like="+escape(like)+options;
+
+
+getJsDialog(name,height,width,titre);
+
+
+
+$.ajax({
+type: "POST",
+url: "/ajax_listing",
+data: parameters,
+success: function(html){
+
+$("#listing_"+name).html(html);
+
+if (name=="formacodes")chargeFormacodes(0);
+
+chargeListing(name);
+stopPatienter();
+
+$("#listing_"+name).dialog('open');
+
+},
+error:  function(request,text){
+ajaxError(request,text);
+}
+});
+
+}
+
+
+function getJsDialog(table,diagHeight,diagWidth,titre){
+
+$("#listing_"+table).dialog({
+autoOpen: false ,
+buttons: {
+"Fermer": function() { $(this).dialog("close"); },
+"Envoyer": function() { envoyerListing(table); }
+},
+dialogClass: "dialog_listing",
+height : diagHeight,
+width : diagWidth,
+minWidth : 300,
+minHeight : 150,
+resizable : false,
+title: titre
+});
+
+}
+
+
+function envoyerListing(table){
+
+startPatienter();
+
+var inputs=$("input[name='list_"+table+"[]']");
+var ids=new Array();
+
+for (var i=0 ; i < inputs.length ; i++){
+if (inputs[i].checked)ids.push(inputs[i].value);
+}
+
+if ($("#text_affinage_"+table).length){
+var hiddens=$("input[name='"+table+"_id[]']");
+for (var j=0 ; j < hiddens.length ; j++){
+var found=false;
+for (var i=0 ; i < inputs.length ; i++){
+if (hiddens[j].value == inputs[i].value) found = true;
+}
+if(found == false) ids.push(hiddens[j].value);
+}
+}
+
+if (ids.length > 0){
+affichageElements(ids,table);
+}else{
+supprAllValues(table);
+}
+$("#listing_"+table).dialog("close");
+
+}
+
+
+
+function affichageElements(ids,table){
+$.ajax({
+type: "POST",
+url: "/ajax",
+data: "action=creationElementAffichage&name="+table+"&ids="+ids,
+success: function(html){
+$("#selected_values_"+table).html(html);
+$(".btn_suppr_value").ToolTip({
+className: 'tooltips',
+position: 'mouse',
+delay: 200
+});
+$(".btn_suppr_all_values").ToolTip({
+className: 'tooltips_warning',
+position: 'mouse',
+delay: 200
+});
+calculReponses();
+},
+error:  function(request,text){
+stopPatienter();
+ajaxError(request,text);
+}
+});
+}
+
+function supprValue(table,id){
+$("#div_value_"+table+"_"+id+" *").blur();
+$("#div_value_"+table+"_"+id).remove();
+if ($("#selected_values_"+table).children("div").length == 1){
+supprAllValues(table);
+}else{
+calculReponses();
+}
+}
+
+
+function supprAllValues(table){
+$("#selected_values_"+table+" *").blur();
+$("#selected_values_"+table).html("");
+calculReponses();
+
+}
+
+
+//fonction de rechargement du listing (cochage des éléments déjà ajoutés)
+function chargeListing(table){
+
+var hiddens=$("input[name='"+table+"_id[]']");
+var inputs=$("input[name='list_"+table+"[]']");
+
+for (var i=0 ; i < inputs.length ; i++){
+for (var j=0 ; j < hiddens.length ; j++){
+if (inputs[i].value == hiddens[j].value) inputs[i].checked = true;
+}
+}
+
+}
+
+
+
+
+/************************************************/
+/* */
+/*  AJAX LISTING FORMACODES */
+/* */
+/************************************************/
+//chargement de l'arborescence des formacodes
+function afficheArboFormacodes(){
+chargeFormacodes('0');
+}
+
+//rechargement de l'arborescence des formacodes
+function rechargeArboFormacode(){
+document.getElementById('childs_code_0').innerHTML = '';
+document.getElementById('champ_affine_formacode').value="";
+chargeFormacodes('0');
+}
+
+//vérification des conditions à remplir pour faire une recherche sur les formacodes
+function checkAffinageFormacode(input){
+var nb_mini=3;
+if(input.value.indexOf('%')!=-1)nb_mini+=1;
+if (input.value.length<nb_mini){
+alert('Votre recherche doit porter sur au moins 3 caractères');
+}else{
+chargeRechercheFormacodes(input.value);
+}
+}
+
+
+//chargement de l'arborescence soujacente à un code_pere
+function chargeFormacodes(code_pere){
+
+startPatienter();
+
+$.ajax({
+type: "POST",
+url: "/ajax",
+data: "action=chargeFormacode&id="+code_pere,
+success: function(html){
+
+if ($("#childs_code_"+code_pere).children().length==0){
+
+$("#childs_code_"+code_pere).html(html);
+
+if ($("#img_"+code_pere).length) $("#img_"+code_pere).attr("src","/img/bt_moins.gif");
+
+}else{
+if ($("#childs_code_"+code_pere).length){
+
+if(document.getElementById('childs_code_'+code_pere).style.display=='block'){
+document.getElementById('childs_code_'+code_pere).style.display='none';
+if (document.getElementById('img_'+code_pere))document.getElementById('img_'+code_pere).setAttribute("src","/img/bt_plus.gif");
+}else{
+document.getElementById('childs_code_'+code_pere).style.display='block';
+if (document.getElementById('img_'+code_pere))document.getElementById('img_'+code_pere).setAttribute("src","/img/bt_moins.gif");
+}
+}
+}
+chargeListing('formacodes');
+
+stopPatienter();
+
+},
+error:  function(request,text){
+ajaxError(request,text);
+stopPatienter();
+}
+});
+
+}
+
+
+function calculReponsesFullText(mode){
+
+startPatienter();
+
+var text = $("#input_full_text").val();
+var ou = $("#input_full_text_ou").val();
+var diplome= $("#input_full_text_diplome").val();
+var elc=$("#elc").val();
+
+if (mode=='tous'){
+while (text.indexOf('"')!=-1)
+text = text.replace('"','');
+$("#input_full_text").val(text);
+}
+
+if (mode=='exacte'){
+while (text.indexOf('"')!=-1)
+text = text.replace('"','');
+text='"'+text+'"';
+$("#input_full_text").val(text);
+}
+
+$('#full_text').val(text);
+$('#full_text_ou').val(ou);
+$('#full_text_diplome').val(diplome);
+
+
+$.ajax({
+type: "POST",
+url: "/ajax",
+data: "action=calculReponsesFullText&text="+escape(text)+"&ou="+escape(ou)+"&diplome="+escape(diplome)+"&elc="+escape(elc),
+success: function(html){
+$('#nb_resultats').html(html);
+if ($('#form_recherche_avancee').length==0 ){
+$('#bloc_corps').html("");
+$('#form_rech').remove();
+}
+$('.ac_results').css('display','none');
+stopPatienter();
+goBlink();
+},
+error:  function(request,text){
+stopPatienter();
+ajaxError(request,text);
+}
+});
+
+}
+
+function calculReponses(){
+startPatienter();
+
+var ids_diplome = new Array();
+var ids_formacode = new Array();
+var ids_gd_domaine = new Array();
+var ids_niveau_sortie = new Array();
+var ids_bassin_emploi = new Array();
+var ids_mesures = new Array();
+var ids_dispo = new Array();
+var foad = false;
+var geo_calvados = false;
+var geo_manche = false;
+var geo_orne = false;
+var texte="";
+var type_form="";
+
+
+$(":input[name='niveau_sortie_id[]']").each(function(){
+ids_niveau_sortie.push($(this).val()); });
+$(":input[name='diplome_id[]']").each( function(){
+ids_diplome.push($(this).val()); });
+$(":input[name='formacodes_id[]']").each(function(){
+ids_formacode.push($(this).val()); });
+$(":input[name='gd_domaine_id[]']").each(function(){
+ids_gd_domaine.push($(this).val()); });
+$(":input[name='bassin_emploi_id[]']").each(function(){
+ids_bassin_emploi.push($(this).val()); });
+$(":input[name='mesures_id[]']").each(function(){
+ids_mesures.push($(this).val()); });
+$(":input[name='dispo_id[]']:checked").each(function(){
+ids_dispo.push($(this).val()); });
+
+
+if ( $(":input[name='geo_calvados']:checked").val() != null ) geo_calvados = true;
+if ( $(":input[name='geo_manche']:checked").val() != null ) geo_manche = true;
+if ( $(":input[name='geo_orne']:checked").val() != null ) geo_orne = true;
+texte =  $(":input[name='full_text']").val();
+type_form = $(":input[name='type_formation']:checked").val();
+foad =  $(":input[name='foad']:checked").val();
+
+$.ajax({
+type: "POST",
+url: "/ajax",
+data: 	"action=calculReponses"+
+"&full_text="+ escape(texte) +
+"&type_form="+ type_form +
+"&ids_diplome=" + ids_diplome +
+"&ids_formacode=" + ids_formacode +
+"&ids_gd_domaine=" + ids_gd_domaine +
+"&ids_niveau_sortie="+ids_niveau_sortie+
+"&foad="+foad+
+"&geo_calvados="+geo_calvados+
+"&geo_manche="+geo_manche+
+"&geo_orne="+geo_orne+
+"&ids_bassin_emploi="+ids_bassin_emploi+
+"&ids_mesures="+ids_mesures+
+"&ids_dispo="+ids_dispo,
+success: function(html){
+$('#nb_resultats').html(html);
+//razRechFullText();
+$('.ac_results').css('display','none');
+stopPatienter();
+goBlink();
+},
+error:  function(request,text){
+stopPatienter();
+ajaxError(request,text);
+}
+});
+
+
+}
+
+function goBlink(){
+
+blink('nb_resultats',4,400);
+
+}
+
+
+function ajaxError(request,text){
+alert("Erreur d'appel des données : "+text);
+}
+//FONCTION RENVOYANT UN OBJET AJAX
+function getXhr(){
+var xhr = null;
+if (window.XMLHttpRequest || window.ActiveXObject){
+if (window.ActiveXObject){
+try{
+xhr = new ActiveXObject("Msxml2.XMLHTTP");
+}
+catch(e){
+xhr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+}
+else {
+xhr = new XMLHttpRequest();
+}
+}
+else {
+alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+return null;
+}
+return xhr;
+}
+//FONCTION EFFECTUANT UNE REQUETE AJAX
+// la variable argument est de la forme "argument1=data1&argument2=data2 etc..."
+function requestAjax(filename,argument,method,callback) {
+var xhr = getXhr();
+if ( (!method=='GET')||(!method=='POST') ) 	alert('methode envoi de Ajax mal definie');
+if ( (method=='GET')&&(argument!=null) ) 		{
+filename=filename+'?'+argument;
+argument=null;
+}
+xhr.open(method, filename, true);
+xhr.onreadystatechange = function() {
+if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+callback(xhr);
+}
+};
+if (method=="POST"){
+xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded; charset=iso-8859-15");
+}
+xhr.send(argument);
+}
+//la variable map est définie en globale pour être utilisé dans d'autres fonctions
+var map=null;
+//FONCTION DE CHARGEMENT DE LA CARTE et des ses dimensions
+function chargerCarte(malargeur,malongueur) {
+var divmap=document.getElementById('map');
+
+//divmap.innerHTML='ID=MAP C ICI';
+
+divmap.style.width=malargeur;
+divmap.style.height=malongueur;
+divmap.style.display='block';
+
+//alert('chargement carte');
+
+if (GBrowserIsCompatible()) {
+//chargement de la carte
+map = new GMap2(divmap);
+map.addControl(new GSmallMapControl());
+map.addControl(new GMapTypeControl());
+map.setCenter(new GLatLng(49.05, -0.50), 8);
+}/**/
+}
+
+//cette variable est un tableau des éléménts "établissement" du document XML
+//on utilisera les index du tableau pour récupérer les informations concernant ce noeud XML (coordonnées, adresse, noms, etc..)
+var etabs=null;
+//identifiant de l'etablissement dont l'infobulle est affichée
+var idEtabselect=null;
+var idFormselect=null;
+//FONCTION d'AFFICHAGE DES MARKERS SUR LA CARTE SUITE A UNE REQUETE AJAX
+function  chargerDonnees(data){
+var xml=data.responseXML;
+//alert(data.responseText);
+etabs=xml.getElementsByTagName('etablissement');
+for (var i=0; i<LengthEtab();i++){
+AjoutMarker(i);
+}
+}
+//fonction renvoyant le nombre d'élément "etablissement" dans le flux Xml
+function LengthEtab(){
+return etabs.length;
+}
+//renvoit les nom et coordonnÃ©es d'un  Ã©tablissement à partir de leur numéro d'index
+function CoorEtabs(index){
+var retour='<div class="geoloc"><p class="geoloc">';
+
+try{		retour+= etabs[index].getElementsByTagName('etablissement_nom')[0].firstChild.nodeValue+'<br/>';
+}		catch(e){
+}
+try{		retour+= etabs[index].getElementsByTagName('adresse')[0].firstChild.nodeValue+'<br/>';
+}		catch(e){
+}
+try{		retour+= etabs[index].getElementsByTagName('CP')[0].firstChild.nodeValue+' ' ;
+}		catch(e){
+}
+try{		retour+= etabs[index].getElementsByTagName('commune')[0].firstChild.nodeValue;
+}	catch(e){
+}
+retour+='</p></div>';
+return retour;
+}
+//renvoit la liste des formations d'un Ã©tablissement ou bien null si pas de formations
+var formIDS=new Array();
+var trouve=false;
+function FormationsEtabs(index){
+var retour=null;
+var nbreformations=etabs[index].getElementsByTagName('formation').length;
+if ( nbreformations>0){
+retour='<div class="geoloc"><ul class="geoloc">';
+for (var y=0;y<nbreformations;y++){
+
+retour+='<li>'+etabs[index].getElementsByTagName('formation')[y].getElementsByTagName('lien_formation')[0].firstChild.nodeValue;
+try{
+retour+=' (du '+etabs[index].getElementsByTagName('formation')[y].getElementsByTagName('date_debut')[0].firstChild.nodeValue;
+retour+=' au '+etabs[index].getElementsByTagName('formation')[y].getElementsByTagName('date_fin')[0].firstChild.nodeValue+')';
+}catch (e){}
+retour+='</li>';
+//alert(etabs[index].getElementsByTagName('formation')[y].attributes[0].nodeValue);
+if (etabs[index].getAttribute('etablissement_type'))
+formIDS.push(etabs[index].getAttribute('etablissement_type')+etabs[index].getAttribute('etablissement_id'));
+}
+retour+='</ul></div>';
+}
+return retour;
+}
+//ajout de marker grÃ¢ce Ã  un noeud "Ã©tablissement" du flux Xml
+function AjoutMarker(index){
+//alert('ajout marker');
+//"géoloc" est le noeud xml "geoloc" du noeud "etablissement" dont l'index est passé en argument
+var geoloc=etabs[index].getElementsByTagName('geoloc')[0];
+
+
+//on récupère les coordonnées de l'établissement
+var point = new GLatLng(parseFloat(geoloc.getAttribute("lat")), parseFloat(geoloc.getAttribute("lng")), 9);
+//instanciation du marker
+var marker=new GMarker(point);
+//le marker est attaché à la carte
+map.addOverlay(marker);
+
+
+//variable pour la creation des onglets
+var onglets = new Array;
+onglets[0] = new GInfoWindowTab ('Lieu', CoorEtabs(index) );
+if (FormationsEtabs(index)) onglets[1] = new GInfoWindowTab ("Formation(s)", FormationsEtabs(index));
+var options = {   maxWidth : 400, selectedTab : 0 };
+
+//si les champs "formations" sont remplis on ajoute une info-bulle par onglet qui se declenche au click
+if (FormationsEtabs(index)){
+marker.bindInfoWindowTabsHtml(onglets,options);
+}
+//sinon on affiche une info bulle simple avec adresse uniquement
+else{
+marker.bindInfoWindowHtml( CoorEtabs(index) );
+}
+//si l'etablissement selectionné est celui-ci on ajoute une deuxieme info bulle qui s'ouvre dés le chargement,
+//elle possède les mêmes infos que la précédente
+var x=0;
+while (x<formIDS.length && trouve==false){
+if (formIDS[x]==idFormselect){
+idEtabselect=etabs[index].getAttribute("etablissement_id");
+trouve=true;
+}
+x++;
+}
+
+
+if (etabs[index].getAttribute("etablissement_id")==idEtabselect){
+//si les champs "formations" sont remplis on ajoute une info-bulle par onglet qui se declenche au click
+if (FormationsEtabs(index)){
+marker.openInfoWindowTabsHtml(onglets,options);
+}
+//sinon on affiche une info bulle simple avec adresse uniquement
+else{
+marker.openInfoWindowHtml( CoorEtabs(index) );
+}
+}
+
+//gestionnaire d'evenement
+//google.maps.Event.addListener(marker, "mouseover", function() {marker.openInfoWindowHtml('test')});
+//google.maps.Event.addListener(marker, "mouseout", function() {marker.bindInfoWindowHtml('test')});
+}
+
+
+function AfficherCarte(selectedID,type){
+
+
+//si cette variable n'est pas nulle, l'info-bulle correspondant à cet ID apparaitra automatiquement voir fonction AjoutMarker
+if (type=='ofs')idEtabselect=selectedID;
+if (type=='afm')idFormselect=selectedID;
+//affichage de la carte et de sa div
+document.getElementById('map').style.display='block';
+chargerCarte('700px', '500px');
+
+//requete Ajax qui sera traitée par  la fonction chargerDonnees()
+//les argument passé dans le Get de la requete Ajax, different selon qu'il s'agisse de formation continue ou apprentissage
+var args='type='+type;
+requestAjax('/ajax_carto',args,'GET',chargerDonnees);/**/
+//window.location.href="#map1";
+//document.location.href="#contmap";
+}
+
+</script><style type="text/css">html{ font-family: Verdana, sans-serif; } body { background: url(/img/background_all.gif); background-repeat: no-repeat; background-position: top center; background-color: #E5E5E5; font-size: 11px; margin: 0px; padding: 0px; width: 100%; } input { font-family: Verdana, sans-serif; font-size: 11px; } #bloc_centre{ width:869px; padding-bottom:10px; float:left; } #bloc_page { background-image:url(/img/pixel.gif); background-position:0px 950px; background-repeat:repeat-x; height:100%; margin-left:auto; margin-right:auto; width:1000px; } #bloc_corps { color:#47475F; padding-left: 65px; width:935px; height:100%; /*background-image: url(/img/background.gif); background-repeat: no-repeat;*/ margin-left:auto; margin-right:auto; } #bloc_bandeau { width:100%; } #bloc_recherche { color: #5F5F5F; font-family: "Verdana"; margin: 0px 0px 0px 45px; border:solid 1px grey; border-radius:0px 10px 10px 10px; width:865px; padding:20px; background-color:white; box-shadow: 10px 10px 12px -6px; } #quoi{ float:left; width:430px; } #ou{ float:left; width:430px; /*border-left:1px dashed grey;*/ } .box_shadow{ border:solid 1px grey; border-radius:10px; background-color:white; box-shadow: 10px 10px 12px -6px; padding:20px; } #criteres_rech_avancee{ border:solid 1px grey; border-radius:0px 10px 10px 10px; padding:20px; width:865px; background-color:white; box-shadow: 10px 10px 12px -6px; } #modes_recherche{ margin:50px 0px 0px 45px; } #modes_recherche.avancee{ margin:40px 0px 0px 0px; } #modes_recherche span a{ color: #97C324; font-family: "Verdana"; font-size: 14px; font-weight: bold; font-variant:small-caps; display: inline-block; padding:5px 10px; text-decoration:none; border:solid 1px grey; border-radius:10px 10px 0px 0px; margin-bottom:-1px; border-top:solid 4px #97C324; background-color:white; } #modes_recherche span.selected a{ border-bottom:solid 1px white; border-top:solid 4px #E43187; color: #E43187; } .menu_link{ padding-left:15px; background-image:url("/img/puce.gif"); background-repeat:no-repeat; background-position:0px 4px; } .boutons_rech{ text-align:center; margin-top:15px; font-weight:bold; } .boutons_rech a{ margin:0px 20px; } .bulle_aide{ /*position:absolute; top: 23px;*/ margin-left:47px; } .bulle_aide div{ height:25px; font-weight:normal; font-size:10px; color:grey; } .bulle_aide div a{ float: right; color:#E43187; } .quoi_ou{ background-color:#FFFBCF; width:300px; padding-left:3px; font-size:16px; /*border-top:solid 1px #848484; border-left:solid 1px #848484; border-bottom:solid 1px #FAFAFA; border-right:solid 1px #FAFAFA;*/ border-top:solid 1px #848484; border-right:solid 1px #848484; border-bottom:solid 1px #DFDFDF; border-left:solid 1px #DFDFDF; } #input_full_text_ou{ } #aide_result_rech_av{ margin-left: 730px; position: absolute; top: 252px; } #bloc_pied{ width:1000px; margin-left:auto; margin-right:auto; height:40px; clear:left; background-image: url(/img/pied.gif); background-repeat: repeat-x; } .button_recherche { /*border: none;*/ font-weight: bold; color: #FFFFFF; text-align: center; background-color: #E43187; cursor: pointer; } .button_button { /*border: none;*/ font-weight: bold; color: #FFFFFF; text-align: center; background-color: #97C324; cursor: pointer; border-radius:5px; } .liens_recherche { padding-top: 0px; padding-bottom: 0px; text-decoration: none; color : #5F5F5F; } .liens_depts { text-decoration: none; color : #5F5F5F; } a:hover { text-decoration: underline; color : #5F5F5F; } #titre_erreur { font-size: 15px; font-weight: bold; padding: 10px; } #message_erreur { font-size: 12px; font-style: italic; padding: 10px; color: red; } .erreur{ font-weight: bold; font-size: 12px; padding: 10px; color: red; padding:10px; } .noborder { margin: 0px; border: 0px; padding: 0px; border-collapse:collapse; } table .noborder { border-collapse: collapse; empty-cells: show; margin: 0px; border: 0px; padding: 0px; } a img { border: none; } h3 { color: #E43187; text-transform: uppercase; font-family: "Verdana"; font-weight: bold; font-size:14px; } .liste_resu_organisme th { color: #FFFFFF; background-color: #7FBF5F; } .liste_resu_organisme a { text-decoration: none; color : #6F6F6F; font-weight: bold; } .liste_resu_organisme a:hover { text-decoration: underline; color : #000000; } .pair { color: #6F6F6F; background: #FFFFFF; } .impair { color: #6F6F6F; background: #DBEFD1; } .ligne_module { color: #6F6F6F; background: #FED3E6; border-top: 1px solid #6F6F6F; } .ligne_action { color: #6F6F6F; background: #DBEFD1; border-top: 1px solid #6F6F6F; } .detail_organisme { border-color:-moz-use-text-color #811B4C; border-style:none solid solid; border-width:0 1px 1px; width:750px; font-family: "Verdana"; height:auto; padding:0 10px 3px; } .entete_detail_organisme{ color: #FFFFFF; border-top-color: #811B4C; background-color: #E43187; } .entete_top_detail_organisme { background-color: #E43187; border-top:1px solid #811B4C; color: #FFFFFF; float:left; height:9px; overflow-y:hidden; width:728px; } .entete_detail_organisme { background-color: #E43187; border-color:-moz-use-text-color #811B4C; border-style:none solid solid; border-width:0 1px 1px; clear:both; color:#FFFFFF; font-size:14px; font-weight:bold; height:auto; overflow-y:hidden; padding:0 10px 3px; width:750px; font-family: "Verdana"; } .coin_gauche { background-image: url(/img/coin_gauche.gif); background-repeat:no-repeat; float:left; height:10px; overflow-y:hidden; width:22px; } .coin_droite { background-image: url(/img/coin_droite.gif); background-repeat:no-repeat; float:left; height:10px; overflow-y:hidden; width:22px; } .raison_sociale { color:#000000; font-weight:bold; padding-top: 5px; padding-bottom: 5px; } .adresse { background-color: #FED3E6; border-style: none; clear:both; color:#000000; height:auto; /*float: left;*/ overflow-y:hidden; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; font-family: "Verdana"; } .contacts { background-color: #FFFFFF; border-style: solid; border-width:1px 1px 1px; clear:both; color:#000000; height:auto; /*float: right;*/ overflow-y:hidden; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; font-family: "Verdana"; } .affinage{ width:99%; border:solid 2px #97C324; text-align:center; margin-bottom:3px; padding-top:2px; padding-bottom:2px; } .affinage table{ margin-left:auto; margin-right:auto; } .affinage table td.verti_centre{ text-align:right; } .affine_listing{ width:175px; color:#A3A3A3; } .nb_rep_listing{ margin-right:10px; font-size:9px; color:red; width:70px; display:block; float:left; padding:4px 0 0 4px; position:absolute; } .tout_cocher{ background-color:#FFDC7F; } .ligne_listing_impair{ background-color:#FFEEBF; } .selected_value{ padding-left:25px; } .patienter { z-index: 300; position: fixed; width: 90px; height: 90px; top: 50%; left: 50%; margin-top: -45px; margin-left: -45px; /*border: solid 1px #444444; background-color: #777777;*/ text-align: center; /*padding-top: 25px;*/ display: none; } #nb_resultats { text-align:center; font-size:20px; margin:30px; height:25px; font-weight:normal; } #nb_resultats.moteur { padding-top:20px; } #nb_resultats a { text-decoration:none; margin:30px 30px 30px 10px; color: #97C324; } #nb_resultats a:hover { color:#5F5F5F; text-decoration:underline; } #nb_resultats a img{ margin-right:10px; } table.liste_resu_organisme { width:865px; border-collapse:collapse; /*border-bottom:solid 1px #5F5F5F;*/ } table.liste_resu_organisme th a { color:white; text-decoration:none; } table.liste_resu_organisme th a:hover { color:white; text-decoration:underline; } table.liste_resu_organisme td { /*height:17px;*/ border-left:solid 1px #5F5F5F; border-right:solid 1px #5F5F5F; padding-left:2px; } table.liste_resu_organisme th { height:17px; /*border-top:solid 1px #5F5F5F;*/ border-left:solid 1px #5F5F5F; border-right:solid 1px #5F5F5F; } .pagination{ width:865px; border:1px solid #6F6F6F; border-collapse: collapse; } .pagination a{ margin-left:3px; margin-right:3px; margin-top:0px; margin-bottom:0px; color:#5F5F5F; font-weight:bold; } .pagination .combo{ /*width:110px;	*/ } .pagination .legende{ /*width:540px;*/ border:1px solid #6F6F6F; } .pagination .legende table{ width:100%; margin-left: 10px; border-collapse: collapse; } .pagination .legende .texte_leg{ /*width:110px;*/ } .pagination .legende .icones{ width:10px; } .pagination .tdpagination{ text-align:center; width:120px; border:1px solid #6F6F6F; } .icones{ width:10px; } #pied_page{ margin-top :100px; margin-bottom:30px; text-align:center; color:#5f5f5f; font-size:9px; } .pagination a img{ margin-bottom:-3px; } img.cliquable { border: none; cursor: pointer; } .cliquable { cursor: pointer; } .recherche_gauche{ float:left; width:435px; } .recherche_droite{ float:left; width:435px; } .tabaffofs{ width:100%; } .ligne_session{ color:#5F5F5F; } .selectDep{ border: 1px solid green; color:green; padding: 2px; } .liste_lettre a.lettre_select{ color:orange; font-weight:bold; text-decoration:none; } .liste_lettre{ margin-left:65px; width:760px; margin-bottom:20px; } .liste_lettre a{ margin:7px; color:#5F5F5F; font-weight:bold; text-decoration:none; } .annuaire_ofs a{ color : #5F5F5F; } .annuaire_ofs a:hover{ color : orange; } .annuaire_ofs a:visited{ color : #9F7779; } .annuaire_ofs div{ margin-bottom:3px; color : #5F5F5F; } .entete{ height:190px; } .liens_entete{ border-collapse: collapse; border-spacing:0px; font-weight:bold; font-size:12px; } #liens_entete{ border-right: 5px solid #E43187; font-weight: bold; margin-left: 750px; padding: 5px; position: absolute; text-align: right; top: 120px; } .critere_recherche{ width:500px; margin-top:5px; margin-bottom:5px; } .groupe_critere { background-color:#FFFFEF; border:2px solid #BDEF86; margin:0 0 5px 0; padding:5px; width:850px; font-weight:normal; font-size:11px; border-radius:5px } .groupe_critere .critere_recherche{ width:820px; /*margin-top:10px; margin-bottom:0px;*/ } .groupe_critere .bi_critere .critere_recherche{ width:410px; /*margin-top:10px; margin-bottom:0px;*/ } .suppr_selected_value{ vertical-align:top; } #entete_impression{ display:none; } #bandeau_top{ width:1038px; border-collapse: collapse; position:fixed; top:0px; z-index:9999; } #bandeau_top td{ color:black; font-size:10px; font-weight:bold; text-align:right; border-bottom:solid 1px #646567; background-color:#FFD651; padding:0px; height:20px; } #bandeau_top td a{ color:black; } #bandeau_top .mascotte-tmf{ background:none; border:none; width:38px; padding:0px; } #bandeau_top .mascotte-tmf img{ margin-bottom:-30px; } #bandeau_top a{ text-decoration:none; color:#646567; font-weight:normal; } #bandeau_top a:hover{ text-decoration:none; color:darkRed; font-weight:normal; } .liens_bas a{ color:grey; text-decoration:underline; font-size:10px; } #sites_partenaires{ margin:0px auto 30px auto; } #sites_partenaires td{ padding:0px 40px; } #sites_partenaires img{ height:	30px; } #avertissement_bloquage{ display:none; } #in_avertissement_bloquage{ color:#AF0000; text-align:center; } .no-border{ border:none !important; } .no-background{ background:none !important; } .sess_impair{ background-color:#DFDFDF; } td.separator{ border-bottom:solid 1px #DFDFDF; height:0px; } #display_rub{ width:100%; } #arbo_rubriques{ width:220px; margin-right:10px; font-size:12px; } .lien_rub{ text-decoration:none; display:block; width:100%; color:#47475F; } .lien_rub:hover, .lien_rub:visited{ text-decoration:none; color:#47475F; } .selected_tr{ background-color:#FFE5AF; } .texte_description_rub{ font-size:13px; margin-bottom:5px; } .texte_lien_rub{ margin-bottom:5px; } .texte_tri_rub{ margin:15px 0; font-weight:bold; color:#E5378B; } .bloc_rub{ margin-top:10px; margin-bottom:10px; } .titre_rub{ font-size:18px; font-weight:bold; margin-bottom:10px; color:#97C324; } .nom_org{ font-weight:bold; } .rs_org{ font-style:italic; } .menussrub2{ font-weight:bold; } .menussrub3{ } .menusrub{ margin-top:7px; font-weight:bold; } #display_rub td{ vertical-align:top; } .select_level1 .lien_rub{ font-style:italic; font-weight:bold; color:#97C324; } .select_level2 { font-weight:bold; } .select_level2 .lien_rub{ font-weight:bold; color:#97C324; } .select_level3 .lien_rub{ font-style:italic; color:#97C324; } table.listing_values{ border-collapse: collapse; width:100%; } table.listing_values td{ border:1px solid #D6D6D6; padding:2px 4px; cursor:pointer; } .suppr_all_values{ position:absolute; padding:3px 0 0 5px; } .tooltips{ background-color:#BDEF86; border:1px solid grey; padding:5px; text-align:center; } .tooltips_warning{ background-color:#BDEF86; border:1px solid darkred; padding:5px; text-align:center; } .help{ cursor:help; border-bottom-style: dotted; border-bottom-width:1px; } #aide_result{ display:inline; } #aide_result a{ margin:0px; } .tabrech{ font-size:12px; font-weight:bold; } #cartes_elc{ width:250px; height:220px; vertical-align:top; } #map-bn{ z-index:100; } #label-elc ul, #label-elc ul li{ margin:0px; padding:0px; list-style: none; } #label-elc a{ margin-top:2px; cursor:pointer; display:inline-block; } #BN-ELC-bn{ margin-bottom:10px; } #BN-ELC-orne{ margin-bottom:10px; } #cartes_elc img{ border:none; } .img-ela{ display:none; position:absolute; border:none; } .area_map{ cursor:pointer; border:none; } .map-highlight{ font-weight:bold; border:solid 1px red; border-left:none; border-right:none; } #bouton_rechercher{ text-align:center; margin-top:50px; } #rechercher_xl{ color:white; backgroud-color:#E43187; padding:15px 24px; font-size:17px; border-radius:10px; margin-bottom:10px; } .blank_page{ margin: 210px 20px 20px 20px; text-align:center; } .blank_page .patienter_anim{ margin-bottom:40px; } .image-dossier{ float:left; margin:10px; border:solid 1px grey; } .dl-dossier{ background-color: #B4E875; border: 2px solid #97C324; border-radius: 3px 3px 3px 3px; color: #5B5B5B; display: block; font-size: 12px; font-weight: bold; margin: 30px auto; padding: 5px; text-align: center; text-decoration: none; width: 195px; } #contenu { width : 865px; } #ficheOFS { } #calendrier_sessions{ background-color:white; } #nom, #intitule, .intitule { background-position:left center; background-repeat:no-repeat; color:#E5378B; font-size:16px; font-weight:bold; padding:10px; text-align:center; } #numero { color:#E5378B; font-style:italic; padding:0 10px 10px; text-align:center; } .tabintitule { background-image: url(/img/bg_entete.gif); background-repeat: no-repeat; background-position:top left; background-color:#C18838; padding:0px; } .tabintitule .tabintituleright { background-image: url(/img/bg_entete-right.gif); background-repeat: no-repeat; background-position:top right; width:50px; } .bloc { background-color:#FFFFEF; border:2px solid #BDEF86; padding:10px; } .bloc ul{ margin-top:0px; margin-bottom:0px; } .bloc2 { border-left:2px solid #97C324; border-top:2px solid #97C324; } .bloccontenu { } .etablissement { background-color:#FFFFEF; border:1px solid #789D17; margin:10px; padding:10px; border-radius:3px; } .etabtitre { background-color:#FFEEBF; color:#E5378B; font-size:12px; font-weight:bold; padding:3px; } #raison { font-size : 12px; font-weight : bold; padding-bottom : 20px; } #adresse { background-color : #FFE4E3; border : 2px solid #E32623; padding : 10px; margin-bottom : 20px; } #contenu label{ float : left; margin-right : 3px; font-weight : bold; } #contenu p{ } #contenu hr{ margin-top : 15px; margin-bottom : 15px; } #contenu  strong{ } #organisation{ } #retour { background-image: url(/img/retour.gif); background-repeat: no-repeat; background-position:top left; padding-left:20px; margin-left:550px; } #retour a{ color:#5F5F5F; } .invisible { display:none; } .inline { display:inline; } .block { display:block; } #credits{ margin-top:20px; } h3.titre_bloc{ background-color:#BDEF86; background-image:url(/img/bg_entete.gif); background-position:left top; background-repeat:no-repeat; color:#005F0D; font-family:"Verdana"; font-size:12px; font-weight:bold; margin-bottom:0; padding:2px 2px 2px 20px; text-transform:uppercase; } a.inline{ text-decoration:none; margin-bottom:10px; display:block; } a.inline img{ margin-bottom:-4px; } .imprimer{ margin-bottom:15px; } #contenu a { color : #7F1F50; } .titre_fiche{ color:white; background-color:#E5378B; } .titre_fiche2{ color:#67686A; font-size:16px; /*background-color:#EC7B1D;*/ } .titre_fiche2_top{ border-top:3px solid #E5378B; } .titre_fiche2_left{ border-left:3px solid #E5378B; } .titre_fiche2_right{ border-right:3px solid #E5378B; } .titre_fiche2_bottom{ border-bottom:3px solid #E5378B; } #intitule table{ margin-left: auto; margin-right: auto; border-collapse: collapse; } #intitule2 table{ margin-left: auto; margin-right: auto; /*border-collapse: collapse;*/ } .bloc_plus{ /*display:none;*/ margin-top:3px; } .bloc_moins{ margin-top:3px; } #contenu a.bouton_plus_moins{ text-decoration:none; color:#E5378B; } a.bouton_plus_moins img{ margin-bottom:-4px; } .ficheME { margin:15px; } .th1 { background-color: #BDEF86; } .th2 { background-color: #FFEEBF; } #tab_frais{ margin-top:5px; margin-bottom:5px; margin-left:auto; margin-right:auto; border-collapse: collapse; } #tab_frais th, #tab_frais td{ border:1px solid #789D17; } #tab_frais .noborder{ border:none; } .pcpnc { width: 200px; text-align: center; } .intitule_duree { vertical-align: middle; width: 150px; text-align: right; padding-left: 10px; padding-right: 10px; height: 25px; } .maj_of{ font-style:italic; } .afficher_masquer { border:dashed 1px grey; padding:3px; border-radius:3px; } p.geoloc{ display:table; font-size:11px; margin:0px; padding:10px 0px 0px 0px; } ul.geoloc{ display:table; font-size:10px; margin-bottom:0px; margin-left:0px; padding:0px; list-style-position: inside; list-style-type: square; } div.geoloc{ overflow:auto; height:	150px; /*width:350px;*/ margin:0px; padding:0px; } #title{ font-size:14px; font-weight:bold; text-align:center; width:700px; padding:10px; text-transform: uppercase; } #map{ width:700px; height:500px; } body{ font-family:"Verdana"; color:#5F5F5F; } /* * jQuery UI CSS Framework * Copyright (c) 2010 AUTHORS.txt (http: * Dual licensed under the MIT (MIT-LICENSE.txt) and GPL (GPL-LICENSE.txt) licenses. */ /* Layout helpers ----------------------------------*/ .ui-helper-hidden { display: none; } .ui-helper-hidden-accessible { position: absolute; left: -99999999px; } .ui-helper-reset { margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; } .ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } .ui-helper-clearfix { display: inline-block; } /* required comment for clearfix to work in Opera \*/ * html .ui-helper-clearfix { height: 1%; } .ui-helper-clearfix { display: block; } /* end clearfix */ .ui-helper-zfix { width: 100%; height: 100%; top: 0; left: 0; position: absolute; opacity: 0; filter: Alpha(Opacity = 0); } /* Interaction Cues ----------------------------------*/ .ui-state-disabled { cursor: default !important; } /* Icons ----------------------------------*/ /* states and images */ .ui-icon { display: block; text-indent: -99999px; overflow: hidden; background-repeat: no-repeat; } /* Misc visuals ----------------------------------*/ /* Overlays */ .ui-widget-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } /* * jQuery UI CSS Framework * Copyright (c) 2010 AUTHORS.txt (http: * Dual licensed under the MIT (MIT-LICENSE.txt) and GPL (GPL-LICENSE.txt) licenses. * To view and modify this theme, visit http: */ /* Component containers ----------------------------------*/ .ui-widget { font-family: Verdana, Arial, sans-serif /*{ffDefault}*/; font-size: 11px; /*{fsDefault}*/; } .ui-widget .ui-widget { font-size: 1em; } .ui-widget input,.ui-widget select,.ui-widget textarea,.ui-widget button { font-family: Verdana, Arial, sans-serif /*{ffDefault}*/; font-size: 11px; } .ui-widget-content { border: 1px solid #aaaaaa /*{borderColorContent}*/; background: #ffffff /*{bgColorContent}*/ url(/style/images/ui-bg_flat_75_ffffff_40x100.png) /*{bgImgUrlContent}*/ 50% /*{bgContentXPos}*/   50% /*{bgContentYPos}*/   repeat-x /*{bgContentRepeat}*/; color: #222222 /*{fcContent}*/; } .ui-widget-content a { color: #222222 /*{fcContent}*/; } .ui-widget-header { border: 1px solid #aaaaaa /*{borderColorHeader}*/; background: #cccccc /*{bgColorHeader}*/ url(/style/images/ui-bg_highlight-soft_75_cccccc_1x100.png) /*{bgImgUrlHeader}*/   50% /*{bgHeaderXPos}*/   50% /*{bgHeaderYPos}*/ repeat-x /*{bgHeaderRepeat}*/; color: #222222 /*{fcHeader}*/; font-weight: bold; font-size:12px; } .ui-widget-header a { color: #222222 /*{fcHeader}*/; } /* Interaction states ----------------------------------*/ .ui-state-default,.ui-widget-content .ui-state-default { border: 1px solid #d3d3d3 /*{borderColorDefault}*/; background: #e6e6e6 /*{bgColorDefault}*/ url(/style/images/ui-bg_glass_75_e6e6e6_1x400.png) /*{bgImgUrlDefault}*/ 50% /*{bgDefaultXPos}*/   50% /*{bgDefaultYPos}*/   repeat-x /*{bgDefaultRepeat}*/; font-weight: normal /*{fwDefault}*/; color: #555555 /*{fcDefault}*/; } .ui-state-default a,.ui-state-default a:link,.ui-state-default a:visited { color: #555555 /*{fcDefault}*/; text-decoration: none; } .ui-state-hover,.ui-widget-content .ui-state-hover,.ui-state-focus,.ui-widget-content .ui-state-focus { border: 1px solid #999999 /*{borderColorHover}*/; background: #dadada /*{bgColorHover}*/ url(/style/images/ui-bg_glass_75_dadada_1x400.png) /*{bgImgUrlHover}*/   50% /*{bgHoverXPos}*/   50% /*{bgHoverYPos}*/   repeat-x /*{bgHoverRepeat}*/; font-weight: normal /*{fwDefault}*/; color: #212121 /*{fcHover}*/; } .ui-state-hover a,.ui-state-hover a:hover { color: #212121 /*{fcHover}*/; text-decoration: none; } .ui-state-active,.ui-widget-content .ui-state-active { border: 1px solid #aaaaaa /*{borderColorActive}*/; background: #ffffff /*{bgColorActive}*/ url(/style/images/ui-bg_glass_65_ffffff_1x400.png) /*{bgImgUrlActive}*/   50% /*{bgActiveXPos}*/   50% /*{bgActiveYPos}*/   repeat-x /*{bgActiveRepeat}*/; font-weight: normal /*{fwDefault}*/; color: #212121 /*{fcActive}*/; } .ui-state-active a,.ui-state-active a:link,.ui-state-active a:visited { color: #212121 /*{fcActive}*/; text-decoration: none; } .ui-widget :active { outline: none; } /* Interaction Cues ----------------------------------*/ .ui-state-highlight,.ui-widget-content .ui-state-highlight { border: 1px solid #fcefa1 /*{borderColorHighlight}*/; background: #fbf9ee /*{bgColorHighlight}*/ url(/style/images/ui-bg_glass_55_fbf9ee_1x400.png) /*{bgImgUrlHighlight}*/ 50% /*{bgHighlightXPos}*/   50% /*{bgHighlightYPos}*/   repeat-x /*{bgHighlightRepeat}*/; color: #363636 /*{fcHighlight}*/; } .ui-state-highlight a,.ui-widget-content .ui-state-highlight a { color: #363636 /*{fcHighlight}*/; } .ui-state-error,.ui-widget-content .ui-state-error { border: 1px solid #cd0a0a /*{borderColorError}*/; background: #fef1ec /*{bgColorError}*/ url(/style/images/ui-bg_glass_95_fef1ec_1x400.png) /*{bgImgUrlError}*/   50% /*{bgErrorXPos}*/   50% /*{bgErrorYPos}*/   repeat-x /*{bgErrorRepeat}*/; color: #cd0a0a /*{fcError}*/; } .ui-state-error a,.ui-widget-content .ui-state-error a { color: #cd0a0a /*{fcError}*/; } .ui-state-error-text,.ui-widget-content .ui-state-error-text { color: #cd0a0a /*{fcError}*/; } .ui-priority-primary,.ui-widget-content .ui-priority-primary { font-weight: bold; } .ui-priority-secondary,.ui-widget-content .ui-priority-secondary { opacity: .7; filter: Alpha(Opacity = 70); font-weight: normal; } .ui-state-disabled,.ui-widget-content .ui-state-disabled { opacity: .35; filter: Alpha(Opacity = 35); background-image: none; } /* Icons ----------------------------------*/ /* states and images */ .ui-icon { width: 16px; height: 16px; background-image: url(/style/images/ui-icons_222222_256x240.png) /*{iconsContent}*/; } .ui-widget-content .ui-icon { background-image: url(/style/images/ui-icons_222222_256x240.png) /*{iconsContent}*/; } .ui-widget-header .ui-icon { background-image: url(/style/images/ui-icons_222222_256x240.png) /*{iconsHeader}*/; } .ui-state-default .ui-icon { background-image: url(/style/images/ui-icons_888888_256x240.png) /*{iconsDefault}*/; } .ui-state-hover .ui-icon,.ui-state-focus .ui-icon { background-image: url(/style/images/ui-icons_454545_256x240.png) /*{iconsHover}*/; } .ui-state-active .ui-icon { background-image: url(/style/images/ui-icons_454545_256x240.png) /*{iconsActive}*/; } .ui-state-highlight .ui-icon { background-image: url(/style/images/ui-icons_2e83ff_256x240.png) /*{iconsHighlight}*/; } .ui-state-error .ui-icon,.ui-state-error-text .ui-icon { background-image: url(/style/images/ui-icons_cd0a0a_256x240.png) /*{iconsError}*/; } /* positioning */ .ui-icon-carat-1-n { background-position: 0 0; } .ui-icon-carat-1-ne { background-position: -16px 0; } .ui-icon-carat-1-e { background-position: -32px 0; } .ui-icon-carat-1-se { background-position: -48px 0; } .ui-icon-carat-1-s { background-position: -64px 0; } .ui-icon-carat-1-sw { background-position: -80px 0; } .ui-icon-carat-1-w { background-position: -96px 0; } .ui-icon-carat-1-nw { background-position: -112px 0; } .ui-icon-carat-2-n-s { background-position: -128px 0; } .ui-icon-carat-2-e-w { background-position: -144px 0; } .ui-icon-triangle-1-n { background-position: 0 -16px; } .ui-icon-triangle-1-ne { background-position: -16px -16px; } .ui-icon-triangle-1-e { background-position: -32px -16px; } .ui-icon-triangle-1-se { background-position: -48px -16px; } .ui-icon-triangle-1-s { background-position: -64px -16px; } .ui-icon-triangle-1-sw { background-position: -80px -16px; } .ui-icon-triangle-1-w { background-position: -96px -16px; } .ui-icon-triangle-1-nw { background-position: -112px -16px; } .ui-icon-triangle-2-n-s { background-position: -128px -16px; } .ui-icon-triangle-2-e-w { background-position: -144px -16px; } .ui-icon-arrow-1-n { background-position: 0 -32px; } .ui-icon-arrow-1-ne { background-position: -16px -32px; } .ui-icon-arrow-1-e { background-position: -32px -32px; } .ui-icon-arrow-1-se { background-position: -48px -32px; } .ui-icon-arrow-1-s { background-position: -64px -32px; } .ui-icon-arrow-1-sw { background-position: -80px -32px; } .ui-icon-arrow-1-w { background-position: -96px -32px; } .ui-icon-arrow-1-nw { background-position: -112px -32px; } .ui-icon-arrow-2-n-s { background-position: -128px -32px; } .ui-icon-arrow-2-ne-sw { background-position: -144px -32px; } .ui-icon-arrow-2-e-w { background-position: -160px -32px; } .ui-icon-arrow-2-se-nw { background-position: -176px -32px; } .ui-icon-arrowstop-1-n { background-position: -192px -32px; } .ui-icon-arrowstop-1-e { background-position: -208px -32px; } .ui-icon-arrowstop-1-s { background-position: -224px -32px; } .ui-icon-arrowstop-1-w { background-position: -240px -32px; } .ui-icon-arrowthick-1-n { background-position: 0 -48px; } .ui-icon-arrowthick-1-ne { background-position: -16px -48px; } .ui-icon-arrowthick-1-e { background-position: -32px -48px; } .ui-icon-arrowthick-1-se { background-position: -48px -48px; } .ui-icon-arrowthick-1-s { background-position: -64px -48px; } .ui-icon-arrowthick-1-sw { background-position: -80px -48px; } .ui-icon-arrowthick-1-w { background-position: -96px -48px; } .ui-icon-arrowthick-1-nw { background-position: -112px -48px; } .ui-icon-arrowthick-2-n-s { background-position: -128px -48px; } .ui-icon-arrowthick-2-ne-sw { background-position: -144px -48px; } .ui-icon-arrowthick-2-e-w { background-position: -160px -48px; } .ui-icon-arrowthick-2-se-nw { background-position: -176px -48px; } .ui-icon-arrowthickstop-1-n { background-position: -192px -48px; } .ui-icon-arrowthickstop-1-e { background-position: -208px -48px; } .ui-icon-arrowthickstop-1-s { background-position: -224px -48px; } .ui-icon-arrowthickstop-1-w { background-position: -240px -48px; } .ui-icon-arrowreturnthick-1-w { background-position: 0 -64px; } .ui-icon-arrowreturnthick-1-n { background-position: -16px -64px; } .ui-icon-arrowreturnthick-1-e { background-position: -32px -64px; } .ui-icon-arrowreturnthick-1-s { background-position: -48px -64px; } .ui-icon-arrowreturn-1-w { background-position: -64px -64px; } .ui-icon-arrowreturn-1-n { background-position: -80px -64px; } .ui-icon-arrowreturn-1-e { background-position: -96px -64px; } .ui-icon-arrowreturn-1-s { background-position: -112px -64px; } .ui-icon-arrowrefresh-1-w { background-position: -128px -64px; } .ui-icon-arrowrefresh-1-n { background-position: -144px -64px; } .ui-icon-arrowrefresh-1-e { background-position: -160px -64px; } .ui-icon-arrowrefresh-1-s { background-position: -176px -64px; } .ui-icon-arrow-4 { background-position: 0 -80px; } .ui-icon-arrow-4-diag { background-position: -16px -80px; } .ui-icon-extlink { background-position: -32px -80px; } .ui-icon-newwin { background-position: -48px -80px; } .ui-icon-refresh { background-position: -64px -80px; } .ui-icon-shuffle { background-position: -80px -80px; } .ui-icon-transfer-e-w { background-position: -96px -80px; } .ui-icon-transferthick-e-w { background-position: -112px -80px; } .ui-icon-folder-collapsed { background-position: 0 -96px; } .ui-icon-folder-open { background-position: -16px -96px; } .ui-icon-document { background-position: -32px -96px; } .ui-icon-document-b { background-position: -48px -96px; } .ui-icon-note { background-position: -64px -96px; } .ui-icon-mail-closed { background-position: -80px -96px; } .ui-icon-mail-open { background-position: -96px -96px; } .ui-icon-suitcase { background-position: -112px -96px; } .ui-icon-comment { background-position: -128px -96px; } .ui-icon-person { background-position: -144px -96px; } .ui-icon-print { background-position: -160px -96px; } .ui-icon-trash { background-position: -176px -96px; } .ui-icon-locked { background-position: -192px -96px; } .ui-icon-unlocked { background-position: -208px -96px; } .ui-icon-bookmark { background-position: -224px -96px; } .ui-icon-tag { background-position: -240px -96px; } .ui-icon-home { background-position: 0 -112px; } .ui-icon-flag { background-position: -16px -112px; } .ui-icon-calendar { background-position: -32px -112px; } .ui-icon-cart { background-position: -48px -112px; } .ui-icon-pencil { background-position: -64px -112px; } .ui-icon-clock { background-position: -80px -112px; } .ui-icon-disk { background-position: -96px -112px; } .ui-icon-calculator { background-position: -112px -112px; } .ui-icon-zoomin { background-position: -128px -112px; } .ui-icon-zoomout { background-position: -144px -112px; } .ui-icon-search { background-position: -160px -112px; } .ui-icon-wrench { background-position: -176px -112px; } .ui-icon-gear { background-position: -192px -112px; } .ui-icon-heart { background-position: -208px -112px; } .ui-icon-star { background-position: -224px -112px; } .ui-icon-link { background-position: -240px -112px; } .ui-icon-cancel { background-position: 0 -128px; } .ui-icon-plus { background-position: -16px -128px; } .ui-icon-plusthick { background-position: -32px -128px; } .ui-icon-minus { background-position: -48px -128px; } .ui-icon-minusthick { background-position: -64px -128px; } .ui-icon-close { background-position: -80px -128px; } .ui-icon-closethick { background-position: -96px -128px; } .ui-icon-key { background-position: -112px -128px; } .ui-icon-lightbulb { background-position: -128px -128px; } .ui-icon-scissors { background-position: -144px -128px; } .ui-icon-clipboard { background-position: -160px -128px; } .ui-icon-copy { background-position: -176px -128px; } .ui-icon-contact { background-position: -192px -128px; } .ui-icon-image { background-position: -208px -128px; } .ui-icon-video { background-position: -224px -128px; } .ui-icon-script { background-position: -240px -128px; } .ui-icon-alert { background-position: 0 -144px; } .ui-icon-info { background-position: -16px -144px; } .ui-icon-notice { background-position: -32px -144px; } .ui-icon-help { background-position: -48px -144px; } .ui-icon-check { background-position: -64px -144px; } .ui-icon-bullet { background-position: -80px -144px; } .ui-icon-radio-off { background-position: -96px -144px; } .ui-icon-radio-on { background-position: -112px -144px; } .ui-icon-pin-w { background-position: -128px -144px; } .ui-icon-pin-s { background-position: -144px -144px; } .ui-icon-play { background-position: 0 -160px; } .ui-icon-pause { background-position: -16px -160px; } .ui-icon-seek-next { background-position: -32px -160px; } .ui-icon-seek-prev { background-position: -48px -160px; } .ui-icon-seek-end { background-position: -64px -160px; } .ui-icon-seek-start { background-position: -80px -160px; } /* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */ .ui-icon-seek-first { background-position: -80px -160px; } .ui-icon-stop { background-position: -96px -160px; } .ui-icon-eject { background-position: -112px -160px; } .ui-icon-volume-off { background-position: -128px -160px; } .ui-icon-volume-on { background-position: -144px -160px; } .ui-icon-power { background-position: 0 -176px; } .ui-icon-signal-diag { background-position: -16px -176px; } .ui-icon-signal { background-position: -32px -176px; } .ui-icon-battery-0 { background-position: -48px -176px; } .ui-icon-battery-1 { background-position: -64px -176px; } .ui-icon-battery-2 { background-position: -80px -176px; } .ui-icon-battery-3 { background-position: -96px -176px; } .ui-icon-circle-plus { background-position: 0 -192px; } .ui-icon-circle-minus { background-position: -16px -192px; } .ui-icon-circle-close { background-position: -32px -192px; } .ui-icon-circle-triangle-e { background-position: -48px -192px; } .ui-icon-circle-triangle-s { background-position: -64px -192px; } .ui-icon-circle-triangle-w { background-position: -80px -192px; } .ui-icon-circle-triangle-n { background-position: -96px -192px; } .ui-icon-circle-arrow-e { background-position: -112px -192px; } .ui-icon-circle-arrow-s { background-position: -128px -192px; } .ui-icon-circle-arrow-w { background-position: -144px -192px; } .ui-icon-circle-arrow-n { background-position: -160px -192px; } .ui-icon-circle-zoomin { background-position: -176px -192px; } .ui-icon-circle-zoomout { background-position: -192px -192px; } .ui-icon-circle-check { background-position: -208px -192px; } .ui-icon-circlesmall-plus { background-position: 0 -208px; } .ui-icon-circlesmall-minus { background-position: -16px -208px; } .ui-icon-circlesmall-close { background-position: -32px -208px; } .ui-icon-squaresmall-plus { background-position: -48px -208px; } .ui-icon-squaresmall-minus { background-position: -64px -208px; } .ui-icon-squaresmall-close { background-position: -80px -208px; } .ui-icon-grip-dotted-vertical { background-position: 0 -224px; } .ui-icon-grip-dotted-horizontal { background-position: -16px -224px; } .ui-icon-grip-solid-vertical { background-position: -32px -224px; } .ui-icon-grip-solid-horizontal { background-position: -48px -224px; } .ui-icon-gripsmall-diagonal-se { background-position: -64px -224px; } .ui-icon-grip-diagonal-se { background-position: -80px -224px; } /* Misc visuals ----------------------------------*/ /* Corner radius */ .ui-corner-tl { -moz-border-radius-topleft: 4px /*{cornerRadius}*/; -webkit-border-top-left-radius: 4px /*{cornerRadius}*/; border-top-left-radius: 4px /*{cornerRadius}*/; } .ui-corner-tr { -moz-border-radius-topright: 4px /*{cornerRadius}*/; -webkit-border-top-right-radius: 4px /*{cornerRadius}*/; border-top-right-radius: 4px /*{cornerRadius}*/; } .ui-corner-bl { -moz-border-radius-bottomleft: 4px /*{cornerRadius}*/; -webkit-border-bottom-left-radius: 4px /*{cornerRadius}*/; border-bottom-left-radius: 4px /*{cornerRadius}*/; } .ui-corner-br { -moz-border-radius-bottomright: 4px /*{cornerRadius}*/; -webkit-border-bottom-right-radius: 4px /*{cornerRadius}*/; border-bottom-right-radius: 4px /*{cornerRadius}*/; } .ui-corner-top { -moz-border-radius-topleft: 4px /*{cornerRadius}*/; -webkit-border-top-left-radius: 4px /*{cornerRadius}*/; border-top-left-radius: 4px /*{cornerRadius}*/; -moz-border-radius-topright: 4px /*{cornerRadius}*/; -webkit-border-top-right-radius: 4px /*{cornerRadius}*/; border-top-right-radius: 4px /*{cornerRadius}*/; } .ui-corner-bottom { -moz-border-radius-bottomleft: 4px /*{cornerRadius}*/; -webkit-border-bottom-left-radius: 4px /*{cornerRadius}*/; border-bottom-left-radius: 4px /*{cornerRadius}*/; -moz-border-radius-bottomright: 4px /*{cornerRadius}*/; -webkit-border-bottom-right-radius: 4px /*{cornerRadius}*/; border-bottom-right-radius: 4px /*{cornerRadius}*/; } .ui-corner-right { -moz-border-radius-topright: 4px /*{cornerRadius}*/; -webkit-border-top-right-radius: 4px /*{cornerRadius}*/; border-top-right-radius: 4px /*{cornerRadius}*/; -moz-border-radius-bottomright: 4px /*{cornerRadius}*/; -webkit-border-bottom-right-radius: 4px /*{cornerRadius}*/; border-bottom-right-radius: 4px /*{cornerRadius}*/; } .ui-corner-left { -moz-border-radius-topleft: 4px /*{cornerRadius}*/; -webkit-border-top-left-radius: 4px /*{cornerRadius}*/; border-top-left-radius: 4px /*{cornerRadius}*/; -moz-border-radius-bottomleft: 4px /*{cornerRadius}*/; -webkit-border-bottom-left-radius: 4px /*{cornerRadius}*/; border-bottom-left-radius: 4px /*{cornerRadius}*/; } .ui-corner-all { -moz-border-radius: 4px /*{cornerRadius}*/; -webkit-border-radius: 4px /*{cornerRadius}*/; border-radius: 4px /*{cornerRadius}*/; } /* Overlays */ .ui-widget-overlay { background: #aaaaaa /*{bgColorOverlay}*/ url(/style/images/ui-bg_flat_0_aaaaaa_40x100.png) /*{bgImgUrlOverlay}*/   50% /*{bgOverlayXPos}*/   50% /*{bgOverlayYPos}*/   repeat-x /*{bgOverlayRepeat}*/; opacity: .3; filter: Alpha(Opacity = 30) /*{opacityOverlay}*/; } .ui-widget-shadow { margin: -8px /*{offsetTopShadow}*/   0 0 -8px /*{offsetLeftShadow}*/; padding: 8px /*{thicknessShadow}*/; background: #aaaaaa /*{bgColorShadow}*/ url(/style/images/ui-bg_flat_0_aaaaaa_40x100.png) /*{bgImgUrlShadow}*/   50% /*{bgShadowXPos}*/   50% /*{bgShadowYPos}*/   repeat-x /*{bgShadowRepeat}*/; opacity: .3; filter: Alpha(Opacity = 30) /*{opacityShadow}*/; -moz-border-radius: 8px /*{cornerRadiusShadow}*/; -webkit-border-radius: 8px /*{cornerRadiusShadow}*/; border-radius: 8px /*{cornerRadiusShadow}*/; } .ac_results { padding: 0px; border: 1px solid black; background-color: white; overflow: hidden; z-index: 99999; } .ac_results strong { color:#E43187; } .ac_results ul { width: 100%; list-style-position: outside; list-style: none; padding: 0; margin: 0; } .ac_results li { margin: 0px; padding: 2px 5px; cursor: default; display: block; /* if width will be 100% horizontal scrollbar will apear when scroll mode will be used */ /*width: 100%;*/ font: menu; font-size: 16px; /* it is very important, if line-height not setted or setted in relative units scroll will be broken in firefox */ line-height: 16px; overflow: hidden; } .ac_loading { background: white url('/style/images/indicator.gif') right center no-repeat; } .ac_odd { background-color: #eee; } .ac_over { background-color: #FFCC5F; /*color: white;*/ } /* Dialog ----------------------------------*/ .ui-dialog { position: absolute; padding: .2em; width: 300px; overflow: hidden; border-top: solid 2px #CFCFCF; border-left: solid 2px #CFCFCF; border-right: solid 2px #8F8F8F; border-bottom: solid 2px #8F8F8F; } .ui-dialog .ui-dialog-titlebar { position: relative; height:15px; padding:3px 0 6px 10px; background-image: url("/img/bg_titre_dialog.gif"); background-position: top; } .ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .2em 0; } .ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; } .ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; } .ui-dialog .ui-dialog-titlebar-close:hover,.ui-dialog .ui-dialog-titlebar-close:focus { padding: 0; } .ui-dialog .ui-dialog-content { position: relative; border: 0; margin: 2px 1px 1px 1px; background: none; overflow: auto; border:solid 1px #D2D2D2; zoom: 1; } .ui-dialog .ui-dialog-buttonpane { text-align: left; border-width: 1px 0 0 0; background-image: none; margin: 2px 0 0 0; padding: 0 5px 0 0; background-color:#FFFFEF; } .ui-dialog .ui-dialog-buttonpane button { float: right; margin:0.5em 0.4em 0.5em 10px; cursor: pointer; padding:2px 5px; line-height: 1.4em; width: auto; overflow: visible; background-image: url("/img/bg_titre_dialog.gif"); background-position: top; } .ui-dialog .ui-resizable-se { width: 14px; height: 14px; right: 3px; bottom: 3px; } .ui-draggable .ui-dialog-titlebar { cursor: move; } </style>
+<!--
+<script type="text/javascript" language="javascript" src="/js/jscript.js"></script>
+
+<script type="text/javascript" language="javascript" src="/js/jqajax.js"></script>
+<script type="text/javascript" language="javascript" src="/js/carto.js" ></script>
+
+<link rel="stylesheet" type="text/css" href="/style/general.css"/>
+<link rel="stylesheet" type="text/css" href="/style/detail_fiche.css"/>
+
+<link rel="stylesheet" type="text/css" href="/style/carto.css"/>
+<link rel="stylesheet" type="text/css" href="/style/jquery.css"/>
+
+--><link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" media="print" href="/style/print_result.css">
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" media="print" href="/style/print_ie6.css"/>
+<![endif]--><!--[if IE]>
+<style type="text/css">
+.autocomplete_update {
+	position:absolute;
+	overflow:visible;
+	z-index:100;
+	border:none;
+	background-color:none;
+	width:370px;
+}
+.autocomplete_update ul  {
+	list-style-type: none;
+	margin:2px;
+	padding:0px;
+	text-align: left;
+	overflow:visible;
+	border:1px solid #bbcc00;
+	background-color:#FFFFCC;
+	
+}
+</style>
+<![endif]--><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26269009-1']);
+  _gaq.push(['_setDomainName', 'trouvermaformation.fr']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><title>TrouverMaFormation - Fiche détaillée</title>
+</head>
+<body>
+<div id="bloc_page">
+
+
+<!-- Bandeau trouvermaformation + champ de recherche-->
+
+
+
+
+<div class="entete">
+
+
+<div id="entete_impression">
+<img src="/img/bg_print.gif">
+</div>
+	
+	
+<table id="bandeau_top" class="no_print">
+<tr>
+<td style="text-align:left;">
+</td>
+<td>
+
+<a href="http://saisirmaformation.errefom.fr" target="_blank">Vous êtes organisme de formation déclaré en Basse-Normandie ? Cliquez ici pour communiquer votre offre de formation.</a>
+</td>
+
+<td class="mascotte-tmf">
+<a href="http://saisirmaformation.errefom.fr" target="_blank"><img src="/img/mascotte-smf.gif"></a>
+</td>
+
+</tr>
+<tr>
+<td class="no-border no-background"></td>
+<td class="no-border no-background"><img src="/img/pose-mascotte2.gif" style="margin-top:-5px"></td>
+<td class="no-border no-background"></td>
+</tr>
+</table>
+<!-- <div style="position: relative; font-size: 18px; color: red; top: 60px; left: 270px; font-weight: bold;margin-bottom:-20px;border:solid 2px;width:650px;text-align:center;">Plateforme de test, lancement officiel du site le 2 octobre</div>--><a href="/" title="Retour à la page d'accueil - Nouvelle recherche" class="enable_tool_tips" style="position: relative; top: 105px; left: 65px; margin-bottom: -40px; width: 500px; height: 35px;display:block;"></a>
+	
+	<div id="liens_entete" class="liens_entete">
+		<img src="/img/puce.gif"><a class="liens_recherche" href="/">Moteur de recherche</a><br><img src="/img/puce.gif"><a class="liens_recherche" href="/recherche_avancee.jsp">Recherche avancée</a><br><img src="/img/puce.gif"><a class="liens_recherche" href="/annuaire.jsp">Annuaire des organismes</a><br><img src="/img/puce.gif"><a class="liens_recherche" href="/infos.jsp?rm=102">Adresses utiles</a><br>
+</div>
+	
+	
+	<form action="/TraitementRecherche" method="post" name="form_action" id="form_action">
+		<input type="hidden" name="action_submit" value="recherche_simple"><input type="hidden" name="type">
+</form>
+	
+</div>
+
+
+
+
+
+
+<div id="bloc_corps">
+
+<table style="width: 865px;" class="imprimer"><tbody><tr>
+<td style="width: 50%;">
+			 
+		</td>
+		<td style="text-align: right;">
+			
+			  
+			</td>
+			
+					
+			<td style="width:20px;">
+			<img class="cliquable enable_tool_tips" title="Imprimer la fiche" onclick="window.print();" src="/img/print.gif">
+</td>
+			
+		
+	</tr></tbody></table>
+<div id="contenu">
+
+
+			
+
+
+
+
+
+
+<div id="ficheAF">
+		
+	<div id="intitule">
+<table cellpadding="0">
+<tr>
+<td style="vertical-align: top;"><img src="/img/titre_gauche_haut.gif"></td>
+<td class="titre_fiche"></td>
+<td style="vertical-align: top;"><img src="/img/titre_droite_haut.gif"></td>
+</tr>
+<tr>
+<td class="titre_fiche"></td>
+<td class="titre_fiche">
+TITRE PROFESSIONNEL ASSISTANT(E) DE VIE AUX FAMILLES PAR LA VAE</td>
+<td class="titre_fiche"></td>
+</tr>
+<tr>
+<td style="vertical-align: bottom;"><img src="/img/titre_gauche_bas.gif"></td>
+<td class="titre_fiche"></td>
+<td style="vertical-align: bottom;"><img src="/img/titre_droite_bas.gif"></td>
+</tr>
+</table>
+</div>		
+	
+	<div id="numero">
+		<strong>Numéro de la formation : </strong>A802994
+	</div>
+			
+	
+	
+		
+		<h3 class="titre_bloc">Objectifs pédagogiques :</h3>
+		<div class="bloc">
+			Valider les 3 CCP du titre : <br>
+- Assister les personnes dans la  réalisation des actes de leur vie quotidienne <br>
+- Assurer la garde active des enfants et des bébés à (leur) domicile<br>
+- Assister les personnes dans la réalisation de leurs tâches domestiques  <br>
+</div>
+	
+	
+	
+		
+		<h3 class="titre_bloc">Métiers préparés ou emplois visés :</h3>
+		<div class="bloc">
+			Assistante de Vie aux Familles
+		</div>
+		
+	
+		
+		<h3 class="titre_bloc">Contenu de la formation :</h3>
+		<div class="bloc">
+			<a href="javascript:void(0);" class="bouton_plus_moins" onclick="showHidePlusMoins('3874998025404899','9572247867365069',this);"><img src="img/zoomplus.gif" border="0" alt="zoom+"> Lire la suite...</a><div class="bloc_moins" style="display:block;" id="3874998025404899">Phase préliminaire :<br>
+- Présentation de la démarche VAE et constitution du dossier individuel<br><br>
+Phase d'investigation : <br>
+- Présentation du DSPP<br>
+- Recensement des caractéristiques personnelles, des aptitudes acquises, des comportements professionnels, des ambitions...<br>
+- Recensement des acquis théoriques et des connaissances acquises par l'expérience professionnelle<br>
+- Décrire les postes et fonctions occupés, les compétences professionnelles...<br><br>
+Phase...</div>
+<div class="bloc_plus" id="9572247867365069" style="display:none;">Phase préliminaire :<br>
+- Présentation de la démarche VAE et constitution du dossier individuel<br><br>
+Phase d'investigation : <br>
+- Présentation du DSPP<br>
+- Recensement des caractéristiques personnelles, des aptitudes acquises, des comportements professionnels, des ambitions...<br>
+- Recensement des acquis théoriques et des connaissances acquises par l'expérience professionnelle<br>
+- Décrire les postes et fonctions occupés, les compétences professionnelles...<br><br>
+Phase de formalisation : <br>
+- Elaborer, construire et finaliser le dossier de synthèse<br><br>
+Mise en situation de validation : <br>
+- Présentation du déroulement d'une session de validation<br>
+- Préparation à la mise en pratique et à l'entretien technique<br><br>
+Validation devant jury</div>
+		</div>
+	
+	
+	<h3 class="titre_bloc">Conditions d&#8217;admission :</h3>
+	<div class="bloc">
+	
+		
+			<strong>- Niveau d'entrée : </strong>
+			
+				Pas de niveau requis
+				
+			
+			<br><strong>- Expérience profesionnelle : </strong>
+			3 ans minimum
+			<br><strong>- Formation accessible dans le cadre d'une <span class="enable_tool_tips help" title="Validation des acquis de l'expérience">VAE</span> : </strong>
+			Oui
+			<br><strong>- Possibilité d'<span class="enable_tool_tips help" title="Possibilité de réduire la formation&lt;br/&gt;en fonction des acquis de la VAE">allègement du parcours de formation</span> : </strong>
+			Oui
+			<br>
+</div>
+				
+				
+	<h3 class="titre_bloc">Validation de la formation :</h3>
+	<div class="bloc">
+	
+		
+		
+		
+			<strong> - Niveau de sortie : </strong>
+			
+				Niveau V (CAP, BEP)
+				
+			
+			<br><strong> - Type de validation : </strong>
+			
+				Titre du ministère du travail, de l'emploi, de la formation professionnelle et du dialogue social
+				
+			
+			<br><strong> - Commentaire : </strong>
+				Validation adaptée selon les besoins<br>
+</div>
+	
+	
+	
+	
+	
+	
+		<h3 class="titre_bloc">Calendrier des sessions :</h3>
+		<div class="bloc" id="calendrier_sessions">
+			
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<fieldset class="etablissement">
+<legend align="right" class="maj_of">Mise à jour faite le 31/01/2013 par l'organisme</legend>
+		
+
+	<div class="etabtitre">
+	
+	    <table style="width:100%;">
+<tr>
+<td style="font-style:italic;width:470px;">
+	    			Du 01/01/2013 au 31/12/2013
+				</td>
+				<td>
+					
+				</td>
+			</tr>
+<tr>
+<td>
+					
+						A MORTAGNE AU PERCHE (61400)
+						
+						<img class="cliquable img_map enable_tool_tips" title="Voir sur la carte" onclick="showMapWithId('afm','OFS2501989');" style="height:20px;margin-bottom:-7px;margin-left:10px;" src="/img/BN2.gif">
+</td>
+				<td>
+					
+				</td>
+			</tr>
+<tr>
+<td>
+					Entrées / Sorties permanentes
+				</td>
+				<td>
+					
+				</td>
+			</tr>
+</table>
+</div>
+
+	<br><strong>Modalité d'enseignement : </strong>Formation entièrement en présentielle<br><br><strong>Dispositif de formation mobilisé : </strong>
+		
+			
+			
+				<a onclick="openDialog('dhtmlwindow42', 'Fiche dispositif', 800, 480); return false;" href="#">Validation des acquis de l'expérience (État - Région)</a>
+				<div style="display:none" id="dhtmlwindow42" class="enable_dialog">
+					<div id="ficheME42" class="ficheME">
+						<div class="intitule" id="intitule42">
+							Validation des acquis de l'expérience (État - Région)(VAE)
+						</div>
+						<hr>
+					
+						La VAE permet l'obtention de tout ou partie d'une certification (diplôme, titre à finalité professionnelle ou certificat de qualification professionnelle) sur la base d'une expérience professionnelle salariée, non salariée (commerçant, collaborateur de commerçant, profession libérale, agriculteur ou artisan...) et/ou bénévole (syndicale, associative) et/ou volontaire. <br>
+Cette expérience, en lien avec la certification visée, est validée par un jury. Les certifications, enregistrées au Répertoire National des Certifications Professionnelles (RNCP), sont accessibles par la VAE.<br><br>
+Cette démarche est accessible à toute personne, quels que soient son âge, sa nationalité, son statut et son niveau de formation, ayant au moins trois ans d'expérience salariée, non salariée ou bénévole.
+						<hr>
+<strong>Où se renseigner ?</strong><br>
+						Auprès du réseau des Point Relais Conseil (PRC) : sur tout le territoire bas-normand, 14 structures sont habilitées par la Région à accueillir et accompagner les personnes souhaitant s'engager dans une démarche de VAE. <br>
+Il est possible également : <br>
+- de s'informer auprès des structures d'accueil du public (Pôle emploi, Apec, Missions locales, PLIE, CAP Emploi ...).<br>
+- de prendre contact à l'adresse suivante : vae@crbn.fr
+						<hr>
+<strong>D&#8217;autres informations sur le web...</strong><br>
+						
+							Fiche pratique sur le site du Ministère de Travail, de l'Emploi et de la Santé :<br><a href="javascript:void(0);" onclick="window.open('http://www.travail-emploi-sante.gouv.fr/informations-pratiques,89/fiches-pratiques,91/formation-professionnelle,118/la-validation-des-acquis-de-l,1074.html','_blank','menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,width=800,height=600');">Cliquer ici</a><br><hr>
+<div style="width: 98%; text-align: right; margin-top: 15px;">
+						<a href="javascript:void(0);" onclick="window.open('http://nsi.errefom.fr/mesuresEtDispositifs/fiche.jsp?id=42','_blank','menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,width=800,height=600');"><img src="/img/logo_md.gif" style="border: medium none ; margin-bottom: -8px; margin-right: 5px;">Plus d'infos sur le site de l'ERREFOM</a>
+					</div>
+					</div>
+				</div>
+			
+		
+		<br><br><strong>Lieu de formation : </strong><br><table width="100%"><tr>
+<td style="width:33%;vertical-align:top;"><ul><li>
+					
+					<strong>
+						INFREP
+					</strong><br>
+					Maison de la Formation<br>Rue Ferdinand de Boyères<br>61400 MORTAGNE AU PERCHE
+					
+					
+				</li></ul></td>
+				
+			
+			</tr></table>
+<br><strong>Hébergement : </strong>Pas d'hébergement en centre
+	
+	<strong>Restauration : </strong>Possibilité de restauration en centre
+	
+	
+	
+	<br><strong>Type de parcours de formation : </strong>
+		Formation mixte (individualisée et/ou modularisée)
+		<br><br><strong>Rythmes de la formation :</strong>
+		Rythme adapté à la demande , En Centre de formation
+		<br><strong>Public(s) visé(s) : </strong>
+		
+			Salariés éligible au plan de formation , 
+		
+			Tous demandeurs d'emploi, 
+		
+			Licenciés pour motif économique, 
+		
+			Salariés à titre individuel, 
+		
+			Salariés des établissements de santé, médico-sociaux, 
+		
+			Bénéficiaires de contrats aidés, 
+		
+			Salariés éligible au DIF
+		
+		<br><br><strong>Durées moyennes : </strong>
+		
+			<strong>        - totale : </strong>24 heures 
+		
+		
+			<strong>        - en centre : </strong>24 heures 
+		
+		
+		<br><br><strong>Organisme formateur : </strong><br>
+			
+				
+				- <a href="javascript:void(0);" onclick="window.open('/detail_fiche.jsp?type=ofs&amp;id=2501989&amp;popup=true','_blank','menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,width=1050,height=600');">INFREP MORTAGNE-AU-PERCHE</a>
+				/ MORTAGNE AU PERCHE / <img src="/img/tel.gif" width="10" height="9" alt="telephone"> 02 33 85 31 20 / <img src="/img/mail.gif" width="10" height="10" alt="courriel"><a id="9897282833170364E8" href="#" rel="gro/perfni//16perfni" class="email">infrep61@infrep.org</a><script>$('#9897282833170364E8').nospam({ replaceText:true, maxTextLength: 50 });</script><br><br>
+</fieldset>
+</div>
+	
+			
+			
+		
+</div>
+
+			
+		
+<div id="credits">
+<em>
+Source ERREFOM
+</em>
+</div>
+<table style="width: 865px;" class="imprimer"><tbody><tr>
+<td style="width: 50%;">
+			 
+		</td>
+		<td style="text-align: right;">
+			
+			  
+			</td>
+			
+			
+			<td style="width:20px;">
+			<img class="cliquable enable_tool_tips" title="Imprimer la fiche" onclick="window.print();" src="/img/print.gif">
+</td>
+			
+		
+	</tr></tbody></table>
+</div>
+<!-- fin contenu -->
+</div>
+<!-- fin bloc_corps -->
+<div id="pied_page">
+
+Moteur de recherche de l'offre de formation professionnelle continue financé par :
+<table style="margin-left: auto; margin-right: auto;"><tr>
+<th style="width:60px;"><a href="javascript:void(0);" onclick="window.open('http://www.basse-normandie.pref.gouv.fr','_blank','menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,width=800,height=600');"><img src="/img/logo-pref.gif"></a></th>
+<th style="width:60px;"><a href="javascript:void(0);" onclick="window.open('http://www.cr-basse-normandie.fr','_blank','menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,width=800,height=600');"><img src="/img/logo-bn.gif"></a></th>
+<th style="width:60px;"><a href="javascript:void(0);" onclick="window.open('http://www.fse.gouv.fr','_blank','menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,width=800,height=600');"><img src="/img/logo-europe.gif"></a></th>
+</tr></table>
+Un produit développé par :
+<table style="margin-left: auto; margin-right: auto;"><tr>
+<th style="width:60px;"><a href="javascript:void(0);" onclick="window.open('http://www.errefom.info','_blank','menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes,width=800,height=600');"><img src="/img/logo-errefom.gif"></a></th>
+</tr></table>
+<table style="margin-left: auto; margin-right: auto;" class="liens_bas"><tr>
+<td>
+	
+	<a href="mailto:contact@errefom.info?subject=A%20propos%20de%20TrouverMaFormation">Contact</a>
+	 |
+	<a href="javascript:void(0);" onclick="openDialog('infos_real', 'Réalisation de TrouverMaFormation',400,480);">Réalisation</a>
+	
+	
+	<div id="infos_real" style="display:none;" class="enable_dialog">
+	<div style="background:url(/img/filet.gif);">
+		
+		<div style="margin:10px;color:#E43187;font-weight:bold;">
+		Structuration de l'information - Gestion du projet informatique, modélisation &amp; architecture technique :
+		</div>
+		<div style="margin:0px 10px 5px 10px;color:#5F5F5F;">
+		Nathalie LAVOLO - ERREFOM<br>
+		Claire PIZY - ERREFOM<br>		
+		Hervé MARIE - ERREFOM<br>
+		Fabrice LEROY - ERREFOM<br>
+		Yann VOLEAU - ERREFOM<br><br>
+</div>
+				
+		<div style="margin:10px;color:#E43187;font-weight:bold;">
+		Conception &amp; réalisation graphique :
+		</div>
+		<div style="margin:0px 10px 5px 10px;color:#5F5F5F;">
+		Société EcomEpub<br>
+		Nathalie GREMBER - ERREFOM<br>
+		Nathalie LAVOLO - ERREFOM<br>
+		Cyril HILIOU - Edenweb<br>
+		Yann VOLEAU - ERREFOM<br><br>
+</div>
+		
+		<div style="margin:10px;color:#E43187;font-weight:bold;">
+		Appui technique :
+		</div>
+		<div style="margin:0px 10px 5px 10px;color:#5F5F5F;">
+		Hervé MARIE - ERREFOM<br>
+		Remy DANTAN - Edenweb<br><br>
+</div>
+		
+		<div style="margin:10px;color:#E43187;font-weight:bold;">
+		Appui communication :
+		</div>
+		<div style="margin:0px 10px 5px 10px;color:#5F5F5F;">
+		Société EcomEpub<br>
+		Nathalie GREMBER - ERREFOM
+		</div>
+	</div>
+	</div>
+	
+</td>
+</tr></table>
+</div>
+
+<div id="avertissement_bloquage" style="display:none;">
+
+<div id="in_avertissement_bloquage">
+L'action demandée ne semble pas aboutir. Veuillez réessayer plus tard. <br>
+Si le problème persiste merci de contacter <a href="mailto:offre@errefom.info">offre@errefom.info</a><br>
+Veuillez nous excuser pour le désagrément encouru.
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+<!-- fin bloc_page -->
+</body>
+</html>

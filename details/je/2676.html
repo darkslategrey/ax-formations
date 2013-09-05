@@ -1,0 +1,411 @@
+<html>
+<head>
+<script language="javascript" type="text/javascript">
+	
+	// Déclaration des variables public
+	
+    window.onload = function() {init_tout();}
+    function init_tout()
+    {
+	   //init1(var1);
+       //init2(var2);
+    }
+	
+	
+
+	function openCloseDiv(leDivAOuvrir,leDivAFermer)
+	{
+		var nbDivSousMenu_Ouverts = array_sousMenu_OPENED.length;
+		var nbDivSousMenu_Fermes = array_sousMenu_CLOSED.length;
+		
+		for(var i=0;i<nbDivSousMenu_Fermes;i++){
+		   array_sousMenu_CLOSED[i].style.display = 'block';
+		}
+		
+		//alert('nbDivSousMenu_Fermes = '+nbDivSousMenu_Fermes+'\r\n nbDivSousMenu_Ouverts = '+nbDivSousMenu_Ouverts);
+		
+		for(var i=0;i<nbDivSousMenu_Ouverts;i++){
+		   array_sousMenu_OPENED[i].style.display = 'none';
+		}
+		
+		document.getElementById(leDivAFermer).style.display = 'none';
+		document.getElementById(leDivAOuvrir).style.display = 'block';
+			
+	}
+	
+	
+
+	function rockDivs(leDivAOuvrir,leDivAFermer)
+	{		
+		document.getElementById(leDivAFermer).style.display = 'none';
+		document.getElementById(leDivAOuvrir).style.display = 'block';			
+	}
+	
+	
+	function getElementsByClass(maClass)
+	{
+	/*##################################################### FCT - getElementsByClass(maClass)
+	# 	Cette fonction retourne, dans une liste (array), tous les éléments présents sur la page
+	#	dont le 'className' == maClass
+	#------------------------------------------------------------------------------#
+	#	IN 		maClass				String		Le 'className' à rechercher
+	#
+	#	OUT		tabRetour			array		Une liste contenant tous les éléments répondant au critère
+	#
+	#----------------------------------------------------------------------------#*/
+	
+	    /*    Tableau comportant les elements de retour*/
+	    var tabRetour = new Array();
+	    /* Tableau temporaire necessaire pour faire la boucle et rechercher
+	        les elements ayant la classe précisé, il va contenir tout les
+	        elements du documents */
+	    var tabTmp = new Array();
+	    /* Recupere tout les elements du document */
+	    tabTmp = document.getElementsByTagName("*");
+	    /* Compteur, sert à incrementer le tableau des valeurs de retour */
+	    j=0;
+	    /* Pour chaque element de tabTmp */
+	    for (i=0; i<tabTmp.length; i++) {
+	        /* on regarde si la classe de l'i-eme element est celle qu'on recherche */
+	        if (tabTmp[i].className==maClass)
+	        {
+	            /*si oui on ajoute dans notre tableau de retour à l'index j */
+	            tabRetour[j]=tabTmp[i];
+	            /* on incremente de 1 j pour pas réecrire l'element suivant par dessus */
+	            j++;
+	        }
+	    /* Element suivant ... */
+	    }
+	    /* on retourne notre tableau d'elements ayant la classe spécifié*/
+	   return tabRetour;
+	} 
+
+</script><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-language" content="fr">
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="content-script-type" content="text/javascript">
+<meta http-equiv="imagetoolbar" content="no">
+<title>Change de rythme, choisis l'alternance MFR Rhone alpilles</title>
+<meta name="Keywords" content="MFR, mfr, midi, pyrenees , 46, Lot, bac pro, bepa, animalerie,cheval, service aux personnes, service, personne, equitation, alternance">
+<meta name="Description" content="L'originalité de notre Maison Familiale repose sur trois criteres :
+1. C'est une association loi 1901 constituée par les parents d'élèves, les anciens parents d'élèves et les maîtres de stage.
+2. L'établissement dispense des formations sous contrat avec le Ministère de l'Agriculture et de la Forêt et de l'Éducation Nationale.
+3. Elle dispense une formation par alternance &quot;École-Entreprise&quot;.">
+<meta name="Author" content="Gestibase / www.isites.fr">
+<meta name="Copyright" content="Copyright ©2008-2013 MFR Rhône-Alpilles">
+<meta name="Robots" content="index,follow,all">
+<meta name="Expire" content="never">
+<meta name="Distribution" content="global">
+<meta name="Rating" content="general">
+<meta name="Identifier-URL" content="http://www.mfr-rhonealpilles.com">
+<meta name="Date-Creation-yyyymmdd" content="2008-02-27">
+<meta name="Date-Revision-yyyymmdd" content="2012-01-23 22:52:12">
+<meta name="Category" content="">
+<meta name="GENERATOR" content="Gestibase / www.isites.fr">
+<meta name="abstract" content="L'originalité de notre Maison Familiale repose sur trois criteres :
+1. C'est une association loi 1901 constituée par les parents d'élèves, les anciens parents d'élèves et les maîtres de stage.
+2. L'établissement dispense des formations sous contrat avec le Ministère de l'Agriculture et de la Forêt et de l'Éducation Nationale.
+3. Elle dispense une formation par alternance &quot;École-Entreprise&quot;.">
+<link href="http://www.isites-mfr.info/_fichiersCommuns/06/library/styles/fck_editorarea.css" rel="stylesheet" type="text/css">
+<link href="http://www.isites-mfr.info/_fichiersCommuns/06/library/styles/styles_Interface.css" rel="stylesheet" type="text/css">
+<link href="library/styles_Interface.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/gif" href="img/favIcon_MFR.gif">
+<script type="text/javascript" src="http://www.isites-mfr.info/_fichiersCommuns/shared_LIBRARY/splash.image/splash.image.js"></script><link type="text/css" rel="stylesheet" href="http://www.isites-mfr.info/_fichiersCommuns/shared_LIBRARY/splash.image/splash.image.css">
+<!-- Code à insérer dans le "head" de la page --><!--[if lte IE 6]>
+
+<link href="library/styles_Interface-ie.css" rel="stylesheet" type="text/css" />
+    
+    
+<script defer type="text/javascript" src="http://www.isites-mfr.info/_fichiersCommuns/shared_LIBRARY/js/pngfix.js"> </script>
+
+<![endif]--><!--[if lte IE 7]>
+
+<link href="library/styles_Interface-ie.css" rel="stylesheet" type="text/css" />
+    
+    
+<script defer type="text/javascript" src="http://www.isites-mfr.info/_fichiersCommuns/shared_LIBRARY/js/pngfix.js"> </script>
+
+<![endif]-->
+</head>
+<body>
+<a name="haut"></a>
+<div id="RL_div_conteneurGeneral" align="center">
+
+	<div id="RL_div_header_master">
+		<div id="RL_div_header_H">	
+			
+			<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td><img src="img/interface/header_H_G.jpg" id="RL_img_header_H_G"></td>
+					<td width="100%"><marquee behavior="scroll" scrollamount="3" id="txtDefil_HOME" class="INTERF_txtMarquee">REUSSIR AUTREMENT ... DES la 4ème, LES JEUNES PEUVENT VIVRE L'ALTERNANCE ET FAIRE DE  LEUR PASSION UN METIER ...</marquee></td>
+					<td><img src="http://www.isites-mfr.info/_fichiersCommuns/06/img/interface/header_H_D.jpg" id="RL_img_header_H_D"></td>
+				</tr></table>
+</div>
+		<div id="RL_div_header_M">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td><a href="accueil.html"><img src="img/interface/header_M_logo.jpg" id="RL_img_header_M_logo" alt="Maison Familiale Rurale Rhône-Alpilles" title="Maison Familiale Rurale Rhône-Alpilles" border="0"></a></td>
+					<td id="RL_td_M_bgMFR" valign="top">
+<a href="accueil.html"><img src="img/interface/header_M_nomMaison.jpg" id="RL_img_header_M_nomMaison" alt="Maison Familiale Rurale Rhône-Alpilles" title="Maison Familiale Rurale Rhône-Alpilles" border="0"></a><br><div id="RL_div_M_identite_MFR">2, rue de la garrigue<br>13310 ST MARTIN DE CRAU<br>Tél. 04 90 49 17 52 - Fax 04 90 49 10 64<br>eMail <a href="mailto:mfr.rhone-alpilles@mfr.asso.fr" class="INTERF_liensInfoMaison">mfr.rhone-alpilles@mfr.asso.fr</a>
+</div>
+</td>
+					<td>
+                    
+                   <a href="accueil.html">
+                    <img src="img/interface/header_M_photoMFR.jpg" id="RL_img_header_M_photoMFR" alt="Maison Familiale Rurale Rhône-Alpilles" title="Maison Familiale Rurale Rhône-Alpilles" border="0"></a>                   
+                    
+                    </td>
+				</tr></table>
+</div>
+		<div id="RL_div_header_B">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td><img src="http://www.isites-mfr.info/_fichiersCommuns/06/img/interface/header_B_G.jpg" id="RL_img_header_B_G"></td>
+				 <td width="100%">	
+				 
+<div id="RL_div_header_B_M"><table border="0" cellspacing="0" cellpadding="0" class="INTERF_menu_HAUT_txt" align="right"><tr>
+<td align="right" valign="middle" nowrap>
+<img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/ico/flch_VERTE_D.gif" width="7" height="6" hspace="5" border="0" align="absmiddle"><a href="http://www.mfr-rhonealpilles.com" class="INTERF_menu_HAUT_txt">accueil</a>
+</td>
+			<td align="right" valign="middle"><img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/pixUnik/pu_Transp.gif" width="5" height="1"></td>
+			<td align="right" valign="middle" nowrap>
+<img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/ico/flch_VERTE_D.gif" width="7" height="6" hspace="5" border="0" align="absmiddle"><a href="contact.html" class="INTERF_menu_HAUT_txt">contact</a>
+</td>
+			<td align="right" valign="middle"><img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/pixUnik/pu_Transp.gif" width="5" height="1"></td>
+			<td align="right" valign="middle" nowrap>
+<img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/ico/flch_VERTE_D.gif" width="7" height="6" hspace="5" border="0" align="absmiddle"><a href="acces.html" class="INTERF_menu_HAUT_txt">plan d'accès</a>
+</td>
+            
+        			
+
+		</tr></table></div>
+</td>
+                    
+                    <td><img src="http://www.isites-mfr.info/_fichiersCommuns/06/img/interface/header_B_D.jpg" id="RL_img_header_B_D"></td>
+				</tr></table>
+</div>
+	</div>
+
+	<div id="RL_div_body_master">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" id="RL_table_body_3cols"><tr>
+<td valign="top" id="RL_td_body_G"><img src="http://www.isites-mfr.info/_fichiersCommuns/06/img/interface/body_G.jpg" id="RL_img_body_G"></td>
+				<td valign="top" id="RL_td_body_menuGch">
+<div id="RL_div_menuGch_PAGES">
+	<table border="0" cellpadding="0" cellspacing="8" class="INTERF_menu_GAUCHE_txt">
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Les MFR" href="page-104-les-mfr.html" class="INTERF_menu_GAUCHE_txt lien_menu_104">Les MFR </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle">
+								<div id="RL_div_sousMenu_114_closed" style="display:block;" class="RL_div_sousMenu_CLOSED">
+								
+							
+												
+									<a title="La MFR Rhône-Alpilles" href="page-114-la-mfr-rhone-alpilles.html" class="INTERF_menu_GAUCHE_txt lien_menu_114">La MFR Rhône-Alpilles</a>
+									
+														
+									
+									
+								</div>
+								<div id="RL_div_sousMenu_114_opened" style="display:none;" class="RL_div_sousMenu_OPENED">
+									<a title="La MFR Rhône-Alpilles" href="page-114-la-mfr-rhone-alpilles.html" class="INTERF_menu_GAUCHE_txt lien_menu_114">La MFR Rhône-Alpilles</a><br><div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="réussite examen MFR St Martin et insertion professionnelle" href="page-144-la-mfr-rhone-alpilles-reussite-examen-et-insertion.html" class="INTERF_sousMenu_GAUCHE_txt">réussite examen et insertion</a></div>
+<div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="MFR RHONE ALPILLES à ST MARTIN DE CRAU" href="page-134-la-mfr-rhone-alpilles-qu-est-ce-que-c-est-.html" class="INTERF_sousMenu_GAUCHE_txt">Qu'est-ce que c'est?</a></div>
+<div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="Statuts en formation initiale par apprentissage en formation continue" href="page-137-la-mfr-rhone-alpilles-statuts.html" class="INTERF_sousMenu_GAUCHE_txt">Statuts</a></div>								</div>
+							</td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="MFR RHONE ALPILLES à ST MARTIN DE CRAU" href="page-139-plan-d-acces.html" class="INTERF_menu_GAUCHE_txt lien_menu_139">PLAN D'ACCES </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle" class="INTERF_menu_GAUCHE_spacer"></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Résidence Sociale FJT" href="page-141-fjt-la-garrigue---presentation.html" class="INTERF_menu_GAUCHE_txt lien_menu_141">FJT La Garrigue - Présentation </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Journée Portes Ouvertes" href="page-164-journee-portes-ouvertes.html" class="INTERF_menu_GAUCHE_txt lien_menu_164">Journée Portes Ouvertes </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle" class="INTERF_menu_GAUCHE_spacer"></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Nos formations" href="page-5-nos-formations.html" class="INTERF_menu_GAUCHE_txt lien_menu_5">Nos formations </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="filieres mfr rhone alpilles" href="page-98-nos-filieres.html" class="INTERF_menu_GAUCHE_txt lien_menu_98">Nos filières </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Demande d'infos" href="page-99-demande-d-infos.html" class="INTERF_menu_GAUCHE_txt lien_menu_99">Demande d'infos </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Formation Continue pour Adultes" href="page-118-formation-continue-pour-adultes.html" class="INTERF_menu_GAUCHE_txt lien_menu_118">Formation Continue pour Adultes </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle" class="INTERF_menu_GAUCHE_spacer"></td>
+						</tr>
+<tr>
+<td align="right" valign="middle">
+								<div id="RL_div_sousMenu_119_closed" style="display:block;" class="RL_div_sousMenu_CLOSED">
+								
+							
+												
+									<a title="MFR RHONE ALPILLES à ST MARTIN DE CRAU" href="page-119-vie-de-la-mfr.html" class="INTERF_menu_GAUCHE_txt lien_menu_119">Vie de la MFR</a>
+									
+														
+									
+									
+								</div>
+								<div id="RL_div_sousMenu_119_opened" style="display:none;" class="RL_div_sousMenu_OPENED">
+									<a title="MFR RHONE ALPILLES à ST MARTIN DE CRAU" href="page-119-vie-de-la-mfr.html" class="INTERF_menu_GAUCHE_txt lien_menu_119">Vie de la MFR</a><br><div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="St Martin de Crau" href="page-135-vie-de-la-mfr-st-martin-de-crau.html" class="INTERF_sousMenu_GAUCHE_txt">St Martin de Crau</a></div>
+<div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="Le panier des Alpilles" href="page-133-vie-de-la-mfr-le-panier-des-alpilles.html" class="INTERF_sousMenu_GAUCHE_txt">Le panier des Alpilles</a></div>
+<div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="CAP MBC" href="page-136-vie-de-la-mfr-cap-mbc.html" class="INTERF_sousMenu_GAUCHE_txt">CAP MBC</a></div>								</div>
+							</td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Toute l'actualité" href="page-21-toute-l-actualite.html" class="INTERF_menu_GAUCHE_txt lien_menu_21">Toute l'actualité </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle" class="INTERF_menu_GAUCHE_spacer"></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Partenaires MFR Rhône-Alpilles St Martin de Crau" href="page-121-partenaires.html" class="INTERF_menu_GAUCHE_txt lien_menu_121">Partenaires </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="taxe d'apprentissage" href="page-122-taxe-d-apprentissage.html" class="INTERF_menu_GAUCHE_txt lien_menu_122">Taxe d'apprentissage </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Hébergement collectif location" href="page-12-accueil-de-groupes.html" class="INTERF_menu_GAUCHE_txt lien_menu_12">Accueil de groupes </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Liens avec nos anciens" href="page-123-liens-avec-nos-anciens.html" class="INTERF_menu_GAUCHE_txt lien_menu_123">Liens avec nos anciens </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle" class="INTERF_menu_GAUCHE_spacer"></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Description du FJT " href="page-159-description-du-fjt-.html" class="INTERF_menu_GAUCHE_txt lien_menu_159">Description du FJT  </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle">
+								<div id="RL_div_sousMenu_152_closed" style="display:block;" class="RL_div_sousMenu_CLOSED">
+								
+										
+									<a title="Nos services et équipements" href="javascript:" onclick="openCloseDiv('RL_div_sousMenu_152_opened','RL_div_sousMenu_152_closed'); return false;" class="INTERF_menu_GAUCHE_txt lien_menu_152">Nos services et équipements</a>
+									
+														
+									
+									
+								</div>
+								<div id="RL_div_sousMenu_152_opened" style="display:none;" class="RL_div_sousMenu_OPENED">
+									<a title="Nos services et équipements" href="" class="INTERF_menu_GAUCHE_txt lien_menu_152">Nos services et équipements</a><br><div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="Les Logements" href="page-153-nos-services-et-equipements-les-logements.html" class="INTERF_sousMenu_GAUCHE_txt">Les Logements</a></div>
+<div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="Les animations" href="page-154-nos-services-et-equipements-les-animations.html" class="INTERF_sousMenu_GAUCHE_txt">Les animations</a></div>
+<div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="L'accompagnement" href="page-155-nos-services-et-equipements-l-accompagnement.html" class="INTERF_sousMenu_GAUCHE_txt">L'accompagnement</a></div>
+<div class="RL_div_menu_SELECTED_NO INTERF_sousMenu_GAUCHE_txt"><a title="Services" href="page-156-nos-services-et-equipements-services.html" class="INTERF_sousMenu_GAUCHE_txt">Services</a></div>								</div>
+							</td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Conditions d'accès et Procédure d'admission" href="page-157-conditions-d-acces-et-procedure-d-admission.html" class="INTERF_menu_GAUCHE_txt lien_menu_157">Conditions d'accès et Procédure d'admission </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="L'essentiel à télécharger" href="page-163-l-essentiel-a-telecharger.html" class="INTERF_menu_GAUCHE_txt lien_menu_163">L'essentiel à télécharger </a></div></td>
+						</tr>
+<tr>
+<td align="right" valign="middle"><div class="RL_div_menu_SELECTED_NO"><a title="Contact, horaires et plan d'accès" href="page-158-contact--horaires-et-plan-d-acces.html" class="INTERF_menu_GAUCHE_txt lien_menu_158">Contact, horaires et plan d'accès </a></div></td>
+						</tr>
+<tr><td></td></tr>
+</table>
+</div>
+					
+<script>
+	var array_sousMenu_OPENED = getElementsByClass('RL_div_sousMenu_OPENED');
+	var array_sousMenu_CLOSED = getElementsByClass('RL_div_sousMenu_CLOSED');
+</script>
+</td>
+				<td width="100%" align="center" valign="top">
+<div id="RL_div_contenuPageType" class="page_index">
+	<div id="RL_div_contenuPageType_INTITULE_PARENT" class="INTERF_edito_intitule">MFR Rhône-Alpilles</div>
+<div id="RL_div_contenuPageType_INTITULE_ENFANT" class="INTERF_edito_ttr">Bienvenue sur le site de notre Maison Familiale Rurale !</div> 
+ 
+ 
+	
+    <div id="page_accueil_bis">
+	<div id="RL_div_contenuPageType_PARAG_TEXTE" class="INTERF_edito_txt">
+<div align="center">
+<strong><u><blink class="aucune"></blink><blink class="aucune"><img width="38" height="28" alt="" src="http://www.mfr-rhonealpilles.com/medias/Image/nouveau.gif"></blink></u><blink class="aucune"></blink><u><blink class="aucune">I</blink></u><blink class="aucune"></blink><u><blink class="aucune">MPORTANT<img width="41" height="31" alt="" src="http://www.mfr-rhonealpilles.com/medias/Image/nouveau.gif"></blink><br><a class="INTERF_liensUtilisateur" href="http://www.mfr-rhonealpilles.com/page-122-taxe-d-apprentissage.html"><blink class="aucune">Campagne Taxe d'apprentissage 2012</blink></a></u><a class="INTERF_liensUtilisateur" href="http://www.mfr-rhonealpilles.com/page-122-taxe-d-apprentissage.html"><blink class="aucune"><span style="font-weight: bold;"><u></u></span></blink></a><u><a class="INTERF_liensUtilisateur" href="http://www.mfr-rhonealpilles.com/page-122-taxe-d-apprentissage.html"><blink class="aucune"></blink></a><blink class="aucune"></blink><br><br><font size="4"></font></u><font size="4"></font></strong><font size="4">   <font color="#ff0000"> </font><strong><u><font size="4"><span class="VertCharteMFR">UN ETABLISSEMENT DE FORMATION CONVIVIAL: </span></font></u></strong><font size="2"><br></font></font>
+</div>
+<p><font size="4"><font size="2"></font></font></p>
+<p><font size="4"><font size="2"><a href="http://www.mfr-rhonealpilles.com/medias/Image/news/une%20maison1.png" title="maison" rel="splash.image|page"><img align="left" width="330" hspace="10" height="254" src="http://www.mfr-rhonealpilles.com/medias/Image/news/une%20maison1.png" border="0" alt="maison"></a><br></font></font></p>
+<p><font size="4"><font size="2">La Maison Familiale Rurale Rhône-Alpilles est une petite structure à<span class="OrangeCharteMFR"> <strong><font size="2">taille humaine</font></strong></span> où s'associent les familles, les entreprises, les administrateurs, l'équipe pour <strong><font size="2"><span class="VertCharteMFR">partager des valeurs et un état d'esprit</span></font></strong> qui permet aux jeunes de <font size="3"><strong><font size="2"><span class="OrangeCharteMFR">réussir autrement</span></font></strong>.</font> </font><font size="3"><font size="2">La Maison Familiale Rurale propose des <strong><font size="2"><span class="VertCharteMFR">formations en alternance</span></font></strong> liant au maximum la <strong><font size="2"><span class="OrangeCharteMFR">vie de l'entreprise</span></font></strong>. Il y règne un état d'esprit particulier où les jeunes se sentent considérés, valorisés et accompagnés vers la réussite. L'accent est mis sur le <strong><font size="2"><span class="VertCharteMFR">projet</span></font></strong> mais aussi sur l'autonomie, la responsabilisation des personnes et l'implication dans leur environnement, sur le <strong><font size="2"><span class="OrangeCharteMFR">territoire</span></font></strong> pour appréhender au mieux leur avenir.</font></font></font></p>
+<font size="4"><font size="2"><strong><u><font size="4"><span class="VertCharteMFR"><br></span></font></u></strong></font></font>
+<p><a href="http://www.mfr-rhonealpilles.com/medias/Image/news/une%20equipe.png" title="équipe" rel="splash.image|page"><img align="right" width="300" height="233" src="http://www.mfr-rhonealpilles.com/medias/Image/news/une%20equipe.png" border="0" alt="équipe"></a></p>
+<br><font size="4"><font size="2"><strong><u><font size="4"><span class="VertCharteMFR"> NOS CONVICTIONS: </span></font></u></strong></font></font>
+<p><font size="4"><font size="4"><font size="2"><img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/ico/puceOrangeMFR_1.gif" alt=""><span class="VertCharteMFR"><span style="font-weight: bold;"><font size="3"> Apprendre autrement par l'alternance :</font></span></span></font></font></font></p>
+<p><font size="4"><font size="2"><strong>Pédagogie basée sur l'expérimentation et l'expérience en </strong></font></font></p>
+<p><font size="4"><font size="2"><strong>entreprise: stage ou contrat de travail. </strong></font><br></font></p>
+<font size="4"><font size="4"><font size="2"><span class="VertCharteMFR"><img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/ico/puceOrangeMFR_1.gif" alt=""><strong><span class="VertCharteMFR"><font size="3">Grandir humainement et </font></span></strong></span></font></font><font size="4"><font size="2"><strong><span class="VertCharteMFR"><font size="3">professionnellement: </font></span></strong></font></font><font size="4"><font size="4"><font size="4"><font size="2"><strong><br><br>
+Aider chaque personne en formation à murir son projet professionnel et personnel, réussir sa vie professionnelle. <br></strong></font></font></font></font> </font>
+<p><font size="4"><font size="4"><font size="4"><strong><font size="4"><br><font size="4"><font size="2"> <img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/ico/puceOrangeMFR_1.gif" alt=""><strong><font size="3"><span class="VertCharteMFR">Agir ensemble pour préparer l'avenir:</span></font></strong></font></font></font></strong></font></font></font></p>
+<p align="center"><font size="4"><font size="4"><font size="4"><font size="4"><strong><font size="4"><font size="4"><font size="2"><span style="font-weight: bold;"><font size="3"><a href="http://www.mfr-rhonealpilles.com/medias/Image/news/mfr.JPG" title="maison1" rel="splash.image|page"><img align="right" width="280" height="210" src="http://www.mfr-rhonealpilles.com/medias/Image/news/mfr.JPG" border="0" alt="maison1"></a></font></span></font></font></font></strong></font></font></font></font></p>
+<p><font size="4"><font size="4"><font size="4"><strong><font size="4"><font size="4"><font size="2"><strong><font size="3"> </font></strong><br>
+Associer les maîtres de stage, d'apprentissage et les familles à la formation et aux évaluations. </font></font></font><br></strong></font></font></font></p>
+<p><font size="4"><font size="4"><font size="4"><font size="4"><strong><font size="4"><font size="4"><font size="2"> <img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/ico/puceOrangeMFR_1.gif" alt=""><span class="VertCharteMFR"><font size="3"><strong>Agir en équipe:</strong></font></span></font></font></font></strong></font></font></font></font></p>
+<p><font size="4"><font size="4"><font size="4"><font size="4"><strong><font size="4"><font size="4"><font size="2"><span class="VertCharteMFR"><font size="3"> </font></span>L'engagement d'une équipe de bénévoles et de salariés sur le champ de la formation, de l'éducation et de l'insertion professionnelle.</font> <br></font></font></strong></font></font></font></font></p>
+<p align="center"><font size="4"><font size="4"><font size="4"><font size="4"><strong><font size="4"><font size="4"><font size="2"></font></font></font></strong><font size="4"></font></font></font></font></font></p>
+</div>
+	<div id="RL_div_accueilSyndication_CONTENEUR" class="INTERF_edito_txt">
+	<div id="RL_div_NEWS_header"></div>
+<div id="RL_div_NEWS_body"><table width="99%" border="0" cellspacing="5" cellpadding="0" align="center"><tr>
+<td valign="top" width="33%">
+<div class="div_NEWS_uneNews">
+							<div id="news-content"> <a href="page-21-toute-l-actualite.html#50" class="div_NEWS_uneNews">
+							<span class="INTERF_accueilSyndication_ttr">
+								<img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/ico/flch_VERTE_D.gif" border="0" align="absmiddle"> DU PANIER DES ALPILLES AU MARCHE
+							</span><br><span class="INTERF_accueilSyndication_accroche">Tisser du lien avec les agriculteurs locaux</span>
+							</a>
+						</div>
+</div>		</td>	</tr></table></div>
+<div id="RL_div_NEWS_footer"></div>	
+    
+    </div>
+		</div>	
+</div>
+
+	<br><div id="RL_div_hautDePage" style="float:right;"><a href="#haut" class="INTERF_liensUtilisateur">haut de page<img src="http://www.isites-mfr.info/_fichiersCommuns/shared_IMG/ico/flch_VERTE_H.gif" width="7" height="6" hspace="5" border="0" align="absmiddle"></a></div>
+</td>
+			</tr></table>
+</div>
+
+	<div id="RL_div_footer_master">
+		<a name="bas"></a>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td><img src="http://www.isites-mfr.info/_fichiersCommuns/06/img/interface/footer_G.jpg" id="RL_img_footer_G"></td>
+				<td width="100%" id="RL_td_footer_3cols">
+<div id="RL_div_mentions" class="INTERF_mentions_txt">
+	
+    
+    <form action="http://admin.mfr-rhonealpilles.com" method="post" name="formAdmin">
+		Copyrights © 2008-2013 MFR Rhône-Alpilles  |  <a href="mentions.html" class="INTERF_mentions_txt">Mentions légales</a>  |   <a href="mailto:mfr.rhone-alpilles@mfr.asso.fr" class="INTERF_mentions_txt">Webmaster</a>  |  <a href="http://www.gestibase.com" class="INTERF_mentions_txt" title="Gestibase : Créateur de iSolutions" target="_blank">Gestibase</a>  |   <a href="javascript:" onclick="window.document.formAdmin.submit(); return false;" class="INTERF_mentions_txt">admin</a>
+    </form>
+    
+</div>
+
+
+</td>
+				<td><img src="img/interface/footer_D.jpg" id="RL_img_footer_D"></td>
+			</tr></table>
+</div>
+	
+</div>
+				   
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-8369743-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

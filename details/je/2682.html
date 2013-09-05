@@ -1,0 +1,226 @@
+<html lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<title>Centre de Formation des Métiers de la Corse du Sud - Accueil</title>
+<meta name="description" content="Accueil du site du Centre de Formation des Métiers de la Corse du Sud">
+<meta name="Author" lang="fr" content="Romain BERTOLUCCI">
+<meta name="Robots" content="All">
+<meta name="keywords" content="CFM,CFA,AJACCIO,CORSE,APPRENTISSAGE,FORMATION,INDIVIDUALISATION,PORTO VECCHIO,PROPRIANO,FOAD,APPRENTI BATIMENT,BOUCHE,TERTIAIRE,AUTOMOBILE,METIERS,ALTERNANCE,CAP,BP,BAC PRO,BTS">
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--><link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/prettyPhoto.css">
+<link rel="stylesheet" href="css/jquery.coinSlider.css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+	try {
+		var pageTracker = _gat._getTracker("UA-7090009-1");
+		pageTracker._trackPageview();
+	} catch(err) {}
+</script><script type="text/javascript" src="js/jquery.js"></script><script type="text/javascript" src="js/accordion.js"></script><script type="text/javascript" src="js/jquery.prettyPhoto.js"></script><script type="text/javascript" src="js/jquery.coinSlider.js"></script><script type="text/javascript">
+$(document).ready(function(){
+	var url = window.location.href;
+	if(url.lastIndexOf("ie6=0") == -1) {
+		if($.browser.msie) {
+			if($.browser.version == "6.0") {
+				window.location.href = 'ie6.php?url='+url;
+			}
+		}
+	}
+	$().ajaxSend(function(){
+		$("#loading").show();
+	});
+	$().ajaxStop(function(){
+		$("#loading").hide();
+	});
+	$("#accordion").accordion({
+		autoheight: false		
+	});
+	$("#coinSlider").coinslider({
+		width: 450,
+		height: 330,
+		links: false,
+		delay: 4000
+	});
+	$("a[rel^='prettyPhoto']").prettyPhoto();
+	$("input").attr('autocomplete','off');
+	$("#accordion input[type='text'], #accordion input[type='password']").focus(function(){
+		if($(this).val() == "Votre identifiant" || $(this).val() == "Mot de Passe") {
+			$(this).val('');
+		}
+	});
+	$("#accordion input[type='text'], #accordion input[type='password']").blur(function(){
+		if($(this).val().length == 0 || $(this).val() == "") {
+			if($(this).attr('type') == "text") {
+				$(this).val('Votre identifiant');
+			} else {
+				$(this).val('Mot de Passe');
+			}
+		}
+	});
+	$("#f_field_search").focus(function(){
+		if($(this).val() == "Votre recherche...") {
+			$(this).val('');
+		}
+	});
+	$("#f_field_search").blur(function(){
+		if($(this).val().length == 0 || $(this).val() == "") {
+			$(this).val('Votre recherche...');
+		}
+	});
+	$("#f_search").submit(function(){
+		if($("#f_field_search").val() != "Votre recherche..." && $("#f_field_search").val().length > 1) {
+			return true;
+		} else {
+			return false;
+		}
+	});
+});
+</script><script type="text/javascript">
+	function validation() {
+		if($("#f_field_search").val() == "Votre recherche..." || $("#f_field_search").val().length == 0) {
+			window.location.href = 'recherche.php?e=1';
+			return false;
+		} else {
+			return true;
+		}
+	}
+	</script>
+</head>
+<body>
+<div id="loading">
+<img src="img/ajax-loader.gif" alt="loader"><br>Chargement...</div>
+<div id="main">
+	<div id="header">
+    	<figure><a href="index.php"><img src="img/cma.png" alt="CMA" class="cma"></a>
+    <a href="index.php"><img src="img/cfm.png" alt="CFM" class="cfm"></a>
+</figure><nav id="menuHeader"><ul>
+<li><a href="index.php">Accueil</a></li>
+        <li><a href="etablissement.php">Notre établissement</a></li>
+        <li><a href="devenir.php">Devenir Apprenti</a></li>
+        <li><a href="formation.php">La Formation</a></li>
+        <li><a href="securite.php">La Sécurité</a></li>
+        <li><a href="ressources.php">Ressources en ligne</a></li>
+        <li><a href="recherche.php">Recherche</a></li>
+        <li><a href="contact.php">Contact</a></li>
+        <li><a href="liens.php">Liens</a></li>
+    </ul></nav>
+</div>
+    <div id="content">
+    	 <div id="mainContent">
+            	<div id="boxAccueil" class="TR">
+                	<h2>Bienvenue</h2>
+                	<a href="photo/facade.jpg" rel="prettyPhoto" title="Entrée principale du Centre de Formation des Métiers de la Corse du Sud"><img src="photo/facade_min.jpg" alt="Centre de Formation des Métiers de la Corse du Sud" class="photo fRight"></a>
+                	<p>Bienvenue sur le site du Centre de Formation de la Chambre de Métiers de la Corse du Sud.</p>
+                    <p>Choisir un métier, c'est préparer et engager l'avenir.</p>
+                    <p>Aider à la définition de votre projet professionnel, informer sur les orientations possibles, telle est la mission du Centre d'Aide à la Décision.</p>
+                    <p>Être à votre écoute pour mieux vous connaître et identifier les voies qui vous permettront d'accéder à une qualification en adéquation avec vos souhaits, tels seront nos objectifs.</p>
+                    <p>Bénéficier d'un cursus personnalisé de formation individualisée au C.F.M., telles sont les possibilités que vous offre la Chambre de Métiers de la Corse du Sud au travers de son centre de formation.</p>
+                </div>
+                <div id="slideShow">
+                	<div id="coinSlider">
+<img src="photo/slider/wini5twc/dsc_0001.jpg"><img src="photo/slider/wini5twc/dsc_0002.jpg"><img src="photo/slider/wini5twc/dsc_0004.jpg"><img src="photo/slider/wini5twc/dsc_0005.jpg"><img src="photo/slider/wini5twc/dsc_0007.jpg"><img src="photo/slider/wini5twc/dsc_0008.jpg"><img src="photo/slider/wini5twc/dsc_0010.jpg"><img src="photo/slider/wini5twc/dsc_0012.jpg"><img src="photo/slider/wini5twc/dsc_0016.jpg"><img src="photo/slider/wini5twc/dsc_0018.jpg"><img src="photo/slider/wini5twc/dsc_0019.jpg"><img src="photo/slider/wini5twc/dsc_0021.jpg"><img src="photo/slider/wini5twc/dsc_0033.jpg"><img src="photo/slider/wini5twc/dsc_0042.jpg">
+</div>                </div>
+                <p class="clear"> </p>
+                <h1>Accueil</h1>
+                <div id="boxActu" class="left">
+                	<div class="boxHead TR">Dernière <span class="orange">Actualité</span>
+</div>
+                    <div class="boxCorps">
+<p><a href="actualite.php?id=34">CARREFOUR DES METIERS</a></p>
+<p><strong style="color: #000080; font-family: Arial; font-size: 21px;">L&#8217;aventure vous manque</strong><span style="color: #000080; font-family: Arial; font-size: 21px;">, rendez-vous au Carrefour des Métiers d&#8217;Ajaccio les 3 et 4 mai de 10h00 à 17h00 !</span> <a href="actualite.php?id=34">Lire la suite</a></p>
+<p class="tRight"><a href="archive.php">Accèder aux archives</a></p>
+</div>
+                </div>
+                <div id="boxSearch" class="right">
+                	<div class="boxHead TR">Recherche</div>
+                    <div class="boxCorps"><form method="post" action="resultat.php" onsubmit="return validation();">
+<input type="text" id="f_field_search" name="f_field_search" value="Votre recherche..."><input type="submit" value="Rechercher">
+</form></div>
+                </div>
+                <p class="clear tCenter">
+                	<a href="http://www.cm-ajaccio.fr" target="_blank"><img src="img/logo/logo_cma.jpg" alt="CMA"></a>     
+                    <a href="http://www.ccca-btp.fr/" target="_blank"><img src="img/logo/logo_cccabtp.jpg" alt="CCCA BTP"></a>    
+                    <a href="http://www.oppbtp.fr/" target="_blank"><img src="img/logo/logo_oppbtp.jpg" alt="OPPBTP"></a>    
+                    <a href="http://www.anfa-auto.fr/" target="_blank"><img src="img/logo/logo_anfa.jpg" alt="ANFA"></a>     
+                    <a href="http://www.corse.fr/" target="_blank"><img src="img/logo/logo_ctc.jpg" alt="CTC"></a>
+                </p>
+            </div>
+            <aside><div id="accordion">
+               		
+<a href="" class="acc TR">Web<span class="orange">TV</span></a>
+<div>
+    <img src="img/logo_webtv.png" alt="WebTV" onclick="window.location.href='../webtv/index.php';return false" class="pointer fRight"><p>Actualités, paroles d'apprentis, partenaires institutionnels.</p>
+    <p>Découvrez en image ce qui fait la vie du <strong>Centre de Formation</strong>.</p>
+    <p class="tCenter espaceTop"><a href="http://www.cfm-ajaccio.fr/webtv" onclick="window.location.href='../webtv/index.php';return false">Accèder à la WebTV</a></p>
+</div>
+<a href="" class="acc">Formation à <span class="orange">Distance</span></a>
+<div>
+    <img src="img/logo_foad.png" alt="WebTV" onclick="window.location.href='http://81.255.75.124/appweb/foad/';return false" class="pointer fRight"><p>Il s'agit de modules de formation interactifs et scénarisés faisant référence aux situations professionnelles identifiées dans le livret de compétences. Cette plateforme permettra de répondre de manière innovante aux nouveaux besoins de formation du <strong>CFM2A</strong>.</p>
+    <p class="tCenter espaceTop"><a href="http://81.255.75.124/appweb/foad/" onclick="window.location.href='http://81.255.75.124/appweb/foad/';return false">Accèder à la FOAD</a></p>
+</div>
+<a href="" class="acc">Connexion <span class="orange">Apprenti</span></a>
+<div>
+    <p>Vous accèdez à votre espace privé.</p>
+    <form method="post" action="script/login.php">
+    <span class="accS"><input type="text" name="f_login" value="Votre identifiant"></span>
+    <span class="accS"><input type="password" name="f_mdp" value="Mot de Passe"></span>
+    <span class="accS"><input type="submit" value="Connexion"><span class="fRight lhButton"><a href="oublie.php" onclick="window.location.href='oublie.php';return false">Mot de passe oublié ?</a></span></span>
+    <input type="hidden" value="2" name="f_type">
+</form>
+</div>
+<a href="" class="acc">Connexion <span class="orange">M.A Entreprise</span></a>
+<div>
+    <p>Vous accèdez à votre espace privé.</p>
+    <form method="post" action="script/login.php">
+    <span class="accS"><input type="text" name="f_login" value="Votre identifiant"></span>
+    <span class="accS"><input type="password" name="f_mdp" value="Mot de Passe"></span>
+    <span class="accS"><input type="submit" value="Connexion"><span class="fRight lhButton"><a href="oublie.php" onclick="window.location.href='oublie.php';return false">Mot de passe oublié ?</a></span></span>
+    <input type="hidden" value="3" name="f_type">
+</form>
+</div>
+<a href="" class="acc">Connexion <span class="orange">Personnel CFM</span></a>
+<div class="borderBottom">
+    <p>Vous accèdez à votre espace privé.</p>
+    <form method="post" action="script/login.php">
+    <span class="accS"><input type="text" name="f_login" value="Votre identifiant"></span>
+    <span class="accS"><input type="password" name="f_mdp" value="Mot de Passe"></span>
+    <span class="accS"><input type="submit" value="Connexion"><span class="fRight lhButton"><a href="oublie.php" onclick="window.location.href='oublie.php';return false">Mot de passe oublié ?</a></span></span>
+    <input type="hidden" value="1" name="f_type">
+</form>
+</div>
+	            	</div>				
+                <h3>Nos <span class="orange">Coordonnées</span>
+</h3>
+                <div class="boxSide">
+                    <p><strong>Centre de Formation des Métiers</strong></p>
+                    <p>Chemin de la Sposata</p>
+                    <p>Lieu dit Bacciochi</p>
+                    <p>BP 40958</p>
+                    <p>20700 AJACCIO CEDEX 9</p>
+                    <p>Tel: 04.95.23.53.14</p>
+                    <p>Fax: 04.95.23.53.23</p>
+                    <p class="tCenter"><a href="contact.php">Plus de détails</a></p>
+                </div>
+                <p id="imageSide">
+					                    <a href="http://www.facebook.com/cfm.ajaccio" target="_blank"><img src="img/facebook.png" alt="facebook" title="Rejoignez-nous sur Facebook" id="facebookLink"></a>
+                </p>
+            </aside>
+</div>
+    <footer><nav id="menuFooter"><ul>
+<li><a href="index.php">Accueil</a></li>
+        <li><a href="etablissement.php">Notre établissement</a></li>
+        <li><a href="devenir.php">Devenir Apprenti</a></li>
+        <li><a href="formation.php">La Formation</a></li>
+        <li><a href="ressources.php">Ressources en ligne</a></li>
+        <li><a href="recherche.php">Recherche</a></li>
+        <li><a href="contact.php">Contact</a></li>
+        <li><a href="liens.php">Liens</a></li>
+        <li><a href="legal.php">Mentions Légales</a></li>
+        <li><a href="sitemap.xml">Plan du site</a></li>
+    </ul></nav><p>© 2010 - Centre de Formation des Métiers de la Corse du Sud - Conception : Bastien Santucci - Réalisation : Romain Bertolucci</p>    </footer>
+</div>
+</body>
+</html>
