@@ -1,891 +1,764 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
-
-
-
-
-
-
-
-
-    
 <head>
-	
-
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
-
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-<script language="javascript">
-var chatOnline = "false";//default state of the chat
-var currentUserKey = "guest:1";//our userkey
-</script>
-
-
-
-
-
-<meta name="author" lang="fr" content="root"/>
-
-<script type="text/javascript" src="/jsp/jahia/javascript/jahia.js"></script>
-<!--[if lte IE 6]>
-<style type="text/css">
-img {
-behavior: url("/jsp/jahia/css/pngbehavior.jsp")}
-</style>
-<![endif]-->
-
-
-
-<link rel="stylesheet" href="/jsp/jahia/templates/etoile/etoile_templates/css/general.css" type="text/css"></link>
-<link rel="stylesheet" href="/jsp/jahia/templates/etoile/etoile_templates/css/print.css" type="text/css" media="print"></link>
-
-<link rel="stylesheet" href="/jsp/jahia/templates/etoile/etoile_templates/css/jquery.treeview.css" type="text/css"></link>
-<link rel="stylesheet" href="/jsp/jahia/templates/etoile/etoile_templates/css/core.css" type="text/css"></link>
-<link rel="stylesheet" href="/jsp/jahia/templates/etoile/etoile_templates/css/cupertino/jquery-ui.cupertino.css" type="text/css"></link>
-
-
-	<link rel="shortcut icon" type="image/png" href="/jsp/jahia/templates/etoile/etoile_templates//img/favicon/etoile/favicon.ico" />
-	<link rel="icon" type="image/png" href="/jsp/jahia/templates/etoile/etoile_templates//img/favicon/etoile/favicon.ico" />
-
-
-
-
-
-
-
-	<div class="fullAdminBar">
-		
-
-
-		
-	</div>
-	
-    
-<script type="text/javascript" src="/jsp/jahia/templates/etoile/etoile_templates/javascript/jquery-1.4.1.min.js"></script>
-<script type="text/javascript" src="/jsp/jahia/templates/etoile/etoile_templates/javascript/jquery.highlight-3.js"></script>
-<script type="text/javascript" src="/jsp/jahia/templates/etoile/etoile_templates/javascript/jquery-ui.min.js"></script>
-
-<link rel="alternate" type="application/rss+xml" title="les femmes" href="/GIP/op/preview/cache/bypass/accueiletoile/template/result_rss.rss?query=(jahia.all:( (femme)  NOT ((jahia.file_content_type:application/msword) AND (jahia.file_content_type:application/pdf) AND (jahia.file_content_type:application/vnd.ms-excel) AND (jahia.file_content_type:application/vnd.ms-powerpoint))))" />
-
-<link rel="alternate" type="application/rss+xml" title="territoires" href="/GIP/op/preview/cache/bypass/accueiletoile/template/result_rss.rss?query=(jahia.all:(( +territoire ) AND  (femme) (( +territoire ) AND  (femme)  NOT (jahia.file_content_type:application/msword)) AND (( +territoire ) AND  (femme)  NOT (jahia.file_content_type:application/pdf)) AND (( +territoire ) AND  (femme)  NOT (jahia.file_content_type:application/vnd.ms-excel)) AND (( +territoire ) AND  (femme)  NOT (jahia.file_content_type:application/vnd.ms-powerpoint))))" />
-
-<link rel="alternate" type="application/rss+xml" title="santÃ©" href="/GIP/site/etoilepro/cache/bypass/accueiletoilepro/ORFE/template/result_rss.rss?query=((jahia.container_alias:article AND ((( +santÃ©, +action +sociale )) AND ((jahia.metadata_lastpublishingdate:[001314871689385 TO 001322474889385]))((( +santÃ©, +action +sociale )) AND ((jahia.metadata_lastpublishingdate:[001314871689385 TO 001322474889385])) NOT (jahia.file_content_type:application/msword)) AND ((( +santÃ©, +action +sociale )) AND ((jahia.metadata_lastpublishingdate:[001314871689385 TO 001322474889385])) NOT (jahia.file_content_type:application/pdf)) AND ((( +santÃ©, +action +sociale )) AND ((jahia.metadata_lastpublishingdate:[001314871689385 TO 001322474889385])) NOT (jahia.file_content_type:application/vnd.ms-excel)) AND ((( +santÃ©, +action +sociale )) AND ((jahia.metadata_lastpublishingdate:[001314871689385 TO 001322474889385])) NOT (jahia.file_content_type:application/vnd.ms-powerpoint)))) OR (jahia.container_alias:news AND ((( +santÃ©, +action +sociale )) AND ((jahia.metadata_lastpublishingdate:[001314871689385 TO 001322474889385]))((( +santÃ©, +action +sociale )) AND ((jahia.metadata_lastpublishingdate:[001314871689385 TO 001322474889385])) NOT (jahia.file_content_type:application/msword)) AND ((( +santÃ©, +action +sociale )) AND ((jahia.metadata_lastpublishingdate:[001314871689385 TO 001322474889385])) NOT (jahia.file_content_type:application/pdf)) AND ((( +santÃ©, +action +sociale )) AND ((jahia.metadata_lastpublishingdate:[001314871689385 TO 001322474889385])) NOT (jahia.file_content_type:application/vnd.ms-excel)) AND ((( +santÃ©, +action +sociale )) AND ((jahia.metadata_lastpublishingdate:[001314871689385 TO 001322474889385])) NOT (jahia.file_content_type:application/vnd.ms-powerpoint)))))" />
-
-<link rel="alternate" type="application/rss+xml" title="territoire2" href="/GIP/site/etoilepro/cache/bypass/accueiletoilepro/ORFE/Territoire/template/result_rss.rss?query=((jahia.container_alias:article AND ((( +territoires )) AND ((jahia.metadata_lastpublishingdate:[001317455945335 TO 001322553545335]))((( +territoires )) AND ((jahia.metadata_lastpublishingdate:[001317455945335 TO 001322553545335])) NOT (jahia.file_content_type:application/msword)) AND ((( +territoires )) AND ((jahia.metadata_lastpublishingdate:[001317455945335 TO 001322553545335])) NOT (jahia.file_content_type:application/pdf)) AND ((( +territoires )) AND ((jahia.metadata_lastpublishingdate:[001317455945335 TO 001322553545335])) NOT (jahia.file_content_type:application/vnd.ms-excel)) AND ((( +territoires )) AND ((jahia.metadata_lastpublishingdate:[001317455945335 TO 001322553545335])) NOT (jahia.file_content_type:application/vnd.ms-powerpoint)))) OR (jahia.container_alias:news AND ((( +territoires )) AND ((jahia.metadata_lastpublishingdate:[001317455945335 TO 001322553545335]))((( +territoires )) AND ((jahia.metadata_lastpublishingdate:[001317455945335 TO 001322553545335])) NOT (jahia.file_content_type:application/msword)) AND ((( +territoires )) AND ((jahia.metadata_lastpublishingdate:[001317455945335 TO 001322553545335])) NOT (jahia.file_content_type:application/pdf)) AND ((( +territoires )) AND ((jahia.metadata_lastpublishingdate:[001317455945335 TO 001322553545335])) NOT (jahia.file_content_type:application/vnd.ms-excel)) AND ((( +territoires )) AND ((jahia.metadata_lastpublishingdate:[001317455945335 TO 001322553545335])) NOT (jahia.file_content_type:application/vnd.ms-powerpoint)))))" />
-
-<link rel="alternate" type="application/rss+xml" title="Centre Inffo" href="http://www.etoile.regioncentre.fr/GIP/engineName/customdsiengine/op/edit/accueiletoile?screen=show_rss&fluxid=10" />
-
-<link rel="alternate" type="application/rss+xml" title="Quoi de neuf sur Ã©toile ?" href="http://www.etoile.regioncentre.fr/GIP/engineName/customdsiengine/accueiletoile?screen=show_rss&fluxid=11" />
-
-
- <script type="text/javascript">
-jQuery.noConflict();
-</script>
-
-<title>Rechercher une formation</title>
-
-<script type="text/javascript">
-
-
-jQuery('.popupexterne').live("click",function(e){	
-    var url = jQuery(this).attr("href");
-    jQuery.ajax({
-                    async: false,
-                    global: false,
-                    dataType: 'html',
-                    url: url,
-                    success: function(msg) {
-                                    //alert(msg);
-                                    var html = msg;
-                                    jQuery(html).find('div').each(function(){
-                                                   if(jQuery(this).attr('id') == 'col-1')
-                                                   {
-                                                                   jQuery('#receptacle').html( jQuery(this).html() );
-                                                                   jQuery('#receptacle').dialog('open');
-                                                                   jQuery("#receptacle").dialog({
-																   resizable: false,
-																   width:800,
-																	height:680,
-																	close: function(event, ui) {	jQuery("#receptacle").dialog('destroy')  }
-    	});
-                                                                   return false;
-                                                   }
-                                    });
-                    },
-                    error: function(){
-                                    alert('erreur');
-                    }
-    });
-    e.preventDefault();
-});
-
-</script>
-
-
-
-
-</head>
-
-
-
-<body >
-
-<div id="main" class="article ">
-
-	<div id="header">
-  		<div id="top">
-  			
-
-
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" language="JavaScript">
-    // GLOBAL JS VARS
-    var jahiaMainServletPath="/GIP";
-    var jahiaContextPath ="";
-    // todo make the webdav path dynamic?
-    var jahiaCoreWebdavPath="/webdav";
-</script>
-
-
-
-<script language="javascript" type="text/javascript">
-<!--
-  function submitSimpleSearchForm(){
-    document.searchForm.searchRefineAttribute.value='reset';
-    return;
-  }    
-//-->
-</script>
-
-
-
-<a class="accesslink" name="top" href="#top" accesskey="5">&nbsp;</a>
-
-<div id="logosTop">
-	<a class="logo_rep_francaise" title="Site national du ministÃ¨re du travail" href="http://www.centre.travail.gouv.fr" target="_blank">Site national du ministÃ¨re du travail</a>
-	<a class="logo_region_centre" title="RÃ©gion centre" href="http://www.regioncentre.fr" target="_blank">RÃ©gion centre</a>
-	<a class="logo_europe" title="Fond Social EuropÃ©en" href="http://www.fse.gouv.fr" target="_blank">Fond Social EuropÃ©en</a>
-	<a class="logo_europecentre" title="L'Europe s'engage en rÃ©gion Centre" href="http://www.europe-centre.eu/" target="_blank">L'Europe s'engage en rÃ©gion Centre</a>
-</div>
-
-<div id="quicklinkheader">
-    
-
-
-
-<ul>
-
-	<!--<li>	
-		<a href="/GIP/engineName/customengine/accueiletoile/seformer/formation/rechercheformation;jsessionid=0996A798543C045E7542585E8C630B57?screen=contact_init">
-		Contactez-nous</a>	
-	</li>-->
-
-    
-                <li>
-                <a  href="/GIP/cache/off/accueiletoile/agenda_public;jsessionid=0996A798543C045E7542585E8C630B57" 
-                	
-                	
-                	
-                	title="Agenda"
-                	
-                	>
-                    	<span>Agenda</span></a>
-                    
-                </li>
-                
-                <li>
-                <a  href="http://www.etoile.regioncentre.fr/GIP/op/edit/cache/bypass/accueiletoile/cache/off/engineName/search?screen=execute&displaySearch=simple&searchHandler=advSearch&direct=searchurl&searchView=advSearch&id=198&query=true" 
-                	
-                	
-                	
-                	title="Br&egrave;ves"
-                	
-                	>
-                    	<span>Br&egrave;ves</span></a>
-                    
-                </li>
-                
-                <li>
-                <a  href="http://www.etoile.regioncentre.fr/GIP/engineName/customdsiengine/accueiletoile?screen=show_rss&fluxid=11" 
-                	
-                	
-                	
-                	title="RSS"
-                	
-                	>
-                    	<span>RSS</span></a>
-                    
-                </li>
-                
-                <li>
-                <a  href="/GIP/cache/off/accueiletoile/pid/2100;jsessionid=0996A798543C045E7542585E8C630B57" 
-                	
-                	
-                	
-                	title="Aide"
-                	
-                	>
-                    	<span>Aide</span></a>
-                    
-                </li>
-                
-                <li>
-                <a  href="http://www.etoile.regioncentre.fr/GIP/site/etoilepro/accueiletoilepro/formationmetiers/offre-formation-pro/SAD" 
-                	
-                	
-                	
-                	title="Saisie &agrave; distance"
-                	
-                	>
-                    	<span>Saisie &agrave; distance</span></a>
-                    
-                </li>
-                
-                <li>
-                <a  href="/GIP/cache/off/accueiletoile/contactez-nous;jsessionid=0996A798543C045E7542585E8C630B57" 
-                	
-                	
-                	
-                	title="Contactez-nous"
-                	
-                	>
-                    	<span>Contactez-nous</span></a>
-                    
-                </li>
-                
-                <li>
-                <a  href="/GIP/cache/off/accueiletoile/sinformer/newletters-etoile;jsessionid=0996A798543C045E7542585E8C630B57" 
-                	
-                	
-                	
-                	title="Newsletter"
-                	
-                	>
-                    	<span>Newsletter</span></a>
-                    
-                </li>
-                
-
-</ul>
-
-</div>
-
-
-
-<div id="search">
-	<form name="searchForm" method="post" action="/GIP/engineName/search/accueiletoile/seformer/formation/rechercheformation;jsessionid=0996A798543C045E7542585E8C630B57" onsubmit="" >
-      <input id="barre_recherche" type="text" name="allWordSearch" size="10"
-      value="" />
-      <input type="hidden" name="maxPageItems" value="10" />
-      <input type="hidden" name="PageSearchResultBuilder.onlyOneHitByPage" value="true" />
-      <input type="hidden" name="searchView" value="advSearch" />
-      <input type="hidden" name="screen" value="execute" />
-      <input type="hidden" name="freeSearch" value='' />
-      <input type="hidden" name="displaySearch" value="simple" />
-      <input type="hidden" name="reset" value='' />            
-      <input type="hidden" name="searchRefineAttribute" value="" />
-      <input type="hidden" name="searchHandler" value="advSearch" />
-      <input id="btn_ok" type="submit" accesskey="4" name="go" onclick="submitSimpleSearchForm();" value="ok"/>
-    
-     
-      <div id="recherche_avancee" class="hidden" onmouseover="this.className='shown';" onmouseout="this.className='hidden';">
-	      
-	      <div id="bloc_recherche">
-		      <a id="btn_plus" href="#">
-		      	+
-		      </a>
-	 
-	      	  <div id="choix_recherche">
-	      	  		<div>
-	      	  			<input type="checkbox" name="tout" />
-	      	  			<label>Tout</label>
-	      	  		</div>
-	      	  		
-	      	  		<label class="filtrer">Filtrer par : </label>
-	      	  		
-	      	  		<div>
-	      	  			<input type="checkbox" name="metier" value="metier"/>
-	      	  			<label>MÃ©tier</label>
-	      	  		</div>
-	      	  		
-	      	  		<div>
-	      	  			<input type="checkbox" name="diplome" value="certification" />
-	      	  			<label>DiplÃ´me</label>
-	      	  		</div>
-	      	  		
-	      	  		<div>
-	      	  			<input type="checkbox" name="formation" value="actionFormation" />
-	      	  			<label>Formation</label>
-	      	  		</div>	
-	      	  		
-	      	  		<div>
-	      	  			<input type="checkbox" name="orgaForm" value="organismeFormation"/>
-	      	  			<label>Organisme</label>
-	      	  		</div>
-	      	  	
-	      	  	<a href="javascript:document.searchForm.displaySearch.value='';document.searchForm.allWordSearch.value='';document.searchForm.reset.value='true';document.searchForm.searchView.value='advSearch';document.searchForm.searchHandler.value='advSearch';document.searchForm.submit()">>&nbsp;<u>Recherche avancÃ©e</u></a>
-	      	  </div>
-      	  	
-      	  	<div id="recherche_footer"></div>
-      	  
-      	  </div>
-      </div>
-      
-      </form>
-</div>                
-
-<div id="receptacle"></div> 
- 		</div>
- 		
-		<div id="navigation">  
-		
-
-
-
-
-
-
-
-
-
-<!-- Gestion des zones cliquables sur le header -->
-
-<div id="zones_cliquables">
-	<a id="logo" accesskey="1" href="/GIP/cache/off/accueiletoile;jsessionid=0996A798543C045E7542585E8C630B57">Accueil - Etoile</a>
-	
-	<a class="logo_GIP" href="http://www.alfacentre.org/" title="GIP Alfa Centre" target="_blank">GIP Alfa Centre</a>
-	<a class="logo_numerovert" href="http://www.etoile.regioncentre.fr/GIP/site/etoile/engineName/customengine?screen=cnasea_init" title="NumÃ©ro vert 0 800 222 100">NumÃ©ro vert 0 800 222 100</a>
-	
-	
-		
-		<a id="espace_pro" href="http://www.etoile.regioncentre.fr/GIP/site/etoilepro">espace pro</a>
-		
-		
-		
-</div>
-
-
-<!-- Gestion du menu -->
-	<div id="menu">
-		<ul><li class='level1 item1' id='elemRacine1'><span><a class='lienNav' target='' id='3' href='/GIP/accueiletoile/sorienter;jsessionid=0996A798543C045E7542585E8C630B57'>S'orienter</a><a class='btn_deplier' href='javascript:void(0);'></a> <div class='editMenu'></div></span><ul><li class='level2 item1'><span><a class='lienNav' target='' id='1009' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes;jsessionid=0996A798543C045E7542585E8C630B57'>S'orienter dans ses &eacute;tudes</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level3 item1'><span><a class='lienNav' target='' id='1430' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/mon-profil;jsessionid=0996A798543C045E7542585E8C630B57'>Mon profil</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level4 item2'><span><a class='lienNav' target='' id='58' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/mon-profil/pid/58;jsessionid=0996A798543C045E7542585E8C630B57'>J'entre en sixi&egrave;me</a></span></li><li class='level4 item3'><span><a class='lienNav' target='' id='3003' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/mon-profil/je-suis-en3eme_1;jsessionid=0996A798543C045E7542585E8C630B57'>Je suis en 3&egrave;me</a></span></li><li class='level4 item4'><span><a class='lienNav' target='' id='3475' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/mon-profil/Je-suis-au-college;jsessionid=0996A798543C045E7542585E8C630B57'>Je suis au coll&egrave;ge</a></span></li><li class='level4 item7'><span><a class='lienNav' target='' id='1029' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/mon-profil/1ere;jsessionid=0996A798543C045E7542585E8C630B57'>Je suis en 1&egrave;re</a></span></li><li class='level4 item8'><span><a class='lienNav' target='' id='2724' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/mon-profil/Je-suis-en-terminale_1;jsessionid=0996A798543C045E7542585E8C630B57'>Je suis en terminale</a></span></li><li class='level4 item9'><span><a class='lienNav' target='' id='52' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/mon-profil/pid/52;jsessionid=0996A798543C045E7542585E8C630B57'>Je suis &eacute;tudiant</a></span></li><li class='level4 item10'><span><a class='lienNav' target='' id='2015' href='/GIP/accueiletoile/seformer/alternance/fiche-pratique-apprentissage;jsessionid=0996A798543C045E7542585E8C630B57'>Je suis apprenti</a></span></li></ul></li><li class='level3 item2'><span><a class='lienNav' target='' id='3968' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/portes-ouvertes-des-etablissements;jsessionid=0996A798543C045E7542585E8C630B57'>Portes ouvertes des &eacute;tablissements</a></span></li><li class='level3 item3'><span><a class='lienNav' target='' id='2279' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/forumsinformation_1;jsessionid=0996A798543C045E7542585E8C630B57'>Forums de l'orientation</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level4 item1'><span><a class='lienNav' target='' id='4828' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/forumsinformation_1/Forums-de-l-orientation-vous-avez-rendez-vous-avec-votre-avenir;jsessionid=0996A798543C045E7542585E8C630B57'>Forums de lâ€™orientation : vous avez rendez-vous avec votre avenir</a></span></li><li class='level4 item2'><span><a class='lienNav' target='' id='4833' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/forumsinformation_1/calendrier-forum-orientation;jsessionid=0996A798543C045E7542585E8C630B57'>Calendrier</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level5 item1'><span><a class='lienNav' target='' id='6376' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/forumsinformation_1/calendrier-forum-orientation/test;jsessionid=0996A798543C045E7542585E8C630B57'>test</a></span></li></ul></li></ul></li><li class='level3 item4'><span><a class='lienNav' target='' id='1032' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/rencontrerconseiller;jsessionid=0996A798543C045E7542585E8C630B57'>Rencontrer un conseiller</a></span></li><li class='level3 item5'><span><a class='lienNav' target='' id='2281' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/Assure_1;jsessionid=0996A798543C045E7542585E8C630B57'>Assure ta rentr&eacute;e</a></span></li><li class='level3 item6'><span><a class='lienNav' target='' id='3017' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/Assure-ton-annee_1;jsessionid=0996A798543C045E7542585E8C630B57'>Assure ton ann&eacute;e</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level4 item1'><span><a class='lienNav' target='' id='4147' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/Assure-ton-annee_1/Assure-ton-annee-ici-on-s-interesse-a-moi;jsessionid=0996A798543C045E7542585E8C630B57'>Assure ton ann&eacute;e : &quot;ici, on sâ€™int&eacute;resse &agrave; moi&quot;</a></span></li><li class='level4 item2'><span><a class='lienNav' target='' id='4151' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/Assure-ton-annee_1/assure-ton-annee-un-dispositif-experimental;jsessionid=0996A798543C045E7542585E8C630B57'>Assure ton ann&eacute;e  un dispositif exp&eacute;rimental</a></span></li></ul></li><li class='level3 item7'><span><a class='lienNav' target='' id='56' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/pid/56;jsessionid=0996A798543C045E7542585E8C630B57'>S'orienter sans pr&eacute;jug&eacute;</a></span></li><li class='level3 item8'><span><a class='lienNav' target='' id='5018' href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/actualites-s-orienter;jsessionid=0996A798543C045E7542585E8C630B57'>Actualit&eacute;s</a></span></li></ul></li><li class='level2 item2'><span><a class='lienNav' target='' id='102' href='/GIP/accueiletoile/sorienter/s-orienter-dans-sa-vie-professionnelle;jsessionid=0996A798543C045E7542585E8C630B57'>S'orienter dans sa vie professionnelle</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul></ul></li><li class='level2 item3'><span><a class='lienNav' target='' id='1007' href='/GIP/accueiletoile/sorienter/metiers;jsessionid=0996A798543C045E7542585E8C630B57'>Les m&eacute;tiers</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level3 item1'><span><a class='lienNav' target='' id='1018' href='/GIP/accueiletoile/sorienter/metiers/recherchemetiers;jsessionid=0996A798543C045E7542585E8C630B57'>Rechercher un m&eacute;tier</a></span></li><li class='level3 item2'><span><a class='lienNav' target='' id='4348' href='/GIP/accueiletoile/sorienter/metiers/actualites-metiers2;jsessionid=0996A798543C045E7542585E8C630B57'>Actualit&eacute;s m&eacute;tiers</a></span></li><li class='level3 item3'><span><a class='lienNav' target='' id='1043' href='/GIP/accueiletoile/sorienter/metiers/fichesdecouvrir;jsessionid=0996A798543C045E7542585E8C630B57'>20 fiches pour d&eacute;couvrir votre futur m&eacute;tier</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul></ul></li><li class='level3 item4'><span><a class='lienNav' target='' id='2654' href='/GIP/accueiletoile/sorienter/metiers/44-metiers-a-decouvrir_1;jsessionid=0996A798543C045E7542585E8C630B57'>M&eacute;tiers de la sant&eacute; et du social</a></span></li><li class='level3 item5'><span><a class='lienNav' target='' id='2809' href='/GIP/accueiletoile/sorienter/metiers/metiers-domaine-ORFE;jsessionid=0996A798543C045E7542585E8C630B57'>Observatoire des m&eacute;tiers (ORFE)</a></span></li><li class='level3 item6'><span><a class='lienNav' target='' id='3065' href='/GIP/accueiletoile/sorienter/metiers/olympiades-des-metiers;jsessionid=0996A798543C045E7542585E8C630B57'>Olympiades des M&eacute;tiers</a></span></li><li class='level3 item8'><span><a class='lienNav' target='' id='5516' href='/GIP/accueiletoile/emploi/actualites-emploi/actualite-aller-vers-l-emploi/cinquante_trois_milles_recrutements_estimes_en_2013_en_region_Centre;jsessionid=0996A798543C045E7542585E8C630B57'>Les m&eacute;tiers qui recrutent</a></span></li></ul></li><li class='level2 item4'><span><a class='lienNav' target='' id='1006' href='/GIP/accueiletoile/sorienter/diplomescertifications;jsessionid=0996A798543C045E7542585E8C630B57'>Dipl&ocirc;mes et certifications</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level3 item1'><span><a class='lienNav' target='' id='1020' href='/GIP/accueiletoile/sorienter/diplomescertifications/recherchediplomes;jsessionid=0996A798543C045E7542585E8C630B57'>Rechercher un dipl&ocirc;me</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level4 item1'><span><a class='lienNav' target='' id='1420' href='/GIP/accueiletoile/sorienter/diplomescertifications/recherchediplomes/generalites;jsessionid=0996A798543C045E7542585E8C630B57'>Qu'est-ce qu'une certification ?</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level5 item1'><span><a class='lienNav' target='' id='2845' href='/GIP/accueiletoile/sorienter/diplomescertifications/recherchediplomes/generalites/diplome_etat;jsessionid=0996A798543C045E7542585E8C630B57'>Dipl&ocirc;mes ou titres d&eacute;livr&eacute;s par l'Etat</a></span></li><li class='level5 item2'><span><a class='lienNav' target='' id='2846' href='/GIP/accueiletoile/sorienter/diplomescertifications/recherchediplomes/generalites/titres-OF;jsessionid=0996A798543C045E7542585E8C630B57'>Titres des organismes de formation priv&eacute;s ou publics</a></span></li><li class='level5 item3'><span><a class='lienNav' target='' id='2847' href='/GIP/accueiletoile/sorienter/diplomescertifications/recherchediplomes/generalites/CQP;jsessionid=0996A798543C045E7542585E8C630B57'>CQP d&eacute;livr&eacute;s par les branches professionnelles</a></span></li><li class='level5 item4'><span><a class='lienNav' target='' id='2848' href='/GIP/accueiletoile/sorienter/diplomescertifications/recherchediplomes/generalites/certification-region-centre;jsessionid=0996A798543C045E7542585E8C630B57'>Les certifications de la r&eacute;gion Centre</a></span></li></ul></li></ul></li><li class='level3 item2'><span><a class='lienNav' target='' id='2039' href='/GIP/accueiletoile/sorienter/diplomescertifications/pid/2039;jsessionid=0996A798543C045E7542585E8C630B57'>Actualit&eacute;s</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level4 item1'><span><a class='lienNav' target='' id='2040' href='/GIP/accueiletoile/sorienter/diplomescertifications/pid/2040;jsessionid=0996A798543C045E7542585E8C630B57'>Br&egrave;ves</a></span></li><li class='level4 item2'><span><a class='lienNav' target='' id='2041' href='/GIP/accueiletoile/sorienter/diplomescertifications/agenda-diplome;jsessionid=0996A798543C045E7542585E8C630B57'>Agenda</a></span><ul></ul></li></ul></li><li class='level3 item3'><span><a class='lienNav' target='' id='2978' href='/GIP/accueiletoile/sorienter/diplomescertifications/en-savoir-plus-diplomes;jsessionid=0996A798543C045E7542585E8C630B57'>A savoir sur la base dipl&ocirc;mes</a></span></li></ul></li><li class='level2 item5'><span><a class='lienNav' target='' id='1011' href='/GIP/accueiletoile/sorienter/rechercherunlieudinformation;jsessionid=0996A798543C045E7542585E8C630B57'>Rechercher un lieu d'information</a></span></li></ul></li><li class='level1 item2' id='elemRacine2'><span><a class='lienNav' target='' id='997' href='/GIP/accueiletoile/seformer;jsessionid=0996A798543C045E7542585E8C630B57'>Se former</a><a class='btn_deplier' href='javascript:void(0);'></a> <div class='editMenu'></div></span><ul><li class='level2 item1'><span><a class='lienNav' target='' id='1012' href='/GIP/accueiletoile/seformer/formation;jsessionid=0996A798543C045E7542585E8C630B57'>Offre de Formation</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level3 item1'><span><a class='lienNav' target='' id='2239' href='/GIP/accueiletoile/seformer/formation/rechercheformation;jsessionid=0996A798543C045E7542585E8C630B57'>Rechercher une formation</a></span></li><li class='level3 item2'><span><a class='lienNav' target='' id='4435' href='/GIP/accueiletoile/seformer/formation/recherches_predefinies;jsessionid=0996A798543C045E7542585E8C630B57'>Recherches pr&eacute;d&eacute;finies</a></span></li></ul></li><li class='level2 item2'><span><a class='lienNav' target='' id='1038' href='/GIP/accueiletoile/seformer/Formation-scolaire-universitaire;jsessionid=0996A798543C045E7542585E8C630B57'>Formation scolaire et universitaire</a></span></li><li class='level2 item3'><span><a class='lienNav' target='' id='4157' href='/GIP/accueiletoile/seformer/alternance;jsessionid=0996A798543C045E7542585E8C630B57'>Alternance</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level3 item1'><span><a class='lienNav' target='' id='225' href='/GIP/accueiletoile/seformer/alternance/fiche-pratique-apprentissage;jsessionid=0996A798543C045E7542585E8C630B57'>Apprentissage</a></span></li><li class='level3 item2'><span><a class='lienNav' target='' id='180' href='/GIP/accueiletoile/seformer/alternance/contrat-de-professionalisation;jsessionid=0996A798543C045E7542585E8C630B57'>Contrat de professionnalisation</a></span></li><li class='level3 item3'><span><a class='lienNav' target='' id='4299' href='/GIP/accueiletoile/seformer/alternance/campagne-de-promotion-de-l-alternance;jsessionid=0996A798543C045E7542585E8C630B57'>Campagne de promotion de l'alternance</a></span></li></ul></li><li class='level2 item4'><span><a class='lienNav' target='' id='1014' href='/GIP/accueiletoile/seformer/formation-continue1;jsessionid=0996A798543C045E7542585E8C630B57'>Formation continue</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level3 item1'><span><a class='lienNav' target='' id='4191' href='/GIP/accueiletoile/sorienter/s-orienter-dans-sa-vie-professionnelle/changer_de_metier_evoluer/financer-une-formation-quelles-possibilites/Formation-des-salaries;jsessionid=0996A798543C045E7542585E8C630B57'>Salari&eacute;s</a></span></li><li class='level3 item2'><span><a class='lienNav' target='' id='4202' href='/GIP/accueiletoile/sorienter/s-orienter-dans-sa-vie-professionnelle/changer_de_metier_evoluer/financer-une-formation-quelles-possibilites/les-possibilites-de-financer-une-formation-pour-les-demandeurs-d-emploi;jsessionid=0996A798543C045E7542585E8C630B57'>Demandeurs d'emploi</a></span></li><li class='level3 item3'><span><a class='lienNav' target='' id='4204' href='/GIP/accueiletoile/sorienter/s-orienter-dans-sa-vie-professionnelle/changer_de_metier_evoluer/financer-une-formation-quelles-possibilites/Le-financement-des-formations-pour-les-professionnels-non-salaries;jsessionid=0996A798543C045E7542585E8C630B57'>Professionnels non salari&eacute;s</a></span></li><li class='level3 item4'><span><a class='lienNav' target='' id='4205' href='/GIP/accueiletoile/sorienter/s-orienter-dans-sa-vie-professionnelle/changer_de_metier_evoluer/financer-une-formation-quelles-possibilites/quelques-financements-specifiques;jsessionid=0996A798543C045E7542585E8C630B57'>Publics sp&eacute;cifiques</a></span></li></ul></li><li class='level2 item7'><span><a class='lienNav' target='' id='4396' href='http://www.etoile.regioncentre.fr/GIP/accueiletoile/sinformer/europe-etranger?utm_source=lien_via_menu&utm_medium=lien-via-menu&utm_content=mobilite&utm_campaign=mobilite_via_menu_formation'>Mobilit&eacute;</a></span></li></ul></li><li class='level1 item3' id='elemRacine3'><span><a class='lienNav' target='' id='998' href='/GIP/accueiletoile/emploi;jsessionid=0996A798543C045E7542585E8C630B57'>Aller vers l'emploi</a><a class='btn_deplier' href='javascript:void(0);'></a> <div class='editMenu'></div></span><ul><li class='level2 item1'><span><a class='lienNav' target='' id='4222' href='/GIP/accueiletoile/emploi/actualites-emploi;jsessionid=0996A798543C045E7542585E8C630B57'>Actualit&eacute;s</a></span></li><li class='level2 item2'><span><a class='lienNav' target='' id='1054' href='/GIP/accueiletoile/emploi/rechercheemploi;jsessionid=0996A798543C045E7542585E8C630B57'>Rechercher un emploi</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level3 item1'><span><a class='lienNav' target='' id='1072' href='/GIP/accueiletoile/emploi/rechercheemploi/rechercheentreprise;jsessionid=0996A798543C045E7542585E8C630B57'>Rechercher une entreprise</a></span></li><li class='level3 item2'><span><a class='lienNav' target='' id='1074' href='/GIP/accueiletoile/emploi/rechercheemploi/concours;jsessionid=0996A798543C045E7542585E8C630B57'>Concours</a></span></li><li class='level3 item3'><span><a class='lienNav' target='' id='1075' href='/GIP/accueiletoile/emploi/rechercheemploi/au-centre-de-l-emploi;jsessionid=0996A798543C045E7542585E8C630B57'>Au Centre de l'Emploi</a></span></li><li class='level3 item4'><span><a class='lienNav' target='' id='2244' href='/GIP/accueiletoile/sinformer/lieuxdinfo/recherchelieuxinfo;jsessionid=0996A798543C045E7542585E8C630B57'>Rencontrer un conseiller</a></span></li><li class='level3 item5'><span><a class='lienNav' target='' id='2991' href='/GIP/accueiletoile/emploi/rechercheemploi/sites-utiles-recherche-emploi;jsessionid=0996A798543C045E7542585E8C630B57'>Sites utiles recherche d'emploi</a></span></li></ul></li><li class='level2 item3'><span><a class='lienNav' target='' id='1060' href='/GIP/accueiletoile/emploi/aide-emploi;jsessionid=0996A798543C045E7542585E8C630B57'>Aides &agrave; l'emploi</a></span></li><li class='level2 item4'><span><a class='lienNav' target='' id='1073' href='/GIP/accueiletoile/emploi/creationentreprise;jsessionid=0996A798543C045E7542585E8C630B57'>Cr&eacute;ation d'entreprise</a></span></li><li class='level2 item5'><span><a class='lienNav' target='' id='5004' href='/GIP/accueiletoile/emploi/jobs-d-ete-2013;jsessionid=0996A798543C045E7542585E8C630B57'>Jobs saisonniers</a></span></li><li class='level2 item6'><span><a class='lienNav' target='' id='6528' href='/GIP/accueiletoile/emploi/emplois-d-avenir-gp;jsessionid=0996A798543C045E7542585E8C630B57'>Emplois d'avenir</a></span></li></ul></li><li class='level1 item4' id='elemRacine4'><span><a class='lienNav' target='' id='999' href='/GIP/accueiletoile/evoluer;jsessionid=0996A798543C045E7542585E8C630B57'>Evoluer</a><a class='btn_deplier' href='javascript:void(0);'></a> <div class='editMenu'></div></span><ul><li class='level2 item1'><span><a class='lienNav' target='' id='4190' href='/GIP/accueiletoile/sorienter/s-orienter-dans-sa-vie-professionnelle/changer_de_metier_evoluer/faire-le-point-sur-son-experience-professionnelle;jsessionid=0996A798543C045E7542585E8C630B57'>Le bilan de comp&eacute;tences</a></span></li><li class='level2 item2'><span><a class='lienNav' target='' id='1062' href='/GIP/accueiletoile/evoluer/vae;jsessionid=0996A798543C045E7542585E8C630B57'>VAE</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul></ul></li><li class='level2 item3'><span><a class='lienNav' target='' id='1400' href='/GIP/accueiletoile/evoluer/developper-ses-competences;jsessionid=0996A798543C045E7542585E8C630B57'>D&eacute;velopper ses comp&eacute;tences</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level3 item1'><span><a class='lienNav' target='' id='3132' href='/GIP/accueiletoile/evoluer/developper-ses-competences/Contrat-de-transition-professionnelle-accompagner-les-mutations-economiques_2;jsessionid=0996A798543C045E7542585E8C630B57'>Contrat de transition professionnelle : accompagner les mutations &eacute;conomiques</a></span></li><li class='level3 item2'><span><a class='lienNav' target='' id='3169' href='/GIP/accueiletoile/evoluer/developper-ses-competences/lire-ecrire-et-compter;jsessionid=0996A798543C045E7542585E8C630B57'>Lire Ecrire et compter</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level4 item1'><span><a class='lienNav' target='' id='4797' href='/GIP/accueiletoile/evoluer/developper-ses-competences/lire-ecrire-et-compter/breves-lire-ecrire-compter;jsessionid=0996A798543C045E7542585E8C630B57'>Br&egrave;ves</a></span></li></ul></li></ul></li><li class='level2 item4'><span><a class='lienNav' target='' id='4140' href='/GIP/accueiletoile/sorienter/s-orienter-dans-sa-vie-professionnelle;jsessionid=0996A798543C045E7542585E8C630B57'>S'orienter dans sa vie professionnelle</a></span></li><li class='level2 item6'><span><a class='lienNav' target='' id='1064' href='/GIP/accueiletoile/sorienter/diplomescertifications;jsessionid=0996A798543C045E7542585E8C630B57'>Dipl&ocirc;mes certifications</a></span></li><li class='level2 item7'><span><a class='lienNav' target='' id='4108' href='/GIP/accueiletoile/evoluer/actualite-evoluer;jsessionid=0996A798543C045E7542585E8C630B57'>Actualit&eacute;s</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level3 item1'><span><a class='lienNav' target='' id='4076' href='/GIP/accueiletoile/evoluer/actualite-evoluer/Metiers-du-BTP-preparer-en-ligne-une-seconde-partie-de-carriere;jsessionid=0996A798543C045E7542585E8C630B57'>M&eacute;tiers du BTP : pr&eacute;parer en ligne une seconde partie de carri&egrave;re</a></span></li><li class='level3 item2'><span><a class='lienNav' target='' id='5531' href='/GIP/accueiletoile/evoluer/actualite-evoluer/DIF-je-me-suis-forme-a-l-horlogerie;jsessionid=0996A798543C045E7542585E8C630B57'>DIF : &quot;je me suis form&eacute; &agrave; lâ€™horlogerie&quot;</a></span></li></ul></li></ul></li><li class='level1 item5' id='elemRacine5'><span><a class='lienNav' target='' id='1000' href='/GIP/accueiletoile/sinformer;jsessionid=0996A798543C045E7542585E8C630B57'>S'informer</a><a class='btn_deplier' href='javascript:void(0);'></a> <div class='editMenu'></div></span><ul><li class='level2 item2'><span><a class='lienNav' target='' id='1068' href='/GIP/accueiletoile/sinformer/viepratique;jsessionid=0996A798543C045E7542585E8C630B57'>Vie pratique</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level3 item1'><span><a class='lienNav' target='' id='1091' href='/GIP/accueiletoile/sinformer/viepratique/logement;jsessionid=0996A798543C045E7542585E8C630B57'>Logement</a></span></li><li class='level3 item2'><span><a class='lienNav' target='' id='1092' href='/GIP/accueiletoile/sinformer/viepratique/transports;jsessionid=0996A798543C045E7542585E8C630B57'>Transports</a></span></li><li class='level3 item3'><span><a class='lienNav' target='' id='2233' href='/GIP/accueiletoile/sinformer/viepratique/Internet_1;jsessionid=0996A798543C045E7542585E8C630B57'>Internet</a></span></li><li class='level3 item4'><span><a class='lienNav' target='' id='2235' href='/GIP/accueiletoile/sinformer/viepratique/sante_2;jsessionid=0996A798543C045E7542585E8C630B57'>Sant&eacute;</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level4 item1'><span><a class='lienNav' target='' id='2509' href='/GIP/accueiletoile/sinformer/viepratique/sante_2/s-informer-sur-l-amour-et-la-sexualite;jsessionid=0996A798543C045E7542585E8C630B57'>S'informer sur l'amour et la sexualit&eacute;</a></span></li><li class='level4 item2'><span><a class='lienNav' target='' id='2518' href='/GIP/accueiletoile/sinformer/viepratique/sante_2/j-ai-16-ans-et-je-prends-soin-de-moi;jsessionid=0996A798543C045E7542585E8C630B57'>J'ai 16 ans et je prends soin de moi</a></span></li><li class='level4 item4'><span><a class='lienNav' target='' id='3218' href='/GIP/accueiletoile/sinformer/viepratique/sante_2/breves-sante;jsessionid=0996A798543C045E7542585E8C630B57'>Br&egrave;ves sant&eacute;</a></span></li></ul></li><li class='level3 item5'><span><a class='lienNav' target='' id='3066' href='/GIP/accueiletoile/sinformer/viepratique/handicap;jsessionid=0996A798543C045E7542585E8C630B57'>Handicap</a></span></li><li class='level3 item6'><span><a class='lienNav' target='' id='4571' href='/GIP/accueiletoile/sinformer/viepratique/faire-garder-ses-enfants;jsessionid=0996A798543C045E7542585E8C630B57'>Faire garder ses enfants</a></span></li></ul></li><li class='level2 item3'><span><a class='lienNav' target='' id='1069' href='/GIP/accueiletoile/sinformer/citoyennete;jsessionid=0996A798543C045E7542585E8C630B57'>Citoyennet&eacute;</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level3 item1'><span><a class='lienNav' target='' id='3693' href='/GIP/accueiletoile/sinformer/citoyennete/service-civique;jsessionid=0996A798543C045E7542585E8C630B57'>Service Civique</a></span></li><li class='level3 item2'><span><a class='lienNav' target='' id='1094' href='/GIP/accueiletoile/sinformer/citoyennete/projets-concours;jsessionid=0996A798543C045E7542585E8C630B57'>Projets -Concours</a></span></li><li class='level3 item3'><span><a class='lienNav' target='' id='1095' href='/GIP/accueiletoile/sinformer/citoyennete/developpementdurable;jsessionid=0996A798543C045E7542585E8C630B57'>D&eacute;veloppement durable</a></span></li><li class='level3 item4'><span><a class='lienNav' target='' id='1408' href='/GIP/accueiletoile/sinformer/citoyennete/lutte-contre-discriminations;jsessionid=0996A798543C045E7542585E8C630B57'>Lutte contre les discriminations</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level4 item1'><span><a class='lienNav' target='' id='3310' href='/GIP/accueiletoile/sinformer/citoyennete/lutte-contre-discriminations/Ouvrir-les-ecoles-de-journalisme-a-la-diversite;jsessionid=0996A798543C045E7542585E8C630B57'>Ouvrir les &eacute;coles de journalisme &agrave; la diversit&eacute;</a></span></li><li class='level4 item2'><span><a class='lienNav' target='' id='4564' href='/GIP/accueiletoile/sinformer/citoyennete/lutte-contre-discriminations/Un-jeu-de-cartes-postales-pour-lutter-contre-les-discriminations;jsessionid=0996A798543C045E7542585E8C630B57'>Un jeu de cartes postales pour lutter contre les discriminations</a></span></li></ul></li><li class='level3 item5'><span><a class='lienNav' target='' id='1536' href='/GIP/accueiletoile/sinformer/citoyennete/mixite-citoyennete;jsessionid=0996A798543C045E7542585E8C630B57'>Mixit&eacute;</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level4 item1'><span><a class='lienNav' target='' id='1538' href='/GIP/accueiletoile/sinformer/citoyennete/mixite-citoyennete/actualites-mixite;jsessionid=0996A798543C045E7542585E8C630B57'>Actualit&eacute;s</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level5 item1'><span><a class='lienNav' target='' id='1537' href='/GIP/accueiletoile/sinformer/citoyennete/mixite-citoyennete/actualites-mixite/agenda-mixite;jsessionid=0996A798543C045E7542585E8C630B57'>Agenda</a></span></li><li class='level5 item2'><span><a class='lienNav' target='' id='1591' href='/GIP/accueiletoile/sinformer/citoyennete/mixite-citoyennete/actualites-mixite/breves-mixite;jsessionid=0996A798543C045E7542585E8C630B57'>Br&egrave;ves</a></span></li></ul></li></ul></li><li class='level3 item6'><span><a class='lienNav' target='' id='3499' href='/GIP/accueiletoile/sinformer/citoyennete/L-Ecole-de-la-citoyennete;jsessionid=0996A798543C045E7542585E8C630B57'>Lâ€™Ecole de la citoyennet&eacute;</a></span></li><li class='level3 item8'><span><a class='lienNav' target='' id='3613' href='/GIP/accueiletoile/sinformer/citoyennete/pid/3613;jsessionid=0996A798543C045E7542585E8C630B57'>Citoyens et solidaires : les projets jeunes d'avenir soutenus par le R&eacute;gion</a></span></li></ul></li><li class='level2 item4'><span><a class='lienNav' target='' id='1017' href='/GIP/accueiletoile/sinformer/lieuxdinfo;jsessionid=0996A798543C045E7542585E8C630B57'>Lieux d'information</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level3 item1'><span><a class='lienNav' target='' id='1021' href='/GIP/accueiletoile/sinformer/lieuxdinfo/recherchelieuxinfo;jsessionid=0996A798543C045E7542585E8C630B57'>Rechercher un lieu d'information</a></span></li><li class='level3 item2'><span><a class='lienNav' target='' id='2761' href='/GIP/accueiletoile/sinformer/lieuxdinfo/qui-fait-quoi;jsessionid=0996A798543C045E7542585E8C630B57'>Le qui fait quoi des r&eacute;seaux</a></span></li></ul></li><li class='level2 item5'><span><a class='lienNav' target='' id='1067' href='/GIP/accueiletoile/sinformer/territoires;jsessionid=0996A798543C045E7542585E8C630B57'>Territoires</a></span><ul></ul></li><li class='level2 item6'><span><a class='lienNav' target='' id='1096' href='/GIP/accueiletoile/sinformer/europe-etranger;jsessionid=0996A798543C045E7542585E8C630B57'>Europe et Etranger</a></span></li><li class='level2 item7'><span><a class='lienNav' target='' id='3724' href='/GIP/accueiletoile/sinformer/pid/3724;jsessionid=0996A798543C045E7542585E8C630B57'>Institution</a><a class='btn_deplier' href='javascript:void(0);'></a> </span><ul><li class='level3 item1'><span><a class='lienNav' target='' id='3725' href='/GIP/accueiletoile/sinformer/CPRDF_public;jsessionid=0996A798543C045E7542585E8C630B57'>Contrat de plan r&eacute;gional pour le d&eacute;veloppement des formations </a></span></li><li class='level3 item2'><span><a class='lienNav' target='' id='4814' href='/GIP/accueiletoile/sinformer/pid/4814;jsessionid=0996A798543C045E7542585E8C630B57'>Tr&eacute;sor de Loire offre du sable aux Pr&eacute;sidents des R&eacute;gions de France !</a></span></li></ul></li><li class='level2 item9'><span><a class='lienNav' target='' id='5937' href='/GIP/accueiletoile/sinformer/newletters-etoile;jsessionid=0996A798543C045E7542585E8C630B57'>Newsletter Etoile</a></span></li></ul></li></ul>
-		
-		<script type="text/javascript">
-		
-		jQuery(document).ready(function(){
-			//-------------- Gestion du menu en mode Ã©dition --------------------
-			
-			jQuery(".editionMode #menu li").hover(
-				function(){
-					jQuery(this).find("ul:first").css("top","-50000px");
-				}
-				,
-				function(){
-					jQuery(this).find("ul:first").css("top","-50000px");
-					jQuery(this).removeClass("active");
-				}
-				);
-				
-			
-			jQuery(".editionMode #menu li").click(
-				function(){
-					jQuery(this).addClass("active");
-					jQuery(this).find("ul:first").css("top","auto");
-				}
-				);	
-
-			jQuery('.lienNav').click(function() {
-				var lien = jQuery(this).attr("href");
-				if (lien.indexOf("http") != -1){				  
-           jQuery(this).attr("target","_blank");
-          
-        }
-				
-			}); 
-				
-			});	
-		</script>
-	</div>	
-<!-- Gestion du fil d'Ariane -->
-	
-	
-		
-		<div id="fil_ariane">
-			<ul>
-								
-					<li class="item1"  style="z-index:99">
-						<a class='home' href="/GIP/accueiletoile;jsessionid=0996A798543C045E7542585E8C630B57">Etoile - Orientation, Formation et Emploi en region Centre </a>	
-						
-							
-						<ul><li class='level1 item1' id='elemRacine1'><span><a class='lienNav' target='' id='3' href='/GIP/accueiletoile/sorienter;jsessionid=0996A798543C045E7542585E8C630B57'>S'orienter</a><a class='btn_deplier' href='javascript:void(0);'></a> </span></li><li class='level1 item2' id='elemRacine2'><span><a class='lienNav' target='' id='997' href='/GIP/accueiletoile/seformer;jsessionid=0996A798543C045E7542585E8C630B57'>Se former</a><a class='btn_deplier' href='javascript:void(0);'></a> </span></li><li class='level1 item3' id='elemRacine3'><span><a class='lienNav' target='' id='998' href='/GIP/accueiletoile/emploi;jsessionid=0996A798543C045E7542585E8C630B57'>Aller vers l'emploi</a><a class='btn_deplier' href='javascript:void(0);'></a> </span></li><li class='level1 item4' id='elemRacine4'><span><a class='lienNav' target='' id='999' href='/GIP/accueiletoile/evoluer;jsessionid=0996A798543C045E7542585E8C630B57'>Evoluer</a><a class='btn_deplier' href='javascript:void(0);'></a> </span></li><li class='level1 item5' id='elemRacine5'><span><a class='lienNav' target='' id='1000' href='/GIP/accueiletoile/sinformer;jsessionid=0996A798543C045E7542585E8C630B57'>S'informer</a><a class='btn_deplier' href='javascript:void(0);'></a> </span></li><li class='menu_ariane_bas'> </li></ul>
-					</li>
-										
-					<li class="item2"  style="z-index:98">
-						<a  href="/GIP/accueiletoile/seformer;jsessionid=0996A798543C045E7542585E8C630B57">Se former</a>	
-						
-								<a class="btn_deplier fleche" href="javascript:void(0);">	</a>
-								
-							
-						<ul><li class='level1 item1' id='elemRacine1'><span><a class='lienNav' target='' id='1012' href='/GIP/accueiletoile/seformer/formation;jsessionid=0996A798543C045E7542585E8C630B57'>Offre de Formation</a><a class='btn_deplier' href='javascript:void(0);'></a> </span></li><li class='level1 item2' id='elemRacine2'><span><a class='lienNav' target='' id='1038' href='/GIP/accueiletoile/seformer/Formation-scolaire-universitaire;jsessionid=0996A798543C045E7542585E8C630B57'>Formation scolaire et universitaire</a><a class='btn_deplier' href='javascript:void(0);'></a> </span></li><li class='level1 item3' id='elemRacine3'><span><a class='lienNav' target='' id='4157' href='/GIP/accueiletoile/seformer/alternance;jsessionid=0996A798543C045E7542585E8C630B57'>Alternance</a><a class='btn_deplier' href='javascript:void(0);'></a> </span></li><li class='level1 item4' id='elemRacine4'><span><a class='lienNav' target='' id='1014' href='/GIP/accueiletoile/seformer/formation-continue1;jsessionid=0996A798543C045E7542585E8C630B57'>Formation continue</a><a class='btn_deplier' href='javascript:void(0);'></a> </span></li><li class='level1 item7' id='elemRacine7'><span><a class='lienNav' target='' id='4396' href='http://www.etoile.regioncentre.fr/GIP/accueiletoile/sinformer/europe-etranger?utm_source=lien_via_menu&utm_medium=lien-via-menu&utm_content=mobilite&utm_campaign=mobilite_via_menu_formation'>Mobilit&eacute;</a><a class='btn_deplier' href='javascript:void(0);'></a> </span></li><li class='menu_ariane_bas'> </li></ul>
-					</li>
-										
-					<li class="item3"  style="z-index:97">
-						<a  href="/GIP/accueiletoile/seformer/formation;jsessionid=0996A798543C045E7542585E8C630B57">Offre de Formation</a>	
-						
-								<a class="btn_deplier fleche" href="javascript:void(0);">	</a>
-								
-							
-						<ul><li class='level1 item1' id='elemRacine1'><span><a class='lienNav' target='' id='2239' href='/GIP/accueiletoile/seformer/formation/rechercheformation;jsessionid=0996A798543C045E7542585E8C630B57'>Rechercher une formation</a><a class='btn_deplier' href='javascript:void(0);'></a> </span></li><li class='level1 item2' id='elemRacine2'><span><a class='lienNav' target='' id='4435' href='/GIP/accueiletoile/seformer/formation/recherches_predefinies;jsessionid=0996A798543C045E7542585E8C630B57'>Recherches pr&eacute;d&eacute;finies</a><a class='btn_deplier' href='javascript:void(0);'></a> </span></li><li class='menu_ariane_bas'> </li></ul>
-					</li>
-										
-					<li class="item4"  style="z-index:96">
-						<a  href="/GIP/accueiletoile/seformer/formation/rechercheformation;jsessionid=0996A798543C045E7542585E8C630B57">Rechercher une formation</a>	
-						
-							
-						
-					</li>
-					
-			</ul>
-		</div>
-		
-		<script type="text/javascript">
-		jQuery(document).ready(function(){
-		
-			//--------- Gestion du changement de couleur du fil ariane ----------
-			
-			var i=1;
-			while(jQuery("#elemRacine"+i).html()!=null)
-				{
-				if(jQuery("#elemRacine"+i+" a").attr("id")==(997))
-					{
-					if(i<6)	{jQuery("#fil_ariane").addClass("v"+i);}
-					else
-						{
-						//A partir du 6iÃ¨me Ã©lÃ©ment de menu la version de couleur du fil d'ariane reste toujours la mÃªme, identique Ã  celle du menu 1 (d'oÃ¹ "v1")
-						jQuery("#fil_ariane").addClass("v1");
-						}
-					}
-				i++;
-				}
-			if(jQuery("#fil_ariane").attr("class")=="") jQuery("#fil_ariane").addClass("v0");
-
-
-			//Gestion btn dÃ©plier
-			jQuery(".fleche").each(function() {
-				if (jQuery(this).next().length == 0)
-				{
-					jQuery(this).remove();
-				}
-			});
-			
-			
-		});	
-		</script>
-		
-		
-		</div>
-  
-  	</div>
-  
-   
-  <div id="contenu">
-    <div id="col-1">
-      
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" type="text/css" href="/metier-formation/include/dhtmlxWindows/dhtmlxwindows.css">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+<meta name="description" content="">
+<meta name="KEYWORDS" content="">
+<meta name="rubrique" content="">
+<meta http-equiv="content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<title>Diplôme d'État d'infirmier - IFSI - IFAS - BLOIS CEDEX - etoile.regioncentre.fr</title>
+<link rel="SHORTCUT ICON" href="http://www.etoile.regioncentre.fr/metier-formation/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/metier-formation/css/page_rech.css">
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="/metier-formation/css/page_rech_ie7.css">
+<![endif]--><link rel="stylesheet" type="text/css" href="/metier-formation/css/page_rech_fiche.css">
+<!--DEBUT CSS Pour dhtmlxWindows --><link rel="stylesheet" type="text/css" href="/metier-formation/include/dhtmlxWindows/dhtmlxwindows.css">
 <link rel="stylesheet" type="text/css" href="/metier-formation/include/dhtmlxWindows/skins/dhtmlxwindows_dhx_blue.css">
-<script language="JavaScript" type="text/javascript" src="/metier-formation/include/dhtmlxWindows/dhtmlxcommon.js" ></script>
-<script language="JavaScript" type="text/javascript" src="/metier-formation/include/dhtmlxWindows/dhtmlxwindows.js" ></script>
-<script language="JavaScript" type="text/javascript" src="/metier-formation/include/sigmaPopup.js" ></script>
+<!--FIN CSS Pour dhtmlxWindows --><!--DEBUT JS GoogleMap --><!--FIN JS GoogleMap --><script type="text/javascript" src="/metier-formation/include/sigma-navigateurs.js"></script><script type="text/javascript" src="/metier-formation/include/sigma-types.js"></script><script type="text/javascript" src="/metier-formation/include/lib_mm.js"></script><script type="text/javascript" src="/metier-formation/include/lib_txt.js"></script><script type="text/javascript" src="/metier-formation/include/lib_frm.js"></script><script type="text/javascript" src="/metier-formation/include/lib_carifcentre.js.asp"></script><script type="text/javascript" src="/metier-formation/include/lib_xmlhttp.js"></script><script type="text/javascript" src="/metier-formation/include/browserSniffer.js"></script><script type="text/javascript" src="/metier-formation/include/dynCalendar.js"></script><script type="text/javascript" src="/metier-formation/include/domUtils.js"></script><script type="text/javascript" src="/metier-formation/include/fonctions.js"></script><script type="text/javascript" src="/metier-formation/include/lib_mm.js"></script><!--DEBUT JS Pour dhtmlxWindows --><script language="JavaScript" type="text/javascript" src="/metier-formation/include/dhtmlxWindows/dhtmlxcommon.js"></script><script language="JavaScript" type="text/javascript" src="/metier-formation/include/dhtmlxWindows/dhtmlxwindows.js"></script><script language="JavaScript" type="text/javascript" src="/metier-formation/include/sigmaPopup.js"></script><!--FIN JS Pour dhtmlxWindows --><!--DEBUT JS Pour dhtmlxCombo --><!--FIN JS Pour dhtmlxCombo --><script type="text/javascript">
+<!--
 
-<script language="javascript" type="text/javascript">
-/*document.domain = 'etoile.regioncentre.fr';*/
-jQuery("iframe").ready(function(){ 
-                for(i=0 ; i<= 10 ; i++) {
-                     setTimeout(testiframe,1000);
-                }
-                function testiframe() {
-                     var testheight = document.getElementById("iframeOffre");
-                     if (testheight && testheight.contentDocument && testheight.contentDocument.body) {    
-                                        if (testheight.contentDocument.body.offsetHeight > 600){
-                                             hauteurIframe = (testheight.contentDocument.body.offsetHeight + 50);
-                                        }else{ 
-                                            hauteurIframe = 600;
-                                        }
-                        jQuery("#iframeOffre").attr("style","height:"+(hauteurIframe)+"px !important;");                                               
-                     }
-                }
-                
-});
+-->
+</script><script language="javascript" type="text/javascript">
+<!--
+// init. du rep. où se trouve les fichiers (sert à générer les url pour le CMS)
+typePageCourante = "rechFormation";
+
+// 13/09/2011 DD : redirection vers page CMS si url paramétrée
+
+carifcentre_verifierIntegrationDansCMS(typePageCourante, "third");
 
 
-</script>
-
-        
-
-
-			
-	    
-	    	
-	        
-	            
-	            	<div class="iframeSigma">
-	        			
-			            			            
-			            
-			          
-						
-						
-
-			            <iframe src ="http://www.etoile.regioncentre.fr/metier-formation/rechFormation/ficheAction.asp?hiFOR_ID=149&modeAcces=GRP&username=guest&password=5f4dcc3b5aa765d61d8327deb882cf99&urlFrom=http://www.etoile.regioncentre.fr:80/GIP/cache/bypass/accueiletoile/seformer/formation/rechercheformation;jsessionid=0996A798543C045E7542585E8C630B57" frameborder="0" scroll="yes" id="iframeOffre" name="iframeOffre">
-  						<p>Votre navigateur ne supporte pas les iframe </p>
-  						<p></p>
-						</iframe>
-						
-			        </div>
-	        	        
-	    	
-	    
+function surChargement() {
+    
+    if(""=="1")
+    {
+        DisableEnableLinks("");
+    }
+    
+	plierDeplierTout();
 	
- 
-    </div>
-  
-    <div id="col-2" class="bloc_bleu_small">   
-    	
-    	<div id="loginbox" class="div50L close">
-		 	
-
-
-
-
-
-
-
-
-
-			  
-	<div class="bloc_header">
-     	<div class="picto">
-			<img src="/jsp/jahia/templates/etoile/etoile_templates/css/images/pictos/bonhommes.gif" alt=""/>
-	    </div>
-        <h2>Mon espace</h2>
-	    <a class="bloc_reduce" title="reduire" name="bloc_reduce"></a>
-    </div>
-    	  		 
-    <div class="bloc_content nologged">
-       <form id="loginForm" name="loginForm" method="POST" action="/GIP/engineName/login/accueiletoile/seformer/formation/rechercheformation;jsessionid=0996A798543C045E7542585E8C630B57">
-          <input type="hidden" name="loginChoice" value="2"/>
-          <input type="hidden" name="screen" value="save"/>
-                    
-          <div>
-          <label class="username">Nom d'utilisateur</label>
-          <input class="username" type="text" name="username" tabindex="1" size="8" onfocus="this.value=''"/>
-          </div>
-                    
-          <div>
-          <label class="password">Mot de Passe</label>
-          <input class="password" type="password" name="password" tabindex="2" size="8" onfocus="this.value=''"/>
-          </div>
-                    
-          <input class="btn_valider" type="submit" name="login" tabindex="4" value="Valider"/>
-                    
-          <div class="optionsForm">
-          	<input class="retenir" type="checkbox" name="useCookie" value="on" tabindex="3"/>
-          	<label class="retenir">Garder en mÃ©moire</label>
-                
-          	<!-- 
-          	<label class="inscription">Pas encore membre ?</label>
-          	 -->
-          	 
-          	<a class="inscription" style="margin:10px;" href="/GIP/engineName/customengine/accueiletoile/oubli-mot-de-passe?screen=forget">Oubli de mot passe</a>
-          	<a class="inscription" href="/GIP/engineName/newuserregistration/accueiletoile/seformer/formation/rechercheformation;jsessionid=0996A798543C045E7542585E8C630B57?mode=display&screen=edit">S'inscrire</a>
-      	  </div>           
-       </form>
-       
-    </div>
 	
-	<div id="receptacle"></div>
-         
-    <div class="bloc_footer"> </div>
-    
- 
- 
- 
+}
 
-	    </div>
-	      
+function surClicAffinerRecherche() {
+	
+	//self.location="/metier-formation/rechFormation/recherche_simple.asp?Affiner=1&modeAcces=GRP";
+	top.location = "http://www.etoile.regioncentre.fr/GIP/accueiletoile/seformer/formation/rechercheformation/cache/off?url=http%3A%2F%2Fwww%2Eetoile%2Eregioncentre%2Efr%2Fmetier%2Dformation%2FrechFormation%2Frecherche%5Fsimple%2Easp&param=Affiner%3D1%26modeAcces%3DGRP&displayscreen=full";
+	
+}
+
+function surClicNouvelleRecherche() {
+
+		//self.location="/metier-formation/rechFormation/recherche_simple.asp?modeAcces=GRP";
+		top.location = "http://www.etoile.regioncentre.fr/GIP/accueiletoile/seformer/formation/rechercheformation/cache/off?url=http%3A%2F%2Fwww%2Eetoile%2Eregioncentre%2Efr%2Fmetier%2Dformation%2FrechFormation%2Frecherche%5Fsimple%2Easp&param=modeAcces%3DGRP&displayscreen=full";
+	
+}
+
+function surClicRechercher() {
+	//document.fmForm.submit()
+	envoyerFormulaire(typePageCourante, document.fmForm);
+}
+
+function surClicImprim(acces) {	    
+	var titre	= "[GIP ALFA CENTRE - Actions de formation]";	
+	ouvrirPopup("http://www.etoile.regioncentre.fr/metier-formation//rechFormation/ficheImpressionAction.asp?hiFOR_ID=149&modeAcces=GRP\n", "Imprimer la fiche", "Imprimer la fiche", 700, 700, true);
+}
+
+function plierDeplierTout()
+{    
+	if (document.getElementById("idDivContact").className == "ficheResultat_paveInfos")
+	{
+		document.getElementById("idDivContact").className = "ficheResultat_paveInfosActif";
+		document.getElementById("idDivInfosPratique").className = "ficheResultat_paveInfosActif";
+		document.getElementById("idDivContenu").className = "ficheResultat_paveInfosActif";		
+		document.getElementById("idDivSessions").className = "ficheResultat_paveInfosActif";			
+		document.getElementById("idDivValidation").className = "ficheResultat_paveInfosActif";
+		document.getElementById("idDivMetAsso").className = "ficheResultat_paveInfosActif";
+		document.getElementById("idDivOfEmp").className = "ficheResultat_paveInfosActif";
+	}
+	else
+	{
+		document.getElementById("idDivContact").className = "ficheResultat_paveInfos";
+		document.getElementById("idDivInfosPratique").className = "ficheResultat_paveInfos";
+		document.getElementById("idDivContenu").className = "ficheResultat_paveInfos";
+		document.getElementById("idDivSessions").className = "ficheResultat_paveInfos";	
+		document.getElementById("idDivValidation").className = "ficheResultat_paveInfos";
+		document.getElementById("idDivMetAsso").className = "ficheResultat_paveInfos";
+		document.getElementById("idDivOfEmp").className = "ficheResultat_paveInfos";
+	}
+}
+
+function surClicEnvoyerParMail() {	    
+    if(""!="1")
+    {
+	    ouvrirPopup("http://www.etoile.regioncentre.fr/metier-formation//outils/popupMail.asp?typeEnvoi=FICHEACTION&hiFOR_ID=149&modeAcces=GRP\n", "Envoi Mail", "Envoi Mail", 663, 580, false)
+	}
+}
+
+function surClicAjouterAuPanier(forId) {
+
+	surAjouterPanier(forId);
+	alert("Cette action de formation a été ajouté au panier.");
+}	
+
+
+function surAjouterPanier(forId){
+	var retour = getResponseURL("GET", "../panier/requetesAjax.asp","action=AJOUTER_AF_PANIER&id="+ forId + "&modeAcces=GRP");
+}
+
+function surClicVoirPanier()
+{
+	ouvrirPopup("http://www.etoile.regioncentre.fr/metier-formation//panier/listePopupPanier.asp?modeAcces=GRP", "Panier", "Panier", 700, 500, true);
+}
+
+function surClicRetourListe()
+{
+	//self.document.location.href="listeActions.asp?modeAcces=GRP";
+	top.location = "http://www.etoile.regioncentre.fr/GIP/accueiletoile/seformer/formation/rechercheformation/cache/off?url=http%3A%2F%2Fwww%2Eetoile%2Eregioncentre%2Efr%2Fmetier%2Dformation%2FrechFormation%2FlisteActions%2Easp&param=modeAcces%3DGRP&displayscreen=full";
+}
+
+/*
+function surClicPlanAccesGoogle()
+{
+	ouvrirPopup("http://www.etoile.regioncentre.fr/metier-formation//rechFormation/planGoogleActions.asp?hiFOR_ID=149&modeAcces=GRP", "Plan d'accès", "Plan d'accès", 550, 575, true);
+}*/
+
+function ouvrirFicheStructureRattachee(parId)
+{    
+    if(""!="1")
+    {
+	    ouvrirPopup("http://www.etoile.regioncentre.fr/metier-formation//rechFormation/ficheOrganisme.asp?hiPAR_ID=" + parId + "&popupFiche=1&modeAcces=GRP", "Lieu d'information", "Lieu d'information", 700, 575, true);
+	}
+}
+
+function ouvrirFicheCertificationRattachee(cerId)
+{    
+    if(""!="1")
+    {
+	    ouvrirPopup("http://www.etoile.regioncentre.fr/metier-formation//rechCertification/fiche.asp?hiVAL_ID=" + cerId + "&popupFiche=1&modeAcces=GRP", "Validation", "Validation", 700, 575, true);
+	}
+}
+
+function ouvrirFicheMetierRattachee(metId)
+{      
+    if(""!="1")
+    {  
+	    ouvrirPopup("http://www.etoile.regioncentre.fr/metier-formation//rechMetier/fiche.asp?hiMET_ID=" + metId + "&popupFiche=1&modeAcces=GRP", "Métier rattaché", "Métier rattaché", 700, 575, true);
+	}
+}
+
+function ouvrirFichePoleEmploiRattachee(romeId)
+{        
+	fullScreen("http://www2.pole-emploi.fr/consultationoffres/InitialiserRecherchePartenaire.do?rome= + romeId + @&lieux=18D,28D,36D,37D,41D,45D","test");
+	
+}
+
+function ouvrirFicheSession(sesId)
+{
+    if(""!="1")
+    {
+        ouvrirPopup("http://www.etoile.regioncentre.fr/metier-formation//rechFormation/ficheSession.asp?hiSES_ID=" + sesId + "&popupFiche=1&modeAcces=GRP", "Session rattachée", "Session rattachée", 700, 575, true);
+    }
+}
+
+function ouvrirFicheOrganisme(parId)
+{
+    if(""!="1")
+    {
+        ouvrirPopup("http://www.etoile.regioncentre.fr/metier-formation//rechFormation/ficheOrganisme.asp?hiPAR_ID=" + parId + "&popupFiche=1&modeAcces=GRP", "Organisme", "Organisme", 700, 575, true);
+    }
+}
+
+function fullScreen(theURL, theTitle) {
+    window.open(theURL, theTitle, 'width=' + screen.width + ',height=' + screen.height + ',left=0,top=0,toolbar=yes,location=yes,directories=yes,status=yes,menubar=yes,copyhistory=yes,resizable=yes,scrollbars=auto');
+}
+
+function afficherNiv3()
+{	
+    if(document.getElementById("idNiv3")!=null)
+	    document.getElementById("idNiv3").style.display="block";
+}
+
+function cacherNiv3()
+{	
+    if(document.getElementById("idNiv3")!=null)
+	    document.getElementById("idNiv3").style.display="none";
+}
+
+//-------------------------------------------------------------------------------
+//	ouvrirFicheForm
+//	- Fonction appellée dans la pagination
+//-------------------------------------------------------------------------------
+function ouvrirFicheForm(id) {
+
+	// récup. des formacodes
+    var strFcoCertif = getResponseURL("GET", "requetesAjax.asp", "action=GET_CODES_FCO_FORM&id=" + id);
+
+	top.location.href = carifcentre_getUrlPageSuivantAffichage("rechFormation", "ficheAction.asp?hiFOR_ID=" + id + "&modeAcces=GRP", "third") + 
+	    "&thesaurus=cdFormaCode" +
+	    "&thesValue=" + strFcoCertif;
+}
+
+function ouvrirPopup(url, name, titreFenetre, largeur, hauteur, resizable) {
+	if(parent!=null)
+	{
+	    try 
+	    {
+		    parent.openSigmaPopup(url, name, titreFenetre, largeur, hauteur,'http://www.etoile.regioncentre.fr/metier-formation/',resizable);
+		}
+		catch(err)
+		{
+			openSigmaPopup(url, name, titreFenetre, largeur, hauteur,'http://www.etoile.regioncentre.fr/metier-formation/',resizable);
+		}
+	}
+	else
+	{
+	    openSigmaPopup(url, name, titreFenetre, largeur, hauteur,'http://www.etoile.regioncentre.fr/metier-formation/',resizable);
+	}	
+}
+
+function DisableEnableLinks(pxHow){    
+  var xHow=false;
+  if(pxHow=="1") xHow=true;  
+  var flIgnore=false;
+  objLinks = document.links;
+  for(i=0;i<objLinks.length;i++){   
+    flIgnore=false; 
+    if(objLinks[i].href && xHow){ 
+        if(objLinks[i].href.toString().getFuncBody().indexOf("plierDeplierTout()")>=0){            
+            flIgnore=true;
+        }
+    }
+    if(!flIgnore)
+    {
+        //objLinks[i].disabled = xHow;
+        objLinks[i].href = "#";
+        //link with onclick
+        if(objLinks[i].onclick && xHow){  
+            objLinks[i].onclick = new Function("return false;" + objLinks[i].onclick.toString().getFuncBody());
+        }
+        //link without onclick
+        else if(xHow){  
+          objLinks[i].onclick = function(){return false;}
+        }
+        //remove return false with link without onclick
+        else if(!xHow && objLinks[i].onclick.toString().indexOf("function(){return false;}") != -1){            
+          objLinks[i].onclick = null;
+        }
+        //remove return false link with onclick
+        else if(!xHow && objLinks[i].onclick.toString().indexOf("return false;") != -1){  
+          strClick = objLinks[i].onclick.toString().getFuncBody().replace("return false;","")
+          objLinks[i].onclick = new Function(strClick);
+        }
+    }
+  }
+}
+
+String.prototype.getFuncBody = function(){ 
+  var str=this.toString(); 
+  str=str.replace(/[^{]+{/,"");
+  str=str.substring(0,str.length-1);   
+  str = str.replace(/\n/gi,"");
+  if(!str.match(/\(.*\)/gi))str += ")";
+  return str; 
+} 
+
+
+
+
+
+
+
+
+/****************DNA 17/06/2010*********************
+ * Fonctions d'affichage de la carte GoogleMap     *
+ ***************************************************/
+ 
+//déclarations de variables globales
+var marqueur = new Array(["1","1.3417880","47.5999900", "149", "Diplôme d\'État d\'infirmier<br/>Session du 02/09/2013 au 04/07/2014"]);
+    
+function getContenuAcces(objMarqueur)
+{//renvoie le contenu HTML de l'infobulle à partir des infos du tableau des infobulles
+    var contenu = '<div style="width:300px;">'+
+                    '<div class="infobulle_soustitre">Comment y aller ?</div>'+
+                    '<div class="infobulle_contenu">'+
+                      'Entrez votre adresse et calculez votre itinéraire :<br>'+
+                      '<input type="text" id="idItiAdrDep" size=40>&nbsp;<a href="javascript:lancerCalculItineraireGoogleMap(document.getElementById(\'idItiAdrDep\').value, \'(' + objMarqueur.getPosition().lat() + ', ' + objMarqueur.getPosition().lng() + ')\');">Ok</a>'+
+                    '</div>'+
+                  '</div>';
+    return contenu;
+}
+function getContenuLegende()
+{//renvoie le contenu HTML de la légende à partir des infos de la fiche
+    var contenu = '<div style="width:100%;padding:8px;">';    
+
+    contenu += '<div class="infobulle_titre" style="overflow:none;">Diplôme d\'État d\'infirmier</div>';
+    contenu += '<div class="infobulle_contenu" style="font-size:10px;">';
+	contenu += '<div>IFSI - IFAS</div>';
+	contenu += '<div>41016 BLOIS CEDEX<br/><br/></div>';
+	for(i=0;i<marqueur.length;i++) {
+		if (marqueur[i][1] != '') {
+			contenu += '<div style="clear:both;"></div>';
+			contenu += '<div style="float:left;"><img src="http://chart.apis.google.com/chart?chst=d_map_spin&chld=0.6|20|FF6644|12|b|' + marqueur[i][0] + '" /></div><div style="float:left;"> ' + marqueur[i][4].split('<br/>')[1] + '</div>';
+		}
+	}
+	contenu += '</div>';
+    contenu += '</div>';
+
+    return contenu;
+}
+
+function surClicPlanAccesGoogle()
+{//appelle la popup d'impression de la carte
+    ouvrirPopup("http://www.etoile.regioncentre.fr/metier-formation//outils/popupAfficherGoogleMap.asp?centre=(47.4880680,2.4372939)&zoom=16&nomTableauMarqueurs=marqueur&zoneLegende=getContenuLegende()","Plan d'accès", "Plan d'accès", 800, 500, true);
+}
+/***************************************************/
+
+
+
+
+
+
+
+
+
+//-->
+</script><style type="text/css">
+<!-- Enlever le surlignage et le curseur main quand les liens sont désactivés. 
+
+-->
+</style>
+</head>
+<body onload="surChargement();">
+
+    <!-- ClickTale Top part -->
+    <script type="text/javascript">
+    var WRInitTime=(new Date()).getTime();
+    </script><!-- ClickTale end of Top part --><h1>Alfa centre : Fiche formation</h1>
+<!--*************DEBUT PAGE**************-->
+<div id="page" class="rech_fiche">
+	<div id="page_entete"></div>
+	<!--*************DEBUT CORPS**************-->
+	<div id="page_corps">
+
+<form name="fmForm" method="GET" action="ficheAction.asp?modeAcces=GRP">
+
+	<div class="bloc_rech_outils">
+		<div class="bloc_rech_outils_entete"></div>
+		<div class="bloc_rech_outils_corps">
+			<ul>
+<li class="rech_outil_imprimerFiche"><a href="javascript:surClicImprim('');">Imprimer la fiche</a></li>
+		        <li class="rech_outil_envoyerMail"><a href="javascript:surClicEnvoyerParMail();">Envoyer par mail</a></li>
+		        <li class="rech_outil_panier" onmouseover="this.className='rech_outil_panierActif';" onmouseout="this.className='rech_outil_panier';">
+<a href="#">Mon panier</a>
+			        <ul>
+<li class="rech_outil_panierAjouter"><a href="javascript:surClicAjouterAuPanier('149');">Ajouter</a></li>
+				        <li class="rech_outil_panierVoir"><a href="javascript:surClicVoirPanier();">Voir</a></li>
+			        </ul>
+</li>	
+		        
+		        <li class="rech_outil_affinerRecherche"><a href="javascript:surClicAffinerRecherche();">Affiner la recherche</a></li>
+		        
+			    <li class="rech_outil_nouvelleRecherche"><a href="javascript:surClicNouvelleRecherche();">Nouvelle recherche</a></li>
+				
+			</ul>
+</div>
+		<div class="bloc_rech_outils_pied"></div>
+	</div>
+
+
+    <div class="bloc_ficheResultat" id="content_bloc_fiche">
+        <div class="bloc_ficheResultat_entete">
+            
+				<ul>
+<li><a href="http://www.etoile.regioncentre.fr/GIP/accueiletoile/sorienter/diplomescertifications/recherchediplomes/cache/off?url=http%3A%2F%2Fwww%2Eetoile%2Eregioncentre%2Efr%2Fmetier%2Dformation%2FrechCertification%2Fliste%2Easp&amp;param=lstValId%3D191%26modeAcces%3DGRP&amp;displayscreen=full" target="_blank">1 certification</a></li>					
+					<li><a href="http://www.etoile.regioncentre.fr/GIP/accueiletoile/sorienter/metiers/recherchemetiers/cache/off?url=http%3A%2F%2Fwww%2Eetoile%2Eregioncentre%2Efr%2Fmetier%2Dformation%2FrechMetier%2FgotoMetier%2Easp&amp;param=typeRecherche%3DA%26lstROME%3DROME%5F1040%2C+ROME%5F1041%2C%26modeAcces%3DGRP&amp;displayscreen=full" target="_blank">1 Metier</a></li>					
+					<li class="rech_ongletMetierEmploi" onmouseover="this.className='rech_ongletMetierEmploiActif';" onmouseout="this.className='rech_ongletMetierEmploi';">
+						<a href="#">Offres d'emploi</a>
+						<ul>
+<li class="rech_ongletMetierPoleEmploi" onmouseout="javascript:cacherNiv3();" onmouseover="javascript:afficherNiv3();">
+<a href="#">Pôle emploi</a>
+							
+							</li>
+							<!--li class="rech_ongletMetierEmploiAPEC"><a href="#" target="_blank">APEC</a></li-->
+						</ul>
+</li>
+				</ul>
+<br><table width="100%" class="ficheResultat_intitule">
+<tr width="100%">
+<td width="100%" valign="top">
+                        <h2>Diplôme d'État d'infirmier</h2>
+                        
+				                    <a class="rech_lienPlanAcces" href="javascript:surClicPlanAccesGoogle();">Plan d'accès Google</a>				                
+				                     
+                    </td>                    
+                </tr>
+<tr width="100%">
+<td width="100%">                        
+                        <a href="javascript:ouvrirFicheOrganisme(2852);">                     
+                        IFSI - IFAS
+                        </a>
+                    </td>
+                </tr>
+</table>
+<table width="100%">
+<tr width="100%">
+<td width="50%" valign="top">
+                        <table class="ficheResultat_adresse" width="100%">
+<tr width="100%">
+<td width="100%" valign="top">
+                                            Mail Pierre Charlot
+                                        </td>                                        
+                                    </tr>
+<tr width="100%">
+<td width="100%" valign="top">
+                                            Centre hospitalier
+                                        </td>
+                                    </tr>
+<tr width="100%">
+<td width="100%" valign="top">
+					                41016 BLOIS CEDEX
+					                    </td>
+					                </tr>
+</table>
+<table width="100%" class="ficheResultat_coordonneeDouble"><tr width="100%">
+<td valign="top">
+										<b>Tél : </b>
+										02 54 55 64 08
+											     
+												
+									</td>
+			                    </tr></table>
+<table width="100%" class="ficheResultat_coordonneeDouble"><tr width="100%">
+<td valign="top">
+									<b>Fax : </b>02 54 55 62 70
+	                            </td>
+	                        </tr></table>
+<table width="100%" class="ficheResultat_coordonnee"><tr width="100%">
+<td valign="top">
+										<b>Mail : </b>
+										
+										<a href="mailTo:sec.ifsi@ch-blois.fr">sec.ifsi@ch-blois.fr</a> 
+										
+		                            </td>
+		                        </tr></table>
+</td> 
+                    <td width="50%" valign="top">                               				        
+			                                      
+                    </td>                   
+                </tr>
+<tr>
+<td width="50%" valign="top"></td>
+                    <td width="50%" valign="top">
+                                                                        
+		                <table width="100%" class="ficheResultat_coordonnee">
+<tr width="100%">
+<td width="100%" valign="bottom" align="left">
+		                            Financeurs :
+		                        </td>
+                            </tr>
+<tr width="100%">
+<td width="100%">                                                              
+								    
+									    <img src="/metier-formation/telechargement/ficTelecharge_1/images_carif_centre/logo_region_fse_75.jpg"> 
+									    
+	                            </td>
+	                        </tr>
+</table>
+</td>
+                </tr>
+</table>
+<span id="idSpanPlierDeplier"><a class="rech_lienAffichagePavesInfos" href="javascript:plierDeplierTout();" title="Plier/déplier">Plier/déplier</a></span>
+        </div>        
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
-
-
-
-
-
-		    
-		
-
-
-
-    
-             
-             
-                             
-             
-		    
-		    
-		  <div id="qf37">       
-            <div class="bloc_simple">
-				<div class="bloc_header">   
-					<div class="picto">
-				        
-				        
-				        <img src="/jsp/jahia/templates/etoile/etoile_templates/css/images/pictos/etoile.gif" alt=""/>
-			        </div>
-					<h2>Articles</h2>
-
-			    </div>
+        <div class="bloc_ficheResultat_corps">
+            <!-- ============================== Bloc Contact ============================== -->
+			
+			
+			
+			<div class="ficheResultat_paveInfos" id="idDivContact" style="display:none;">
+            
+				<h3 onclick="this.parentNode.className = (this.parentNode.className == 'ficheResultat_paveInfosActif' ? 'ficheResultat_paveInfos' : 'ficheResultat_paveInfosActif');"><span>Contacts</span></h3>
+				<div class="ficheResultat_paveInfos_corps">
 					
-			
-			
-			<script type="text/javascript">
-			  	jQuery().ready(function() {
-			  		jQuery("#qf37").hide();
-			  	});
-            </script>
-			
-		
-			</div>
-			
-			
-			<div class="bloc_footer"> </div>
-		</div>
-		
-    
-             
-             
-                             
-             
-		    
-		    
-		  <div id="qf56">       
-            <div class="bloc_simple">
-				<div class="bloc_header">   
-					<div class="picto">
-				        
-				        
-				        <img src="/jsp/jahia/templates/etoile/etoile_templates/css/images/pictos/soleil.gif" alt=""/>
-			        </div>
-					<h2>Agenda</h2>
+<div class="bloc_rech_message">Aucune information disponible pour le moment</div>
 
-			    </div>
+				</div>
+            </div>
+            <!-- ============================== Bloc Informations pratiques ============================== -->
+			
+                <div class="ficheResultat_paveInfos" id="idDivInfosPratique">
+            
+				<h3 onclick="this.parentNode.className = (this.parentNode.className == 'ficheResultat_paveInfosActif' ? 'ficheResultat_paveInfos' : 'ficheResultat_paveInfosActif');"><span>Informations pratiques</span></h3>
+				<div class="ficheResultat_paveInfos_corps">			
+				    
+					<table width="100%" class=""><tr width="100%">
+<td width="100%" valign="top"><b><u>Admission : </u></b></td>
+		                </tr></table>
+<table width="100%" class="">
+<tr width="100%">
+<td width="3%" valign="top"></td>
+			                    <td width="27%" valign="top"><u>Niveau d'entrée : </u></td>
+			                    <td width="70%" valign="top">
+					        Indéterminé
+                                </td>                                   
+			                </tr>
+<tr width="100%">
+<td width="3%" valign="top"></td>
+			                    <td width="27%" valign="top"><u>Niveau de sortie : </u></td>
+			                    <td width="70%" valign="top">
+					        Niveau II (Bac +3 ou 4)</td>                                   
+			                    </tr>
+<tr width="100%">
+<td width="3%" valign="top"></td>
+			                <td width="27%" valign="top"><u>Pré-requis / Admission : </u></td>
+			                <td width="70%" valign="top">
+<div>
+	<p>
+		<strong>Modalités de sélection (entretien, dossier, concours,...) : </strong>Concours </p>
+	<p>
+		Coût de formation pris en charge + éligible à la bourse régionale d'études.</p>
+</div>
+</td>
+			                </tr>
+</table>
+<table width="100%" class="lignePaire"><tr width="100%">
+<td width="100%" valign="top"><b><u>Organisation : </u></b></td>	                    
+	                    </tr></table>
+<table width="100%" class="lignePaire"><tr width="100%">
+<td width="3%" valign="top"></td>
+		                <td width="27%" valign="top"><u>Rythme et / ou modalité : </u></td>
+		                <td width="70%" valign="top"> 						        
+				        Continu temps plein
+                            </td>
+                        </tr></table>
+<table width="100%" class=""><tr width="100%">
+<td width="30%" valign="top"><b><u>Lieu d'information : </u></b></td>			                			                
+		                    <td width="70%" valign="top">					    						        
+				            
+								<div>
+                                    <a href="#" onclick="ouvrirFicheStructureRattachee('2852');" title="41016 - IFSI - IFAS - BLOIS CEDEX">
+									    IFSI - IFAS -
+									    41016
+									        - BLOIS CEDEX
+								    </a>
+								</div>				                                    			                    
+		                        
+                            </td>                                   
+		                </tr></table>
+</div>
+            </div>
+            <!-- ============================== Bloc Contenu ============================== -->			
+			
+                <div class="ficheResultat_paveInfos" id="idDivContenu">
+            
+				<h3 onclick="this.parentNode.className = (this.parentNode.className == 'ficheResultat_paveInfosActif' ? 'ficheResultat_paveInfos' : 'ficheResultat_paveInfosActif');"><span>Contenu</span></h3>
+				<div class="ficheResultat_paveInfos_corps">					
+				    <table width="100%">
+<tr width="100%" class="lignePaire">
+<td width="30%" valign="top"><b><u>Objectif : </u></b></td>
+					        <td width="70%" valign="top">
+<div>
+	Le DE d'infirmier forme les étudiants à devenir les collaborateurs directs du médecin, capables d'appliquer ses prescriptions, d'administrer les médicaments, de poser les perfusions, d'effectuer les prises de sang, de prendre en charge le bien-être et l'hygiène du malade, de surveiller et transmettre l'évolution de son état.</div>
+</td>
+					    </tr>
+<tr width="100%" class="">
+<td width="30%" valign="top"><b><u>Programme : </u></b></td>
+					        <td width="70%" valign="top">
+<div>
+	Alternance entre une formation théorique (28 modules obligatoires et transversaux) et une formation pratique</div>
+</td>
+					    </tr>
+</table>
+</div>
+            </div>
+            
+            <!-- ============================== Bloc Sessions ============================== -->
+            
+                <div class="ficheResultat_paveInfos" id="idDivSessions">
+            
+				<h3 onclick="this.parentNode.className = (this.parentNode.className == 'ficheResultat_paveInfosActif' ? 'ficheResultat_paveInfos' : 'ficheResultat_paveInfosActif');"><span>Sessions</span></h3>
+				<div class="ficheResultat_paveInfos_corps" align="center">					   
+
 					
+                    <table cellpadding="0" cellspacing="0" class="tableau tableauResultat" id="Table1" width="100%"><tbody width="100%">
+<tr width="100%">
+<th>Date début</th>
+		                        <th>Date fin</th>
+		                        <th>Dép.</th>
+		                        <th>Ville</th>
+		                        <th>Financeur</th>
+	                        </tr>
+<tr class="lignePaire " title="Diplôme d'État d'infirmier" style="cursor: pointer" onmouseover="this.className = 'ligneSelectionnee ';" onmouseout="this.className = 'lignePaire ';">
+<td onclick="ouvrirFicheSession('52928');" valign="top">02/09/2013</td>
+	                            <td onclick="ouvrirFicheSession('52928');" valign="top">04/07/2014</td>
+	                            <td onclick="ouvrirFicheSession('52928');" valign="top">41</td>
+	                            <td onclick="ouvrirFicheSession('52928');" valign="top">BLOIS</td>
+	                            
+                                <td onclick="ouvrirFicheSession('52928');" valign="top">
+                                Conseil Régional<br>
+</td>
+	                        </tr>
+</tbody></table>
+</div>
+            </div>
+            <!-- ============================== Bloc Validation ============================== -->
 			
+                <div class="ficheResultat_paveInfos" id="idDivValidation">
+            
+				<h3 onclick="this.parentNode.className = (this.parentNode.className == 'ficheResultat_paveInfosActif' ? 'ficheResultat_paveInfos' : 'ficheResultat_paveInfosActif');"><span>Validation</span></h3>
+				<div class="ficheResultat_paveInfos_corps">	
+				    <table width="100%"><tr width="100%" class="">
+<td width="30%" valign="top"><b><u>Validation : </u></b></td>
+				            <td width="70%" valign="top">		        					    
+					        
+	                            <a href="#" onclick="ouvrirFicheCertificationRattachee('191');" title="Diplôme d'État d'infirmier">
+								    Diplôme d'État d'infirmier
+							    </a>
+							    
+                            </td>
+                                 
+                         </tr></table>
+</div>
+            </div>
+            <!-- ============================== Bloc Métiers associés ============================== -->
 			
-			<script type="text/javascript">
-			  	jQuery().ready(function() {
-			  		jQuery("#qf56").hide();
-			  	});
-            </script>
+                <div class="ficheResultat_paveInfos" id="idDivMetAsso">
+            
+				<h3 onclick="this.parentNode.className = (this.parentNode.className == 'ficheResultat_paveInfosActif' ? 'ficheResultat_paveInfos' : 'ficheResultat_paveInfosActif');"><span>Métiers associés</span></h3>
+				<div class="ficheResultat_paveInfos_corps">					   
+					<table width="100%"><tr width="100%" class="lignePaire">
+<td width="30%" valign="top"><b><u>Métiers : </u></b></td>
+				                <td width="70%" valign="top">
+				            
+                                
+                                <a href="javascript:ouvrirFicheMetierRattachee('316');" title="Infirmier">
+								    Infirmier
+							    </a><br>
+</td>
+                            </tr></table>
+</div>
+            </div>
+            <!-- ============================== Bloc Offres d'emploi ============================== -->
 			
-		
-			</div>
-			
-			
-			<div class="bloc_footer"> </div>
-		</div>
-		
-    
-             
-             
-                             
-             
-		    
-		    
-		  <div id="qf17">       
-            <div class="bloc_simple">
-				<div class="bloc_header">   
-					<div class="picto">
-				        
-				        
-				        <img src="/jsp/jahia/templates/etoile/etoile_templates/css/images/pictos/etoile.gif" alt=""/>
-			        </div>
-					<h2>Br&egrave;ves</h2>
-
-			    </div>
-					
-			
-			
-			<script type="text/javascript">
-			  	jQuery().ready(function() {
-			  		jQuery("#qf17").hide();
-			  	});
-            </script>
-			
-		
-			</div>
-			
-			
-			<div class="bloc_footer"> </div>
-		</div>
-		
-      
-    
-    
-	    
-	     
-    
-
- 
+                <div class="ficheResultat_paveInfos" id="idDivOfEmp">
+            
+				<h3 onclick="this.parentNode.className = (this.parentNode.className == 'ficheResultat_paveInfosActif' ? 'ficheResultat_paveInfos' : 'ficheResultat_paveInfosActif');"><span>Offres d'emploi</span></h3>				
+				<div class="ficheResultat_paveInfos_corps">		
+				    <table width="100%" class=""><tr width="100%">
+<td width="30%" valign="center">
+					            <img src="/metier-formation/images/polemploi_logo.png">
+</td>
+					        <td width="70%" valign="top">					            				                					                
+					                                                        
+                                            <a href="http://www2.pole-emploi.fr/consultationoffres/InitialiserRecherchePartenaire.do?rome=J1505&amp;lieux=18D,28D,36D,37D,41D,45D" target="_blank" title="Soins infirmiers spécialisés en prévention">
+							                    Soins infirmiers spécialisés en prévention							                    
+						                    </a><br><a href="http://www2.pole-emploi.fr/consultationoffres/InitialiserRecherchePartenaire.do?rome=J1506&amp;lieux=18D,28D,36D,37D,41D,45D" target="_blank" title="Soins infirmiers généralistes">
+							                    Soins infirmiers généralistes							                    
+						                    </a><br>
+</td>
+					   </tr></table>
+</div>
+            </div>
+        </div>       
+        <script type="text/javascript">            
+                        
+                document.getElementById("idSpanPlierDeplier").style.display="";
+            
+        </script><div style="clear:both;"></div>
+        <div class="bloc_ficheResultat_pied">
+            <table width="100%"><tr width="100%">
+<td width="50%" valign="top" class="ficheResultat_source">               
+                        
+                        Source : Conseil régional<br><span>© GIP Alfa Centre - Orléans</span>                        
+                    </td>
+                    <td width="50%" valign="top" class="ficheResultat_reference" style="text-align: right;">
+                        
+					        Mise à jour : 28/06/2013
+                         | Réf : 153
+                    </td>
+                </tr></table>
+</div>        
     </div>
-  </div>
-   
-  
-  <div id="footer">
-    <script type="text/javascript" src="/jsp/jahia/templates/etoile/etoile_templates/javascript/ui.draggable.js"></script>
-<script type="text/javascript" src="/jsp/jahia/templates/etoile/etoile_templates/javascript/ui.resizable.js"></script>
-<script type="text/javascript" src="/jsp/jahia/templates/etoile/etoile_templates/javascript/ui.dialog.js"></script>
-<script type="text/javascript" src="/jsp/jahia/templates/etoile/etoile_templates/javascript/filAriane.js"></script>
-<script type="text/javascript" src="/jsp/jahia/templates/etoile/etoile_templates/javascript/utils.js"></script>
-<script type="text/javascript" src="/jsp/jahia/templates/etoile/etoile_templates/javascript/reductionBloc.js"></script>
-<script type="text/javascript" src="/jsp/jahia/templates/etoile/etoile_templates/javascript/gestionOnglets.js"></script>
-<script type="text/javascript" src="/jsp/jahia/templates/etoile/etoile_templates/javascript/gestionDiaporamas.js"></script>
-<script type="text/javascript" src="/jsp/jahia/templates/etoile/etoile_templates/javascript/windowOnLoad.js"></script>
-<script type="text/javascript" src="/jsp/jahia/javascript/prototype/prototype-1.6.0.3.js"></script>
-<script type="text/javascript" src="/jsp/jahia/javascript/scriptaculous_1.6.1/effects.js"></script>
-
-
-<!--[if lte IE 6]>
-	<script type="text/javascript" src="/jsp/jahia/templates/etoile/etoile_templates/javascript/menu.js"></script>
-	<script type="text/javascript" src="/jsp/jahia/templates/etoile/etoile_templates/javascript/transparenceMenuIE6.js"></script>
-<![endif]-->
-
-
-<script type="text/javascript">
-		
-	jQuery(document).ready(function(){
-		
-		//-------------- Gestion du menu en mode Ã©dition --------------------
-
-		jQuery("#plan li").css("display","none");
-		jQuery("#plan li.link1").css("display","block");
-		jQuery("#plan li.link2").css("display","block");
-		jQuery("#plan li.link3").css("display","block");
-
-		});
-			
-</script>
-
-
-<div id='plan'><a name='plan' accesskey='3' href='/GIP/cache/off/accueiletoile;jsessionid=0996A798543C045E7542585E8C630B57/#plan'>&nbsp;</a><div class='title_plan'><h1>Plan de site</h1></div><div style='clear:both;'><ul class='item1'><li class='link1'><a href='/GIP/accueiletoile/sorienter;jsessionid=0996A798543C045E7542585E8C630B57'>S'orienter</a></li><li class='link2'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes;jsessionid=0996A798543C045E7542585E8C630B57'>S'orienter dans ses &eacute;tudes</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/mon-profil;jsessionid=0996A798543C045E7542585E8C630B57'>Mon profil</a></li><li class='link4'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/mon-profil/pid/58;jsessionid=0996A798543C045E7542585E8C630B57'>J'entre en sixi&egrave;me</a></li><li class='link4'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/mon-profil/je-suis-en3eme_1;jsessionid=0996A798543C045E7542585E8C630B57'>Je suis en 3&egrave;me</a></li><li class='link4'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/mon-profil/Je-suis-au-college;jsessionid=0996A798543C045E7542585E8C630B57'>Je suis au coll&egrave;ge</a></li><li class='link4'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/mon-profil/1ere;jsessionid=0996A798543C045E7542585E8C630B57'>Je suis en 1&egrave;re</a></li><li class='link4'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/mon-profil/Je-suis-en-terminale_1;jsessionid=0996A798543C045E7542585E8C630B57'>Je suis en terminale</a></li><li class='link4'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/mon-profil/pid/52;jsessionid=0996A798543C045E7542585E8C630B57'>Je suis &eacute;tudiant</a></li><li class='link4'><a href='/GIP/accueiletoile/seformer/alternance/fiche-pratique-apprentissage;jsessionid=0996A798543C045E7542585E8C630B57'>Je suis apprenti</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/portes-ouvertes-des-etablissements;jsessionid=0996A798543C045E7542585E8C630B57'>Portes ouvertes des &eacute;tablissements</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/forumsinformation_1;jsessionid=0996A798543C045E7542585E8C630B57'>Forums de l'orientation</a></li><li class='link4'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/forumsinformation_1/Forums-de-l-orientation-vous-avez-rendez-vous-avec-votre-avenir;jsessionid=0996A798543C045E7542585E8C630B57'>Forums de lâ€™orientation : vous avez rendez-vous avec votre avenir</a></li><li class='link4'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/forumsinformation_1/calendrier-forum-orientation;jsessionid=0996A798543C045E7542585E8C630B57'>Calendrier</a></li><li class='link5'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/forumsinformation_1/calendrier-forum-orientation/test;jsessionid=0996A798543C045E7542585E8C630B57'>test</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/rencontrerconseiller;jsessionid=0996A798543C045E7542585E8C630B57'>Rencontrer un conseiller</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/Assure_1;jsessionid=0996A798543C045E7542585E8C630B57'>Assure ta rentr&eacute;e</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/Assure-ton-annee_1;jsessionid=0996A798543C045E7542585E8C630B57'>Assure ton ann&eacute;e</a></li><li class='link4'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/Assure-ton-annee_1/Assure-ton-annee-ici-on-s-interesse-a-moi;jsessionid=0996A798543C045E7542585E8C630B57'>Assure ton ann&eacute;e : &quot;ici, on sâ€™int&eacute;resse &agrave; moi&quot;</a></li><li class='link4'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/Assure-ton-annee_1/assure-ton-annee-un-dispositif-experimental;jsessionid=0996A798543C045E7542585E8C630B57'>Assure ton ann&eacute;e  un dispositif exp&eacute;rimental</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/pid/56;jsessionid=0996A798543C045E7542585E8C630B57'>S'orienter sans pr&eacute;jug&eacute;</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/sorienter-dans-ses-etudes/actualites-s-orienter;jsessionid=0996A798543C045E7542585E8C630B57'>Actualit&eacute;s</a></li><li class='link2'><a href='/GIP/accueiletoile/sorienter/s-orienter-dans-sa-vie-professionnelle;jsessionid=0996A798543C045E7542585E8C630B57'>S'orienter dans sa vie professionnelle</a></li><li class='link2'><a href='/GIP/accueiletoile/sorienter/metiers;jsessionid=0996A798543C045E7542585E8C630B57'>Les m&eacute;tiers</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/metiers/recherchemetiers;jsessionid=0996A798543C045E7542585E8C630B57'>Rechercher un m&eacute;tier</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/metiers/actualites-metiers2;jsessionid=0996A798543C045E7542585E8C630B57'>Actualit&eacute;s m&eacute;tiers</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/metiers/fichesdecouvrir;jsessionid=0996A798543C045E7542585E8C630B57'>20 fiches pour d&eacute;couvrir votre futur m&eacute;tier</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/metiers/44-metiers-a-decouvrir_1;jsessionid=0996A798543C045E7542585E8C630B57'>M&eacute;tiers de la sant&eacute; et du social</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/metiers/metiers-domaine-ORFE;jsessionid=0996A798543C045E7542585E8C630B57'>Observatoire des m&eacute;tiers (ORFE)</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/metiers/olympiades-des-metiers;jsessionid=0996A798543C045E7542585E8C630B57'>Olympiades des M&eacute;tiers</a></li><li class='link3'><a href='/GIP/accueiletoile/emploi/actualites-emploi/actualite-aller-vers-l-emploi/cinquante_trois_milles_recrutements_estimes_en_2013_en_region_Centre;jsessionid=0996A798543C045E7542585E8C630B57'>Les m&eacute;tiers qui recrutent</a></li><li class='link2'><a href='/GIP/accueiletoile/sorienter/diplomescertifications;jsessionid=0996A798543C045E7542585E8C630B57'>Dipl&ocirc;mes et certifications</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/diplomescertifications/recherchediplomes;jsessionid=0996A798543C045E7542585E8C630B57'>Rechercher un dipl&ocirc;me</a></li><li class='link4'><a href='/GIP/accueiletoile/sorienter/diplomescertifications/recherchediplomes/generalites;jsessionid=0996A798543C045E7542585E8C630B57'>Qu'est-ce qu'une certification ?</a></li><li class='link5'><a href='/GIP/accueiletoile/sorienter/diplomescertifications/recherchediplomes/generalites/diplome_etat;jsessionid=0996A798543C045E7542585E8C630B57'>Dipl&ocirc;mes ou titres d&eacute;livr&eacute;s par l'Etat</a></li><li class='link5'><a href='/GIP/accueiletoile/sorienter/diplomescertifications/recherchediplomes/generalites/titres-OF;jsessionid=0996A798543C045E7542585E8C630B57'>Titres des organismes de formation priv&eacute;s ou publics</a></li><li class='link5'><a href='/GIP/accueiletoile/sorienter/diplomescertifications/recherchediplomes/generalites/CQP;jsessionid=0996A798543C045E7542585E8C630B57'>CQP d&eacute;livr&eacute;s par les branches professionnelles</a></li><li class='link5'><a href='/GIP/accueiletoile/sorienter/diplomescertifications/recherchediplomes/generalites/certification-region-centre;jsessionid=0996A798543C045E7542585E8C630B57'>Les certifications de la r&eacute;gion Centre</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/diplomescertifications/pid/2039;jsessionid=0996A798543C045E7542585E8C630B57'>Actualit&eacute;s</a></li><li class='link4'><a href='/GIP/accueiletoile/sorienter/diplomescertifications/pid/2040;jsessionid=0996A798543C045E7542585E8C630B57'>Br&egrave;ves</a></li><li class='link4'><a href='/GIP/accueiletoile/sorienter/diplomescertifications/agenda-diplome;jsessionid=0996A798543C045E7542585E8C630B57'>Agenda</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/diplomescertifications/en-savoir-plus-diplomes;jsessionid=0996A798543C045E7542585E8C630B57'>A savoir sur la base dipl&ocirc;mes</a></li><li class='link2'><a href='/GIP/accueiletoile/sorienter/rechercherunlieudinformation;jsessionid=0996A798543C045E7542585E8C630B57'>Rechercher un lieu d'information</a></li></ul><ul class='item2'><li class='link1'><a href='/GIP/accueiletoile/seformer;jsessionid=0996A798543C045E7542585E8C630B57'>Se former</a></li><li class='link2'><a href='/GIP/accueiletoile/seformer/formation;jsessionid=0996A798543C045E7542585E8C630B57'>Offre de Formation</a></li><li class='link3'><a href='/GIP/accueiletoile/seformer/formation/rechercheformation;jsessionid=0996A798543C045E7542585E8C630B57' class='current'>Rechercher une formation</a></li><li class='link3'><a href='/GIP/accueiletoile/seformer/formation/recherches_predefinies;jsessionid=0996A798543C045E7542585E8C630B57'>Recherches pr&eacute;d&eacute;finies</a></li><li class='link2'><a href='/GIP/accueiletoile/seformer/Formation-scolaire-universitaire;jsessionid=0996A798543C045E7542585E8C630B57'>Formation scolaire et universitaire</a></li><li class='link2'><a href='/GIP/accueiletoile/seformer/alternance;jsessionid=0996A798543C045E7542585E8C630B57'>Alternance</a></li><li class='link3'><a href='/GIP/accueiletoile/seformer/alternance/fiche-pratique-apprentissage;jsessionid=0996A798543C045E7542585E8C630B57'>Apprentissage</a></li><li class='link3'><a href='/GIP/accueiletoile/seformer/alternance/contrat-de-professionalisation;jsessionid=0996A798543C045E7542585E8C630B57'>Contrat de professionnalisation</a></li><li class='link3'><a href='/GIP/accueiletoile/seformer/alternance/campagne-de-promotion-de-l-alternance;jsessionid=0996A798543C045E7542585E8C630B57'>Campagne de promotion de l'alternance</a></li><li class='link2'><a href='/GIP/accueiletoile/seformer/formation-continue1;jsessionid=0996A798543C045E7542585E8C630B57'>Formation continue</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/s-orienter-dans-sa-vie-professionnelle/changer_de_metier_evoluer/financer-une-formation-quelles-possibilites/Formation-des-salaries;jsessionid=0996A798543C045E7542585E8C630B57'>Salari&eacute;s</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/s-orienter-dans-sa-vie-professionnelle/changer_de_metier_evoluer/financer-une-formation-quelles-possibilites/les-possibilites-de-financer-une-formation-pour-les-demandeurs-d-emploi;jsessionid=0996A798543C045E7542585E8C630B57'>Demandeurs d'emploi</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/s-orienter-dans-sa-vie-professionnelle/changer_de_metier_evoluer/financer-une-formation-quelles-possibilites/Le-financement-des-formations-pour-les-professionnels-non-salaries;jsessionid=0996A798543C045E7542585E8C630B57'>Professionnels non salari&eacute;s</a></li><li class='link3'><a href='/GIP/accueiletoile/sorienter/s-orienter-dans-sa-vie-professionnelle/changer_de_metier_evoluer/financer-une-formation-quelles-possibilites/quelques-financements-specifiques;jsessionid=0996A798543C045E7542585E8C630B57'>Publics sp&eacute;cifiques</a></li><li class='link2'><a href='http://www.etoile.regioncentre.fr/GIP/accueiletoile/sinformer/europe-etranger?utm_source=lien_via_menu&utm_medium=lien-via-menu&utm_content=mobilite&utm_campaign=mobilite_via_menu_formation'>Mobilit&eacute;</a></li></ul><ul class='item3'><li class='link1'><a href='/GIP/accueiletoile/emploi;jsessionid=0996A798543C045E7542585E8C630B57'>Aller vers l'emploi</a></li><li class='link2'><a href='/GIP/accueiletoile/emploi/actualites-emploi;jsessionid=0996A798543C045E7542585E8C630B57'>Actualit&eacute;s</a></li><li class='link2'><a href='/GIP/accueiletoile/emploi/rechercheemploi;jsessionid=0996A798543C045E7542585E8C630B57'>Rechercher un emploi</a></li><li class='link3'><a href='/GIP/accueiletoile/emploi/rechercheemploi/rechercheentreprise;jsessionid=0996A798543C045E7542585E8C630B57'>Rechercher une entreprise</a></li><li class='link3'><a href='/GIP/accueiletoile/emploi/rechercheemploi/concours;jsessionid=0996A798543C045E7542585E8C630B57'>Concours</a></li><li class='link3'><a href='/GIP/accueiletoile/emploi/rechercheemploi/au-centre-de-l-emploi;jsessionid=0996A798543C045E7542585E8C630B57'>Au Centre de l'Emploi</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/lieuxdinfo/recherchelieuxinfo;jsessionid=0996A798543C045E7542585E8C630B57'>Rencontrer un conseiller</a></li><li class='link3'><a href='/GIP/accueiletoile/emploi/rechercheemploi/sites-utiles-recherche-emploi;jsessionid=0996A798543C045E7542585E8C630B57'>Sites utiles recherche d'emploi</a></li><li class='link2'><a href='/GIP/accueiletoile/emploi/aide-emploi;jsessionid=0996A798543C045E7542585E8C630B57'>Aides &agrave; l'emploi</a></li><li class='link2'><a href='/GIP/accueiletoile/emploi/creationentreprise;jsessionid=0996A798543C045E7542585E8C630B57'>Cr&eacute;ation d'entreprise</a></li><li class='link2'><a href='/GIP/accueiletoile/emploi/jobs-d-ete-2013;jsessionid=0996A798543C045E7542585E8C630B57'>Jobs saisonniers</a></li><li class='link2'><a href='/GIP/accueiletoile/emploi/emplois-d-avenir-gp;jsessionid=0996A798543C045E7542585E8C630B57'>Emplois d'avenir</a></li></ul><ul class='item4'><li class='link1'><a href='/GIP/accueiletoile/evoluer;jsessionid=0996A798543C045E7542585E8C630B57'>Evoluer</a></li><li class='link2'><a href='/GIP/accueiletoile/sorienter/s-orienter-dans-sa-vie-professionnelle/changer_de_metier_evoluer/faire-le-point-sur-son-experience-professionnelle;jsessionid=0996A798543C045E7542585E8C630B57'>Le bilan de comp&eacute;tences</a></li><li class='link2'><a href='/GIP/accueiletoile/evoluer/vae;jsessionid=0996A798543C045E7542585E8C630B57'>VAE</a></li><li class='link2'><a href='/GIP/accueiletoile/evoluer/developper-ses-competences;jsessionid=0996A798543C045E7542585E8C630B57'>D&eacute;velopper ses comp&eacute;tences</a></li><li class='link3'><a href='/GIP/accueiletoile/evoluer/developper-ses-competences/Contrat-de-transition-professionnelle-accompagner-les-mutations-economiques_2;jsessionid=0996A798543C045E7542585E8C630B57'>Contrat de transition professionnelle : accompagner les mutations &eacute;conomiques</a></li><li class='link3'><a href='/GIP/accueiletoile/evoluer/developper-ses-competences/lire-ecrire-et-compter;jsessionid=0996A798543C045E7542585E8C630B57'>Lire Ecrire et compter</a></li><li class='link4'><a href='/GIP/accueiletoile/evoluer/developper-ses-competences/lire-ecrire-et-compter/breves-lire-ecrire-compter;jsessionid=0996A798543C045E7542585E8C630B57'>Br&egrave;ves</a></li><li class='link2'><a href='/GIP/accueiletoile/sorienter/s-orienter-dans-sa-vie-professionnelle;jsessionid=0996A798543C045E7542585E8C630B57'>S'orienter dans sa vie professionnelle</a></li><li class='link2'><a href='/GIP/accueiletoile/sorienter/diplomescertifications;jsessionid=0996A798543C045E7542585E8C630B57'>Dipl&ocirc;mes certifications</a></li><li class='link2'><a href='/GIP/accueiletoile/evoluer/actualite-evoluer;jsessionid=0996A798543C045E7542585E8C630B57'>Actualit&eacute;s</a></li><li class='link3'><a href='/GIP/accueiletoile/evoluer/actualite-evoluer/Metiers-du-BTP-preparer-en-ligne-une-seconde-partie-de-carriere;jsessionid=0996A798543C045E7542585E8C630B57'>M&eacute;tiers du BTP : pr&eacute;parer en ligne une seconde partie de carri&egrave;re</a></li><li class='link3'><a href='/GIP/accueiletoile/evoluer/actualite-evoluer/DIF-je-me-suis-forme-a-l-horlogerie;jsessionid=0996A798543C045E7542585E8C630B57'>DIF : &quot;je me suis form&eacute; &agrave; lâ€™horlogerie&quot;</a></li></ul><ul class='item5'><li class='link1'><a href='/GIP/accueiletoile/sinformer;jsessionid=0996A798543C045E7542585E8C630B57'>S'informer</a></li><li class='link2'><a href='/GIP/accueiletoile/sinformer/viepratique;jsessionid=0996A798543C045E7542585E8C630B57'>Vie pratique</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/viepratique/logement;jsessionid=0996A798543C045E7542585E8C630B57'>Logement</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/viepratique/transports;jsessionid=0996A798543C045E7542585E8C630B57'>Transports</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/viepratique/Internet_1;jsessionid=0996A798543C045E7542585E8C630B57'>Internet</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/viepratique/sante_2;jsessionid=0996A798543C045E7542585E8C630B57'>Sant&eacute;</a></li><li class='link4'><a href='/GIP/accueiletoile/sinformer/viepratique/sante_2/s-informer-sur-l-amour-et-la-sexualite;jsessionid=0996A798543C045E7542585E8C630B57'>S'informer sur l'amour et la sexualit&eacute;</a></li><li class='link4'><a href='/GIP/accueiletoile/sinformer/viepratique/sante_2/j-ai-16-ans-et-je-prends-soin-de-moi;jsessionid=0996A798543C045E7542585E8C630B57'>J'ai 16 ans et je prends soin de moi</a></li><li class='link4'><a href='/GIP/accueiletoile/sinformer/viepratique/sante_2/breves-sante;jsessionid=0996A798543C045E7542585E8C630B57'>Br&egrave;ves sant&eacute;</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/viepratique/handicap;jsessionid=0996A798543C045E7542585E8C630B57'>Handicap</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/viepratique/faire-garder-ses-enfants;jsessionid=0996A798543C045E7542585E8C630B57'>Faire garder ses enfants</a></li><li class='link2'><a href='/GIP/accueiletoile/sinformer/citoyennete;jsessionid=0996A798543C045E7542585E8C630B57'>Citoyennet&eacute;</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/citoyennete/service-civique;jsessionid=0996A798543C045E7542585E8C630B57'>Service Civique</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/citoyennete/projets-concours;jsessionid=0996A798543C045E7542585E8C630B57'>Projets -Concours</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/citoyennete/developpementdurable;jsessionid=0996A798543C045E7542585E8C630B57'>D&eacute;veloppement durable</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/citoyennete/lutte-contre-discriminations;jsessionid=0996A798543C045E7542585E8C630B57'>Lutte contre les discriminations</a></li><li class='link4'><a href='/GIP/accueiletoile/sinformer/citoyennete/lutte-contre-discriminations/Ouvrir-les-ecoles-de-journalisme-a-la-diversite;jsessionid=0996A798543C045E7542585E8C630B57'>Ouvrir les &eacute;coles de journalisme &agrave; la diversit&eacute;</a></li><li class='link4'><a href='/GIP/accueiletoile/sinformer/citoyennete/lutte-contre-discriminations/Un-jeu-de-cartes-postales-pour-lutter-contre-les-discriminations;jsessionid=0996A798543C045E7542585E8C630B57'>Un jeu de cartes postales pour lutter contre les discriminations</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/citoyennete/mixite-citoyennete;jsessionid=0996A798543C045E7542585E8C630B57'>Mixit&eacute;</a></li><li class='link4'><a href='/GIP/accueiletoile/sinformer/citoyennete/mixite-citoyennete/actualites-mixite;jsessionid=0996A798543C045E7542585E8C630B57'>Actualit&eacute;s</a></li><li class='link5'><a href='/GIP/accueiletoile/sinformer/citoyennete/mixite-citoyennete/actualites-mixite/agenda-mixite;jsessionid=0996A798543C045E7542585E8C630B57'>Agenda</a></li><li class='link5'><a href='/GIP/accueiletoile/sinformer/citoyennete/mixite-citoyennete/actualites-mixite/breves-mixite;jsessionid=0996A798543C045E7542585E8C630B57'>Br&egrave;ves</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/citoyennete/L-Ecole-de-la-citoyennete;jsessionid=0996A798543C045E7542585E8C630B57'>Lâ€™Ecole de la citoyennet&eacute;</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/citoyennete/pid/3613;jsessionid=0996A798543C045E7542585E8C630B57'>Citoyens et solidaires : les projets jeunes d'avenir soutenus par le R&eacute;gion</a></li><li class='link2'><a href='/GIP/accueiletoile/sinformer/lieuxdinfo;jsessionid=0996A798543C045E7542585E8C630B57'>Lieux d'information</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/lieuxdinfo/recherchelieuxinfo;jsessionid=0996A798543C045E7542585E8C630B57'>Rechercher un lieu d'information</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/lieuxdinfo/qui-fait-quoi;jsessionid=0996A798543C045E7542585E8C630B57'>Le qui fait quoi des r&eacute;seaux</a></li><li class='link2'><a href='/GIP/accueiletoile/sinformer/territoires;jsessionid=0996A798543C045E7542585E8C630B57'>Territoires</a></li><li class='link2'><a href='/GIP/accueiletoile/sinformer/europe-etranger;jsessionid=0996A798543C045E7542585E8C630B57'>Europe et Etranger</a></li><li class='link2'><a href='/GIP/accueiletoile/sinformer/pid/3724;jsessionid=0996A798543C045E7542585E8C630B57'>Institution</a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/CPRDF_public;jsessionid=0996A798543C045E7542585E8C630B57'>Contrat de plan r&eacute;gional pour le d&eacute;veloppement des formations </a></li><li class='link3'><a href='/GIP/accueiletoile/sinformer/pid/4814;jsessionid=0996A798543C045E7542585E8C630B57'>Tr&eacute;sor de Loire offre du sable aux Pr&eacute;sidents des R&eacute;gions de France !</a></li><li class='link2'><a href='/GIP/accueiletoile/sinformer/newletters-etoile;jsessionid=0996A798543C045E7542585E8C630B57'>Newsletter Etoile</a></li></ul></div><div style='clear:both;'><ul class='item6'></ul><ul class='item7'></ul></div></div>
-
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['t1._setAccount', 'UA-32441223-1']);
-  _gaq.push(['t1._setDomainName', 'etoile.regioncentre.fr']);  
-  _gaq.push(['t1._trackPageview']); 
-  _gaq.push(['t2._setAccount', 'UA-1144400-6']); 
-  _gaq.push(['t2._setDomainName', 'etoile.regioncentre.fr']);
-  _gaq.push(['t2._trackPageview']); 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
-
-<div id="quicklinkFooter">
-	<a class="accesslink" name="bottom" href="#bottom" accesskey="7">&nbsp;</a>
     
-
-
-<ul>
-
+	<div class="bloc_rech_outils">
+		<div class="bloc_rech_outils_entete"></div>
+		<div class="bloc_rech_outils_corps">
+			<ul>
+<li class="rech_outil_imprimerFiche"><a href="javascript:surClicImprim('');">Imprimer la fiche</a></li>
+		        <li class="rech_outil_envoyerMail"><a href="javascript:surClicEnvoyerParMail();">Envoyer par mail</a></li>
+		        <li class="rech_outil_panier" onmouseover="this.className='rech_outil_panierActif';" onmouseout="this.className='rech_outil_panier';">
+<a href="#">Mon panier</a>
+			        <ul>
+<li class="rech_outil_panierAjouter"><a href="javascript:surClicAjouterAuPanier('149');">Ajouter</a></li>
+				        <li class="rech_outil_panierVoir"><a href="javascript:surClicVoirPanier();">Voir</a></li>
+			        </ul>
+</li>	
+		        
+		        <li class="rech_outil_affinerRecherche"><a href="javascript:surClicAffinerRecherche();">Affiner la recherche</a></li>
+		        
+			    <li class="rech_outil_nouvelleRecherche"><a href="javascript:surClicNouvelleRecherche();">Nouvelle recherche</a></li>		        		        			
+				
+			</ul>
+</div>
+		<div class="bloc_rech_outils_pied"></div>
+	</div>
     
-                <li><a href="/GIP/cache/off/accueiletoile/index-actions-de-formation-complet;jsessionid=0996A798543C045E7542585E8C630B57"
-                    title="Formations"><span>Formations</span></a>
-                    
-                </li>
-                
-                <li><a href="/GIP/cache/off/accueiletoile/diplomes-100;jsessionid=0996A798543C045E7542585E8C630B57"
-                    title="Dipl&ocirc;mes et certifications"><span>Dipl&ocirc;mes et certifications</span></a>
-                    
-                </li>
-                
-                <li><a href="/GIP/cache/off/accueiletoile/index_metiers_complet;jsessionid=0996A798543C045E7542585E8C630B57"
-                    title="M&eacute;tiers"><span>M&eacute;tiers</span></a>
-                    
-                </li>
-                
-                <li><a href="/GIP/cache/off/accueiletoile/mentions-legales;jsessionid=0996A798543C045E7542585E8C630B57"
-                    title="Mentions l&eacute;gales"><span>Mentions l&eacute;gales</span></a>
-                    
-                </li>
-                
-                <li><a href="/GIP/cache/off/accueiletoile/liste-statique-missions-locales;jsessionid=0996A798543C045E7542585E8C630B57"
-                    title="Liste des missions locales"><span>Liste des missions locales</span></a>
-                    
-                </li>
-                
-                <li><a href="/GIP/cache/off/accueiletoile/index_lieux_infos_complet;jsessionid=0996A798543C045E7542585E8C630B57"
-                    title="Lieux d'information"><span>Lieux d'information</span></a>
-                    
-                </li>
-                
-                <li><a href="/GIP/cache/off/accueiletoile/index-organismes-de-formation-complet;jsessionid=0996A798543C045E7542585E8C630B57"
-                    title="Organismes de formation"><span>Organismes de formation</span></a>
-                    
-                </li>
-                
+    <br><br>
+</form>
 
-
-</ul>
-
+	</div>
+	<!--*************FIN CORPS**************-->
+	<div id="page_pied"></div>
 </div>
+<!--*************FIN PAGE**************-->
+	
+	<iframe id="iFrameCarifCentre" style="display:block;" name="iFrameCarifCentre" height="1" width="1" frameborder="0">
+	</iframe>
+
+	
+
+	<div id="impressionChargement" style="margin-left:-140px;margin-top:-60px;width:285px; height:120px; position:absolute; left:50%; top:50%; border: 1px solid #000000; background-color:#FFFFFF; display: none;">
+
+	<br><center>Chargement de l'impression<br>Veuillez patienter...
+	<br>
+</center>
+	<br><span style="z-index:10;position:absolute;top:53px;left:130px" id="pagesImpression"></span>
+
+	<div style="text-align:center;position:relative;left:42px;border:1px solid #B8B2A0;width:200px;height:15px;">
+	<div id="progressBar" style="position:absolute;left:0px;background-color:#EBE9E4;height:15px;width:0px;"></div>
+	</div>
 
 
 
-  </div>
-  
-</div>
+	<br><center><a href="javascript:annulerImpressionUrl();">Cliquez ici pour annuler</a></center>
+
+	</div>
+
+
+	<div id="PDFChargement" style="margin-left:-140px;margin-top:-60px;width:285px; height:150px; position:absolute; left:50%; top:50%; border: 1px solid #000000; background-color:#FFFFFF; display: none;">
+	<br><br><center>Génération de l'export PDF<br><br><!--Veuillez patienter...<br/><br/><img src="/metier-formation/images/progressbar.gif" />--><img src="/metier-formation/images/chargement2.gif" alt="chargement"><br><a href="javascript:annulerExportPDF();">Cliquez ici pour annuler</a>
+	<br><br>
+</center>
+	</div>
+
+
+
+	<script type="text/javascript">
+	//<!--
+	
+	//-->
+	</script><!-- ClickTale Bottom part --><div id="ClickTaleDiv" style="display: none;"></div>
+    <script type="text/javascript">
+    document.write(unescape("%3Cscript%20src='"+
+     (document.location.protocol=='https:'?
+      'https://clicktale.pantherssl.com/':
+      'http://s.clicktale.net/')+
+     "WRc5.js'%20type='text/javascript'%3E%3C/script%3E"));
+    </script><script type="text/javascript">
+    var ClickTaleSSL=1;
+    if(typeof ClickTale=='function') ClickTale(50275,1,"www");
+    </script><!-- ClickTale end of Bottom part -->
 </body>
 </html>
