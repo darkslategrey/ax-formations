@@ -1,8 +1,0 @@
-class CreatesPages < ActiveRecord::Migration
-  def up
-    create_table :formation do |t|
-      t.text :content
-      t.boolean :published, default: false
-    end
-  end
-end

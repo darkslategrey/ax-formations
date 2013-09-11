@@ -1,0 +1,249 @@
+-- MySQL dump 10.13  Distrib 5.5.32, for debian-linux-gnu (i686)
+--
+-- Host: localhost    Database: enf_formation
+-- ------------------------------------------------------
+-- Server version	5.5.32-0ubuntu0.13.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `contrat`
+--
+
+DROP TABLE IF EXISTS `contrat`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contrat` (
+  `ID_nat` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  `contrat` tinytext NOT NULL,
+  PRIMARY KEY (`ID_nat`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `experience`
+--
+
+DROP TABLE IF EXISTS `experience`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `experience` (
+  `ID_exp` tinyint(5) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `experience` tinytext NOT NULL,
+  PRIMARY KEY (`ID_exp`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `experience2`
+--
+
+DROP TABLE IF EXISTS `experience2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `experience2` (
+  `ID_exp2` tinyint(5) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `experience2` tinytext NOT NULL,
+  PRIMARY KEY (`ID_exp2`)
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `geo`
+--
+
+DROP TABLE IF EXISTS `geo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `geo` (
+  `ID_Geo` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `Geo` tinytext NOT NULL,
+  `code` tinytext NOT NULL,
+  PRIMARY KEY (`ID_Geo`)
+) ENGINE=MyISAM AUTO_INCREMENT=334 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `geo_zipcode`
+--
+
+DROP TABLE IF EXISTS `geo_zipcode`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `geo_zipcode` (
+  `ZIP` varchar(7) DEFAULT NULL,
+  `INSEE` varchar(7) NOT NULL DEFAULT '',
+  `VILLE` text,
+  `CODREG` varchar(7) DEFAULT NULL,
+  `REGION` text,
+  PRIMARY KEY (`INSEE`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `offer`
+--
+
+DROP TABLE IF EXISTS `offer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `offer` (
+  `ID` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
+  `VIS` tinyint(1) unsigned DEFAULT '0',
+  `URG` tinyint(1) unsigned DEFAULT '0',
+  `ID_TYPDET` tinyint(4) DEFAULT '1',
+  `DATE` datetime DEFAULT '0000-00-00 00:00:00',
+  `UPDATE` datetime DEFAULT '0000-00-00 00:00:00',
+  `KELDATE` datetime DEFAULT '0000-00-00 00:00:00',
+  `TYPE` smallint(4) unsigned DEFAULT '0',
+  `JOBTYPE` varchar(4) DEFAULT NULL,
+  `URGTYPE1` tinyint(4) DEFAULT '0',
+  `URGTYPE2` tinyint(4) DEFAULT '0',
+  `CONTRACT` tinytext,
+  `TIT` tinytext NOT NULL,
+  `ENT` tinytext NOT NULL,
+  `CITY` tinytext NOT NULL,
+  `LOC` tinytext NOT NULL,
+  `ZIP` tinytext NOT NULL,
+  `REGLOC` tinytext NOT NULL,
+  `NAT` tinyint(4) unsigned DEFAULT '0',
+  `DUR` tinytext,
+  `IDTC` tinyint(4) DEFAULT '0',
+  `IDTP` tinyint(4) DEFAULT '0',
+  `ADV` tinytext,
+  `BEG` tinytext,
+  `PRICE` tinytext,
+  `EXP` tinyint(5) unsigned DEFAULT '4',
+  `EXP2` tinyint(5) unsigned zerofill DEFAULT NULL,
+  `ART` text,
+  `REF` tinytext,
+  `HOW` mediumtext,
+  `HOWTYPE` tinyint(5) unsigned zerofill DEFAULT '00000',
+  `CONT` tinytext,
+  `ADR` mediumtext,
+  `TEL` tinytext,
+  `FAX` tinytext,
+  `MAIL` tinytext,
+  `WEB` tinytext,
+  `LNK` tinytext,
+  `LOG` text,
+  `GLOB` tinyint(4) NOT NULL DEFAULT '0',
+  `CONTI` tinyint(4) NOT NULL DEFAULT '4',
+  `LANG` tinytext,
+  `VIEW` mediumint(5) unsigned zerofill DEFAULT '00000',
+  `COUNT` mediumint(5) unsigned zerofill DEFAULT '00000',
+  PRIMARY KEY (`ID`),
+  FULLTEXT KEY `ART` (`TIT`,`ENT`,`ART`)
+) ENGINE=MyISAM AUTO_INCREMENT=81 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `regeo`
+--
+
+DROP TABLE IF EXISTS `regeo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `regeo` (
+  `ID_regeo` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `regeo` tinytext NOT NULL,
+  `recode` tinytext NOT NULL,
+  PRIMARY KEY (`ID_regeo`)
+) ENGINE=MyISAM AUTO_INCREMENT=261 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `secteur`
+--
+
+DROP TABLE IF EXISTS `secteur`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `secteur` (
+  `ID_sec` varchar(4) NOT NULL,
+  `secteur` tinytext NOT NULL,
+  PRIMARY KEY (`ID_sec`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `sessions`
+--
+
+DROP TABLE IF EXISTS `sessions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sessions` (
+  `ID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `LOGIN` tinytext NOT NULL,
+  `PASSWD` tinytext NOT NULL,
+  `PRIV` tinyint(3) unsigned DEFAULT '0',
+  `PRODUCT` tinyint(4) DEFAULT '0',
+  `RIGHT` tinyint(4) NOT NULL DEFAULT '1',
+  `RIGHT2` tinyint(4) NOT NULL DEFAULT '1',
+  `MODE` tinyint(4) NOT NULL DEFAULT '0',
+  `MODE2` tinyint(4) NOT NULL DEFAULT '0',
+  `CREDITS` smallint(6) DEFAULT '0',
+  `CREDITS2` smallint(6) DEFAULT '0',
+  `GR` tinytext,
+  `NEWGR` tinyint(4) NOT NULL DEFAULT '2',
+  `NOM` tinytext,
+  `PRENOM` tinytext,
+  `JJ` tinyint(2) unsigned DEFAULT '0',
+  `MM` tinyint(2) unsigned DEFAULT '0',
+  `AAAA` smallint(4) unsigned DEFAULT '0',
+  `DATECREA` datetime DEFAULT '0000-00-00 00:00:00',
+  `DATEUPDATE` datetime DEFAULT '0000-00-00 00:00:00',
+  `DATEEND` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `DATEEND2` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `GEO` tinytext,
+  `ZONE` tinyint(4) NOT NULL DEFAULT '4',
+  `RANGE` tinyint(4) NOT NULL DEFAULT '1',
+  `LANGUAGE` tinytext,
+  `LANG` tinyint(4) NOT NULL DEFAULT '0',
+  `SOCIETE` tinytext NOT NULL,
+  `CONTRAT` tinytext NOT NULL,
+  `WEB` tinytext,
+  `LOGO` tinytext,
+  `LOGOSPONSOR` tinyint(1) DEFAULT '0',
+  `LOGOTXT` varchar(200) DEFAULT NULL,
+  `TEL` tinytext,
+  `MAIL` tinytext,
+  `FUNCT` tinytext,
+  `FAX` tinytext,
+  `ADRESSE` text,
+  `RMAIL` tinytext,
+  `RLINK` tinytext,
+  `WHO` tinyint(4) NOT NULL DEFAULT '2',
+  `OBS1` text,
+  `OBS2` text,
+  `CVIEW` mediumint(6) unsigned zerofill DEFAULT '000000',
+  `CVIEWCV` mediumint(6) unsigned zerofill DEFAULT '000000',
+  `CCONEX` mediumint(6) unsigned zerofill DEFAULT '000000',
+  `CCODE` tinytext NOT NULL,
+  `CLAST` datetime DEFAULT '0000-00-00 00:00:00',
+  `CBEFORE` datetime DEFAULT '0000-00-00 00:00:00',
+  `TYPEREC` tinyint(2) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=898 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2013-09-10 11:42:16

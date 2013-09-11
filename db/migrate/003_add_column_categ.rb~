@@ -1,5 +1,0 @@
-class AddColumnCateg < ActiveRecord::Migration
-
-  def up
-    add_column :formations, :ets, :string
-    add_column :formations, :cp, :string
