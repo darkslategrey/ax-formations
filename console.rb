@@ -6,98 +6,98 @@ class Formation < ActiveRecord::Base
 end
 
 
-class EnfDB < ActiveRecord::Base
+class JeDB < ActiveRecord::Base
   
   establish_connection(adapter: 'mysql2', database: 'enf_formation', pool: 5, 
                        username: 'root', password: 'admin', socket: '/var/run/mysqld/mysqld.sock')
   self.abstract_class = true
 end
 
-class ContratEnf < EnfDB
+class ContratJe < JeDB
   self.table_name = 'contrat'
   self.primary_key =  'ID_nat'
 end
 
-class ExperienceEnf < EnfDB
+class ExperienceJe < JeDB
   self.table_name = 'experience'
   self.primary_key = 'ID_exp'
 end
 
-class Experience2Enf < EnfDB
+class Experience2Je < JeDB
   self.table_name = 'experience2'
   self.primary_key = 'ID_exp2'
 end
 
-class GeoEnf < EnfDB
+class GeoJe < JeDB
   self.table_name = 'geo'
   self.primary_key = 'ID_Geo'
 end
 
-class GeoZipcodeEnf < EnfDB
+class GeoZipcodeJe < JeDB
   self.table_name = 'geo_zipcode'
   self.primary_key = 'INSEE'
 end
 
-class OfferEnf < EnfDB
+class OfferJe < JeDB
   self.table_name = 'offer'
   self.primary_key = 'ID'
 end
 
-class RegeoEnf < EnfDB
+class RegeoJe < JeDB
   self.table_name = 'regeo'
   self.primary_key = 'ID_regeo'
 end
 
-class SecteurEnf < EnfDB
+class SecteurJe < JeDB
   self.table_name = 'secteur'
   self.primary_key = 'ID_sec'
 end
 
 ##### DEP FORMATION ######
 
-class DepDB < ActiveRecord::Base
+class JdDB < ActiveRecord::Base
   
   establish_connection(adapter: 'mysql2', database: 'dep_formation', pool: 5, 
                        username: 'root', password: 'admin', socket: '/var/run/mysqld/mysqld.sock')
   self.abstract_class = true
 end
 
-class ContratDep < DepDB
+class ContratJd < JdDB
   self.table_name = 'contrat'
   self.primary_key =  'ID_nat'
 end
 
-class ExperienceDep < DepDB
+class ExperienceJd < JdDB
   self.table_name = 'experience'
   self.primary_key = 'ID_exp'
 end
 
-class Experience2Dep < DepDB
+class Experience2Jd < JdDB
   self.table_name = 'experience2'
   self.primary_key = 'ID_exp2'
 end
 
-class GeoDep < DepDB
+class GeoJd < JdDB
   self.table_name = 'geo'
   self.primary_key = 'ID_Geo'
 end
 
-class GeoZipcodeDep < DepDB
+class GeoZipcodeJd < JdDB
   self.table_name = 'geo_zipcode'
   self.primary_key = 'INSEE'
 end
 
-class OfferDep < DepDB
+class OfferJd < JdDB
   self.table_name = 'offer'
   self.primary_key = 'ID'
 end
 
-class RegeoDep < DepDB
+class RegeoJd < JdDB
   self.table_name = 'regeo'
   self.primary_key = 'ID_regeo'
 end
 
-class SecteurDep < DepDB
+class SecteurJd < JdDB
   self.table_name = 'secteur'
   self.primary_key = 'ID_sec'
 end
