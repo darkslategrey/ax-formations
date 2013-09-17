@@ -1,621 +1,0 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>Lycée professionnel Marcelle Pardé</title>
-<meta http-equiv="content-type" content="text/html;charset=utf-8">
-<style type="text/css">		@import url(squelettes/css/lycee_parde.css);		@import url(squelettes/css/spip_style.css);	</style>
-<!--[if lte IE 6]>		<link rel="stylesheet" type="text/css" media="all" href="squelettes/css/lycee_parde_ie6.css" />	<![endif]--><script type="text/javascript" src="squelettes/js/deroulant.js"></script><link rel="stylesheet" type="text/css" media="all" href="extensions/porte_plume/css/barre_outils.css">
-<link rel="stylesheet" type="text/css" media="all" href="http://www.marcelleparde.fr/spip.php?page=barre_outils_icones.css">
-<!-- Debut CS --><style type="text/css">
-/* Pour info : enveloppe_mails = -1 */
-
-</style>
-<!-- Fin CS --><script src="prive/javascript/jquery.js" type="text/javascript"></script><script src="prive/javascript/jquery.form.js" type="text/javascript"></script><script src="prive/javascript/ajaxCallback.js" type="text/javascript"></script><script src="prive/javascript/jquery.cookie.js" type="text/javascript"></script><!-- insert_head --><!--[if lt IE 7]>
-	<script src='extensions/msie_compat/javascript/jquery.ifixpng.js'></script>
-	<script type='text/javascript'>//<![CDATA[
-		jQuery.ifixpng('rien.gif');		
-		function fixie() {
-			jQuery('img').ifixpng();
-		}
-		$(document).ready(function() { fixie(); });
-		onAjaxLoad(fixie);	
-	//]]></script>
-<![endif]--><script type="text/javascript" src="extensions/porte_plume/javascript/xregexp-min.js"></script><script type="text/javascript" src="extensions/porte_plume/javascript/jquery.markitup_pour_spip.js"></script><script type="text/javascript" src="extensions/porte_plume/javascript/jquery.previsu_spip.js"></script><script type="text/javascript" src="http://www.marcelleparde.fr/spip.php?page=porte_plume_start.js&amp;lang=fr"></script><!-- Debut CS --><script type="text/javascript"><!--
-var cs_prive=window.location.pathname.match(/\/ecrire\/$/)!=null;
-jQuery.fn.cs_todo=function(){return this.not('.cs_done').addClass('cs_done');};
-var cs_init = function() {
-	/* optimisation : 'IF(1)' */ if(!cs_prive) jQuery("a.spip_out,a.spip_url,a.spip_glossaire",this).attr("target", "_blank"); 
-}
-if(typeof onAjaxLoad=='function') onAjaxLoad(cs_init);
-if(window.jQuery) {
-var cs_sel_jQuery=typeof jQuery(document).selector=='undefined'?'@':'';
-var cs_CookiePlugin="prive/javascript/jquery.cookie.js";
-jQuery(document).ready(function(){
-	cs_init.apply(document);
-});
-}
-// --></script><!-- Fin CS --><script src="lib/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.js" type="text/javascript"></script><script src="http://www.marcelleparde.fr/plugins/fancybox/javascript/fancybox.js" type="text/javascript"></script><script type="text/javascript">/* <![CDATA[ */
-// fontion callback lancee a l affichage de la box
-var fancyonshow=function() {
-	//showlongdesc(this);
-	hideembed();
-}
-// fontion callback lancee a la fermeture de la box
-var fancyonclose=function() {
-	showembed();
-}
-var fb_selecteur_galerie="#documents_portfolio .fancybox, .documents_portfolio .fancybox";
-var fb_selecteur_commun=".fancybox";
-var fb_selecteur_frame=".iframe";
-var fb_options = {
-	"padding": 10,
-	"margin": 20,
-	"opacity": false,
-	"modal": false,
-	"cyclic": false,
-	"scrolling": "auto",
-	"width": 560,
-	"height": 340,
-	"autoScale": true,
-	"autoDimensions": true,
-	"centerOnScroll": true,
-	"hideOnOverlayClick": true,
-	"hideOnContentClick": true,
-	"overlayShow": true,
-	"overlayOpacity": 0.3,
-	"overlayColor": "#666",
-	"titleShow": true,
-	"titlePosition": "float",
-	"titleFormat": null,
-	"transitionIn": "fade",
-	"transitionOut": "fade",
-	"speedIn": 300,
-	"speedOut": 300,
-	"changeSpeed": 300,
-	"changeFade": "fast",
-	"easingIn": "swing",
-	"easingOut": "swing",
-	"showCloseButton": true,
-	"showNavArrows": true,
-	"enableEscapeButton": true,
-	"onStart": fancyonshow,
-	"onClosed": fancyonclose
-};
-var fb_commun_options = fb_options;
-var fb_frame_options = fb_options;
-if (window.jQuery)
-(function($){if(typeof onAjaxLoad == "function") onAjaxLoad(fancy_init);
-	$(fancy_init);
- })(jQuery);
-/* ]]> */</script><link rel="stylesheet" href="lib/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="all">
-</head>
-<body>
-
-	<div class="container">
-	
-		<div class="top">
-			
-			<div class="bandeau">
-			
-				<div class="centre_bandeau">							<h1>Lycée professionnel Marcelle Pardé 					<span>Bourg-en-Bresse (Ain)</span>				</h1>				<div class="rechercher">					<form method="get" action="http://www.marcelleparde.fr/spip.php?page=recherche">												<input type="hidden" name="page" value="recherche"><input type="text" name="recherche" value="Rechercher" onclick="if (this.value=='Rechercher'){ this.value = '';}" onblur="if (this.value==''){ this.value = 'Rechercher';}"><input type="image" src="squelettes/images/submit.png" name="submit">
-</form>				</div>									<a class="parents" href="-espace-parents-"></a>												<div class="menu">									<ul>
-<li>							<a href="http://www.marcelleparde.fr" class="lien_menu">Accueil</a>						</li>																																																<li class="liste_relative">									<ul id="menu3" class="cacher" onmouseover="deplier(3);" onmouseout="replier(3);">
-<li>													<a href="-menus-" class="lien_sous_menu" onmouseover="deplier(3);" onmouseout="replier(3);">MENUS</a>												</li>																																																					</ul>
-</li>								<li>									<a id="lien3" href="-actualites-" class="lien_menu" onmouseover="deplier(3);" onmouseout="replier(3);">Actualités</a>								</li>																																																																					<li class="liste_relative">									<ul id="menu4" class="cacher" onmouseover="deplier(4);" onmouseout="replier(4);">
-<li class="liste_sous_relative">													<ul id="menu5" class="cacher_sous_menu" onmouseover="deplier(4); deplier_sous_menu(5);" onmouseout="replier(4); replier_sous_menu(5);">
-<li>																<a href="le-lycee-des-metiers,3" class="lien_sous_menu" onmouseover="deplier(4); deplier_sous_menu(5);" onmouseout="replier(4); replier_sous_menu(5);">Le lycée des métiers</a>															</li>																																																																																									<li>																<a href="-projet-d-etablissement-" class="lien_sous_menu" onmouseover="deplier(4); deplier_sous_menu(5);" onmouseout="replier(4); replier_sous_menu(5);">Projet d’établissement</a>															</li>																																																																																									<li>																<a href="-contrat-d-objectifs-" class="lien_sous_menu" onmouseover="deplier(4); deplier_sous_menu(5);" onmouseout="replier(4); replier_sous_menu(5);">Contrat d’objectifs</a>															</li>																																										</ul>
-</li>																								<li>													<a id="lien5" href="-politique-de-l-etablissement-" class="lien_sous_menu" onmouseover="deplier(4); deplier_sous_menu(5);" onmouseout="replier(4); replier_sous_menu(5);">Politique de l’établissement</a>												</li>																																																																																																															<li class="liste_sous_relative">													<ul id="menu6" class="cacher_sous_menu" onmouseover="deplier(4); deplier_sous_menu(6);" onmouseout="replier(4); replier_sous_menu(6);">
-<li>																<a href="qui-etait-marcelle-parde,6" class="lien_sous_menu" onmouseover="deplier(4); deplier_sous_menu(6);" onmouseout="replier(4); replier_sous_menu(6);">Qui était Marcelle PARDE ?</a>															</li>																																																																																																																																									<li>																<a href="plan-d-acces" class="lien_sous_menu" onmouseover="deplier(4); deplier_sous_menu(6);" onmouseout="replier(4); replier_sous_menu(6);">Situation géographique</a>															</li>																																																																																																																																									<li>																<a href="bourg-en-bresse,8" class="lien_sous_menu" onmouseover="deplier(4); deplier_sous_menu(6);" onmouseout="replier(4); replier_sous_menu(6);">Bourg-en-Bresse</a>															</li>																																										</ul>
-</li>																								<li>													<a id="lien6" href="-un-peu-d-histoire-et-de-geographie-" class="lien_sous_menu" onmouseover="deplier(4); deplier_sous_menu(6);" onmouseout="replier(4); replier_sous_menu(6);">Un peu d’histoire et de géographie</a>												</li>																																																																																																															<li class="liste_sous_relative">													<ul id="menu7" class="cacher_sous_menu" onmouseover="deplier(4); deplier_sous_menu(7);" onmouseout="replier(4); replier_sous_menu(7);">
-<li>																<a href="internat,9" class="lien_sous_menu" onmouseover="deplier(4); deplier_sous_menu(7);" onmouseout="replier(4); replier_sous_menu(7);">Internat</a>															</li>																																																																																									<li>																<a href="-restauration-scolaire-" class="lien_sous_menu" onmouseover="deplier(4); deplier_sous_menu(7);" onmouseout="replier(4); replier_sous_menu(7);">Restauration scolaire</a>															</li>																																																																																									<li>																<a href="-infirmerie-" class="lien_sous_menu" onmouseover="deplier(4); deplier_sous_menu(7);" onmouseout="replier(4); replier_sous_menu(7);">Infirmerie</a>															</li>																																																																																									<li>																<a href="-assistance-sociale-scolaire-" class="lien_sous_menu" onmouseover="deplier(4); deplier_sous_menu(7);" onmouseout="replier(4); replier_sous_menu(7);">Assistance sociale scolaire</a>															</li>																																																																																									<li>																<a href="-conseiller-d-orientation-" class="lien_sous_menu" onmouseover="deplier(4); deplier_sous_menu(7);" onmouseout="replier(4); replier_sous_menu(7);">Conseiller d’orientation psychologue</a>															</li>																																										</ul>
-</li>																								<li>													<a id="lien7" href="-infos-pratiques-" class="lien_sous_menu" onmouseover="deplier(4); deplier_sous_menu(7);" onmouseout="replier(4); replier_sous_menu(7);">Infos pratiques</a>												</li>																																																																																																																																																			<li>													<a href="les-formations" class="lien_sous_menu" onmouseover="deplier(4);" onmouseout="replier(4);">La voie Professionnelle</a>												</li>																																																					</ul>
-</li>								<li>									<a id="lien4" href="-le-lycee-" class="lien_menu" onmouseover="deplier(4);" onmouseout="replier(4);">Le lycée</a>								</li>																																																																																													<li class="liste_relative">									<ul id="menu19" class="cacher" onmouseover="deplier(19);" onmouseout="replier(19);">
-<li class="liste_sous_relative">													<ul id="menu80" class="cacher_sous_menu" onmouseover="deplier(19); deplier_sous_menu(80);" onmouseout="replier(19); replier_sous_menu(80);">
-<li>																<a href="-les-nouveaux-livres-" class="lien_sous_menu" onmouseover="deplier(19); deplier_sous_menu(80);" onmouseout="replier(19); replier_sous_menu(80);">Les nouveaux livres</a>															</li>																																																																																									<li>																<a href="-evenements-" class="lien_sous_menu" onmouseover="deplier(19); deplier_sous_menu(80);" onmouseout="replier(19); replier_sous_menu(80);">évènements</a>															</li>																																										</ul>
-</li>																								<li>													<a id="lien80" href="-actualite-" class="lien_sous_menu" onmouseover="deplier(19); deplier_sous_menu(80);" onmouseout="replier(19); replier_sous_menu(80);">ACTUALITE</a>												</li>																																																					</ul>
-</li>								<li>									<a id="lien19" href="presentation-du-cdi" class="lien_menu" onmouseover="deplier(19);" onmouseout="replier(19);">Le CDI</a>								</li>																																																																					<li class="liste_relative">									<ul id="menu45" class="cacher" onmouseover="deplier(45);" onmouseout="replier(45);">
-<li>													<a href="-maison-des-lyceens-" class="lien_sous_menu" onmouseover="deplier(45);" onmouseout="replier(45);">Maison des lycéens</a>												</li>																																																																																																															<li>													<a href="-conseil-de-la-vie-lyceenne-" class="lien_sous_menu" onmouseover="deplier(45);" onmouseout="replier(45);">Conseil de la vie lycéenne</a>												</li>																																																																																																															<li>													<a href="-vie-du-lycee-" class="lien_sous_menu" onmouseover="deplier(45);" onmouseout="replier(45);">Vie du lycée</a>												</li>																																																					</ul>
-</li>								<li>									<a id="lien45" href="-la-vie-lyceenne-" class="lien_menu" onmouseover="deplier(45);" onmouseout="replier(45);">La vie lycéenne</a>								</li>																																																																					<li class="liste_relative">									<ul id="menu50" class="cacher" onmouseover="deplier(50);" onmouseout="replier(50);">
-<li>													<a href="-association-sportive-" class="lien_sous_menu" onmouseover="deplier(50);" onmouseout="replier(50);">Association sportive</a>												</li>																																																					</ul>
-</li>								<li>									<a id="lien50" href="-sport-au-lycee-" class="lien_menu" onmouseover="deplier(50);" onmouseout="replier(50);">Sport au lycée</a>								</li>																																																																																													<li>									<a href="contact,40" class="lien_menu">Contact</a>								</li>																																	<li class="spacer">					</ul>
-</div>							</div>				
-			</div>
-			
-		</div>
-		
-		<div class="page">
-		
-			<div class="ariane">
-			
-				<a href="http://www.marcelleparde.fr">Accueil</a>
-				
-			</div>
-			
-			<div class="colg">
-				
-				
-				<div class="cadre_editorial_accueil">
-					<div class="cadre_editorial_top_accueil">
-						<div class="cadre_editorial_bottom_accueil">
-							
-							<div class="editorial">
-								
-								
-									
-									<div class="titre_article">
-										<h2>Edito</h2>
-									</div>
-									
-									
-									
-									<div class="content">
-										
-										
-										
-										<p><span class="spip_document_14 spip_documents spip_documents_center">
-<img src="local/cache-vignettes/L290xH207/entree-b4409.jpg" width="290" height="207" alt="" style="height:207px;width:290px;"></span></p>
-
-<p>Le Lycée professionnel scolarise 500 élèves autour de 5 grands secteurs d’activités :</p>
-
-<p><img src="local/cache-vignettes/L8xH11/puce-32883.gif" width="8" height="11" class="puce" alt="-" style="height:11px;width:8px;"> les métiers des Services Administratifs,
-<br><img src="local/cache-vignettes/L8xH11/puce-32883.gif" width="8" height="11" class="puce" alt="-" style="height:11px;width:8px;"> les métiers de la Vente et du Commerce,
-<br><img src="local/cache-vignettes/L8xH11/puce-32883.gif" width="8" height="11" class="puce" alt="-" style="height:11px;width:8px;"> les métiers des Carrières Sanitaires et Sociales,
-<br><img src="local/cache-vignettes/L8xH11/puce-32883.gif" width="8" height="11" class="puce" alt="-" style="height:11px;width:8px;"> les métiers de l’Esthétique (<i>rentrée 2012</i>),
-<br><img src="local/cache-vignettes/L8xH11/puce-32883.gif" width="8" height="11" class="puce" alt="-" style="height:11px;width:8px;"> les métiers de la Mode.</p>
-
-<p>Du CAP au Baccalauréat Professionnel en passant par la certification intermédiaire BEP, le Lycée Marcelle Pardé propose un enseignement en relation avec l’entreprise et ses métiers dans des locaux modernes, adaptés et disposant des meilleurs outils pédagogiques.</p>
-
-<p>Lors de leur cursus de 3 ans, les élèves, en situation en entreprise durant 22 semaines, sont ainsi préparés à leur future insertion professionnelle tout en ayant aussi l’objectif d’une poursuite d’étude Post-Bac.</p>
-
-<p>En effet, un dispositif « Passerelle » permet à chaque élève le désirant, d’accéder à différentes formations « BTS » dispensées dans les établissements partenaires.</p>
-
-<h3 class="spip">La Voie Professionnelle est aussi une voie de réussite et d’excellence.</h3>
-									</div>
-									
-								
-								
-							</div>
-							
-						</div>
-					</div>
-				</div>
-				
-				
-				<div class="colonne_actus">
-					
-						<div class="cadre_editorial_accueil">
-							<div class="cadre_editorial_top_accueil">
-								<div class="cadre_editorial_bottom_accueil">
-									
-									<div class="editorial">
-										
-										<div class="titre_article">
-											<h2>Dernières actualités</h2>
-										</div>
-										
-										
-											
-											
-											
-											
-										
-										
-											
-											
-									
-										
-											
-											<div class="titre_article_accueil">
-												<h3>
-													RESULTATS AUX EXAMENS
-												</h3>
-											</div>
-											
-											<div class="content">								
-												
-												
-												
-												<dl class="spip_document_291 spip_documents spip_documents_left" style="float:left;width:120px;">
-<dt><a href="IMG/pdf/CAP_2013.pdf" title="PDF - 356.2 ko" type="application/pdf"><img src="local/cache-vignettes/L52xH52/pdf-eb697.png" width="52" height="52" alt="PDF - 356.2 ko" style="height:52px;width:52px;"></a></dt>
-<dt class="spip_doc_titre" style="width:120px;"><strong>CAP 2013</strong></dt>
-</dl>
-<dl class="spip_document_293 spip_documents spip_documents_left" style="float:left;width:120px;">
-<dt><a href="IMG/pdf/BEP_2013.pdf" title="PDF - 1003.7 ko" type="application/pdf"><img src="local/cache-vignettes/L52xH52/pdf-eb697.png" width="52" height="52" alt="PDF - 1003.7 ko" style="height:52px;width:52px;"></a></dt>
-<dt class="spip_doc_titre" style="width:120px;"><strong>BEP 2013</strong></dt>
-</dl>
-<dl class="spip_document_294 spip_documents spip_documents_left" style="float:left;width:120px;">
-<dt><a href="IMG/pdf/BAC_PRO_2013.pdf" title="PDF - 1 Mo" type="application/pdf"><img src="local/cache-vignettes/L52xH52/pdf-eb697.png" width="52" height="52" alt="PDF - 1 Mo" style="height:52px;width:52px;"></a></dt>
-<dt class="spip_doc_titre" style="width:120px;"><strong>BAC PRO 2013</strong></dt>
-</dl>
-<dl class="spip_document_296 spip_documents spip_documents_left" style="float:left;width:120px;">
-<dt><a href="IMG/pdf/admis_bac_pro_apres_examen_de_controle.pdf" title="PDF - 208.5 ko" type="application/pdf"><img src="local/cache-vignettes/L52xH52/pdf-eb697.png" width="52" height="52" alt="PDF - 208.5 ko" style="height:52px;width:52px;"></a></dt>
-<dt class="spip_doc_titre" style="width:120px;"><strong>ADMIS APRES EPREUVE DE CONTROLE</strong></dt>
-</dl>
-<dl class="spip_document_297 spip_documents spip_documents_left" style="float:left;width:120px;">
-<dt><a href="IMG/pdf/diplome_national_du_brevet_2013.pdf" title="PDF - 146.7 ko" type="application/pdf"><img src="local/cache-vignettes/L52xH52/pdf-eb697.png" width="52" height="52" alt="PDF - 146.7 ko" style="height:52px;width:52px;"></a></dt>
-<dt class="spip_doc_titre" style="width:120px;"><strong>DIPLOME NATIONAL DU BREVET</strong></dt>
-</dl>
-<div class="spacer"></div>
-												
-											</div>
-											
-										
-											
-											<div class="titre_article_accueil">
-												<h3>
-													REGLEMENT INTERIEUR
-												</h3>
-											</div>
-											
-											<div class="content">								
-												
-												
-												
-												<p><strong>Le règlement intérieur de l’établissement est disponible dans la rubrique "Espaces Parents"</strong></p>
-												
-												
-												
-												<div class="spacer"></div>
-												
-											</div>
-											
-										
-											
-											<div class="titre_article_accueil">
-												<h3>
-													INSCRIPTION EN 3PREPRO
-												</h3>
-											</div>
-											
-											<div class="content">								
-												
-												
-												
-												<p><strong>L’Internat du lycée n’est pas proposé aux élèves souhaitant entrer en 3 PREPRO</strong></p>
-												
-												
-												
-												<div class="spacer"></div>
-												
-											</div>
-											
-										
-											
-											<div class="titre_article_accueil">
-												<h3>
-													CONSEILS DE CLASSE
-												</h3>
-											</div>
-											
-											<div class="content">								
-												
-												
-												
-												<p>Vous trouverez dans l’espace parents
- le <span style="background-color:#ffff00; padding:0px 2px;">planning </span> et
- le <span style="background-color:#ffff00; padding:0px 2px;">  bilan</span>  des conseils de classe du 2nd semestre</p>
-												
-												
-												
-												<div class="spacer"></div>
-												
-											</div>
-											
-										
-										
-										
-											<a class="voir" href="-actualites-">Voir toutes les actus</a>
-										
-										
-									</div>
-									
-								</div>
-							</div>
-						</div>
-					
-					
-					
-					<div class="spacer"></div>
-					
-				</div>
-				
-				<div class="spacer"></div>
-				
-			</div>
-			
-			<div class="cold">
-			
-				<div class="cadre_bleu_top"></div>
-				<div class="cadre_bleu_motif">
-					<div class="contenu_cold">
-					
-						
-						<h3>
-							<a href="-les-formations,20-">Les formations</a>
-						</h3>
-						
-						
-						
-							<ul>
-<li>
-											
-											
-											<a href="-les-metiers-des-services-a-la-" class="theme_formation">Les métiers des services à la personne</a>
-										</li>
-										<ul class="cadre_formations"><ul>
-<li>
-											
-												
-													
-											
-											
-											<a href="bac-pro-assp,24">Bac Pro ASSP</a>
-										</li>
-									
-								
-								
-									
-										<li>
-											
-												
-													
-											
-											
-											<a href="fas,25">FAS</a>
-										</li>
-									
-								
-								
-									
-										<li>
-											
-												
-													
-											
-											
-											<a href="bac-pro-esthetique-cosmetique-et,52">Bac pro Esthétique Cosmétique et Parfumerie</a>
-										</li>
-									
-								
-							</ul></ul>
-<li>
-											
-											
-											<a href="-les-metiers-des-services-aux-" class="theme_formation">Les métiers des services aux entreprises</a>
-										</li>
-										<ul class="cadre_formations"><ul>
-<li>
-											
-												
-													
-											
-											
-											<a href="bac-pro-gestion-administration,48">Bac Pro Gestion Administration</a>
-										</li>
-									
-								
-								
-									
-										<li>
-											
-												
-													
-											
-											
-											<a href="cap-vente,19">Cap Vente</a>
-										</li>
-									
-								
-								
-									
-										<li>
-											
-												
-													
-											
-											
-											<a href="bac-pro-commerce,20">Bac Pro Commerce</a>
-										</li>
-									
-								
-								
-									
-										<li>
-											
-												
-													
-											
-											
-											<a href="bac-pro-service,21">Bac Pro Service</a>
-										</li>
-									
-								
-								
-									
-										<li>
-											
-												
-													
-											
-											
-											<a href="bac-pro-metiers-de-la-mode">BAC PRO MM</a>
-										</li>
-									
-								
-							</ul></ul>
-<li>
-											
-											
-											<a href="-dispositifs-particuliers-" class="theme_formation">Dispositifs particuliers</a>
-										</li>
-										<ul class="cadre_formations"><ul>
-<li>
-											
-												
-													
-											
-											
-											<a href="3eme-dp6,15">3ème DP6</a>
-										</li>
-									
-								
-								
-									
-										<li>
-											
-												
-													
-											
-											
-											<a href="mgi,16">MGI</a>
-										</li>
-									
-								
-								
-									
-										<li>
-											
-												
-													
-											
-											
-											<a href="ulis,17">ULIS</a>
-										</li>
-									
-								
-								
-									
-										<li>
-											
-												
-													
-											
-											
-											<a href="greta,18">GRETA</a>
-										</li>
-									
-								
-								
-									
-										<li>
-											
-												
-													
-											
-											
-											<a href="v-a-e,51">V.A.E.</a>
-										</li>
-									
-								
-							</ul></ul>
-</ul>
-</div>
-				</div>
-				<div class="cadre_bleu_bottom"></div>
-				<div class="spacer"></div>
-				
-			
-				
-				<div class="cadre_bleu_top"></div>
-				<div class="cadre_bleu_motif">
-					<div class="contenu_cold">
-					
-						
-						<h3>
-							<a href="-ifas-institut-de-formation-d-aide-">IFAS - Institut de formation d’Aide-Soignants</a>
-						</h3>
-						
-						
-						
-					</div>
-				</div>
-				<div class="cadre_bleu_bottom"></div>
-				<div class="spacer"></div>
-				
-			
-				
-				<div class="cadre_bleu_top"></div>
-				<div class="cadre_bleu_motif">
-					<div class="contenu_cold">
-					
-						
-						<h3>
-							<a href="-les-periodes-de-formation-en-">Les périodes de formation en milieu professionnel</a>
-						</h3>
-						
-						
-						
-							<ul>
-<li>
-											
-											
-											<a href="-calendrier-des-pfmp-">Calendrier des PFMP</a>
-										</li>
-									
-								
-								
-									
-										<li>
-											
-											
-											<a href="-objectifs-pedagogiques-">Objectifs pédagogiques</a>
-										</li>
-									
-								
-								
-									
-										<li>
-											
-											
-											<a href="-documents-tuteur-">Documents tuteur</a>
-										</li>
-									
-								
-							</ul>
-</div>
-				</div>
-				<div class="cadre_bleu_bottom"></div>
-				<div class="spacer"></div>
-				
-			
-				
-				<div class="cadre_bleu_top"></div>
-				<div class="cadre_bleu_motif">
-					<div class="contenu_cold">
-					
-						
-						<h3>
-							<a href="-relations-aux-entreprises-">Relations aux entreprises</a>
-						</h3>
-						
-						
-						
-							<ul>
-<li>
-											
-											
-											<a href="-marches-publics-">Marchés publics</a>
-										</li>
-									
-								
-							</ul>
-</div>
-				</div>
-				<div class="cadre_bleu_bottom"></div>
-				<div class="spacer"></div>				
-			</div>
-			
-			<div class="spacer"></div>
-			
-		</div>
-		
-		<div class="spacer"></div>
-		
-		<div class="bottom">
-			
-			<div class="degrade_footer">			<div class="footer">							<div class="footer_contenu">									<a href="http://www.marcelleparde.fr/spip.php?page=plan-du-site">Plan du site</a>					<span class="separation_footer"> :: </span>																<a href="mentions-legales">Mentions légales</a>						<span class="separation_footer"> :: </span>															<a href="http://www.dsfi.fr" target="_blank">Site Internet DSFI</a>										</div>			</div>				</div>		
-		</div>
-		
-	</div>
-	
-</body>
-</html>
