@@ -7,6 +7,15 @@ require 'yaml'
 
 namespace :db do
 
+
+  desc "Migrate Doli Je db"
+  task :migrate_je do
+    ActiveRecord::Base.establish_connection(adapter: 'mysql2', database: 'jobenfance', 
+                                            username: 'root', password: 'admin',
+                                            socket: '/var/run/mysqld/mysqld.sock')
+    ActiveRecord::Migrator.migrate("db/migrate_je/")
+  end
+
   desc "Migrate the db"
   task :migrate do
     # connection_details = YAML::load(File.open('config/database.yml'))
@@ -36,6 +45,20 @@ namespace :db do
 
   task :clean do
     exec 'rm *~'
+  end
+
+  task :reinit_je do
+    sh 'mysqladmin -u root -padmin drop jobenfance'
+    sh 'mysqladmin -u root -padmin create jobenfance'
+    sh 'cat doli_jobenfance.dump.sql | mysql -u root -padmin jobenfance'
+    sh 'cat sql_scripts/alter_soc.sql | mysql -u root -padmin jobenfance'
+  end
+
+  task :reinit_jd do
+    sh 'mysqladmin -u root -padmin drop jobdependance'
+    sh 'mysqladmin -u root -padmin create jobdependance'
+    sh 'cat doli_jobdependance.dump.sql | mysql -u root -padmin jobdependance'
+    sh 'cat sql_scripts/alter_soc.sql | mysql -u root -padmin jobdependance'
   end
 
 end
