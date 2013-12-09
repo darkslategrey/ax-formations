@@ -26,10 +26,10 @@ je_docs_dir = jd_docs_dir = ''
 pp conf
 
 # creation du rep documents/id_tier/thumb
-Formation.where.not(:id_doli => nil).where(:dest => 'je').map { |f| f.id_doli }.each { |tiers_id|
+Formation.where.not(:id_doli => nil).where(:dest => 'jd').map { |f| f.id_doli }.each { |tiers_id|
   next if tiers_id.nil?
   puts "tiers_id <#{tiers_id}>"
-  tiers = LlxSocJe.find(tiers_id)
+  tiers = LlxSocJd.find(tiers_id)
   if tiers.nil?
     puts "ATTENTION #{tiers_id} introuvable"
     break
@@ -43,7 +43,7 @@ Formation.where.not(:id_doli => nil).where(:dest => 'je').map { |f| f.id_doli }.
     logo_file_src  = tiers.logo.split('/')[1]
   end
 
-  dest_dir = "#{conf['je']['docs_dir']}/societe/#{tiers_id}/logos"
+  dest_dir = "#{conf['jd']['docs_dir']}/societe/#{tiers_id}/logos"
 
   if File.exists? "#{dest_dir}/#{logo_file_dest}"
     puts "EXIST #{dest_dir}/#{logo_file_dest}"
@@ -51,7 +51,7 @@ Formation.where.not(:id_doli => nil).where(:dest => 'je').map { |f| f.id_doli }.
   end
   # copie du fichier de logo à l'endroit approprié
 
-  thumb_dir = "#{conf['je']['docs_dir']}/societe/#{tiers_id}/logos/thumbs"
+  thumb_dir = "#{conf['jd']['docs_dir']}/societe/#{tiers_id}/logos/thumbs"
 
   puts "mkdir -p #{dest_dir}"
   `mkdir -p #{dest_dir}`

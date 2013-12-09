@@ -61,6 +61,13 @@ namespace :db do
     sh 'cat sql_scripts/alter_soc.sql | mysql -u root -padmin jobdependance'
   end
 
+  desc "load data"
+  task :load_data do
+    sh 'load_data.sh'
+    sh 'cat sql_scripts/alter_soc.sql | mysql -u root -padmin jobenfance'
+  end
+
+
 end
 
 desc "Console"

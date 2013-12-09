@@ -1,8 +1,14 @@
 require 'sqlite3'
 require 'active_record'
+require 'active_support'
 
 class Formation < ActiveRecord::Base
   establish_connection(adapter: 'sqlite3', database: 'data.sqlite3', pool: 5)
+
+  def to_key
+    "#{self.ets}#{self.tel}#{self.addresse}#{self.ville}#{self.email}"
+  end
+
 end
 
 
@@ -129,6 +135,17 @@ class LlxSocJe < DoliJe
   belongs_to :llx_c_departement, :class_name => 'LlxCDepJe', :foreign_key => 'fk_departement'
   has_one :llx_cat_soc_je, :class_name => 'LlxCatSocJe', :foreign_key => 'fk_societe'
   has_one :llx_cat_je, :class_name => 'LlxCatJe', :through => :llx_cat_soc_je
+
+
+
+  # def ==(soc)
+  #   self.nom == soc.nom and 
+  #     self.tel === soc.tel and 
+  #     self.address == soc.address and
+  #     self.ville == soc.ville and
+  #     self.email == soc.email
+  # end
+
 end
 
 
